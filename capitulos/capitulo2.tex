@@ -82,6 +82,43 @@ Descritores de textura são algoritmos que procuram fazer o que o olho humano fa
 
 \subsection{GLCM}\label{sec:GLCM}
 
+GLCM, ou matriz de co-ocorrência de nível de cinza, é uma técnica de descrição de textura que visa extrair medidas estatíticas da imagem sendo analisada. Para tanto, é criada uma matriz quadrada de tamanho $MxM$ onde M é a quantidade de níveis de cinza possíveis na imagem em questão. Essa matriz armazena a probabilidade de dois \textit{pixels} se relacionarem através de uma certa relação espacial\cite{GLCM}. 
+
+Para esse trabalho, a relação observada é a da vizinhança entre dois \textit{pixels}, sempre analisando o valor a direita de um determinado \textit{pixel} da imagem. Os 255 valores de intensidade possíveis são divididos em 8 níveis. Cada elemento $P_{i,j}$ na GLCM $G$ conta a quantidade de vezes que um \textit{pixel} com valor de intensidade no nível $j$ apareceu à direita de um \textit{pixel} com valor no nível $i$. A figura \ref{fig:GLCM} exemplifica a criação da GLCM a partir de uma imagem com 8 níveis possíveis.
+
+\begin{figure}
+\includegraphics[width=8cm]{GLCM} 
+\centering
+\caption{Exemplo da elaboração da GLCM. Extraída de https://www.mathworks.com/help/images/ref/graycomatrix.html}
+\label{fig:GLCM}
+\end{figure}
+
+Uma vez criada a imagem, diversas medidas podem ser tiradas. Para esse trabalho são extraídas 4 características definidas abaixo. Nas equações apresentadas $P_{(i,j)}$ representa o valor do elemento na posição $(i,j)$ da GLCM, $\mu_i$ e $\mu_j$ representam a média dos valores de $i$ e $j$ respectivamente e $\sigma_i$ e $\sigma_j$ os desvios padrão destes valores.
+
+\begin{itemize}
+
+\item Contraste: mede o contraste entre um \textit{pixel} e seu vizinho na imagem. Deve ser 0 para uma imagem completamente homogênea. Definido por:
+	\begin{equation}
+		C = \sum_{i,j} (i-j)^{2}P_{(i,j)}
+	\end{equation}
+	
+\item Correlação: mede a taxa de correlação de um \textit{pixel} e seu vizinho na imagem inteira. Definida por:
+	\begin{equation}
+		Co = \sum_{i,j} \frac{(i - \mu_i)(j - \mu_j)P_{(i,j)}}{\sigma_i\sigma_j}
+	\end{equation}
+	
+\item Energia: soma do quadrado dos elementos da imagem. Definida por:
+	\begin{equation}
+		E = \sum_{i,j} P_{(i,j)}^{2}
+	\end{equation}
+	
+\item Homogeneidade: mede a proximidade da distribuição dos elementos à diagonal da matriz. Definida por:
+	\begin{equation}
+		H = \sum_{i,j} \frac{P_{(i,j)}}{1+|i-j|}
+	\end{equation}
+\end{itemize}
+
+
 
 
 
