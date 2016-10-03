@@ -1,0 +1,27 @@
+\chapter{Introdução}\label{cap:intro}
+
+			Atualmente, a frota de carros dos grandes centros urbanos tem fica cada vez maior. Esse aumento no número de veículos cria uma demanda por espaço de estacionamento, levando a construção de novos estacionamentos e uma dificuldade muito maior de se encontrar vagas disponíveis nos estacionamentos existentes nos estabelecimentos comerciais, áreas residenciais e centros urbanos.
+			
+			De fato, todo ano, milhões de pessoas gastam milhares de horas rondando estacionamentos de supermercados, \textit{shoppings} e prédios comerciais em busca de uma vaga de estacionamento vazia. Procurar por uma vaga em um estacionamento grande e cheio é uma tarefa cansativa e desagradável. Muitas vezes vagas desocupadas não são encontradas por motoristas que preferem parar seu carro e esperar que uma vaga seja liberada próximo a ele. Outras vezes possíveis clientes desistem de ir a um determinado estabelecimento pois sabem da dificuldade de estacionar que enfrentarão. Esse problema é comum principalmente em \textit{shopping centers} e grandes supermercados, que possuem seus próprios estacionamentos disponíveis para os clientes, mas que estão frequentemente muito cheios.
+			
+			Facilitar a tarefa da busca de vagas em estacionamentos de estabelecimentos como estes é benéfico então não só para os clientes, mas também para os donos e gerentes desses estabelecimentos. Sendo assim, esse trabalho tem como objetivo criar um sistema que seja capaz de determinar a ocupação das vagas de um estacionamento descoberto e informar quantas vagas estão disponíveis e a sua localização para os motoristas através do processamento de imagens do estacionamento. Tal solução facilitaria a procura de vagas, eliminando o tempo gasto trafegando por fileiras de vagas ocupadas.
+			
+			A solução utiliza redes neurais artificais combinadas com técnicas descritoras de textura e características de crominância para diferenciar imagens de carros de imagens de vagas desocupadas. Cada região que contém vagas na imagem obtida é dividida em diversas seções verticais. Cada seção será classificada entre vaga vazia ou veículo, de forma que o programa então é capaz de determinar quantas vagas estão ocupadas nessa região e, consequentemente, quantas estão vazias.
+			
+			No capítulo \ref{cap:fundament} serão apresentados alguns conceitos importantes para o entendimento da solução que será apresentada posteriormente. Serão detalhados o que é uma imagem, como funciona um vídeo e outros elementos teóricos importantes como espaços de cores, classificação de padrões e redes neurais artificiais. Em seguida serão apresentadas algumas métricas utilizadas na validação dos resultados do trabalho. Finalmente, alguns trabalhos correlatos serão citados, e serão discutidos os motivos da escolha da abordagem utilizada.
+			
+			No capítulo \ref{cap:solucao}, a solução proposta é apresentada. Nesta seção será detalhado o funcionamento do sistema criado, o fluxo de execução do programa e os elementos que permitem o funcionamento do sistema.
+			
+			Em seguida, no capítulo \ref{cap:results} apresentará dados estatísticos sobre os resultados obtidos, acompanhados de observações. Esse capítulo também apresenta os detalhes da rede neural artificial utilizada.
+			
+			O capítulo \ref{cap:conclusao} possui comentários sobre a taxa de sucesso do trabalho, suas fragilidades, sua adequação para uso no estado atual e se o objetivo desejado foi alcançado. O capítulo finaliza o trabalho com uma discussão sobre possíveis trabalhos futuros para a evolução do sistema.\cite{de2006introduccao}
+			
+			
+
+
+
+
+
+
+
+

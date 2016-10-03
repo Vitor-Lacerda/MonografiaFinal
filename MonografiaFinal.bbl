@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{de2006introduccao}
+Jos{\'e} Eust{\'a}quio~Rangel de~Queiroz and Herman~Martins Gomes.
+\newblock Introdu{\c{c}}{\~a}o ao processamento digital de imagens.
+\newblock {\em RITA}, 13(2):11--42, 2006.
+
+\bibitem{colorSpacesDigitalVideo}
+R~Gaunt.
+\newblock Color spaces in digital video.
+\newblock Technical report, Lawrence Livermore National Lab., CA (United
+  States), 1997.
+
+\bibitem{gonzalez2009digital}
+Rafael~C Gonzalez.
+\newblock {\em Digital image processing}.
+\newblock Pearson Education India, 2009.
+
+\bibitem{IBGE2000introducao}
+IBGE.
+\newblock {\em Introdução ao processamento digital de imagens}.
+\newblock IBGE, 2000.
+
+\bibitem{LivroVideoDigital}
+Charles~A. Poynton.
+\newblock {\em A Technical Introduction to Digital Video}.
+\newblock John Wiley \& Sons, Inc., New York, NY, USA, 1996.
+
+\end{thebibliography}
