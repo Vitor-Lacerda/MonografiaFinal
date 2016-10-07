@@ -42,8 +42,9 @@ RGB é um acrônimo para \textit{Red, Green, Blue}, vermelho, verde e azul em in
 
 Esse espaço de cor é o mais comumente encontrado no cotidiano, uma vez que é semelhante visão humana e portanto é utilizado pelos dispositivos multimídia mais comuns.
 	
-	\begin{equation}\label{eq:corRGB}
+	\begin{equation}
 			C_{i,j} = p_{i,j,1} . R + p_{i,j,2} . G + p_{i,j,3} . B ,  (0<i<M, 0<j<N)
+	\label{eq:corRGB}
 	\end{equation}
 
 \subsection{Espaço YCbCr}
@@ -52,9 +53,9 @@ Assim como o espaço de cor RGB, o espaço YCbCr também representa uma imagem a
 
 Na figura \ref{fig:Espacos:sub:YCbCr} estão exemplificados os canais de uma imagem no espaço YCbCr.
 
-\begin{equation}\label{eq:Y}
+\begin{equation}
 	Y = 0,299.R + 0,587.G + 0,114.B
-
+\label{eq:Y}
 \end{equation}
 
 
@@ -93,7 +94,7 @@ Para esse trabalho, a relação observada é a da vizinhança entre dois \textit
 \label{fig:GLCM}
 \end{figure}
 
-Uma vez criada a imagem, diversas medidas podem ser tiradas. Para esse trabalho são extraídas 4 características definidas abaixo. Nas equações apresentadas $P_{(i,j)}$ representa o valor do elemento na posição $(i,j)$ da GLCM, $\mu_i$ e $\mu_j$ representam a média dos valores de $i$ e $j$ respectivamente e $\sigma_i$ e $\sigma_j$ os desvios padrão destes valores.
+Uma vez criada a matriz de co-ocorrência, diversas medidas podem ser tiradas. Para esse trabalho são extraídas 4 características definidas abaixo. Nas equações apresentadas $P_{(i,j)}$ representa o valor do elemento na posição $(i,j)$ da GLCM, $\mu_i$ e $\mu_j$ representam a média dos valores de $i$ e $j$ respectivamente e $\sigma_i$ e $\sigma_j$ os desvios padrão destes valores.
 
 \begin{itemize}
 
@@ -117,6 +118,55 @@ Uma vez criada a imagem, diversas medidas podem ser tiradas. Para esse trabalho 
 		H = \sum_{i,j} \frac{P_{(i,j)}}{1+|i-j|}
 	\end{equation}
 \end{itemize}
+
+
+\section{Vídeos}\label{sec:video}
+
+
+Quando observamos uma cena no mundo real, ela raramente é estática. Com o passar do tempo, os objetos presentes nela se movem continuamente pelo espaço, criando infinitas imagens diferentes em nossas retinas. Podemos simular essa sensação de movimento na nossa visão através da exibição rápida de imagens que contém valores discretos. Esse é o conceito de um vídeo digital. Um vídeo digital é formado através da amostragem de imagens	em três eixos: horizontal, vertical e temporal\cite{LivroVideoDigital}. A cada intervalo fixo de tempo, uma imagem representada por uma matriz bidimensional de valores de intensidade luminosa e cor é amostrada. Cada uma dessas imagens, ou quadros, representa o estado da cena naquele momento no tempo.
+
+\subsection{Fluxo Óptico}\label{sec:fluxooptico}
+
+O movimento é um dos elementos principais para a extração de informações de um vídeo. O fluxo óptico, ou \textit{optical flow}, é uma das técnicas para a estimativa de movimento em vídeos digitais. A técnica consiste em medir a projeção 2D no plano da imagem de um movimento real 3D\cite{mota2011tensor}. Essa projeção 2D mede a velocidade de cada \textit{pixel} da imagem. Esses vetores de velocidade da imagem podem ser utilizados para a realização de diversas tarefas. Por exemplo, é possível extrair a magnitude dos vetores e criar uma nova imagem, aonde os valores de intensidade representam o movimento realizado pelo \textit{pixel}. Nesse trabalho, essa técnica é utilizada para a segmentação de objetos em movimento contra um fundo estático, detalhada no capítulo \ref{cap:solucao}. A figura \ref{fig:fluxo} mostra os vetores de movimento calculados e uma imagem em níveis de cinza que representa as magnitudes das velocidades de cada pixel.
+
+\begin{figure}
+ \centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{velocidadevetores}
+	\caption{}
+	\label{fig:fluxo:sub:vetores}
+\end{subfigure}\
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{velocidademagnitude}
+	\caption{}
+	\label{fig:fluxo:sub:magnitude}
+\end{subfigure}
+\caption{(a) Representação dos vetores de velocidade estimado pelo fluxo óptico. (b) Imagem em níveis de cinza onde a intensidade \textit{pixel} representa a magnitude do seu vetor de velocidade.}
+\label{fig:fluxo}
+\end{figure}
+
+Para calcular o fluxo óptico, começamos assumindo que no intervalo entre dois quadros a intensidade de cada \textit{pixel} não muda de forma significativa. Chamamos então a intensidade de cada \textit{pixel} na posição (x,y) em um determinado momento $t$ de $I(x,y,t)$ e portanto, podemos dizer que: 
+
+\begin{equation}
+	I(x,y,t) = I(x+dx, y+dy, t+dt)
+\label{eq:fluxo1}
+\end{equation} 
+
+onde $dx$ e $dy$ são o deslocamento que o \textit{pixel} no intervalo $dt$ entre dois quadros.
+
+Queremos então encontrar a velocidade $v =(\frac{dx}{dt},\frac{dy}{dt})$ do \textit{pixel}. Usando a expansão por série de Taylor e manipulações matemáticas na equação \ref{eq:fluxo1}, obtemos a equação \ref{eq:fluxo2}\cite{faria1992fluxo}.
+
+\begin{equation}
+	\nabla Iv + I_t = 0
+\label{eq:fluxo2}
+\end{equation}
+
+onde $\nabla I$ é o gradiente da função intensidade. Essa equação descreve o chamado problema de Restrição do Fluxo Óptico\cite{mota2011tensor}. Porém, há um problema na equação. A partir dela só é possível obter um dos componentes da velocidade. A solução completa da velocidade depende de um cálculo na vizinhança de cada ponto. Diversos métodos foram criados para a fazer a estimativa da velocidade, com propriedades diversas. Para esse trabalho foi escolhido o método desenvolvido por Lucas e Kanade, detalhado em \cite{faria1992fluxo}\cite{mota2011tensor} e \cite{bruhn2005lucas}. Este método se utiliza de características de uma vizinhança local e visa minimizar o erro de mínimos quadrados. Foi escolhido por ser resistente a ruído e ter mostrado um resultado mais adequado para as exigências do trabalho.
+
+
+
 
 
 
