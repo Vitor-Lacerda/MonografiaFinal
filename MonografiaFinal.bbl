@@ -16,10 +16,22 @@ Rafael~C Gonzalez.
 \newblock {\em Digital image processing}.
 \newblock Pearson Education India, 2009.
 
+\bibitem{Haykin}
+Simon Haykin.
+\newblock {\em Neural Networks}.
+\newblock Prentice Hall, 2 edition, 1999.
+
 \bibitem{IBGE2000introducao}
 IBGE.
 \newblock {\em Introdução ao processamento digital de imagens}.
 \newblock IBGE, 2000.
+
+\bibitem{GLCM}
+Jefferson~Gustavo Martins, YMG Costa, D~Bertolini, and LS~Oliveira.
+\newblock Uso de descritores de textura extra{\i}dos de glcm para o
+  reconhecimento de padroes em diferentes dom{\i}nios de aplica{\c{c}}ao.
+\newblock In {\em XXXVII Conferencia Latinoamericana de Inform{\'a}tica}, pages
+  637--652, 2011.
 
 \bibitem{LivroVideoDigital}
 Charles~A. Poynton.
