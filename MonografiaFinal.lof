@@ -3,10 +3,8 @@
 \select@language {brazil}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces (a) Uma matriz com n\IeC {\'\i }veis de cinza e (b) a imagem correspondente\relax }}{3}{figure.caption.8}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces (a) Uma matriz com n\IeC {\'\i }veis de cinza e (b) a imagem correspondente\relax }}{4}{figure.caption.8}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces (a) Uma imagem e cada um de seus canais RGB ordenados da esquerda para a direita e (b) os canais YCbCr da imagem ordenados da esquerda para a direita.\relax }}{5}{figure.caption.9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Exemplo da elabora\IeC {\c c}\IeC {\~a}o da GLCM. Extra\IeC {\'\i }da de https://www.mathworks.com/help/images/ref/graycomatrix.html\relax }}{5}{figure.caption.10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Exemplo da elabora\IeC {\c c}\IeC {\~a}o da GLCM. Extra\IeC {\'\i }da de https://www.mathworks.com/help/images/ref/graycomatrix.html\relax }}{6}{figure.caption.10}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A estrutura b\IeC {\'a}sica de um neur\IeC {\^o}nio humano\relax }}{9}{figure.caption.11}

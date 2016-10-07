@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.10.7)  7 OCT 2016 15:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.3)  7 OCT 2016 18:02
 entering extended mode
 **./MonografiaFinal.tex
 (MonografiaFinal.tex
@@ -53,6 +53,7 @@ Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
@@ -71,13 +72,15 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO)
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
 Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
 Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
 )
@@ -112,20 +115,8 @@ File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-
-! Package hyperref Error: Wrong driver option `pdftex',
-(hyperref)                because pdfTeX in PDF mode is not detected.
-
-See the hyperref package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4362 \ProcessKeyvalOptions{Hyp}
-                                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 4362.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 436
+2.
 Package hyperref Info: Hyper figures OFF on input line 4486.
 Package hyperref Info: Link nesting OFF on input line 4491.
 Package hyperref Info: Hyper index ON on input line 4494.
@@ -133,12 +124,14 @@ Package hyperref Info: Plain pages OFF on input line 4501.
 Package hyperref Info: Backreferencing ON on input line 4504.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4735.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\backref.sty"
 Package: backref 2016/05/21 v1.39 Bibliographical back referencing
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
 ))
 \c@Hy@tempcnt=\count92
 
@@ -165,22 +158,14 @@ LaTeX Info: Redefining \pageref on input line 6416.
 \c@Hfootnote=\count96
 )
 
-Package hyperref Message: Driver (default): hdvips.
+Package hyperref Message: Driver: hpdftex.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hdvips.def"
-File: hdvips.def 2016/06/24 v6.83q Hyperref driver for dvips
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pdfmark.def"
-File: pdfmark.def 2016/06/24 v6.83q Hyperref definitions for pdfmark specials
-\pdf@docset=\toks16
-\pdf@box=\box26
-\pdf@toks=\toks17
-\pdf@defaulttoks=\toks18
-\HyField@AnnotCount=\count97
-\Fld@listcount=\count98
-\c@bookmark@seq@number=\count99
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
+\Fld@listcount=\count97
+\c@bookmark@seq@number=\count98
 \Hy@SectionHShift=\skip43
-))
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -193,19 +178,21 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics-def\dvips.def"
-File: dvips.def 2016/07/10 v3.1a Driver-dependent file (DPC,SPQR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+\Gread@gobject=\count99
 ))
 \Gin@req@height=\dimen107
 \Gin@req@width=\dimen108
 )
 (C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\boites\boites.sty
 File: boites.sty 
-Package: boites 2013/11/21 v1.1 Colored, framed and breakable across pages boxes
-\bk@bxb=\box27
-\bk@bxa=\box28
+Package: boites 2013/11/21 v1.1 Colored, framed and breakable across pages boxe
+s
+\bk@bxb=\box26
+\bk@bxa=\box27
 \bk@lcnt=\count100
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
@@ -221,7 +208,7 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layoutheight=\dimen114
 \Gm@layouthoffset=\dimen115
 \Gm@layoutvoffset=\dimen116
-\Gm@dimlist=\toks19
+\Gm@dimlist=\toks16
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
 (C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspace.sty
@@ -229,20 +216,20 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 )
 \c@TotPaginas=\count104
 \c@definition=\count105
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2016/04/23 3.9r The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
 (C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
 )
-(C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\babel-portuges\portuges.ldf
+(C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\babel-portuges\portuges
+.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2016/04/23 3.9r Babel common definitions
 \babel@savecnt=\count106
 \U@D=\dimen117
@@ -279,8 +266,9 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: dvips.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
@@ -311,11 +299,10 @@ Package caption Info: hyperref package is loaded.
 )
 \c@subfigure=\count109
 \c@subtable=\count110
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks20
-\inpenc@posthook=\toks21
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
@@ -323,7 +310,8 @@ Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -559,7 +547,8 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -627,7 +616,8 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2423 (decimal 9251)
 )) (cores.tex)
 Package hyperref Info: Option `colorlinks' set `true' on input line 48.
- (MonografiaFinal.aux)
+
+(MonografiaFinal.aux)
 \openout1 = `MonografiaFinal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
@@ -644,7 +634,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
 LaTeX Font Info:    ... okay on input line 78.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
 LaTeX Font Info:    ... okay on input line 78.
-\AtBeginShipoutBox=\box29
+\AtBeginShipoutBox=\box28
 Package backref Info: ** backref set up for natbib ** on input line 78.
 Package hyperref Info: Link coloring ON on input line 78.
 
@@ -659,16 +649,42 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 78.
 LaTeX Info: Redefining \pageref on input line 78.
 LaTeX Info: Redefining \nameref on input line 78.
- (MonografiaFinal.out)
-(MonografiaFinal.out)
+
+(MonografiaFinal.out) (MonografiaFinal.out)
 \@outlinefile=\write3
 \openout3 = `MonografiaFinal.out'.
 
 
+(C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count112
+\scratchdimen=\dimen125
+\scratchbox=\box29
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen126
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
+\everyMPtoPDFconversion=\toks20
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
 *geometry* driver: auto-detecting
-*geometry* detected driver: dvips
+*geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
-* driver: dvips
+* driver: pdftex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -711,51 +727,72 @@ Package caption Info: End \AtBeginDocument code.
 \len@uadesch=\skip47
 \len@uacaph=\skip48
 LaTeX Font Info:    Try loading font information for T1+ua1 on input line 79.
-
-(C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\arial\t1ua1.fd
+ (C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\arial\t1ua1.fd
 File: t1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for T1/ua1.
 )
 LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <20> not available
 (Font)              Font shape `T1/ua1/b/n' tried instead on input line 79.
-File: positivo_cor.eps Graphic file (type eps)
- <positivo_cor.eps>
+
+<positivo_cor.pdf, id=75, 119.44624pt x 60.225pt>
+File: positivo_cor.pdf Graphic file (type pdf)
+ <use positivo_cor.pdf>
+Package pdftex.def Info: positivo_cor.pdf used on input line 79.
+(pdftex.def)             Requested size: 70.28004pt x 35.43501pt.
 \len@lskipoffset=\skip49
 LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <10> not available
 (Font)              Font shape `T1/ua1/b/n' tried instead on input line 79.
 \len@lskipoffset=\skip50
- [1
+
+[1
 
 
 
-]
+{C:/Users/Infosolo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./positi
+vo_cor.pdf>]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 79.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 79.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 79.
-\@tempa=\count112
+\@tempa=\count118
  [2
 
 ]
 \len@brasiliaw=\skip51
 \len@uadesch=\skip52
 \len@uacaph=\skip53
-File: positivo_cor.eps Graphic file (type eps)
- <positivo_cor.eps>
+File: positivo_cor.pdf Graphic file (type pdf)
+ <use positivo_cor.pdf>
+Package pdftex.def Info: positivo_cor.pdf used on input line 79.
+(pdftex.def)             Requested size: 70.28004pt x 35.43501pt.
 \len@lskipoffset=\skip54
 \len@lskipoffset=\skip55
+ [3
 
-[3
+]pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.86   \begin{agradecimentos}
+                              [1
 
-] [1
 
 
+]pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.90   \begin{resumo}
+                      [2
 
-] [2
 
-
-] [3
+]pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.95   \begin{abstract}
+                        [3
 
 
 ]
@@ -774,13 +811,9 @@ Package babel Warning: You haven't loaded the language english yet
  [5
 
 ] (MonografiaFinal.lof
-Overfull \hbox (428.27338pt too wide) in paragraph at lines 7--7
- [][][] [] [][]  
- []
-
-
-Overfull \hbox (192.77798pt too wide) in paragraph at lines 8--8
- [][][] [] [][]  
+Overfull \hbox (183.64143pt too wide) in paragraph at lines 8--8
+ [][] [][][]\T1/cmr/m/n/12 Exemplo da ela-bo-ra-ção da GLCM. Ex-traída de https
+://www.mathworks.com/help/images/ref/graycomatrix.html[][] [][]  
  []
 
 )
@@ -800,137 +833,156 @@ Cap\'{\i }tulo 1.
 [1
 
 
-]) (capitulos/capitulo2.tex [2]
-Cap\'{\i }tulo 2.
-
-! LaTeX Error: File `MatrizNivelCinza' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.19 ...hics[width=.5\linewidth]{MatrizNivelCinza}
-                                                  
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `ExemploNivelCinza' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 ...ics[width=.5\linewidth]{ExemploNivelCinza}
-                                                  
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[3
-
 ]
 
-! LaTeX Error: File `exemploRGBFinal' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.65 ...phics[width=.8\linewidth]{exemploRGBFinal}
-                                                  
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Warning: Reference `cap:solucao' on page 2 undefined on input line 13.
 
 
-! LaTeX Error: File `exemploYCbCrFinal' not found.
+LaTeX Warning: Reference `cap:results' on page 2 undefined on input line 15.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.71 ...ics[width=.8\linewidth]{exemploYCbCrFinal}
-                                                  
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
-[4]
+LaTeX Warning: Reference `cap:conclusao' on page 2 undefined on input line 17.
 
-! LaTeX Error: File `GLCM' not found.
+) (capitulos/capitulo2.tex [2]
+Cap\'{\i }tulo 2.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.90 \includegraphics[width=8cm]{GLCM}
-                                      
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Warning: Reference `cap:solucao' on page 3 undefined on input line 5.
 
+<imagens/MatrizNivelCinza.png, id=171, 584.93532pt x 584.1825pt>
+File: imagens/MatrizNivelCinza.png Graphic file (type png)
+
+<use imagens/MatrizNivelCinza.png>
+Package pdftex.def Info: imagens/MatrizNivelCinza.png used on input line 19.
+(pdftex.def)             Requested size: 113.81102pt x 113.66107pt.
+
+<imagens/ExemploNivelCinza.png, id=173, 29.35968pt x 29.35968pt>
+File: imagens/ExemploNivelCinza.png Graphic file (type png)
+
+<use imagens/ExemploNivelCinza.png>
+Package pdftex.def Info: imagens/ExemploNivelCinza.png used on input line 25.
+(pdftex.def)             Requested size: 113.81102pt x 113.8114pt.
+ [3
+
+] [4 <./imagens/MatrizNivelCinza.png> <./imagens/ExemploNivelCinza.png>]
+<imagens/exemploRGBFinal.png, id=201, 481.8pt x 481.8pt>
+File: imagens/exemploRGBFinal.png Graphic file (type png)
+
+<use imagens/exemploRGBFinal.png>
+Package pdftex.def Info: imagens/exemploRGBFinal.png used on input line 65.
+(pdftex.def)             Requested size: 182.09833pt x 182.09341pt.
+
+<imagens/exemploYCbCrFinal.png, id=202, 465.23813pt x 232.61906pt>
+File: imagens/exemploYCbCrFinal.png Graphic file (type png)
+
+<use imagens/exemploYCbCrFinal.png>
+Package pdftex.def Info: imagens/exemploYCbCrFinal.png used on input line 71.
+(pdftex.def)             Requested size: 182.09833pt x 91.0476pt.
+ [5 <./imagens/exemploRGBFinal.png> <./imagens/exemploYCbCrFinal.png>]
+<imagens/GLCM.png, id=214, 317.68687pt x 170.13562pt>
+File: imagens/GLCM.png Graphic file (type png)
+ <use imagens/GLCM.png>
+Package pdftex.def Info: imagens/GLCM.png used on input line 90.
+(pdftex.def)             Requested size: 227.62204pt x 121.90564pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 92--92
 []\T1/cmr/m/n/12 Figura 2.3: |Exem-plo da ela-bo-ra-ção da GLCM. Ex-traída de
  []
 
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 100.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 100.
- [5]) (capitulos/capituloRedes.tex [6]
+ [6 <./imagens/GLCM.png>]) (capitulos/capituloRedes.tex [7]
 Cap\'{\i }tulo 3.
-) (capitulos/capitulo3.tex [7
+
+Package caption Warning: \label without proper reference on input line 18.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:neuronio' on page 8 undefined on input line 13.
+
+<imagens/neuronio.jpg, id=233, 192.72pt x 116.5956pt>
+File: imagens/neuronio.jpg Graphic file (type jpg)
+
+<use imagens/neuronio.jpg>
+Package pdftex.def Info: imagens/neuronio.jpg used on input line 17.
+(pdftex.def)             Requested size: 273.14923pt x 165.25555pt.
+ [8
 
 ]
-Cap\'{\i }tulo 4.
-) (capitulos/capitulo4.tex [8
 
-]
-Cap\'{\i }tulo 5.
-) (capitulos/capitulo5.tex [9
+LaTeX Warning: Reference `fig:neuroartificial' on page 9 undefined on input lin
+e 34.
 
-]
-Cap\'{\i }tulo 6.
-) [10
 
-] (MonografiaFinal.bbl (MonografiaFinal.brf)
+LaTeX Warning: Reference `cap:solucao' on page 9 undefined on input line 40.
+
+) [9 <./imagens/neuronio.jpg>] [10] (MonografiaFinal.bbl (MonografiaFinal.brf)
 \tf@brf=\write7
 \openout7 = `MonografiaFinal.brf'.
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 118.
- [11
+[11
 
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 118.
  (MonografiaFinal.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 118.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 118.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
-Package rerunfilecheck Info: File `MonografiaFinal.out' has not changed.
-(rerunfilecheck)             Checksum: D8BAE0103966EBFA754AA1778CEFD0BC;1386.
+
+
+Package rerunfilecheck Warning: File `MonografiaFinal.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `MonografiaFinal.out':
+(rerunfilecheck)             Before: 926E554A8F5988EE7377B2EED426CBE7;1150
+(rerunfilecheck)             After:  31C2E2C9518C806D2FEF909E75A28B36;1128.
 Package rerunfilecheck Info: File `MonografiaFinal.brf' has not changed.
-(rerunfilecheck)             Checksum: B42E2C7FC6880A5F69B24492B34EF741;390.
+(rerunfilecheck)             Checksum: A8ADFA961D01A54D8A64B9C12F8CD06C;390.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 118.
  )
 (\end occurred when \iffalse on line 462 was incomplete) 
 Here is how much of TeX's memory you used:
- 8836 strings out of 493335
- 129721 string characters out of 3136689
- 244662 words of memory out of 3000000
- 12191 multiletter control sequences out of 15000+200000
- 22113 words of font info for 35 fonts, out of 3000000 for 9000
+ 9383 strings out of 493334
+ 137895 string characters out of 3136663
+ 247877 words of memory out of 3000000
+ 12682 multiletter control sequences out of 15000+200000
+ 26187 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,7n,94p,1174b,549s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 59i,8n,94p,1174b,549s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Infosolo\App
+Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users
+\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.
+pk> <C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
+600\ecti1200.pk> <C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
+nappen\ec\dpi600\ecbx2488.pk> <C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Infosolo\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Infosolo\AppD
+ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\
+Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.p
+k>{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Infosolo/AppData
+/Roaming/MiKTeX/2.9/fonts/type1/urw/arial/ua1b8a.pfb>
+Output written on MonografiaFinal.pdf (21 pages, 589678 bytes).
+PDF statistics:
+ 636 PDF objects out of 1000 (max. 8388607)
+ 64 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on MonografiaFinal.dvi (21 pages, 65652 bytes).

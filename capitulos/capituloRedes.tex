@@ -8,13 +8,41 @@ Simon Haykin\cite{Haykin} define uma rede neural como "...um processador distrib
 
 As redes neurais artificiais são utilizadas para resolver problemas como ajuste de funções, classificação de objetos e reconhecimento de padrões. Nesse capítulo, serão explicados conceitos importantes para o entendimento das redes artificiais, começando pelo seu elemento mais básico, o neurônio.
 
-\section{Neurônios naturais}
+\section{Neurônios}
 
+O neurônio é a estrutura básica do sistema nervoso central. É uma célula composta principalmente de três partes distintas: o corpo celular, os dendritos e o axônio. O corpo celular é a estrutra central do célula aonde está contido o núcleo do neurônio e são executados as suas funções vitais. Os dendritos são prolongamentos do corpo celular responsáveis por receber sinais e o axônio é uma extensão maior do corpo celular, responsável por enviar sinais a outros neurônios. Dois neurônios interagem em apenas  pontos de contato chamados sinapses. Nessas sinapses o axônio de um neurônio envia sinais para os dendritos de um segundo neurônio. A figura \ref{fig:neuronio} ilustra a estrutura básica dos neurônios.
 
-\section{Neurônios artificiais}
+\begin{figure}
+\centering
+\includegraphics[width=.6\textwidth]{neuronio}
+\label{fig:neuronio}
+\caption{A estrutura básica de um neurônio humano}
+\end{figure}
 
+O neurônio artificial também possui três estruturas básicas semelhantes àquelas do neurônio natural. Seus três elementos básicos são: as entradas(análogas aos dendritos), a sáida(análoga ao axônio) e um núcleo de processamento. 
 
-\section{Classificação de padrões}
+O neurônio pode ter uma ou mais conexões de entrada caracterizadas por um peso $wi$ e que recebe um valor $xi$. No núcleo do neurônio artificial há um somador que calcula o valor $u$ agregado das entradas, ponderadas pelo peso correspondente. O resultado dessa soma ponderada é então deslocado de um valor escalar e em seguida submetido a uma função chamada de função de ativação, que determina a saída final do neurônio. Em suma podemos descrever a saída de um neurônio $n$ que possui $i$ entradas através das seguintes equações:
+
+\begin{equation}
+ u_n = \sum_{j=1}^i x_jw_j
+\end{equation}
+
+\begin{equation}
+s(n) = f(u_n + b)
+\end{equation}
+
+Aonde $u_n$ é o valor agregado das entradas, $x_j$ é a j-ésima entrada e $w_j$ o peso da conexão associada, $s(n)$ é a saída do neurônio, $f$ é a função de ativação e $b$ o deslocamento, ou $bias$ do neurônio $n$. A figura \ref{fig:neuroartificial} ilustra a estrutura básica de um neurônio artificial.
+
+%imagem do neurônio artifical
+
+Claramente, a função de ativação do neurônio é o grande fator que define o seu comportamento e consequentemente sua funcionalidade. O neurônio mais simples possível tem sua saída regida por uma função degrau simples e tem uma saída binária. Isto é, se o valor agregado $u$ de suas entradas for maior que um determinado limiar, a sua saída será 1 e a saída será 0 caso contrário. Esse neurônio é chamado de \textit{perceptron}. É fácil ver que o \textit{perceptron} tem aplicações limitadas e por causa disso, é mais comum que neurônios com funções de ativações mais complexas sejam utilizados. Se escolhermos uma função com uma distribuição mais suave de valores permite que a saída do neurônio sejam valores entre 0 e 1. Além disso, mudanças mais sutis na entrada não causam mudanças bruscas como poderiam causar em um \textit{perceptron}. Essas características resultam em um neurônio muito mais capaz de aprender e de resolver o problema em questão.
+
+Diversas funções podem ser utilizadas como funções de ativação. No capítulo \ref{cap:solucao} será discutida a escolha da função de ativação para a rede neural utilizada neste trabalho.
+
 
 
 \section{Redes Neurais Feed-Forward}
+
+
+\section{Treinamento}
+
