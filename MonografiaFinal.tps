@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=605
+NormalPos.right=980
+NormalPos.bottom=501
 Class=LaTeXView
 Document=capitulos\capitulo1.tex
 
 [Frame0_View0,0]
-TopLine=0
-Cursor=3693
+TopLine=25
+Cursor=3006
 
 [Frame1]
 Flags=0
@@ -29,14 +29,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=605
+NormalPos.right=980
+NormalPos.bottom=501
 Class=LaTeXView
 Document=capitulos\capitulo2.tex
 
 [Frame1_View0,0]
-TopLine=90
-Cursor=7062
+TopLine=142
+Cursor=9413
 
 [Frame2]
 Flags=0
@@ -47,14 +47,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=605
-Class=LaTeXView
-Document=..\Monografia\capitulos\capitulo2.tex
+NormalPos.right=980
+NormalPos.bottom=501
+Class=BibTeXView
+Document=bibliografia.bib
 
 [Frame2_View0,0]
-TopLine=70
-Cursor=7622
+TopLine=175
+Cursor=5876
 
 [Frame3]
 Flags=0
@@ -65,16 +65,34 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=605
-Class=BibTeXView
-Document=bibliografia.bib
+NormalPos.right=980
+NormalPos.bottom=501
+Class=LaTeXView
+Document=MonografiaFinal.tex
 
 [Frame3_View0,0]
-TopLine=43
-Cursor=2163
+TopLine=92
+Cursor=2430
+
+[Frame4]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=980
+NormalPos.bottom=501
+Class=LaTeXView
+Document=capitulos\capituloRedes.tex
+
+[Frame4_View0,0]
+TopLine=0
+Cursor=1431
 
 [SessionInfo]
-FrameCount=4
-ActiveFrame=1
+FrameCount=5
+ActiveFrame=4
 
