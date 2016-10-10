@@ -35,9 +35,42 @@ Aonde $u_n$ é o valor agregado das entradas, $x_j$ é a j-ésima entrada e $w_j
 
 %imagem do neurônio artifical
 
-Claramente, a função de ativação do neurônio é o grande fator que define o seu comportamento e consequentemente sua funcionalidade. O neurônio mais simples possível tem sua saída regida por uma função degrau simples e tem uma saída binária. Isto é, se o valor agregado $u$ de suas entradas for maior que um determinado limiar, a sua saída será 1 e a saída será 0 caso contrário. Esse neurônio é chamado de \textit{perceptron}. É fácil ver que o \textit{perceptron} tem aplicações limitadas e por causa disso, é mais comum que neurônios com funções de ativações mais complexas sejam utilizados. Se escolhermos uma função com uma distribuição mais suave de valores permite que a saída do neurônio sejam valores entre 0 e 1. Além disso, mudanças mais sutis na entrada não causam mudanças bruscas como poderiam causar em um \textit{perceptron}. Essas características resultam em um neurônio muito mais capaz de aprender e de resolver o problema em questão.
+Claramente, a função de ativação do neurônio é o grande fator que define o seu comportamento e consequentemente sua funcionalidade. Existem dois tipos básicos de funções de ativação\cite{Haykin}: a função degrau e a função sigmóide.
 
-Diversas funções podem ser utilizadas como funções de ativação. No capítulo \ref{cap:solucao} será discutida a escolha da função de ativação para a rede neural utilizada neste trabalho.
+O neurônio mais simples possível tem sua saída regida por uma função degrau e saída binária. Isto é, se o valor agregado $u$ de suas entradas for maior que um determinado limiar, a sua saída será 1 e a saída será 0 caso contrário. Apesar de ser capaz de resolver alguns problemas, esse tipo de neurônio tem algumas desvantagens. Por vezes, alterações sutis podem representar a diferença entre os dois valores possíveis da sáida. Além disso, um alcance limitado de valores na saída prejudica o treinamento.
+
+A escolha mais comum de de função de ativação para a construção de redes neurais é a família de funções sigmóides. Essas funções, que tem um gráfico com formato de \textit{S}, assumem valores contínuos entre 0 e 1, o que faz com que alterações sutis na entrada representem alterações mais sutis na saída, aumentando a qualidade da informação gerada pelo neurônio. A mais comum das funções sigmóides utilizadas é a função logística, definida pela equação \ref{eq:logistica}, onde $a$ é uma constante que mede a declividade da curva.
+
+\begin{equation}
+
+f(u) = \frac{1}{1 + \exp{-au}}
+
+\label{eq:logistica}
+
+\end{equation}
+
+Um dos motivos que tornou a função logística uma escolha popular para os neurônios artificiais foi a sua derivação simples, uma vez que algoritmos de treinamento muitas vezes usam a derivada da função de ativação\cite{Kosabov}.
+
+É interessante reparar que quando $a$ se aproxima do infinito, a função logística se comporta da mesma forma que a função degrau.
+
+\begin{figure}
+ \centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{degrau}
+	\caption{}
+	\label{fig:ativacao:sub:degrau}
+\end{subfigure}\
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{logistica}
+	\caption{}
+	\label{fig:ativacao:sub:logistica}
+\end{subfigure}
+\caption{(a) Gráfico da função degrau com limiar 0. (b) Gráfico da função logística com a = 1}
+\label{fig:ativacao}
+\end{figure}
+
 
 
 
