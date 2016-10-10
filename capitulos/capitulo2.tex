@@ -98,22 +98,22 @@ Uma vez criada a matriz de co-ocorrência, diversas medidas podem ser tiradas. P
 
 \begin{itemize}
 
-\item Contraste: mede o contraste entre um \textit{pixel} e seu vizinho na imagem. Deve ser 0 para uma imagem completamente homogênea. Definido por:
+\item \textbf{Contraste}: mede o contraste entre um \textit{pixel} e seu vizinho na imagem. Deve ser 0 para uma imagem completamente homogênea. Definido por:
 	\begin{equation}
 		C = \sum_{i,j} (i-j)^{2}P_{(i,j)}
 	\end{equation}
 	
-\item Correlação: mede a taxa de correlação de um \textit{pixel} e seu vizinho na imagem inteira. Definida por:
+\item \textbf{Correlação}: mede a taxa de correlação de um \textit{pixel} e seu vizinho na imagem inteira. Definida por:
 	\begin{equation}
 		Co = \sum_{i,j} \frac{(i - \mu_i)(j - \mu_j)P_{(i,j)}}{\sigma_i\sigma_j}
 	\end{equation}
 	
-\item Energia: soma do quadrado dos elementos da imagem. Definida por:
+\item \textbf{Energia}: soma do quadrado dos elementos da imagem. Definida por:
 	\begin{equation}
 		E = \sum_{i,j} P_{(i,j)}^{2}
 	\end{equation}
 	
-\item Homogeneidade: mede a proximidade da distribuição dos elementos à diagonal da matriz. Definida por:
+\item \textbf{Homogeneidade}: mede a proximidade da distribuição dos elementos à diagonal da matriz. Definida por:
 	\begin{equation}
 		H = \sum_{i,j} \frac{P_{(i,j)}}{1+|i-j|}
 	\end{equation}

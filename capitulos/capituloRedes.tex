@@ -42,11 +42,8 @@ O neurônio mais simples possível tem sua saída regida por uma função degrau
 A escolha mais comum de de função de ativação para a construção de redes neurais é a família de funções sigmóides. Essas funções, que tem um gráfico com formato de \textit{S}, assumem valores contínuos entre 0 e 1, o que faz com que alterações sutis na entrada representem alterações mais sutis na saída, aumentando a qualidade da informação gerada pelo neurônio. A mais comum das funções sigmóides utilizadas é a função logística, definida pela equação \ref{eq:logistica}, onde $a$ é uma constante que mede a declividade da curva.
 
 \begin{equation}
-
-f(u) = \frac{1}{1 + \exp{-au}}
-
+	f(u) = \frac{1}{1 + \exp{-au}}
 \label{eq:logistica}
-
 \end{equation}
 
 Um dos motivos que tornou a função logística uma escolha popular para os neurônios artificiais foi a sua derivação simples, uma vez que algoritmos de treinamento muitas vezes usam a derivada da função de ativação\cite{Kosabov}.
@@ -76,6 +73,48 @@ Um dos motivos que tornou a função logística uma escolha popular para os neur
 
 \section{Redes Neurais Feed-Forward}
 
+Apesar de neurônios serem capazes de resolver alguns problemas sozinhos, o verdadeiro poder das redes neurais vem da interconexão entre os neurônios de forma a criar ligações semelhantes às sinapses dos neurônios naturais.
+
+Existem várias arquiteturas para a formação destas redes de neurônios, porém neste trabalho a discussão será limitada àquela utilizada na implementação do programa: as chamadas redes neurais \textit{feed-forward}.
+
+São necessárias ao menos três camadas para a construção da rede neste modelo: a primeira camada, chamada de camada de entrada, uma ou mais camadas intermediárias(ou ocultas) e a camada de saída. O papel das camadas ocultas é intermediar entre as entradas externas e a saída da rede, de forma a possibilitar que a rede extraia dados estatíticos mais significativos da sua entrada.  Uma camada é composta de um número de neurônios que agem de forma paralela. Cada neurônio de uma camada que não é a de saída está conectado apenas ao neurônios da camada seguinte, de forma que não há comunicação entre uma camada e camadas anteriores a ela. Isto é, a informação flui na rede apenas no sentido entrada-saída, como ilustrado na figura \ref{fig:feedfoward}.
+
+\begin{figure}
+\centering
+\includegraphics[width=.6\textwidth]{feedforward}
+\label{fig:feedfoward}
+\caption{A arquitetura feed-forward. Cada neurônio se comunica com os neurônios da camada seguinte até que a saída final seja produzida. Adaptada de \cite{Haykin}}
+\end{figure}
+
+O vetor de entrada da rede é alimentado aos neurônios da primeira camada, cuja saída serve de entrada para a segunda camada e assim por diante, até que a última camada seja alimentada pela saída da camada anterior e produza a saída final da rede. 
 
 \section{Treinamento}
 
+Para que uma rede neural artificical possa ser utilizada, ela precisa antes aprender a realizar a tarefa para a qual foi criada. Para isso a rede precisa ter duas abilidades importantes: de aprendizado e de generalização. Aprendizado é a capacidade da rede de aproximar o comportamento das entradas fornecidas durante o treinamento, enquanto generalização é a sua capacidade de prever e operar sobre dados além do conjunto com a qual foi treinada\cite{ZhangNNSurvey}.
+
+É necessário então que a rede passe por um processo de treinamento, onde os valores dos pesos $wi$ e os deslocamentos $b$ de cada neurônio são definidos de forma que o funcionamento da rede seja ótimo para a tarefa que se deseja realizar. Para realizar o treinamento de uma rede, o primeiro passo é definir 3 conjuntos distintos de entradas:
+
+\begin{itemize}
+	\item \textbf{Conjunto de testes:} A rede é submetida às entradas deste conjunto para que seja feita a calibração dos valores da matriz de pesos $W$ e do vetor de deslocamentos $B$.
+	
+	\item \textbf{Conjunto de validação:} Após uma etapa de treinamento, a rede computa os dados deste conjunto de entradas para validar os valores da matriz $W$ e do vetor $B$ escolhidos até então.
+	
+	\item \textbf{Conjunto de testes:} Por fim, após o treinamento, a rede é submetida aos dados deste conjunto, a fim de verificar o seu funcionamento correto.
+\end{itemize}
+
+Isto é, a cada ciclo de treinamento, a rede ajusta os seus pesos e deslocamentos de acordo com o conjunto de treinamento, e em seguida processa os dados do conjunto de validação. Se for determinado que a rede teve sucesso no processo de validação, ela fica pronta pra passar pelo conjunto de testes, aonde as sua capacidade de generalização é testada. A matriz $W$ de pesos gerada durante este processo é uma forma de representação do "conhecimento" da rede. Assim, o aprendizado não é uma característica de cada neurônio, mas sim um processo que ocorre na rede inteira como resultado do treinamento\cite{Kozabov}.
+
+Existem duas principais maneiras de se executar o treinamento de uma rede.
+
+\begin{itemize}
+	\item \textbf{Treinamento supervisionado:} Neste paradigma os conjunto de treinamento e de validação consistem em um grupo de vetores de entrada $x$ e um gabarito de vetores de saída desejado $y$. O treinamento acontece até que o vetor de saída da rede para uma determinada entrada $x_i$ seja suficientemente próximo do vetor gabarito $y_i$ correspondete.
+	
+	
+	\item \textbf{Treinamento não-supervisionado:} Neste paradigma a rede apenas recebe um conjunto $x$ de entradas e aprende características intrínsicas do dados apresentados a ela.
+	
+\end{itemize}
+
+Uma vez definido o paradigma de treinamento, é necessário definir uma técnica para a análise do erro e alteração dos valores da matriz de pesos $W$ e do vetor $B$ de deslocamentos. Uma das técnicas mais utilizadas é a chamada de \textit{backpropagation}\cite{DeepLearning, ZhangNNSurvey}. A técnica consiste de uma análise do erro apresentado na saída da rede, que então é utilizada para se percorrer a rede no sentido contrário dos dados modificando os valores de $W$ e $B$ de forma a diminuir o erro na próxima iteração. Essa técnica é muito utilizada para sistemas de treinamento supervisionado, onde o erro é avaliado através de uma comparação da saída da rede com o gabarito fornecido. Uma vez que a os valores de $W$ e $B$ param de mudar, diz-se que a rede atingiu um estado de convergência\cite{Kozabov} e o treinamento finaliza.
+
+
+\section{Classificação de padrões}
