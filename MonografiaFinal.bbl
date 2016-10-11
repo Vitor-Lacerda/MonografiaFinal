@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{NNForPR}
+Christopher~M Bishop.
+\newblock {\em Neural networks for pattern recognition}.
+\newblock Oxford university press, 1995.
 
 \bibitem{de2006introduccao}
 Jos{\'e} Eust{\'a}quio~Rangel de~Queiroz and Herman~Martins Gomes.
@@ -16,6 +21,11 @@ Rafael~C Gonzalez.
 \newblock {\em Digital image processing}.
 \newblock Pearson Education India, 2009.
 
+\bibitem{DeepLearning}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock Deep learning.
+\newblock Book in preparation for MIT Press, 2016.
+
 \bibitem{Haykin}
 Simon Haykin.
 \newblock {\em Neural Networks}.
@@ -25,6 +35,12 @@ Simon Haykin.
 IBGE.
 \newblock {\em Introdução ao processamento digital de imagens}.
 \newblock IBGE, 2000.
+
+\bibitem{Kosabov}
+Nikola~K Kasabov.
+\newblock {\em Foundations of neural networks, fuzzy systems, and knowledge
+  engineering}.
+\newblock Marcel Alencar, 1996.
 
 \bibitem{GLCM}
 Jefferson~Gustavo Martins, YMG Costa, D~Bertolini, and LS~Oliveira.
@@ -37,5 +53,11 @@ Jefferson~Gustavo Martins, YMG Costa, D~Bertolini, and LS~Oliveira.
 Charles~A. Poynton.
 \newblock {\em A Technical Introduction to Digital Video}.
 \newblock John Wiley \& Sons, Inc., New York, NY, USA, 1996.
+
+\bibitem{ZhangNNSurvey}
+Guoqiang~Peter Zhang.
+\newblock Neural networks for classification: a survey.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics, Part C
+  (Applications and Reviews)}, 30(4):451--462, 2000.
 
 \end{thebibliography}

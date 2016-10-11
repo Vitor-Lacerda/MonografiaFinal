@@ -16,5 +16,5 @@
 \contentsline {section}{\numberline {3.1}Neur\IeC {\^o}nios}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}Redes Neurais Feed-Forward}{11}{section.3.2}
 \contentsline {section}{\numberline {3.3}Treinamento}{12}{section.3.3}
-\contentsline {section}{\numberline {3.4}Classifica\IeC {\c c}\IeC {\~a}o de padr\IeC {\~o}es}{13}{section.3.4}
-\contentsline {chapter}{Refer\^encias}{14}{section*.15}
+\contentsline {section}{\numberline {3.4}Classifica\IeC {\c c}\IeC {\~a}o de padr\IeC {\~o}es}{14}{section.3.4}
+\contentsline {chapter}{Refer\^encias}{16}{section*.16}
