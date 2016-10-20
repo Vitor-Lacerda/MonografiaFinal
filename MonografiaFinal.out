@@ -22,5 +22,12 @@
 \BOOKMARK [0][-]{chapter.5}{Solu\347\343o Proposta}{}% 22
 \BOOKMARK [1][-]{section.5.1}{Aquisi\347\343o}{chapter.5}% 23
 \BOOKMARK [1][-]{section.5.2}{Regi\365es de Interesse}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.3}{Se\347\365es Verticais}{chapter.5}% 25
-\BOOKMARK [0][-]{section*.17}{Refer\352ncias}{}% 26
+\BOOKMARK [1][-]{section.5.3}{Classifica\347\343o das se\347\365es}{chapter.5}% 25
+\BOOKMARK [2][-]{subsection.5.3.1}{Extra\347\343o de caracter\355sticas}{section.5.3}% 26
+\BOOKMARK [2][-]{subsection.5.3.2}{Classifica\347\343o da rede neural artificial}{section.5.3}% 27
+\BOOKMARK [2][-]{subsection.5.3.3}{Ajuste gaussiano dos vizinhos}{section.5.3}% 28
+\BOOKMARK [2][-]{subsection.5.3.4}{Sistema de vota\347\343o}{section.5.3}% 29
+\BOOKMARK [1][-]{section.5.4}{Extra\347\343o do movimento}{chapter.5}% 30
+\BOOKMARK [2][-]{subsection.5.4.1}{Fluxo \323ptico}{section.5.4}% 31
+\BOOKMARK [2][-]{subsection.5.4.2}{Regi\365es de movimento}{section.5.4}% 32
+\BOOKMARK [0][-]{section*.20}{Refer\352ncias}{}% 33

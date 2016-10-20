@@ -10,7 +10,13 @@ O sistema recebe como entrada um vídeo em cores capturado em um certo ângulo e
 
 A imagem \ref{fig:fluxograma} contém um fluxograma que mostra as etapas do processamento de cada quadro do vídeo adquirido. No decorrer deste capítulo cada um desses passo será discutido com mais detalhes.
 
-%%Fazer fluxograma e inserir aqui%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{fluxograma}
+	\label{fig:fluxograma}
+	\caption{Um fluxograma com o funcionamento geral do programa}
+	\centering
+\end{figure}
 
 
 
@@ -26,19 +32,51 @@ Uma câmera montada em um poste de luz ou outro ponto similar captura as imagens
 	\centering
 \end{figure}
 
-Diversas câmeras podem ser instaladas para aumentar a cobertura do estacionamento. Neste caso, cada vídeo é processado por uma cópia diferente do sistema. Por isso, neste capítulo a discussão será focada apenas no processamento do vídeo de uma câmera.
+Neste trabalho, a preocupação foi implementar um programa que analisa as imagens de uma única câmera de vídeo. Em uma aplicação no mundo real, diversas câmeras seriam instaladas para aumentar a cobertura do estacionamento. Neste caso, cada vídeo seria processado por uma cópia diferente do sistema, responsável pela área coberta pela câmera correspondente. As saídas de cada cópia do programa correspondem a ocupação das vagas em um setor diferente do estacionamento.
 
 \section{Regiões de Interesse}\label{sec:ROIs}
 
-No momento da instalação do programa, é necessário definir um número qualquer de regiões de interesse(ROIs). Essas regiões determinam a área da imagem onde existem vagas. Além de determinar as regiões, deve-se informar ao programa o número de vagas existente em cada região de interesse.
+No momento da instalação do programa, é necessário definir um número qualquer de regiões de interesse(\textit{Regions of interest} ou ROIs). Essas regiões determinam a área da imagem onde existem vagas. Além de determinar as regiões, deve-se informar ao programa o número de vagas existente em cada região de interesse.
 
 As ROIs devem ser retangulares e determinadas de forma a não haver interseção entre elas, como exemplificado na figura \ref{fig:ROIs} que mostra as regiões determinadas para o quadro da figura \ref{fig:aquisicao}.
 
-%Figura das regiões de interesse aqui %%
+\begin{figure}
+	\centering
+	\includegraphics[width=8cm]{ROIs}
+	\label{fig:ROIs}
+	\caption{O mesmo quadro da figura \ref{fig:aquisicao}, depois de definidas as regiões de interesse, marcadas de verde.}
+	\centering
+\end{figure}
 
-\section{Seções Verticais}\label{sec:secoesVerticais}
+Depois de determinadas as regiões de interesse, cada uma delas é dividida em um número igual de seções verticais como ilustrado na figura \ref{fig:secoesVerticais}. Como as vagas não são determinadas individualmente no momento da instalação do programa, é necessário que seja feita alguma divisão das ROIs. Cada uma destas seções verticais é classificada separadamente em uma etapa futura do processamento. O resultado da classificação de cada seção de uma ROI determina um vetor $v$ de $n$ elementos, onde $n$ é o número de seções em que a região foi dividida e cada elemento indica a ocupação da vaga, sendo o valor $1$ correspondente a uma vaga ocupada e o valor $2$ correspondente a uma vaga livre. Através da análise deste vetor é que o programa determina o número de vagas livres em cada região. Munido do número de vagas que cada região contém e um valor aproximado do número de seções que um carro ocupa, o programa estima quantas vagas estão ocupadas, e encontra o número de vagas livres através de simples subtração e a posição aproximada destas vagas através da posição das seções livres no vetor.
 
- 
+\begin{figure}
+	\centering
+	\includegraphics[width=8cm]{Secoes}
+	\label{fig:secoesVerticais}
+	\caption{As ROIs determinadas na figura \ref{fig:ROIs} separadas em trinta seções verticais que ainda não foram classificadas. Nesta etapa os vetores $v$ de cada região é composto de trinta valores $2$.}
+	\centering
+\end{figure}
+
+
+\section{Classificação das seções} \label{sec:classificacao}
+
+
+\subsection{Extração de características}
+
+
+\subsection{Classificação da rede neural artificial}
+
+\subsection{Ajuste gaussiano dos vizinhos}
+
+\subsection{Sistema de votação}
+
+
+\section{Extração do movimento}
+
+\subsection{Fluxo Óptico}
+
+\subsection{Regiões de movimento}
 
 
 
