@@ -47,7 +47,7 @@ Esse espaço de cor é o mais comumente encontrado no cotidiano, uma vez que é 
 	\label{eq:corRGB}
 	\end{equation}
 
-\subsection{Espaço YCbCr}
+\subsection{Espaço YCbCr}\label{sect:sub:ycbcr}
 
 Assim como o espaço de cor RGB, o espaço YCbCr também representa uma imagem através de três matrizes, porém, seus canais contém informações diferentes do modelo RGB. Esse modelo, é muito utilizado para o armazenamento de vídeos, uma vez que o modelo tira vantagem de alguns aspectos da visão humana para poder armazenar menos dados, sem perda significativa de informação visual. Por exemplo, humanos são mais sensíveis à detalhes e variações em níveis de cinza do que detalhes em imagens coloridas. Além disso, o olho humano é mais sensível ao verde do que qualquer outra cor\cite{colorSpacesDigitalVideo}. Com esse conhecimento, o espaço YCbCr representa as cores de uma imagem através de sua luminosidade(Y) e os valores de crominância azul(Cb) e crominância vermelha(Cr). Cb e Cr são sinais de diferença de cor e são definidos pela subtração do valor de luminosidade do canal azul e vermelho da imagem, respectivamente. A luminosidade é definida pela equação \ref{eq:Y}\cite{LivroVideoDigital} que reflete a sensibilidade maior a cor verde da visão humana.
 
@@ -101,22 +101,27 @@ Uma vez criada a matriz de co-ocorrência, diversas medidas podem ser tiradas. P
 \item \textbf{Contraste}: mede o contraste entre um \textit{pixel} e seu vizinho na imagem. Deve ser 0 para uma imagem completamente homogênea. Definido por:
 	\begin{equation}
 		C = \sum_{i,j} (i-j)^{2}P_{(i,j)}
+	\label{eq:Contraste}
 	\end{equation}
 	
 \item \textbf{Correlação}: mede a taxa de correlação de um \textit{pixel} e seu vizinho na imagem inteira. Definida por:
 	\begin{equation}
 		Co = \sum_{i,j} \frac{(i - \mu_i)(j - \mu_j)P_{(i,j)}}{\sigma_i\sigma_j}
+	\label{eq:Correlacao}
 	\end{equation}
 	
 \item \textbf{Energia}: soma do quadrado dos elementos da imagem. Definida por:
 	\begin{equation}
 		E = \sum_{i,j} P_{(i,j)}^{2}
+		\label{eq:Energia}
 	\end{equation}
 	
 \item \textbf{Homogeneidade}: mede a proximidade da distribuição dos elementos à diagonal da matriz. Definida por:
 	\begin{equation}
 		H = \sum_{i,j} \frac{P_{(i,j)}}{1+|i-j|}
+		\label{eq:Homo}
 	\end{equation}
+
 \end{itemize}
 
 
