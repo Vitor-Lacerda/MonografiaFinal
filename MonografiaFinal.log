@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.3)  20 OCT 2016 18:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.3)  21 OCT 2016 18:58
 entering extended mode
 **./MonografiaFinal.tex
 (MonografiaFinal.tex
@@ -260,6 +260,96 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count107
 )
+(C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mathtools.sty
+Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count108
+\calc@Bcount=\count109
+\calc@Adimen=\dimen118
+\calc@Bdimen=\dimen119
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count110
+\calc@Cskip=\skip48
+)
+(C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/06/28 v2.15d AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen120
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen121
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count111
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count112
+\leftroot@=\count113
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count114
+\DOTSCASE@=\count115
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen122
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count116
+\c@MaxMatrixCols=\count117
+\dotsspace@=\muskip11
+\c@parentequation=\count118
+\dspbrk@lvl=\count119
+\tag@help=\toks18
+\row@=\count120
+\column@=\count121
+\maxfields@=\count122
+\andhelp@=\toks19
+\eqnshift@=\dimen123
+\alignsep@=\dimen124
+\tagshift@=\dimen125
+\tagwidth@=\dimen126
+\totwidth@=\dimen127
+\lineht@=\dimen128
+\@envbody=\toks20
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count123
+\l_MT_multwidth_dim=\dimen129
+\origjot=\skip52
+\l_MT_shortvdotswithinadjustabove_dim=\dimen130
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen131
+\l_MT_above_intertext_sep=\dimen132
+\l_MT_below_intertext_sep=\dimen133
+\l_MT_above_shortintertext_sep=\dimen134
+\l_MT_below_shortintertext_sep=\dimen135
+)
 (C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
@@ -286,23 +376,23 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen118
-\captionmargin@=\dimen119
-\captionwidth=\dimen120
-\caption@tempdima=\dimen121
-\caption@indent=\dimen122
-\caption@parindent=\dimen123
-\caption@hangindent=\dimen124
+\captionmargin=\dimen136
+\captionmargin@=\dimen137
+\captionwidth=\dimen138
+\caption@tempdima=\dimen139
+\caption@indent=\dimen140
+\caption@parindent=\dimen141
+\caption@hangindent=\dimen142
 )
-\c@ContinuedFloat=\count108
+\c@ContinuedFloat=\count124
 Package caption Info: hyperref package is loaded.
 )
-\c@subfigure=\count109
-\c@subtable=\count110
+\c@subfigure=\count125
+\c@subtable=\count126
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks17
-\inpenc@posthook=\toks18
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
@@ -615,28 +705,28 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 )) (cores.tex)
-Package hyperref Info: Option `colorlinks' set `true' on input line 48.
+Package hyperref Info: Option `colorlinks' set `true' on input line 49.
 
 (MonografiaFinal.aux)
 \openout1 = `MonografiaFinal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-\AtBeginShipoutBox=\box28
-Package backref Info: ** backref set up for natbib ** on input line 78.
-Package hyperref Info: Link coloring ON on input line 78.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+\AtBeginShipoutBox=\box30
+Package backref Info: ** backref set up for natbib ** on input line 79.
+Package hyperref Info: Link coloring ON on input line 79.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -644,11 +734,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count111
+\c@section@level=\count127
 )
-LaTeX Info: Redefining \ref on input line 78.
-LaTeX Info: Redefining \pageref on input line 78.
-LaTeX Info: Redefining \nameref on input line 78.
+LaTeX Info: Redefining \ref on input line 79.
+LaTeX Info: Redefining \pageref on input line 79.
+LaTeX Info: Redefining \nameref on input line 79.
 
 (MonografiaFinal.out) (MonografiaFinal.out)
 \@outlinefile=\write3
@@ -657,17 +747,17 @@ LaTeX Info: Redefining \nameref on input line 78.
 
 (C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count112
-\scratchdimen=\dimen125
-\scratchbox=\box29
-\nofMPsegments=\count113
-\nofMParguments=\count114
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count115
-\MPscratchDim=\dimen126
-\MPnumerator=\count116
-\makeMPintoPDFobject=\count117
-\everyMPtoPDFconversion=\toks20
+\scratchcounter=\count128
+\scratchdimen=\dimen143
+\scratchbox=\box31
+\nofMPsegments=\count129
+\nofMParguments=\count130
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count131
+\MPscratchDim=\dimen144
+\MPnumerator=\count132
+\makeMPintoPDFobject=\count133
+\everyMPtoPDFconversion=\toks25
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -723,25 +813,25 @@ Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hypcap package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\len@brasiliaw=\skip46
-\len@uadesch=\skip47
-\len@uacaph=\skip48
-LaTeX Font Info:    Try loading font information for T1+ua1 on input line 79.
+\len@brasiliaw=\skip53
+\len@uadesch=\skip54
+\len@uacaph=\skip55
+LaTeX Font Info:    Try loading font information for T1+ua1 on input line 80.
  (C:\Users\Infosolo\AppData\Roaming\MiKTeX\2.9\tex\latex\arial\t1ua1.fd
 File: t1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for T1/ua1.
 )
 LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <20> not available
-(Font)              Font shape `T1/ua1/b/n' tried instead on input line 79.
+(Font)              Font shape `T1/ua1/b/n' tried instead on input line 80.
 
 <positivo_cor.pdf, id=135, 119.44624pt x 60.225pt>
 File: positivo_cor.pdf Graphic file (type pdf)
  <use positivo_cor.pdf>
-Package pdftex.def Info: positivo_cor.pdf used on input line 79.
+Package pdftex.def Info: positivo_cor.pdf used on input line 80.
 (pdftex.def)             Requested size: 70.28004pt x 35.43501pt.
-\len@lskipoffset=\skip49
+\len@lskipoffset=\skip56
 LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <10> not available
-(Font)              Font shape `T1/ua1/b/n' tried instead on input line 79.
-\len@lskipoffset=\skip50
+(Font)              Font shape `T1/ua1/b/n' tried instead on input line 80.
+\len@lskipoffset=\skip57
 
 [1
 
@@ -749,32 +839,26 @@ LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <10> not available
 
 {C:/Users/Infosolo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./positi
 vo_cor.pdf>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 79.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 79.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 79.
-\@tempa=\count118
+\@tempa=\count134
  [2
 
 ]
-\len@brasiliaw=\skip51
-\len@uadesch=\skip52
-\len@uacaph=\skip53
+\len@brasiliaw=\skip58
+\len@uadesch=\skip59
+\len@uacaph=\skip60
 File: positivo_cor.pdf Graphic file (type pdf)
  <use positivo_cor.pdf>
-Package pdftex.def Info: positivo_cor.pdf used on input line 79.
+Package pdftex.def Info: positivo_cor.pdf used on input line 80.
 (pdftex.def)             Requested size: 70.28004pt x 35.43501pt.
-\len@lskipoffset=\skip54
-\len@lskipoffset=\skip55
+\len@lskipoffset=\skip61
+\len@lskipoffset=\skip62
  [3
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.86   \begin{agradecimentos}
+l.87   \begin{agradecimentos}
                               [1
 
 
@@ -783,7 +867,7 @@ l.86   \begin{agradecimentos}
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.90   \begin{resumo}
+l.91   \begin{resumo}
                       [2
 
 
@@ -791,7 +875,7 @@ l.90   \begin{resumo}
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.95   \begin{abstract}
+l.96   \begin{abstract}
                         [3
 
 
@@ -799,7 +883,7 @@ l.95   \begin{abstract}
 
 Package babel Warning: You haven't loaded the language english yet
 (babel)                I'll proceed, but expect unexpected results.
-(babel)                Reported on input line 95.
+(babel)                Reported on input line 96.
 
 [4
 
@@ -857,14 +941,14 @@ LaTeX Warning: Reference `cap:conclusao' on page 2 undefined on input line 17.
 
 ) (capitulos/capitulo2.tex [2]
 Cap\'{\i }tulo 2.
-<imagens/MatrizNivelCinza.png, id=318, 584.93532pt x 584.1825pt>
+<imagens/MatrizNivelCinza.png, id=337, 584.93532pt x 584.1825pt>
 File: imagens/MatrizNivelCinza.png Graphic file (type png)
 
 <use imagens/MatrizNivelCinza.png>
 Package pdftex.def Info: imagens/MatrizNivelCinza.png used on input line 19.
 (pdftex.def)             Requested size: 113.81102pt x 113.66107pt.
 
-<imagens/ExemploNivelCinza.png, id=320, 29.35968pt x 29.35968pt>
+<imagens/ExemploNivelCinza.png, id=339, 29.35968pt x 29.35968pt>
 File: imagens/ExemploNivelCinza.png Graphic file (type png)
 
 <use imagens/ExemploNivelCinza.png>
@@ -873,21 +957,21 @@ Package pdftex.def Info: imagens/ExemploNivelCinza.png used on input line 25.
  [3
 
 ] [4 <./imagens/MatrizNivelCinza.png> <./imagens/ExemploNivelCinza.png>]
-<imagens/exemploRGBFinal.png, id=344, 481.8pt x 481.8pt>
+<imagens/exemploRGBFinal.png, id=363, 481.8pt x 481.8pt>
 File: imagens/exemploRGBFinal.png Graphic file (type png)
 
 <use imagens/exemploRGBFinal.png>
 Package pdftex.def Info: imagens/exemploRGBFinal.png used on input line 66.
 (pdftex.def)             Requested size: 182.09833pt x 182.09341pt.
 
-<imagens/exemploYCbCrFinal.png, id=345, 465.23813pt x 232.61906pt>
+<imagens/exemploYCbCrFinal.png, id=364, 465.23813pt x 232.61906pt>
 File: imagens/exemploYCbCrFinal.png Graphic file (type png)
 
 <use imagens/exemploYCbCrFinal.png>
 Package pdftex.def Info: imagens/exemploYCbCrFinal.png used on input line 72.
 (pdftex.def)             Requested size: 182.09833pt x 91.0476pt.
  [5 <./imagens/exemploRGBFinal.png> <./imagens/exemploYCbCrFinal.png>]
-<imagens/GLCM.png, id=357, 317.68687pt x 170.13562pt>
+<imagens/GLCM.png, id=376, 317.68687pt x 170.13562pt>
 File: imagens/GLCM.png Graphic file (type png)
  <use imagens/GLCM.png>
 Package pdftex.def Info: imagens/GLCM.png used on input line 91.
@@ -909,14 +993,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 Package natbib Warning: Citation `mota2011tensor' on page 7 undefined on input 
 line 135.
 
-<imagens/velocidadevetores.png, id=372, 469.755pt x 268.00125pt>
+<imagens/velocidadevetores.png, id=391, 469.755pt x 268.00125pt>
 File: imagens/velocidadevetores.png Graphic file (type png)
 
 <use imagens/velocidadevetores.png>
 Package pdftex.def Info: imagens/velocidadevetores.png used on input line 141.
 (pdftex.def)             Requested size: 182.09833pt x 103.8862pt.
 
-<imagens/velocidademagnitude.png, id=373, 469.755pt x 272.51813pt>
+<imagens/velocidademagnitude.png, id=392, 469.755pt x 272.51813pt>
 File: imagens/velocidademagnitude.png Graphic file (type png)
 
 <use imagens/velocidademagnitude.png>
@@ -954,7 +1038,7 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `fig:neuronio' on page 9 undefined on input line 13.
 
-<imagens/neuronio.jpg, id=392, 192.72pt x 116.5956pt>
+<imagens/neuronio.jpg, id=411, 192.72pt x 116.5956pt>
 File: imagens/neuronio.jpg Graphic file (type jpg)
 
 <use imagens/neuronio.jpg>
@@ -968,14 +1052,14 @@ LaTeX Warning: Reference `fig:neuroartificial' on page 10 undefined on input li
 ne 34.
 
 [10 <./imagens/neuronio.jpg>]
-<imagens/degrau.png, id=407, 422.32782pt x 316.18124pt>
+<imagens/degrau.png, id=425, 422.32782pt x 316.18124pt>
 File: imagens/degrau.png Graphic file (type png)
 
 <use imagens/degrau.png>
 Package pdftex.def Info: imagens/degrau.png used on input line 57.
 (pdftex.def)             Requested size: 182.09833pt x 136.33159pt.
 
-<imagens/logistica.png, id=408, 422.32782pt x 316.18124pt>
+<imagens/logistica.png, id=426, 422.32782pt x 316.18124pt>
 File: imagens/logistica.png Graphic file (type png)
 
 <use imagens/logistica.png>
@@ -991,7 +1075,7 @@ LaTeX Warning: Reference `fig:feedfoward' on page 11 undefined on input line 80
 .
 
 [11 <./imagens/degrau.png (PNG copy)> <./imagens/logistica.png (PNG copy)>]
-<imagens/feedforward.png, id=415, 179.92218pt x 243.91125pt>
+<imagens/feedforward.png, id=434, 179.92218pt x 243.91125pt>
 File: imagens/feedforward.png Graphic file (type png)
 
 <use imagens/feedforward.png>
@@ -1006,7 +1090,7 @@ Package natbib Warning: Citation `Kozabov' on page 13 undefined on input line 1
 Package natbib Warning: Citation `Kozabov' on page 13 undefined on input line 1
 17.
 
-[13] <imagens/features.png, id=433, 110.66344pt x 102.3825pt>
+[13] <imagens/features.png, id=452, 110.66344pt x 102.3825pt>
 File: imagens/features.png Graphic file (type png)
 
 <use imagens/features.png>
@@ -1035,7 +1119,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:fluxograma' on page 18 undefined on input line 11
 .
 
-<imagens/fluxograma.png, id=470, 896.59969pt x 1102.1175pt>
+<imagens/fluxograma.png, id=489, 896.59969pt x 1102.1175pt>
 File: imagens/fluxograma.png Graphic file (type png)
 
 <use imagens/fluxograma.png>
@@ -1050,7 +1134,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:aquisicao' on page 18 undefined on input line 25.
 
 
-<imagens/Vazio3.png, id=472, 1262.46657pt x 709.90219pt>
+<imagens/Vazio3.png, id=491, 1262.46657pt x 709.90219pt>
 File: imagens/Vazio3.png Graphic file (type png)
 
 <use imagens/Vazio3.png>
@@ -1074,7 +1158,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:aquisicao' on page 20 undefined on input line 41.
 
 
-<imagens/ROIs.png, id=483, 845.40843pt x 475.7775pt>
+<imagens/ROIs.png, id=502, 845.40843pt x 475.7775pt>
 File: imagens/ROIs.png Graphic file (type png)
  <use imagens/ROIs.png>
 Package pdftex.def Info: imagens/ROIs.png used on input line 45.
@@ -1104,7 +1188,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:secoesVerticais' on page 20 undefined on input li
 ne 51.
 
-<imagens/Secoes.png, id=487, 843.90282pt x 474.27188pt>
+<imagens/Secoes.png, id=506, 843.90282pt x 474.27188pt>
 File: imagens/Secoes.png Graphic file (type png)
 
 <use imagens/Secoes.png>
@@ -1133,7 +1217,7 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `fig:imgSecao' on page 21 undefined on input line 68.
 
-<imagens/imgSecao.png, id=499, 152.06813pt x 225.09094pt>
+<imagens/imgSecao.png, id=518, 152.06813pt x 225.09094pt>
 File: imagens/imgSecao.png Graphic file (type png)
 
 <use imagens/imgSecao.png>
@@ -1154,153 +1238,320 @@ LaTeX Warning: Command \~ invalid in math mode on input line 85.
 Missing character: There is no ç in font cmr12!
 Missing character: There is no ã in font cmr12!
 
-Package caption Warning: \label without proper reference on input line 100.
+LaTeX Warning: Reference `eq:exemploglcm' on page 22 undefined on input line 85
+.
+
+
+Package caption Warning: \label without proper reference on input line 73.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:imgSecao' on page 22 undefined on input line 85.
+
+
+Package caption Warning: \label without proper reference on input line 73.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:imgSecao' on page 22 undefined on input line 103.
+
+
+
+Package caption Warning: \label without proper reference on input line 122.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:histContraste' on page 22 undefined on input line
- 95.
+ 117.
 
 
-Package caption Warning: \label without proper reference on input line 108.
+Package caption Warning: \label without proper reference on input line 130.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:histCorrelacao' on page 22 undefined on input lin
-e 95.
+e 117.
 
 
-Package caption Warning: \label without proper reference on input line 116.
+Package caption Warning: \label without proper reference on input line 138.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:histEnergia' on page 22 undefined on input line 9
-5.
+LaTeX Warning: Reference `fig:histEnergia' on page 22 undefined on input line 1
+17.
 
 
-Package caption Warning: \label without proper reference on input line 124.
+Package caption Warning: \label without proper reference on input line 146.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:histHomo' on page 22 undefined on input line 95.
+LaTeX Warning: Reference `fig:histHomo' on page 22 undefined on input line 117.
 
 
-Package caption Warning: \label without proper reference on input line 132.
+
+Package caption Warning: \label without proper reference on input line 154.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:histCb' on page 22 undefined on input line 95.
+LaTeX Warning: Reference `fig:histCb' on page 22 undefined on input line 117.
 
 
-Package caption Warning: \label without proper reference on input line 140.
+Package caption Warning: \label without proper reference on input line 162.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:histCr' on page 22 undefined on input line 95.
+LaTeX Warning: Reference `fig:histCr' on page 22 undefined on input line 117.
 
-<imagens/Contraste.png, id=519, 679.78969pt x 506.6428pt>
+<imagens/Contraste.png, id=540, 679.78969pt x 506.6428pt>
 File: imagens/Contraste.png Graphic file (type png)
 
 <use imagens/Contraste.png>
-Package pdftex.def Info: imagens/Contraste.png used on input line 99.
+Package pdftex.def Info: imagens/Contraste.png used on input line 121.
 (pdftex.def)             Requested size: 312.9803pt x 233.25952pt.
 
-<imagens/Correlacoes.png, id=520, 588.69937pt x 475.02469pt>
+<imagens/Correlacoes.png, id=541, 588.69937pt x 475.02469pt>
 File: imagens/Correlacoes.png Graphic file (type png)
 
 <use imagens/Correlacoes.png>
-Package pdftex.def Info: imagens/Correlacoes.png used on input line 107.
+Package pdftex.def Info: imagens/Correlacoes.png used on input line 129.
 (pdftex.def)             Requested size: 312.9803pt x 252.5447pt.
 
-<imagens/Energia.png, id=521, 421.575pt x 316.18124pt>
+<imagens/Energia.png, id=542, 421.575pt x 316.18124pt>
 File: imagens/Energia.png Graphic file (type png)
 
 <use imagens/Energia.png>
-Package pdftex.def Info: imagens/Energia.png used on input line 115.
+Package pdftex.def Info: imagens/Energia.png used on input line 137.
 (pdftex.def)             Requested size: 312.9803pt x 234.73755pt.
 
-<imagens/Homogeneidade.png, id=522, 720.44156pt x 496.85625pt>
+<imagens/Homogeneidade.png, id=543, 720.44156pt x 496.85625pt>
 File: imagens/Homogeneidade.png Graphic file (type png)
 
 <use imagens/Homogeneidade.png>
-Package pdftex.def Info: imagens/Homogeneidade.png used on input line 123.
+Package pdftex.def Info: imagens/Homogeneidade.png used on input line 145.
 (pdftex.def)             Requested size: 312.9803pt x 215.84262pt.
 
-<imagens/CrominanciaAzul.png, id=523, 621.07031pt x 456.95718pt>
+<imagens/CrominanciaAzul.png, id=544, 621.07031pt x 456.95718pt>
 File: imagens/CrominanciaAzul.png Graphic file (type png)
 
 <use imagens/CrominanciaAzul.png>
-Package pdftex.def Info: imagens/CrominanciaAzul.png used on input line 131.
+Package pdftex.def Info: imagens/CrominanciaAzul.png used on input line 153.
 (pdftex.def)             Requested size: 312.9803pt x 230.27695pt.
 
-<imagens/CrominanciaVermelha.png, id=524, 631.60968pt x 471.26062pt>
+<imagens/CrominanciaVermelha.png, id=545, 631.60968pt x 471.26062pt>
 File: imagens/CrominanciaVermelha.png Graphic file (type png)
 
 <use imagens/CrominanciaVermelha.png>
-Package pdftex.def Info: imagens/CrominanciaVermelha.png used on input line 139
+Package pdftex.def Info: imagens/CrominanciaVermelha.png used on input line 161
 .
 (pdftex.def)             Requested size: 312.9803pt x 233.52281pt.
-) [22 <./imagens/imgSecao.png (PNG copy)>] [23 <./imagens/Contraste.png (PNG co
-py)> <./imagens/Correlacoes.png (PNG copy)>] [24 <./imagens/Energia.png (PNG co
-py)> <./imagens/Homogeneidade.png (PNG copy)>] [25 <./imagens/CrominanciaAzul.p
-ng (PNG copy)> <./imagens/CrominanciaVermelha.png (PNG copy)>] [26] (Monografia
-Final.bbl (MonografiaFinal.brf)
+ [22 <./imagens/imgSecao.png (PNG copy)>]
+[23 <./imagens/Contraste.png (PNG copy)> <./imagens/Correlacoes.png (PNG copy)>
+] [24 <./imagens/Energia.png (PNG copy)> <./imagens/Homogeneidade.png (PNG copy
+)>] [25 <./imagens/CrominanciaAzul.png (PNG copy)> <./imagens/CrominanciaVermel
+ha.png (PNG copy)>]
+
+LaTeX Warning: Command \c invalid in math mode on input line 173.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 173.
+
+Missing character: There is no ç in font cmr12!
+Missing character: There is no ã in font cmr12!
+
+Package caption Warning: \label without proper reference on input line 73.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:imgSecao' on page 26 undefined on input line 176.
+
+
+<imagens/influencia.png, id=567, 149.05687pt x 153.57375pt>
+File: imagens/influencia.png Graphic file (type png)
+
+<use imagens/influencia.png>
+Package pdftex.def Info: imagens/influencia.png used on input line 199.
+(pdftex.def)             Requested size: 227.62204pt x 234.53354pt.
+
+
+Package caption Warning: \label without proper reference on input line 200.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:influencia' on page 26 undefined on input line 20
+6.
+
+[26]
+
+Package caption Warning: \label without proper reference on input line 228.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:secaoMeio' on page 27 undefined on input line 223
+.
+
+
+Package caption Warning: \label without proper reference on input line 236.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:erromeio' on page 27 undefined on input line 223.
+
+
+<imagens/secaoMeio.png, id=582, 38.1425pt x 225.84375pt>
+File: imagens/secaoMeio.png Graphic file (type png)
+
+<use imagens/secaoMeio.png>
+Package pdftex.def Info: imagens/secaoMeio.png used on input line 228.
+(pdftex.def)             Requested size: 24.02814pt x 142.26378pt.
+
+<imagens/erroMeio.png, id=583, 840.89156pt x 471.26062pt>
+File: imagens/erroMeio.png Graphic file (type png)
+
+<use imagens/erroMeio.png>
+Package pdftex.def Info: imagens/erroMeio.png used on input line 236.
+(pdftex.def)             Requested size: 227.62204pt x 127.56566pt.
+
+<imagens/fluxogramaVotos.png, id=584, 553.31718pt x 233.37187pt>
+File: imagens/fluxogramaVotos.png Graphic file (type png)
+
+<use imagens/fluxogramaVotos.png>
+Package pdftex.def Info: imagens/fluxogramaVotos.png used on input line 248.
+(pdftex.def)             Requested size: 364.19667pt x 153.60571pt.
+
+
+Package caption Warning: \label without proper reference on input line 248.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:fluxogramaVotos' on page 27 undefined on input li
+ne 255.
+
+[27 <./imagens/influencia.png>] [28 <./imagens/secaoMeio.png (PNG copy)> <./ima
+gens/erroMeio.png> <./imagens/fluxogramaVotos.png>]
+
+LaTeX Warning: Reference `fig:exemploClassificacao' on page 29 undefined on inp
+ut line 269.
+
+<imagens/classificada.png, id=603, 841.64438pt x 475.02469pt>
+File: imagens/classificada.png Graphic file (type png)
+
+<use imagens/classificada.png>
+Package pdftex.def Info: imagens/classificada.png used on input line 273.
+(pdftex.def)             Requested size: 227.62204pt x 128.46857pt.
+
+
+Package natbib Warning: Citation `faria1992fluxo' on page 29 undefined on input
+ line 285.
+
+
+Package natbib Warning: Citation `mota2011tensor' on page 29 undefined on input
+ line 285.
+
+
+Package natbib Warning: Citation `bruhn2005lucas' on page 29 undefined on input
+ line 285.
+
+[29 <./imagens/classificada.png>]
+<imagens/quadroMov.png, id=611, 857.2025pt x 481.8pt>
+File: imagens/quadroMov.png Graphic file (type png)
+
+<use imagens/quadroMov.png>
+Package pdftex.def Info: imagens/quadroMov.png used on input line 293.
+(pdftex.def)             Requested size: 182.09833pt x 102.3499pt.
+ <imagens/mags.png, id=612, 857.2025pt x 481.8pt>
+File: imagens/mags.png Graphic file (type png)
+
+<use imagens/mags.png>
+Package pdftex.def Info: imagens/mags.png used on input line 299.
+(pdftex.def)             Requested size: 182.09833pt x 102.3499pt.
+ <imagens/limiarizada.png, id=613, 857.2025pt x 481.8pt>
+File: imagens/limiarizada.png Graphic file (type png)
+
+<use imagens/limiarizada.png>
+Package pdftex.def Info: imagens/limiarizada.png used on input line 305.
+(pdftex.def)             Requested size: 182.09833pt x 102.3499pt.
+ [30 <./imagens/quadroMov.png (PNG copy)> <./imagens/mags.png (PNG copy)> <./im
+agens/limiarizada.png (PNG copy)>]
+<imagens/retanguloMovimento.png, id=623, 644.4075pt x 363.60844pt>
+File: imagens/retanguloMovimento.png Graphic file (type png)
+
+<use imagens/retanguloMovimento.png>
+Package pdftex.def Info: imagens/retanguloMovimento.png used on input line 356.
+
+(pdftex.def)             Requested size: 227.62204pt x 128.43553pt.
+) [31] [32 <./imagens/retanguloMovimento.png>] (MonografiaFinal.bbl (Monografia
+Final.brf)
 \tf@brf=\write7
 \openout7 = `MonografiaFinal.brf'.
 
- [27
+ [33
 
 
 ])
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
-[28]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
+[34]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
  (MonografiaFinal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
-Package rerunfilecheck Info: File `MonografiaFinal.out' has not changed.
-(rerunfilecheck)             Checksum: 79472989B99850949F87421F514E2A48;2247.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
+
+
+Package rerunfilecheck Warning: File `MonografiaFinal.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `MonografiaFinal.out':
+(rerunfilecheck)             Before: 7D202F6F3AC4595C13CA826211688A04;2255
+(rerunfilecheck)             After:  5796D633A9CB03D313009D044381EA5A;2255.
 Package rerunfilecheck Info: File `MonografiaFinal.brf' has not changed.
 (rerunfilecheck)             Checksum: 0C4D857178B6E9BAAEC6846658FE3A09;1226.
 
-
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
  )
 (\end occurred when \iffalse on line 462 was incomplete) 
 Here is how much of TeX's memory you used:
- 9651 strings out of 493334
- 142970 string characters out of 3136663
- 256591 words of memory out of 3000000
- 12866 multiletter control sequences out of 15000+200000
- 26187 words of font info for 37 fonts, out of 3000000 for 9000
+ 10877 strings out of 493334
+ 161138 string characters out of 3136663
+ 282640 words of memory out of 3000000
+ 14025 multiletter control sequences out of 15000+200000
+ 28391 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,8n,94p,1407b,549s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Infosolo\App
-Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users
-\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.
-pk> <C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
-600\ecti1200.pk> <C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
-nappen\ec\dpi600\ecbx2488.pk> <C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Infosolo\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Infosolo\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\
-Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.p
-k>{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Infosolo/AppData
-/Roaming/MiKTeX/2.9/fonts/type1/urw/arial/ua1b8a.pfb>
-Output written on MonografiaFinal.pdf (39 pages, 3795902 bytes).
+ 59i,9n,94p,1407b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): 
+name{section*.33} has been referenced but does not exist, replaced by a fixed o
+ne
+
+ <C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
+\ecrm1095.pk> <C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
+pen\ec\dpi600\ecbx1440.pk> <C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk
+\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Infosolo\AppData\Local\MiKTeX
+\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Infosolo\AppData
+\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Inf
+osolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> 
+<C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+ecrm1440.pk> <C:\Users\Infosolo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
+en\ec\dpi600\ecbx1728.pk>{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fon
+tname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+mi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Inf
+osolo/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/arial/ua1b8a.pfb>
+Output written on MonografiaFinal.pdf (45 pages, 5761269 bytes).
 PDF statistics:
- 1019 PDF objects out of 1200 (max. 8388607)
- 125 named destinations out of 1000 (max. 500000)
- 385 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1129 PDF objects out of 1200 (max. 8388607)
+ 153 named destinations out of 1000 (max. 500000)
+ 430 words of extra memory for PDF output out of 10000 (max. 10000000)
 
