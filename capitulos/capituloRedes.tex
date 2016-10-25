@@ -68,6 +68,15 @@ Um dos motivos que tornou a função logística uma escolha popular para os neur
 \label{fig:ativacao}
 \end{figure}
 
+Outra função de interesse no estudo das redes neurais artificiais, é a função \textit{softmax} ou exponencial normalizada \cite{bishop2006pattern}. Essa função é utilizada na teoria estatística para a determinação da distribuição da probabilidade. Isto é, a função \textit{softmax} é uma função que define a probabilidade que uma varíavel discreta assuma um determinado valor\cite{altmanbs}. Em termos simples, o seu papel é transformar um vetor de $n$ elementos em um segundo vetor de mesmo tamanho, de valores no intervalo $[0,1]$ e que têm soma total igual a $1$.
+
+Essa função é muito utilizada como função de ativação nas camadas de saídas de redes treinadas para reconhecimento de padrões, por sua capacidade de determinar a probabilidade da entrada pertencer a uma determinada classe. A função \textit{softmax} pode ser definida pela equação \ref{eq:softmax}, onde $x$ é o vetor de tamanho $n$ da entrada e $x_i$ é o seu \textit{i-ésimo} elemento.
+
+\begin{equation}
+p(x)_i = \frac{\exp{x_i}}{\sum_{j=1}^n\exp{x_j}}
+\label{eq:softmax}
+\end{equation}
+
 
 
 
@@ -95,7 +104,7 @@ Para que uma rede neural artificical possa ser utilizada, ela precisa antes apre
 É necessário então que a rede passe por um processo de treinamento, onde os valores dos pesos $wi$ e os deslocamentos $b$ de cada neurônio são definidos de forma que o funcionamento da rede seja ótimo para a tarefa que se deseja realizar. Para realizar o treinamento de uma rede, o primeiro passo é definir 3 conjuntos distintos de entradas:
 
 \begin{itemize}
-	\item \textbf{Conjunto de testes:} A rede é submetida às entradas deste conjunto para que seja feita a calibração dos valores da matriz de pesos $W$ e do vetor de deslocamentos $B$.
+	\item \textbf{Conjunto de treinamento:} A rede é submetida às entradas deste conjunto para que seja feita a calibração dos valores da matriz de pesos $W$ e do vetor de deslocamentos $B$.
 	
 	\item \textbf{Conjunto de validação:} Após uma etapa de treinamento, a rede computa os dados deste conjunto de entradas para validar os valores da matriz $W$ e do vetor $B$ escolhidos até então.
 	
