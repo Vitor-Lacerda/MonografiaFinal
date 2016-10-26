@@ -11,13 +11,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=637
+NormalPos.right=1604
+NormalPos.bottom=756
 Class=LaTeXView
 Document=capitulos\capitulo1.tex
 
 [Frame0_View0,0]
-TopLine=16
+TopLine=8
 Cursor=3006
 
 [Frame1]
@@ -29,13 +29,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=637
+NormalPos.right=1604
+NormalPos.bottom=756
 Class=LaTeXView
 Document=capitulos\capitulo2.tex
 
 [Frame1_View0,0]
-TopLine=82
+TopLine=79
 Cursor=2134
 
 [Frame2]
@@ -47,13 +47,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=637
+NormalPos.right=1604
+NormalPos.bottom=756
 Class=BibTeXView
 Document=bibliografia.bib
 
 [Frame2_View0,0]
-TopLine=187
+TopLine=188
 Cursor=6267
 
 [Frame3]
@@ -65,13 +65,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=637
+NormalPos.right=1604
+NormalPos.bottom=756
 Class=LaTeXView
 Document=MonografiaFinal.tex
 
 [Frame3_View0,0]
-TopLine=89
+TopLine=86
 Cursor=2489
 
 [Frame4]
@@ -83,8 +83,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=637
+NormalPos.right=1604
+NormalPos.bottom=756
 Class=LaTeXView
 Document=capitulos\capituloRedes.tex
 
@@ -101,8 +101,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=637
+NormalPos.right=1604
+NormalPos.bottom=756
 Class=LaTeXView
 Document=..\..\..\..\..\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty
 
@@ -119,14 +119,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=637
+NormalPos.right=1604
+NormalPos.bottom=756
 Class=LaTeXView
-Document=MonografiaFinal.aux
+Document=capitulos\capitulo3.tex
 
 [Frame6_View0,0]
-TopLine=0
-Cursor=0
+TopLine=434
+Cursor=4972
 
 [Frame7]
 Flags=0
@@ -137,14 +137,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1486
-NormalPos.bottom=637
+NormalPos.right=1604
+NormalPos.bottom=756
 Class=LaTeXView
-Document=capitulos\capitulo3.tex
+Document=capitulos\capitulo4.tex
 
 [Frame7_View0,0]
-TopLine=57
-Cursor=4972
+TopLine=247
+Cursor=13334
 
 [SessionInfo]
 FrameCount=8

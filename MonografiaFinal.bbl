@@ -1,9 +1,18 @@
 \begin{thebibliography}{10}
 
+\bibitem{altmanbs}
+DG~Altman.
+\newblock Bs everitt (1998) cambridge dictionary of statistics.
+
 \bibitem{NNForPR}
 Christopher~M Bishop.
 \newblock {\em Neural networks for pattern recognition}.
 \newblock Oxford university press, 1995.
+
+\bibitem{bishop2006pattern}
+Christopher~M Bishop.
+\newblock Pattern recognition.
+\newblock {\em Machine Learning}, 128, 2006.
 
 \bibitem{bong2008integrated}
 DBL Bong, KC~Ting, and KC~Lai.

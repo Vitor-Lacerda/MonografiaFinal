@@ -30,6 +30,7 @@ Uma vez adquiridas as imagens a serem utilizadas para o treinamento, cada uma de
 \end{subfigure}
 \centering
 \caption{(a)Um exemplo de imagem classificada manualmente na classe 1.(b) Um exemplo de imagem classificada manualmente na classe 2.}
+\label{fig:exemploRede}
 \end{figure}
 
 Para que pudesse ser feito o treinamento supervisionado da rede neural, duas matrizes de alvos foram construídas. Uma com dimensões $2x57$ e a outra com dimensões $2x59$. A primeira matriz com todas as colunas iguais a $\begin{psmallmatrix}1\\0\end{psmallmatrix}$ e a segunda com as colunas da forma $\begin{psmallmatrix}0\\1\end{psmallmatrix}$. Essas matrizes vão compor o gabarito utilizado para o treinamento supervisionado da rede.
@@ -42,10 +43,206 @@ Uma vez criadas essas duas matrizes, as entradas e seus respectivos alvos são s
 A rede neural utilizada foi uma rede \textit{feed-forward} com três camadas. A camada oculta possui $15$ neurônios com função de ativação logística (\ref{eq:logistica}) e a camada de saída $2$ neurônios com função de ativação \textit{softmax} (\ref{eq:softmax}). A rede é submetida a um treinamento supervisionado com um limite de $1000$ iterações. Quando a situação de convergência é atingida, o treinamento para e o resultado é a rede final utilizada.
 
 
+\section{Resultados Obtidos}
+
+Para determinar a capacidade da programa de determinar se as seções verticais estão ocupadas ou livres, os resultados obtidos pelo programa foram comparados com os resultados que eram esperados de observadores humanos. Foram apresentados a três observadores, que chamaremos pelas iniciais F, M e P, um conjunto de oito vídeos que mostravam veículos estacionando ou saindo de vagas em um estacionamento descoberto. As áreas de interesse do vídeo foram definidas previamente e divididas em $30$ seções verticais. Dessa forma, todos os observadores e o programa analisaram seções verticais idênticas. 
+
+Cada um dos observadores receberam as seguintes instruções:
+
+\begin{itemize}
+  \item As regiões de interesse e as seções são numeradas como indicado na figura \ref{instrucoes};
+	\item Uma seção ocupada é aquela cuja maior parte de sua área está ocupada por um veículo;
+	\item No momento inicial do vídeo ($0$ segundos), indique quais seções verticais estão ocupadas através do número das ROI e das seções, as outras serão assumidas como livres;
+	\item Se a qualquer momento o estado de ocupação de uma seção mudar, indique o tempo da mudança, a seção onde ocorreu a mudança e a natureza da mudança(ocupada ou liberada).
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=8cm]{instrucoes}
+\centering
+\caption{Figura mostrando a divisão das ROIs e numeração das seções nos vídeos mostrados para os observadores humanos}
+\label{fig:instrucao}
+\end{figure}
+
+Cada observador assistiu aos vídeos sozinho, sem interferência externa e sem conhecimento dos resultados do programa. De fato, a fim de evitar interferência, o programa só foi executado sobre os casos de teste após todos os observadores escolhidos terem entregado os resultados que obteram.
+
+Para os testes apresentados a seguir, serão observadas somente aquelas seções que o programa ou os observadores determinaram como ocupadas. As demais seções serão consideradas livres. Chamaremos de um \textit{acerto} sempre que em um determinado segundo $t$, o programa e um observador concordam quanto a ocupação de uma seção vertical. Sendo assim, o programa pode atingir um máximo de $60$ acertos por segundo. A indicação da ocupação das seções pelos observadores não foi definida a cada segundo, mas considera-se que entre duas acusações de mudança de estado a ocupação das seções permanece a mesma. Sendo assim, podemos utilizar esses momentos para definir a ocupação em cada segundo do vídeo.
+
+Em seguida serão apresentados como um dos vídeos utilizados para os testes. Cada caso iniciará com uma breve descrição do movimento dos veículos no vídeo, a duração do vídeo e o número de acertos possíveis, seguidos de quatro tabelas, uma para cada observador e uma quarta para o programa. As tabelas indicam o tempo onde foram acusadas mudanças de estado nas seções. A primeira linha da tabela indica as seções ocupadas no momento inicial do vídeo e cada linha subsequente indica um momento em segundos quando houve mudança de estado de pelo menos uma seção e a ROI e número das seções. Finalmente, será calculada uma taxa de acerto que compara o desempenho do programa a cada observador e uma taxa final de acerto média para o caso de teste. A taxa de acerto para cada observador é calculada pela razão entre o número de acertos do programa e o número de acertos possíveis para o caso de teste e a taxa de acerto média é a média aritmética entre estes valores. Ao final destas seções uma breve análise dos resultados dos casos de teste será apresentada. Para que o leitor possa compara o desempenho do programa com suas próprias impressões, uma imagem dos momentos iniciais e finais de cada vídeo será mostrada junto de cada análise.
 
 
+ 
+\subsection{Vídeo 1}
+
+No primeiro caso de testes, o vídeo começa com um estacionamento vazio. Depois de alguns segundos um único veículo de cor branca entra na cena pela direita e estaciona em uma vaga na parte inferior da imagem. O vídeo tem $15s$ de duração, totalizando $900$ acertos possíveis.
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video1Inicio}
+\caption{}
+\end{subfigure}\
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video1Fim}
+\caption{}
+\end{subfigure}
+\centering
+\caption{(a) O momento inicial do vídeo 1. (b) O momento final do vídeo 1}%
+\label{}%
+\end{figure}
 
 
+\subsection{Vídeo 2}
+
+Neste vídeo, um carro branco está estacionado no conjunto inferior de vagas. Um veículo cinza entra pela direita e estaciona no conjunto superior de vagas. O vídeo tem uma duração de $10s$, totalizando $600$ acertos possíveis.
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video2Inicio}
+\caption{}
+\end{subfigure}\
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video2Fim}
+\caption{}
+\end{subfigure}
+\centering
+\caption{(a) O momento inicial do vídeo 2. (b) O momento final do vídeo 2}%
+\label{}%
+\end{figure}
+
+\subsection{Vídeo 3}
+
+Neste vídeo, dois carros se encontram no estacionamento. Um veículo amarelo entra pela direita e estaciona na seção superior das vagas. O veículo branco sai pela parte de baixo da tela. Ele tem duração de $20s$ totalizando $1200$ acertos possíveis.
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video3Inicio}
+\caption{}
+\end{subfigure}\
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video3Fim}
+\caption{}
+\end{subfigure}
+\centering
+\caption{(a) O momento inicial do vídeo 3. (b) O momento final do vídeo 3}%
+\label{}%
+\end{figure}
+
+
+\subsection{Vídeo 4}
+
+Neste vídeo, o veículo branco entra em cena pela parte superior da tela e estaciona entre os outros dois carros. O carro cinza sai da vaga que ocupava e estaciona em uma na área inferior. Duração de $30s$, portanto $1800$ possíveis acertos.
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video4Inicio}
+\caption{}
+\end{subfigure}\
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video4Fim}
+\caption{}
+\end{subfigure}
+\centering
+\caption{(a) O momento inicial do vídeo 4. (b) O momento final do vídeo 4}%
+\label{}%
+\end{figure}
+
+
+\subsection{Vídeo 5}
+
+Um veículo desocupa a sua vaga sainda pela parte superior da tela. Duração de $10s$ ou $600$ possíveis acertos.
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video5Inicio}
+\caption{}
+\end{subfigure}\
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video5Fim}
+\caption{}
+\end{subfigure}
+\centering
+\caption{(a) O momento inicial do vídeo 5. (b) O momento final do vídeo 5}%
+\label{}%
+\end{figure}
+
+
+\subsection{Vídeo 6}
+
+Neste vídeo o veículo amarelo entra na cena pela parte inferior da tela. O veículo branco desocupa sua vaga e sai da tela pelo lado esquerdo. O vídeo tem $13s$ totalizando $780$ acertos possíveis.
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video6Inicio}
+\caption{}
+\end{subfigure}\
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video6Fim}
+\caption{}
+\end{subfigure}
+\centering
+\caption{(a) O momento inicial do vídeo 6. (b) O momento final do vídeo 6.}%
+\label{}%
+\end{figure}
+
+\subsection{Vídeo 7}
+
+Neste vídeo um dos carros sai da cena pela esquerda. O vídeo tem $17s$ de duração e portanto $1020$ acertos possíveis.
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video7Inicio}
+\caption{}
+\end{subfigure}\
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video7Fim}
+\caption{}
+\end{subfigure}
+\centering
+\caption{(a) O momento inicial do vídeo 7. (b) O momento final do vídeo 7.}%
+\label{}%
+\end{figure}
+
+\subsection{Vídeo 8}
+
+No oitavo e último caso de testes, um carro branco passa pela região central da imagem sem estacionar em nenhuma vaga e depois um carro cinza estaciona na região inferior. O vídeo tem $23s$ de duração e $1380$ acertos possíveis.
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video8Inicio}
+\caption{}
+\end{subfigure}\
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=.8\linewidth]{Video8Fim}
+\caption{}
+\end{subfigure}
+\centering
+\caption{(a) O momento inicial do vídeo 8. (b) O momento final do vídeo 8.}%
+\label{}%
+\end{figure}
 
 
 
