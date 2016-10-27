@@ -535,6 +535,73 @@ Neste vídeo o veículo amarelo entra na cena pela parte inferior da tela. O ve�
 \label{}%
 \end{figure}
 
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Observador F}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 1: Seções 18 e 19 ocupadas. \\
+ & ROI 2: Seções 12 e 13 ocupadas. \\ \hline
+5 & ROI 2: Seções 14 e 15 ocupadas. \\ \hline
+8 & ROI 1:Seçoes 18 e 19 liberadas. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Observador P}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 1: Seções 18 e 19 ocupadas. \\
+ & ROI 2: Seções 12 e 13 ocupadas. \\ \hline
+5 & ROI 1: Seções 15,16 e 17 ocupadas. \\ \hline
+9 & ROI 2: Seções 18 e 19 liberadas. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Observador M}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 1: Seções 18 e 19 ocupadas. \\
+ & ROI 2: Seções 12 e 13 ocupadas. \\ \hline
+4 & ROI 1: Seções 15,16 e 17 ocupadas. \\ \hline
+8 & ROI 2: Seções 18,19 liberadas.\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Programa}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 1: Seções 18 e 19 ocupadas. \\
+ & ROI 2: Seções 12 e 13 ocupadas. \\ \hline
+5 & ROI 2: Seções 15 e 16 ocupadas. \\ \hline
+7 & ROI 2: Seção 17 ocupada. \\ \hline
+11 & ROI 1: Seções 18 e 19 liberadas. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+Observador & Acertos & Taxa de acertos \\ \hline
+F & 752 & 96,40\% \\  \hline
+P & 774 & 99,23\% \\ \hline
+M & 767 & 98,33\% \\ \hline
+Média & 764,33 & 97,99\% \\
+\hline
+\end{tabular}
+\end{center}
+
+Um caso de testes aonde a avaliação do programa se mantém estável e concorda quase plenamente com a avaliação dos humanos. Os atraso da detecção da liberação das seções $18$ e $19$ da ROI $2$ se deve ao fato de que o movimento do veículo saindo só é considerado finalizado depois que ele sai da tela, o que ocorre alguns momentos depois que os observadores humanos consideraram que ele saiu da vaga.
+
 \subsection{Vídeo 7}
 
 Neste vídeo um dos carros sai da cena pela esquerda. O vídeo tem $17s$ de duração e portanto $1020$ acertos possíveis.
@@ -555,6 +622,66 @@ Neste vídeo um dos carros sai da cena pela esquerda. O vídeo tem $17s$ de dura
 \caption{(a) O momento inicial do vídeo 7. (b) O momento final do vídeo 7.}%
 \label{}%
 \end{figure}
+
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Observador F}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 2: Seções 13,14,16 e 17 ocupadas. \\ \hline
+4 & ROI 2: Seções 13 e 14 liberadas. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Observador P}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 2: Seções 12,13,14,16 e 17 ocupadas. \\ \hline
+6 & ROI 2: Seções 12,13,14 liberadas. \\ 
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Observador M}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 2: Seções 12,13,14,16 e 17 ocupadas. \\ \hline
+5 & ROI 2: Seções 12,13,14 liberadas. \\ 
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Programa}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 2: Seções 13,14,16 e 17 ocupadas. \\ \hline
+1 & ROI 2: Seção 12 ocupada. \\ \hline
+2 & ROI 2: Seção 14 liberada. \\ \hline
+5 & ROI 2: Seções 12 e 13 liberadas. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+Observador & Acertos & Taxa de acertos \\ \hline
+F & 1013 & 99,31\% \\  \hline
+P & 1014 & 99,41\% \\ \hline
+M & 1016 & 99,60\% \\ \hline
+Média & 1014,33 & 99,44\% \\
+\hline
+\end{tabular}
+\end{center}
+
+O programa concordou com os observadores nesse vídeo, exibindo apenas um leve atraso para a classificação correta da seção $12$ e uma liberação levemente precipitada da seção $14$.
 
 \subsection{Vídeo 8}
 
@@ -577,8 +704,64 @@ No oitavo e último caso de testes, um carro branco passa pela região central d
 \label{}%
 \end{figure}
 
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Observador F}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 2: Seções 16 e 17 ocupadas. \\ \hline
+20 & ROI 2: Seções 22 e 23 ocupadas. \\
+\hline
+\end{tabular}
+\end{center}
 
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Observador P}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 2: Seções 16 e 17 ocupadas. \\ \hline
+20 & ROI 2: Seções 22 , 23 e 24 ocupadas. \\
+\hline
+\end{tabular}
+\end{center}
 
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Observador M}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 2: Seções 16 e 17 ocupadas. \\ \hline
+20 & ROI 2: Seções 22,23 e 24 ocupadas. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Programa}  \\ \hline \hline
+Tempo(s) & Acontecimento \\ \hline
+0 & ROI 2: Seções 16 e 17 ocupadas. \\ \hline
+20 & ROI 2: Seções 21,22,23 e 24 ocupadas. \\ \hline
+21 & ROI 2: Seção 21 liberada. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+Observador & Acertos & Taxa de acertos \\ \hline
+F & 1376 & 99,71\% \\  \hline
+P & 1379 & 99,92\% \\ \hline
+M & 1379 & 99,92\% \\ \hline
+Média & 1378 & 99,85\% \\
+\hline
+\end{tabular}
+\end{center}
+
+O programa avalia as seções de forma quase idêntica aos humanos. Aos $20s$, a classificação que ocorre regularmente determina que que quatro seções estão sendo ocupadas pelo veículo. Um segundo depois porém, quando o movimento do veículo termina, o erro corrige e o programa volta a acertar completamente.
 
 
 

@@ -39,6 +39,6 @@
 \contentsline {subsection}{\numberline {6.3.4}V\IeC {\'\i }deo 4}{40}{subsection.6.3.4}
 \contentsline {subsection}{\numberline {6.3.5}V\IeC {\'\i }deo 5}{42}{subsection.6.3.5}
 \contentsline {subsection}{\numberline {6.3.6}V\IeC {\'\i }deo 6}{43}{subsection.6.3.6}
-\contentsline {subsection}{\numberline {6.3.7}V\IeC {\'\i }deo 7}{43}{subsection.6.3.7}
-\contentsline {subsection}{\numberline {6.3.8}V\IeC {\'\i }deo 8}{43}{subsection.6.3.8}
-\contentsline {chapter}{Refer\^encias}{46}{section*.45}
+\contentsline {subsection}{\numberline {6.3.7}V\IeC {\'\i }deo 7}{45}{subsection.6.3.7}
+\contentsline {subsection}{\numberline {6.3.8}V\IeC {\'\i }deo 8}{46}{subsection.6.3.8}
+\contentsline {chapter}{Refer\^encias}{48}{section*.45}
