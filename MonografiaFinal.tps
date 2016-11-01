@@ -35,8 +35,8 @@ Class=LaTeXView
 Document=capitulos\capitulo2.tex
 
 [Frame1_View0,0]
-TopLine=73
-Cursor=2134
+TopLine=192
+Cursor=1623
 
 [Frame2]
 Flags=0
@@ -53,7 +53,7 @@ Class=BibTeXView
 Document=bibliografia.bib
 
 [Frame2_View0,0]
-TopLine=191
+TopLine=192
 Cursor=6267
 
 [Frame3]
@@ -107,8 +107,8 @@ Class=LaTeXView
 Document=capitulos\capitulo3.tex
 
 [Frame5_View0,0]
-TopLine=425
-Cursor=4972
+TopLine=462
+Cursor=28527
 
 [Frame6]
 Flags=0
@@ -125,12 +125,12 @@ Class=LaTeXView
 Document=capitulos\capitulo4.tex
 
 [Frame6_View0,0]
-TopLine=0
-Cursor=1168
+TopLine=54
+Cursor=887
 
 [SessionInfo]
 FrameCount=7
-ActiveFrame=6
+ActiveFrame=5
 
 [Bookmarks]
 capitulos\capitulo4.tex=312 

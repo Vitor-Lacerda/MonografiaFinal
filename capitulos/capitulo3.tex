@@ -239,7 +239,7 @@ O propósito desta etapa é evitar possíveis erros de classificação que podem
 	\centering
 \end{figure}
 
-\subsection{Sistema de votação}
+\subsection{Sistema de votação}\ref{sec:votacao}
 
 Além do sistema de classificação momentânea, o programa integra um componente que determina a classe majoritária de uma seção durante um intervalo de tempo. Para o programa uma seção pode estar em um de dois estados: estabilizada ou não-estabilizada. No começo da execução do programa, nenhuma seção está estabilizada. 
 
@@ -372,7 +372,15 @@ O programa acompanha a posição destes retângulos para determinar o comportame
 
 \section{Mapeamento de Vagas}
 
+Para determinar a quantidade e a posição aproximada das vagas, o programa faz um mapeamento do estacionamento através dos movimentos capturados. Quando um movimento começa ou termina dentro de uma ROI, além de marcar as seções contidas na região deste movimento como não-estabilizadas da forma descrita na seção \ref{sec:video}, o programa também determina que estas seções compõem uma vaga. Com o tempo, o programa terá determinado quais conjuntos de seções determinam as vagas do estacionamento.
 
+As vagas determinadas desta forma não são estáticas. Na medida que veículos ocupam as seções verticais, as posições das vagas se modificam de acordo com a nova informação. Por exemplo, se uma área de movimento termina sobre duas seções que compõem uma vaga e uma terceira ainda não designada, o programa entende que todas as três seções compõem a mesma vaga. De forma semelhante, se as seções interceptadas por um movimento novo são um subconjunto das seções de uma vaga, estas seções passam a compor uma nova vaga, enquanto a vaga que existia antes passa a ser composta pelas seções restantes. Esse dinamismo permite que erros no mapeamento causados, por exemplo, por veículos mal estacionados ou por alguma falha no próprio programa sejam naturalmente corrigidos com o passar do tempo.
+
+O programa determina que uma vaga foi ocupada se a maioria das seções que a compõem estão classificadas como ocupadas. Por isso, é importante que nenhuma seção pertença a mais de uma vaga. Se isso acontecer, o programa considera a ocupação desta seção mais de uma vez, causando erros na contagem das vagas ocupadas. Para garantir que esse critério seja cumprido, o programa designa todas as seções interceptadas por um movimento a uma nova vaga, mesmo que elas já pertencessem a alguma outra vaga. Apesar de garantir a unicidade das seções, essa simplificação traz a desvantagem de ocasionalmente determinar vagas que não refletem corretamente os movimentos. A mais comum destas eventualidades é a criação de vagas compostas de apenas uma seção, exemplificada na figura \ref{fig:umasecao}. Essas vagas oferecem um risco de erro, uma vez que basta que a seção seja classificada como ocupada para que a vaga também o seja, diminuindo a precisão da consideração. Porém, um novo movimento que intercepte esta seção a integra em uma vaga que melhor reflete a configuração do estacionamento. Este tipo de situação de erro então tem uma probabilidade muito maior de corrigir com o passar do tempo do que uma seção que pertença a duas vagas, além de menos possibilidade de causarem erros na contagem de vagas ocupadas, já que comumente estas seções estão presentes em regiões desocupadas.
+
+
+
+%Criar uma figura de uma intersecçao de vagas tipo --> |||| --> |:::
 
 
 
