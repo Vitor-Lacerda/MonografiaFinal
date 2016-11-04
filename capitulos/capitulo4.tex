@@ -56,9 +56,9 @@ Para determinar a capacidade da programa de determinar se as seções verticais 
 Cada um dos observadores receberam as seguintes instruções:
 
 \begin{itemize}
-  \item As regiões de interesse e as seções são numeradas como indicado na figura \ref{instrucoes};
-	\item Uma seção ocupada é aquela cuja maior parte de sua área está ocupada por um veículo;
-	\item No momento inicial do vídeo ($0$ segundos), indique quais seções verticais estão ocupadas através do número das ROI e das seções, as outras serão assumidas como livres;
+  \item As regiões de interesse e as seções são numeradas como indicado na figura \ref{instrucoes}.
+	\item Uma seção ocupada é aquela cuja maior parte de sua área está ocupada por um veículo.
+	\item No momento inicial do vídeo ($0$ segundos), indique quais seções verticais estão ocupadas através do número das ROI e das seções, as outras serão assumidas como livres. Indique também o número de vagas ocupadas.
 	\item Se a qualquer momento o estado de ocupação de uma seção mudar, indique o tempo da mudança, a seção onde ocorreu a mudança e a natureza da mudança(ocupada ou liberada).
 \end{itemize}
 
@@ -74,10 +74,10 @@ Cada observador assistiu aos vídeos sozinho, sem interferência externa e sem c
 
 Para os testes apresentados a seguir, serão observadas somente aquelas seções que o programa ou os observadores determinaram como ocupadas. As demais seções serão consideradas livres. Chamaremos de um \textit{acerto} sempre que em um determinado segundo $t$, o programa e um observador concordam quanto a ocupação de uma seção vertical. Sendo assim, o programa pode atingir um máximo de $60$ acertos por segundo. A indicação da ocupação das seções pelos observadores não foi definida a cada segundo, mas considera-se que entre duas acusações de mudança de estado a ocupação das seções permanece a mesma. Sendo assim, podemos utilizar esses momentos para definir a ocupação em cada segundo do vídeo. Por exemplo, se um observador disser que a seção $10$ estava ocupada no momento inicial do vídeo e depois indicar que a mesma sessão foi liberada aos $8s$, a seção será considerada ocupada durante todos os momentos deste intervalo. 
 
-Em seguida serão apresentados como um dos vídeos utilizados para os testes. Cada caso iniciará com uma breve descrição do movimento dos veículos no vídeo, a duração do vídeo e o número de acertos possíveis, seguidos de quatro tabelas, uma para cada observador e uma quarta para o programa. As tabelas indicam o tempo onde foram acusadas mudanças de estado nas seções. A primeira linha da tabela indica as seções ocupadas no momento inicial do vídeo e cada linha subsequente indica um momento em segundos quando houve mudança de estado de pelo menos uma seção e a ROI e número das seções. Finalmente, será calculada uma taxa de acerto que compara o desempenho do programa a cada observador e uma taxa final de acerto média para o caso de teste. A taxa de acerto para cada observador é calculada pela razão entre o número de acertos do programa e o número de acertos possíveis para o caso de teste e a taxa de acerto média é a média aritmética entre estes valores. Ao final destas seções uma breve análise dos resultados dos casos de teste será apresentada. Para que o leitor possa compara o desempenho do programa com suas próprias impressões, uma imagem dos momentos iniciais e finais de cada vídeo será mostrada junto de cada análise.
+Além da capacidade de classificar cada seção, a precisão do programa em determinar o número de vagas ocupadas a cada momento do vídeo também foi analisada. Para este teste, os observadores foram instruídos a informar o número de vagas ocupadas no início do vídeo. Sempre que considerassem que houve uma mudança neste número, deveriam informar o momento da mudança e o novo número de vagas ocupadas. Para esta análise, um \textit{acerto} é considerado a cada segundo que o programa indica o mesmo número de vagas ocupadas que os observadores. Para a determinação das vagas o programa foi executado no modo complexo de mapeamento.
 
+Nas seções seguintes serão apresentados cada um dos vídeos utilizados para os testes. Cada caso iniciará com uma breve descrição do movimento dos veículos no vídeo, a duração do vídeo e o número de acertos possíveis para as seções verticais, seguidos de cinco tabelas, uma para cada observador e duas para o programa. As tabelas indicam o tempo onde foram acusadas mudanças de estado nas seções e no número de vagas ocupadas. A primeira linha da tabela indica as seções ocupadas no momento inicial do vídeo e cada linha subsequente indica um momento em segundos quando houve mudança de estado de pelo menos uma seção ou vaga, a ROI e número das seções modificadas e um número de vagas ocupadas naquele momento no tempo.  Finalmente, será calculada uma taxa de acerto que compara o desempenho do programa na classificação a cada observador e uma taxa final de acerto média para o caso de teste. A taxa de acerto para cada observador é calculada pela razão entre o número de acertos do programa e o número de acertos possíveis para o caso de teste e a taxa de acerto média é a média aritmética entre estes valores. Ao final destas seções uma breve análise dos resultados dos casos de teste será apresentada. Para que o leitor possa comparar o desempenho do programa com suas próprias impressões, uma imagem dos momentos iniciais e finais de cada vídeo será mostrada junto de cada análise.
 
- 
 \subsection{Vídeo 1}
 
 No primeiro caso de testes, o vídeo começa com um estacionamento vazio. Depois de alguns segundos um único veículo de cor branca entra na cena pela direita e estaciona em uma vaga na parte inferior da imagem. O vídeo tem $15s$ de duração, totalizando $900$ acertos possíveis.
@@ -101,46 +101,12 @@ No primeiro caso de testes, o vídeo começa com um estacionamento vazio. Depois
 
 
 \begin{center}
-\begin{tabular}{|c||c|}
+\begin{tabular}{|c||c||c|}
 \hline
-\multicolumn{2}{|c|}{Observador F}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & Nenhuma seção ocupada \\ \hline
-10 & ROI 2: Seções 18 e 19 ocupadas. \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c|}
-\hline
-\multicolumn{2}{|c|}{Observador P}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & Nenhuma seção ocupada \\ \hline
-10 & ROI 2: Seções 18 e 19 ocupadas. \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c|}
-\hline
-\multicolumn{2}{|c|}{Observador M}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & Nenhuma seção ocupada \\ \hline
-9 & ROI 2: Seções 18 e 19 ocupadas. \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c|}
-\hline
-\multicolumn{2}{|c|}{Programa}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & ROI 2:Seção 3 ocupada. \\ \hline
-10 & ROI 2: Seções 18 e 19 ocupadas. \\ \hline
-14 & ROI 2: Seção 3 liberada. \\
+\multicolumn{3}{|c|}{Observador F}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas ocupadas\\ \hline
+0 & Nenhuma seção ocupada & 0 \\ \hline
+10 & ROI 2: Seções 18 e 19 ocupadas. & 1 \\
 \hline
 \end{tabular}
 \end{center}
@@ -148,7 +114,42 @@ Tempo(s) & Acontecimento \\ \hline
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
-Observador & Acertos & Taxa de acertos \\ \hline
+\multicolumn{3}{|c|}{Observador P}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas ocupadas\\ \hline
+0 & Nenhuma seção ocupada & 0 \\ \hline
+10 & ROI 2: Seções 18 e 19 ocupadas. & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+\multicolumn{3}{|c|}{Observador M}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas ocupadas\\ \hline
+0 & Nenhuma seção ocupada & 0 \\ \hline
+9 & ROI 2: Seções 18 e 19 ocupadas. & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+\multicolumn{3}{|c|}{Programa}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
+0 & ROI 2:Seção 3 ocupada. & 1 \\ \hline
+10 & ROI 2: Seções 18 e 19 ocupadas. & 2\\ \hline
+14 & ROI 2: Seção 3 liberada. & 1\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+\multicolumn{3}{|c|}{Acertos - seções}  \\ \hline \hline
+Observador & Acertos& Taxa de acertos \\ \hline
 F & 886 & 98,44\% \\  \hline
 P & 886 & 98,44\% \\ \hline
 M & 884 & 98,22\% \\ \hline
@@ -157,9 +158,20 @@ Média & 885,3 & 98,37\% \\
 \end{tabular}
 \end{center}
 
-Neste caso de testes, o programa classifica errôneamente a seção $3$ da ROI $2$ durante quase toda a duração do vídeo. Apesar de persistente este erro tem pouca influência na indicação do número de vagas ocupadas, pois uma seção ocupada solitária não é suficiente para que o programa diminua o número de vagas livres.
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+\multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
+Observador & Acertos & Taxa de acertos \\ \hline
+F & 1 & 7\% \\  \hline
+P & 1 & 7\% \\ \hline
+M & 1 & 7\% \\ \hline
+Média & 1 & 7\% \\
+\hline
+\end{tabular}
+\end{center}
 
-Em relação ao observador M, o programa apresentou um atraso de $1s$ na classificação das seções $18$ e $19$ da ROI $2$, um atraso considerado aceitável, principalmente se considerarmos que o programa classificou estas mesmas seções no mesmo momento que os outros dois observadores.
+Neste caso de testes, o programa classifica errôneamente a seção $3$ da ROI $2$ durante quase toda a duração do vídeo. Como o erro se inicia logo no primeiro momento do vídeo, esta seção é definida como uma vaga que conta como ocupada enquanto o erro de classificação persiste. Esse caso ilustra uma possível consequência de um erro de classificação. Apesar do erro, o reconhecimento da vaga ocupada pelo veículo nas seções $18$ e $19$ ocorre sem problemas.
 
 \subsection{Vídeo 2}
 
@@ -184,45 +196,12 @@ Neste vídeo, um carro branco está estacionado no conjunto inferior de vagas. U
 
 
 \begin{center}
-\begin{tabular}{|c||c|}
+\begin{tabular}{|c||c||c|}
 \hline
-\multicolumn{2}{|c|}{Observador F}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & ROI 2: Seções 19 e 20 ocupadas \\ \hline
-6 & ROI 1: Seções 21,22 e 23 ocupadas. \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c|}
-\hline
-\multicolumn{2}{|c|}{Observador P}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & ROI 2: Seções 19 e 20 ocupadas \\ \hline
-6 & ROI 1: Seções 20,21,22 ocupadas. \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c|}
-\hline
-\multicolumn{2}{|c|}{Observador M}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & ROI 2: Seções 19 e 20 ocupadas \\ \hline
-6 & ROI 1: Seções 21,22 e 23 ocupadas. \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c|}
-\hline
-\multicolumn{2}{|c|}{Programa}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & ROI 2: Seções 18,19 e 20 ocupadas. \\ \hline
-6 & ROI 1: Seções 21 e 22 ocupadas. \\ \hline
+\multicolumn{3}{|c|}{Observador F}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
+0 & ROI 2: Seções 19 e 20 ocupadas & 1 \\ \hline
+6 & ROI 1: Seções 21,22 e 23 ocupadas. & 2 \\
 \hline
 \end{tabular}
 \end{center}
@@ -230,6 +209,40 @@ Tempo(s) & Acontecimento \\ \hline
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
+\multicolumn{3}{|c|}{Observador P}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
+0 & ROI 2: Seções 19 e 20 ocupadas  & 1\\ \hline
+6 & ROI 1: Seções 20,21,22 ocupadas. & 2 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+\multicolumn{3}{|c|}{Observador M}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
+0 & ROI 2: Seções 19 e 20 ocupadas & 1\\ \hline
+6 & ROI 1: Seções 21,22 e 23 ocupadas. & 2\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+\multicolumn{3}{|c|}{Programa}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
+0 & ROI 2: Seções 18,19 e 20 ocupadas. & 1 \\ \hline
+6 & ROI 1: Seções 21 e 22 ocupadas. & 2 \\ \hline
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+\multicolumn{3}{|c|}{Acertos - seções}  \\ \hline \hline
 Observador & Acertos & Taxa de acertos \\ \hline
 F & 586 & 97,66\% \\  \hline
 P & 586 & 97,66\% \\ \hline
@@ -239,9 +252,22 @@ Média & 586 & 97,66\% \\
 \end{tabular}
 \end{center}
 
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+\multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
+Observador & Acertos & Taxa de acertos \\ \hline
+F & 10 & 100\% \\  \hline
+P & 10 & 100\% \\ \hline
+M & 10 & 100\% \\ \hline
+Média & 10 & 100\% \\
+\hline
+\end{tabular}
+\end{center}
+
 Neste caso de testes, houve discordância entre os observadores sobre as seções ocupadas pelo carro cinza na parte superior do vídeo. Porém o programa classificou como ocupadas as seções onde houve consenso entre os observadores.
 
-O programa também classificou errôneamente a seção $18$ do ROI $2$ no momento inicial do vídeo. Novamente ele acerta nas seções onde há consenso entre os observadores. O erro é mais aceitável que o erro que ocorreu no vídeo $1$, por causa da proximidade da seção mal-classificada das seções onde houve acerto.
+O programa também classificou errôneamente a seção $18$ do ROI $2$ no momento inicial do vídeo. Novamente ele acerta nas seções onde há consenso entre os observadores. O erro é mais aceitável que o erro que ocorreu no vídeo $1$, pois a determinação da vaga ainda ocorre de maneira que a sua ocupação é reconhecida.
 
 \subsection{Vídeo 3}
 
@@ -265,62 +291,63 @@ Neste vídeo, dois carros se encontram no estacionamento. Um veículo amarelo en
 \end{figure}
 
 \begin{center}
-\begin{tabular}{|c||c|}
+\begin{tabular}{|c||c||c|}
 \hline
-\multicolumn{2}{|c|}{Observador F}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & ROI 1: Seções 22 e 23 ocupadas. \\
- & ROI 2: 19,20 e 21 ocupadas \\ \hline
-8 & ROI 1: Seções 16 e 17 ocupadas. \\ \hline
-13 & ROI 2: Seções 18 e 19 liberadas. \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c|}
-\hline
-\multicolumn{2}{|c|}{Observador P}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & ROI 1: Seções 22 e 23 ocupadas. \\
- & ROI 2: 20 e 21 ocupadas \\ \hline
-9 & ROI 1: Seções 15,16 e 17 ocupadas. \\
+\multicolumn{3}{|c|}{Observador F}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
+0 & ROI 1: Seções 22 e 23 ocupadas. & 2 \\
+ & ROI 2: 19,20 e 21 ocupadas & \\ \hline
+8 & ROI 1: Seções 16 e 17 ocupadas. & 3\\ \hline
+13 & ROI 2: Seções 18 e 19 liberadas. & 2\\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{center}
-\begin{tabular}{|c||c|}
+\begin{tabular}{|c||c||c|}
 \hline
-\multicolumn{2}{|c|}{Observador M}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & ROI 1: Seções 22 e 23 ocupadas. \\
- & ROI 2: 20 e 21 ocupadas \\ \hline
-8 & ROI 1: Seções 15,16 e 17 ocupadas. \\ \hline
-14 & ROI 2: Seções 17,18 e 19 liberadas \\
+\multicolumn{3}{|c|}{Observador P}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
+0 & ROI 1: Seções 22 e 23 ocupadas. & 2 \\
+ & ROI 2: 20 e 21 ocupadas &  \\ \hline
+9 & ROI 1: Seções 15,16 e 17 ocupadas. & 3 \\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{center}
-\begin{tabular}{|c||c|}
+\begin{tabular}{|c||c||c|}
 \hline
-\multicolumn{2}{|c|}{Programa}  \\ \hline \hline
-Tempo(s) & Acontecimento \\ \hline
-0 & ROI 1: Seções 22 e 23 ocupadas. \\
- & ROI 2: 19,20 e 21 ocupadas \\ \hline
-1 & ROI 1: Seção 23 liberada. \\ \hline
-2 & ROI 1: Seção 23 ocupada. \\ \hline
-4 & ROI 1: Seção 23 liberada. \\ \hline
-8 & ROI 1: Seções 16 e 17 ocupadas. \\ \hline
-9 & ROI 2: Seção 21 liberada. \\ 
- & ROI 2: Seções 18 e 24 ocupadas \\ \hline
-11 & ROI 1: Seção 20 ocupada. \\ 
+\multicolumn{3}{|c|}{Observador M}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
+0 & ROI 1: Seções 22 e 23 ocupadas. & 2 \\
+ & ROI 2: 20 e 21 ocupadas & \\ \hline
+8 & ROI 1: Seções 15,16 e 17 ocupadas. & 3 \\ \hline
+14 & ROI 2: Seções 17,18 e 19 liberadas & 2\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+\multicolumn{3}{|c|}{Programa}  \\ \hline \hline
+Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
+0 & ROI 1: Seções 22 e 23 ocupadas. & 2 \\
+ & ROI 2: 19,20 e 21 ocupadas &  \\ \hline
+1 & ROI 1: Seção 23 liberada. & 2 \\ \hline
+2 & ROI 1: Seção 23 ocupada. & 2 \\ \hline
+4 & ROI 1: Seção 23 liberada. & 2 \\ \hline
+8 & ROI 1: Seções 16 e 17 ocupadas. & 3 \\ \hline
+9 & ROI 2: Seção 21 liberada. & 3 \\ 
+ & ROI 2: Seções 18 e 24 ocupadas &  \\ \hline
+10 & Sem acontecimentos & 2 \\ \hline
+11 & ROI 1: Seção 20 ocupada. & 3 \\ 
  & ROI 2: Seção 24 liberada. \\ \hline
-13 & ROI 1: Seção 20 liberada. \\
- & ROI 2: Seção 18,19 e 20 liberada. \\ \hline
-16 & ROI 1: Seção 20 ocupada. \\ \hline
-19 & ROI 1: Seção 20 liberada. \\
+13 & ROI 1: Seção 20 liberada. & 2 \\
+ & ROI 2: Seção 18,19 e 20 liberada. & \\ \hline
+16 & ROI 1: Seção 20 ocupada. & 2 \\ \hline
+19 & ROI 1: Seção 20 liberada. & 2 \\
 \hline
 \end{tabular}
 \end{center}
@@ -337,11 +364,28 @@ Média & 1138 & 94,83\% \\
 \end{tabular}
 \end{center}
 
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+\multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
+Observador & Acertos & Taxa de acertos \\ \hline
+F & 19 & 95\% \\  \hline
+P & 11 & 55\% \\ \hline
+M & 18 & 90\% \\ \hline
+Média & 16 & 80\% \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
 Esse caso de teste possui alguns problemas causados principalmente por causa da movimentação do \textit{drone} no momento da gravação. Essa movimentação faz com que partes da imagem passem a ocupar seções diferentes, criando algumas incosistências. Repare que por volta dos $14s$ dois dos observadores disseram que a seção $18$ da ROI $2$ foi liberada, apesar de nunca terem acusado que ela estava ocupada anteriormente. Essa inconsistência ocorre porque entre o início do vídeo esse momento, o \textit{drone} utilizado para a gravação se movimenta e faz com que o veículo que estava ocupando as  seções $19$ e $20$ ocupe as seções $18$ e $19$. Esse problema acontece em outros casos de teste em menor proporção.
 
-Apesar destes problemas, o teste sobre esse vídeo ainda possui resultados interessantes e úteis. Uma vantagem do uso de um sistema automatizado se mostra neste caso de teste. O observador \textit{P} não percebeu que um veículo saia da tela por volta dos $14$ segundos e por isso não acusou a mudança de estado de nenhuma seção nesse momento. Uma falha que não ocorre no programa. 
+O teste sobre esse vídeo ainda possui resultados interessantes e úteis. Uma vantagem do uso de um sistema automatizado se mostra neste caso de teste. O observador \textit{P} não percebeu que um veículo saia da tela por volta dos $14$ segundos e por isso não acusou a mudança de estado de nenhuma seção nesse momento. Uma falha que não ocorre no programa.
 
 Através deste caso também percebe-se que o programa tem dificuldade em classificar corretamente as seções ocupadas pelo veículo cinza na ROI $1$, evidenciada principalmente pela flutuação da classificação das seções $23$ e $20$.
+
+Mesmo com os problemas, o mapeamento e determinação das ocupações das vagas mostra uma alta taxa de acerto. Neste caso de teste, a determinação inicial das vagas funciona a favor do programa. Apesar de ter dificuldades em classificar o carro cinza, o programa identifica uma das seções que ele ocupa e determina que esta seção pertence a uma vaga. Por isso, o número de vagas ocupadas se mantém correto durante a execução do teste. Uma flutuação na classificação da seção causa um erro por um segundo, mas que é rapidamente corrigido.
 
 
 

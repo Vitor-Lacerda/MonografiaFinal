@@ -33,15 +33,16 @@
 \contentsline {figure}{\numberline {5.17}{\ignorespaces Ilustra\IeC {\c c}\IeC {\~a}o do processo de extra\IeC {\c c}\IeC {\~a}o do movimento significativo no v\IeC {\'\i }deo. (a) mostra o quadro analisado, (b) uma representa\IeC {\c c}\IeC {\~a}o visual da matriz de magnitudes das velocidades e (c) uma representa\IeC {\c c}\IeC {\~a}o da matriz depois de limiarizada.\relax }}{31}{figure.caption.32}
 \contentsline {figure}{\numberline {5.18}{\ignorespaces Um ret\IeC {\^a}ngulo que representa a estimativa da \IeC {\'a}rea ocupada por um objeto em movimento, representado em azul.\relax }}{32}{figure.caption.33}
 \contentsline {figure}{\numberline {5.19}{\ignorespaces O ret\IeC {\^a}ngulo em azul intereceptando algumas se\IeC {\c c}\IeC {\~o}es verticais. As se\IeC {\c c}\IeC {\~o}es tocadas pelo ret\IeC {\^a}ngulo ser\IeC {\~a}o reclassificadas ao final do movimento.\relax }}{33}{figure.caption.34}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces No quadro a esquerda, um movimento representado pelo ret\IeC {\^a}ngulo azul intercepta tr\IeC {\^e}s se\IeC {\c c}\IeC {\~o}es que pertenciam a vaga com os contornos pretos. As se\IeC {\c c}\IeC {\~o}es interceptadas passam a compor uma nova vaga, marcada de azul, enquanto a vaga marcada de preto agora \IeC {\'e} composta apenas da se\IeC {\c c}\IeC {\~a}o restante.\relax }}{34}{figure.caption.35}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces O drone utilizado para a grava\IeC {\c c}\IeC {\~a}o dos v\IeC {\'\i }deos de teste.\relax }}{35}{figure.caption.35}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces (a)Um exemplo de imagem classificada manualmente na classe 1.(b) Um exemplo de imagem classificada manualmente na classe 2.\relax }}{36}{figure.caption.36}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Figura mostrando a divis\IeC {\~a}o das ROIs e numera\IeC {\c c}\IeC {\~a}o das se\IeC {\c c}\IeC {\~o}es nos v\IeC {\'\i }deos mostrados para os observadores humanos\relax }}{37}{figure.caption.37}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 1. (b) O momento final do v\IeC {\'\i }deo 1\relax }}{39}{figure.caption.38}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 2. (b) O momento final do v\IeC {\'\i }deo 2\relax }}{40}{figure.caption.39}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 3. (b) O momento final do v\IeC {\'\i }deo 3\relax }}{41}{figure.caption.40}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 4. (b) O momento final do v\IeC {\'\i }deo 4\relax }}{43}{figure.caption.41}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 5. (b) O momento final do v\IeC {\'\i }deo 5\relax }}{45}{figure.caption.42}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 6. (b) O momento final do v\IeC {\'\i }deo 6.\relax }}{46}{figure.caption.43}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 7. (b) O momento final do v\IeC {\'\i }deo 7.\relax }}{47}{figure.caption.44}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 8. (b) O momento final do v\IeC {\'\i }deo 8.\relax }}{49}{figure.caption.45}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces O drone utilizado para a grava\IeC {\c c}\IeC {\~a}o dos v\IeC {\'\i }deos de teste.\relax }}{36}{figure.caption.36}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces (a)Um exemplo de imagem classificada manualmente na classe 1.(b) Um exemplo de imagem classificada manualmente na classe 2.\relax }}{37}{figure.caption.37}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Figura mostrando a divis\IeC {\~a}o das ROIs e numera\IeC {\c c}\IeC {\~a}o das se\IeC {\c c}\IeC {\~o}es nos v\IeC {\'\i }deos mostrados para os observadores humanos\relax }}{38}{figure.caption.38}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 1. (b) O momento final do v\IeC {\'\i }deo 1\relax }}{40}{figure.caption.39}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 2. (b) O momento final do v\IeC {\'\i }deo 2\relax }}{41}{figure.caption.40}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 3. (b) O momento final do v\IeC {\'\i }deo 3\relax }}{43}{figure.caption.41}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 4. (b) O momento final do v\IeC {\'\i }deo 4\relax }}{45}{figure.caption.42}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 5. (b) O momento final do v\IeC {\'\i }deo 5\relax }}{46}{figure.caption.43}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 6. (b) O momento final do v\IeC {\'\i }deo 6.\relax }}{48}{figure.caption.44}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 7. (b) O momento final do v\IeC {\'\i }deo 7.\relax }}{49}{figure.caption.45}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 8. (b) O momento final do v\IeC {\'\i }deo 8.\relax }}{50}{figure.caption.46}

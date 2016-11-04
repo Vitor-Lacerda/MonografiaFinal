@@ -376,11 +376,32 @@ Para determinar a quantidade e a posição aproximada das vagas, o programa faz 
 
 As vagas determinadas desta forma não são estáticas. Na medida que veículos ocupam as seções verticais, as posições das vagas se modificam de acordo com a nova informação. Por exemplo, se uma área de movimento termina sobre duas seções que compõem uma vaga e uma terceira ainda não designada, o programa entende que todas as três seções compõem a mesma vaga. De forma semelhante, se as seções interceptadas por um movimento novo são um subconjunto das seções de uma vaga, estas seções passam a compor uma nova vaga, enquanto a vaga que existia antes passa a ser composta pelas seções restantes. Esse dinamismo permite que erros no mapeamento causados, por exemplo, por veículos mal estacionados ou por alguma falha no próprio programa sejam naturalmente corrigidos com o passar do tempo.
 
-O programa determina que uma vaga foi ocupada se a maioria das seções que a compõem estão classificadas como ocupadas. Por isso, é importante que nenhuma seção pertença a mais de uma vaga. Se isso acontecer, o programa considera a ocupação desta seção mais de uma vez, causando erros na contagem das vagas ocupadas. Para garantir que esse critério seja cumprido, o programa designa todas as seções interceptadas por um movimento a uma nova vaga, mesmo que elas já pertencessem a alguma outra vaga. Apesar de garantir a unicidade das seções, essa simplificação traz a desvantagem de ocasionalmente determinar vagas que não refletem corretamente os movimentos. A mais comum destas eventualidades é a criação de vagas compostas de apenas uma seção, exemplificada na figura \ref{fig:umasecao}. Essas vagas oferecem um risco de erro, uma vez que basta que a seção seja classificada como ocupada para que a vaga também o seja, diminuindo a precisão da consideração. Porém, um novo movimento que intercepte esta seção a integra em uma vaga que melhor reflete a configuração do estacionamento. Este tipo de situação de erro então tem uma probabilidade muito maior de corrigir com o passar do tempo do que uma seção que pertença a duas vagas, além de menos possibilidade de causarem erros na contagem de vagas ocupadas, já que comumente estas seções estão presentes em regiões desocupadas.
+O programa determina que uma vaga foi ocupada se a maioria das seções que a compõem estão classificadas como ocupadas. Por isso, é importante que nenhuma seção pertença a mais de uma vaga. Se isso acontecer, o programa considera a ocupação desta seção mais de uma vez, causando erros na contagem das vagas ocupadas. Além disso, é importante que as seções que compõe uma vaga reflitam o mais corretamente possível, evitando principalmente que duas vagas distintas estejam marcadas na região de uma única vaga. 
+
+Com esses critérios em mente, dois métodos de mapeamento foram desenvolvidos: o modo simples e o modo complexo. No modo simples o programa designa todas as seções interceptadas por um movimento a uma nova vaga, mesmo que elas já pertencessem a alguma outra vaga. Apesar de garantir a que nehum seção fará parte de duas vagas simultaneamente, essa simplificação traz a desvantagem de ocasionalmente determinar vagas que não refletem corretamente os movimentos. A mais comum destas eventualidades é a criação de vagas compostas de apenas uma seção, exemplificada na figura \ref{fig:umasecao}. Essas vagas oferecem um risco de erro, uma vez que basta que a seção seja classificada como ocupada para que a vaga também o seja, diminuindo a precisão da consideração. Porém, um novo movimento que intercepte esta seção normalmente a integra em uma vaga que melhor reflete a configuração do estacionamento. Este tipo de situação de erro então tem uma probabilidade muito maior de corrigir com o passar do tempo do que uma seção que pertença a duas vagas, além de menos possibilidade de causarem erros na contagem de vagas ocupadas, já que comumente estas seções estão presentes em regiões desocupadas. Esse método é mais adequado quando o programa está executando com um número elevado de seções verticais. Além deste modo exibir melhor performance, o número elevado de seções ajuda a amenizar o problema mencionado.
 
 
+\begin{figure}%
+\centering
+\includegraphics[width=8cm]{umasecao}%
+\caption{No quadro a esquerda, um movimento representado pelo retângulo azul intercepta três seções que pertenciam a vaga com os contornos pretos. As seções interceptadas passam a compor uma nova vaga, marcada de azul, enquanto a vaga marcada de preto agora é composta apenas da seção restante.}%
+\label{fig:umasecao}%
+\centering
+\end{figure}
 
-%Criar uma figura de uma intersecçao de vagas tipo --> |||| --> |:::
+O modo complexo por outro lado segue um conjunto de regras mais elaborado para determinar as vagas a que cada seção pertence. Quando um movimento intercepta um conjunto de seções que chamaremos de $S$, novas vagas são formadas de acordo com os seguintes critérios:
+
+\begin{itemize}
+	\item Caso nenhuma seção de $S$ esteja associada a alguma vaga, $S$ passa a compor uma nova vaga.
+	\item Caso as seções de uma certa vaga $V$ sejam um subconjunto de $S$, $V$ passa a ser composto por $S$.
+	\item Caso $S$ seja um subconjunto de uma vaga $V$, uma nova vaga com as seções de $S$ é criada. Caso as seções de $V$ que não pertenciam a $S$ formem um conjunto contínuo com número de seções suficientemente grande, uma segunda vaga $V_2$ é criada.
+	\item Caso a intersecção entre as seções de $S$ e de uma outra vaga $V$ seja não-nula e nenhum dos casos anteriores ocorra, as seções da intersecção são divididas entre as duas vagas. Se houver um número ímpar de seções a dividir, $S$ recebe a seção sobresalente.
+\end{itemize}
+
+Esse modo de mapeamento não garante naturalmente que as seções pertençam a uma única vaga, apesar da ocorrência ser rara. Porém, as vagas criadas por ele representam melhor a configuração real do estacionamento. Ao contrário do método simples, este modo de mapeamento é mais adequado quando o número de seções verticais em cada área de interesse é menor.
+
+Independentemente do modo escolhido para a execução, o programa determina as vagas no momento inicial do vídeo de forma diferente do que durante o resto da execução. Como neste momento não há movimento algum, as posições das vagas são determinadas apenas pela ocupação das seções verticais. Cada conjunto de seções verticais consecutivas classificadas como ocupadas configuram uma vaga.
+
 
 
 
