@@ -14,7 +14,7 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Um gr\IeC {\'a}fico que mostra duas caracter\IeC {\'\i }sticas $\mathaccentV {tilde}07E{x}_1$ e $\mathaccentV {tilde}07E{x}_2$ de um problema de classifica\IeC {\c c}\IeC {\~a}o hipot\IeC {\'e}tico. C\IeC {\'\i }rculos s\IeC {\~a}o padr\IeC {\~o}es da classe $C_1$, enquanto os 'x' s\IeC {\~a}o padr\IeC {\~o}es da classe $C_2$. O limiar de decis\IeC {\~a}o, representado pela linha, consegue separar bem as duas classes quando as \textit {features} s\IeC {\~a}o consideradas como um par. Por\IeC {\'e}m haveria grande sobreposi\IeC {\c c}\IeC {\~a}o se os valores fossem considerados separadamente. Extra\IeC {\'\i }da de \cite {NNForPR}\relax }}{15}{figure.caption.15}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Um fluxograma com o funcionamento geral do programa\relax }}{19}{figure.caption.16}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Um fluxograma com o funcionamento geral do \textit {DVE}\relax }}{19}{figure.caption.16}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Um quadro de um v\IeC {\'\i }deo adquirido por uma c\IeC {\^a}mera do sistema\relax }}{20}{figure.caption.17}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces O mesmo quadro da figura \ref {fig:aquisicao}, depois de definidas as regi\IeC {\~o}es de interesse, marcadas de verde.\relax }}{20}{figure.caption.18}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces As ROIs determinadas na figura \ref {fig:ROIs} separadas em trinta se\IeC {\c c}\IeC {\~o}es verticais que ainda n\IeC {\~a}o foram classificadas. Nesta etapa os vetores $v$ de cada regi\IeC {\~a}o \IeC {\'e} composto de trinta valores $2$.\relax }}{21}{figure.caption.19}
@@ -39,10 +39,11 @@
 \contentsline {figure}{\numberline {6.2}{\ignorespaces (a)Um exemplo de imagem classificada manualmente na classe 1.(b) Um exemplo de imagem classificada manualmente na classe 2.\relax }}{37}{figure.caption.37}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Figura mostrando a divis\IeC {\~a}o das ROIs e numera\IeC {\c c}\IeC {\~a}o das se\IeC {\c c}\IeC {\~o}es nos v\IeC {\'\i }deos mostrados para os observadores humanos\relax }}{38}{figure.caption.38}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 1. (b) O momento final do v\IeC {\'\i }deo 1\relax }}{40}{figure.caption.39}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 2. (b) O momento final do v\IeC {\'\i }deo 2\relax }}{41}{figure.caption.40}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 2. (b) O momento final do v\IeC {\'\i }deo 2\relax }}{42}{figure.caption.40}
 \contentsline {figure}{\numberline {6.6}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 3. (b) O momento final do v\IeC {\'\i }deo 3\relax }}{43}{figure.caption.41}
 \contentsline {figure}{\numberline {6.7}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 4. (b) O momento final do v\IeC {\'\i }deo 4\relax }}{45}{figure.caption.42}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 5. (b) O momento final do v\IeC {\'\i }deo 5\relax }}{46}{figure.caption.43}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 6. (b) O momento final do v\IeC {\'\i }deo 6.\relax }}{48}{figure.caption.44}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 7. (b) O momento final do v\IeC {\'\i }deo 7.\relax }}{49}{figure.caption.45}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 8. (b) O momento final do v\IeC {\'\i }deo 8.\relax }}{50}{figure.caption.46}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 5. (b) O momento final do v\IeC {\'\i }deo 5\relax }}{47}{figure.caption.43}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 6. (b) O momento final do v\IeC {\'\i }deo 6.\relax }}{49}{figure.caption.44}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 7. (b) O momento final do v\IeC {\'\i }deo 7.\relax }}{50}{figure.caption.45}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces (a) O momento inicial do v\IeC {\'\i }deo 8. (b) O momento final do v\IeC {\'\i }deo 8.\relax }}{52}{figure.caption.46}
+\addvspace {10\p@ }

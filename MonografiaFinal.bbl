@@ -71,6 +71,12 @@ Amin Kianpisheh, Norlia Mustaffa, Pakapan Limtrairut, and Pantea
 \newblock {\em International Journal of Software Engineering and Its
   Applications}, 6(3):55--58, 2012.
 
+\bibitem{lee2008intelligent}
+Sangwon Lee, Dukhee Yoon, and Amitabha Ghosh.
+\newblock Intelligent parking lot application using wireless sensor networks.
+\newblock In {\em Collaborative Technologies and Systems, 2008. CTS 2008.
+  International Symposium on}, pages 48--57. IEEE, 2008.
+
 \bibitem{GLCM}
 Jefferson~Gustavo Martins, YMG Costa, D~Bertolini, and LS~Oliveira.
 \newblock Uso de descritores de textura extra{\i}dos de glcm para o
@@ -88,10 +94,24 @@ Charles~A. Poynton.
 \newblock {\em A Technical Introduction to Digital Video}.
 \newblock John Wiley \& Sons, Inc., New York, NY, USA, 1996.
 
+\bibitem{schmid2011parking}
+Matthias~R Schmid, Savas Ates, J{\"u}rgen Dickmann, Felix von Hundelshausen,
+  and H-J Wuensche.
+\newblock Parking space detection with hierarchical dynamic occupancy grids.
+\newblock In {\em Intelligent Vehicles Symposium (IV), 2011 IEEE}, pages
+  254--259. IEEE, 2011.
+
 \bibitem{true2007vacant}
 Nicholas True.
 \newblock Vacant parking space detection in static images.
 \newblock {\em University of California, San Diego}, 2007.
+
+\bibitem{wolff2006parking}
+Joerg Wolff, Thomas Heuer, Haibin Gao, Michael Weinmann, Stefan Voit, and Uwe
+  Hartmann.
+\newblock Parking monitor system based on magnetic field senso.
+\newblock In {\em 2006 IEEE Intelligent Transportation Systems Conference},
+  pages 1275--1279. IEEE, 2006.
 
 \bibitem{ZhangNNSurvey}
 Guoqiang~Peter Zhang.
