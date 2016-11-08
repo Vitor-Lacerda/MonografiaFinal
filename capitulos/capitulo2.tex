@@ -8,7 +8,7 @@ Esse capítulo tem como objetivo apresentar conceitos que facilitarão o entendi
 
 \subsection{Imagens em nível de cinza}
 
-Para que um computador seja capaz de operar sobre uma imagem, é preciso que seja utilizado um modelo de representação que traduza o que os nossos sentidos conseguem perceber em informações que podem ser interpretadas por uma máquina que não é dotada de visão. A forma mais simples de se representar uma imagem são as imagens em nível de cinza. Podemos definir imagens como uma função \textit{f{x,y}} onde x e y são coordenadas espaciais e o valor de  \textit{f{x,y}} é a luminosidade, ou nível de cinza, da imagem naquele ponto. Quando esses valores são todos discretos, chamamos essa imagem de uma imagem digital.\cite{gonzalez2009digital} Cada elemento individual dessa imagem, cada valor em cada coordenada, pode ser chamado de um \textit{picture element} ou mais comumente \textit{pixel}. Em imagens digitais em nível de cinza, cada \textit{pixel} possui 1 \textit{bit} de informação, ou seja, pode assumir valores entre 0 e 255, onde o valor 0 representa o preto e 255 representa o branco. 
+Para que um computador seja capaz de operar sobre uma imagem, é preciso que seja utilizado um modelo de representação que traduza o que os nossos sentidos conseguem perceber em informações que podem ser interpretadas por uma máquina que não é dotada de visão. A forma mais simples de se representar uma imagem são as imagens em nível de cinza. Podemos definir imagens como uma função \textit{f{(x,y)}} onde x e y são coordenadas espaciais e o valor de  \textit{f{(x,y)}} é a luminosidade, ou nível de cinza, da imagem naquele ponto. Quando esses valores são todos discretos, chamamos essa imagem de uma imagem digital.\cite{gonzalez2009digital} Cada elemento individual dessa imagem, cada valor em cada coordenada, pode ser chamado de um \textit{picture element} ou mais comumente \textit{pixel}. Em imagens digitais em nível de cinza, cada \textit{pixel} possui 1 \textit{bit} de informação, ou seja, pode assumir valores entre 0 e 255, onde o valor 0 representa o preto e 255 representa o branco. 
 
 Uma imagem então, pode ser interpretada por um programa de computador como uma matriz $MxN$ de elementos de 1 \textit{bit}, onde M é a largura da imagem e N é a sua altura. Cada elemento $p_{i,j}$ da matriz possui a informação de luminosidade do pixel correspondente e o computador é capaz de exibir e interpretar esses valores apropriadamente. A figura \ref{fig:NivelCinza} exemplifica esse processo.
 
@@ -33,17 +33,17 @@ Uma imagem então, pode ser interpretada por um programa de computador como uma 
 
 \subsection{Espaços de cores}
 
-Para que um sistema de processamento de imagens possa interpretar e processar cores, é preciso criar modelos apropriados para representá-las. Chamamos os modelos de representação das cores em uma imagem um espaços de cor. Existem diversos espaços de cor, cada um importante para a realisação de tarefas e necessidades diferentes. Para a compreensão deste trabalho, é necessário, porém, entender apenas dois: o espaço RGB e o espaço YCbCr.
+Para que um sistema de processamento de imagens possa interpretar e processar cores, é preciso criar modelos apropriados para representá-las. Chamamos os modelos de representação das cores em uma imagem um espaços de cor. Existem diversos espaços de cor, cada um importante para a realização de tarefas e necessidades diferentes. Para a compreensão deste trabalho, é necessário, porém, entender apenas dois: o espaço RGB e o espaço YCbCr.
 
 \subsection{O espaço RGB}
 
 
-RGB é um acrônimo para \textit{Red, Green, Blue}, vermelho, verde e azul em inglês. Pesquisas mostram que um grande gama de cores pode ser formado através de combinações aditivas das cores vermelho, verde e azul. Essas cores são consideradas então cores primárias aditivas.\cite{IBGE2000introducao}. Nesse modelo, a cor de um \textit{pixel} de uma imagem é representada através de um três coeficientes que definem a influência de cada cor primária na combinação. Uma imagem no modelo RGB é então representada por três matrizes de níveis de cinza de dimensões iguais, chamadas canais, onde cada valor representado na matriz, representa o valor do coeficiente da cor correspondente na imagem final. Isto é, a imagem pode ser representada por uma matriz $MxNx3$ onde a cor final $C_{i,j}$ de cada \textit{pixel} da imagem é definida pela equação \ref{eq:corRGB}. A imagem \ref{fig:Espacos:sub:RGB} mostra os canais de uma imagem RGB separadamente.
+RGB é um acrônimo para \textit{Red, Green, Blue}, vermelho, verde e azul em inglês. Pesquisas mostram que um grande gama de cores pode ser formado através de combinações aditivas das cores vermelho, verde e azul. Essas cores são consideradas então cores primárias aditivas.\cite{IBGE2000introducao}. Nesse modelo, a cor de um \textit{pixel} de uma imagem é representada através de três coeficientes que definem a influência de cada cor primária na combinação. Uma imagem no modelo RGB é então representada por três matrizes de níveis de cinza de dimensões iguais, chamadas canais, onde cada valor representado na matriz, representa o valor do coeficiente da cor correspondente na imagem final. Isto é, a imagem pode ser representada por uma matriz $MxNx3$ onde a cor final $C_{i,j}$ de cada \textit{pixel} da imagem é definida pela equação \ref{eq:corRGB}. A imagem \ref{fig:Espacos:sub:RGB} mostra os canais de uma imagem RGB separadamente.
 
 Esse espaço de cor é o mais comumente encontrado no cotidiano, uma vez que é semelhante visão humana e portanto é utilizado pelos dispositivos multimídia mais comuns.
 	
 	\begin{equation}
-			C_{i,j} = p_{i,j,1} . R + p_{i,j,2} . G + p_{i,j,3} . B ,  (0<i<M, 0<j<N)
+			C_{i,j} = p_{i,j,1} . R + p_{i,j,2} . G + p_{i,j,3} . B ,  (1<i<M, 1<j<N)
 	\label{eq:corRGB}
 	\end{equation}
 
@@ -148,7 +148,7 @@ O movimento é um dos elementos principais para a extração de informações de
 	\caption{}
 	\label{fig:fluxo:sub:magnitude}
 \end{subfigure}
-\caption{(a) Representação dos vetores de velocidade estimado pelo fluxo óptico. (b) Imagem em níveis de cinza onde a intensidade \textit{pixel} representa a magnitude do seu vetor de velocidade.}
+\caption{(a) Representação dos vetores de velocidade estimado pelo fluxo óptico. (b) Imagem em níveis de cinza onde a intensidade do \textit{pixel} representa a magnitude do seu vetor de velocidade.}
 \label{fig:fluxo}
 \end{figure}
 
