@@ -2,11 +2,11 @@
 
 Uma vez que o conhecimento teórico necessário para o entendimento completo do trabalho já foi apresentado, neste capítulo será definida a solução proposta.
 
-A solução desenvolvida consiste em um algoritmo analisa imagens de vídeo de um estacionamento descoberto e determina o número de vagas livres na imagem, além da sua localização aproximada. O sistema funciona bem em imagens de menor qualidade, mas é necessário que o vídeo adquirido seja em cores.
+A solução desenvolvida consiste em um algoritmo analisa imagens de vídeo de um estacionamento descoberto e determina o número de vagas livres na imagem, além da sua localização aproximada. O sistema funciona bem em imagens de menor qualidade, mas é necessário que o vídeo adquirido seja em cores. Chamaremos a solução apresentada a seguir de \textit{Dectector de vagas em estacionamento} ou \textit{DVE}. A partir deste momento no trabalho, referências ao programa se referem ao \textit{DVE}.
 
 O trabalho se preocupa em cumprir os critérios definidos no capítulo \ref{cap:trabalhos}. Além disso, o sistema foi desenvolvido de forma que pudesse processar as imagens adquiridas de forma mais próxima possível do tempo real, causando o mínimo de atrasos para o processamento de quadros subsequentes do vídeo.
 
-O sistema recebe como entrada um vídeo em cores capturado em um certo ângulo e um vetor de regiões de interesse no vídeo. A saída do programa a cada quadro é o número de vagas livres em cada região de interesse no vídeo.
+O sistema recebe como entrada um vídeo em cores capturado em um certo ângulo e um vetor de regiões de interesse no vídeo. A saída do \textit{DVE} a cada quadro é o número de vagas livres em cada região de interesse no vídeo.
 
 A imagem \ref{fig:fluxograma} contém um fluxograma que mostra as etapas do processamento de cada quadro do vídeo adquirido. No decorrer deste capítulo cada um desses passo será discutido com mais detalhes.
 
@@ -14,7 +14,7 @@ A imagem \ref{fig:fluxograma} contém um fluxograma que mostra as etapas do proc
 	\centering
 	\includegraphics[width=1\textwidth]{fluxograma}
 	\label{fig:fluxograma}
-	\caption{Um fluxograma com o funcionamento geral do programa}
+	\caption{Um fluxograma com o funcionamento geral do \textit{DVE}}
 	\centering
 \end{figure}
 
@@ -22,7 +22,7 @@ A imagem \ref{fig:fluxograma} contém um fluxograma que mostra as etapas do proc
 
 \section{Aquisição}\label{sec:aquisicao}
 
-Uma câmera montada em um poste de luz ou outro ponto similar captura as imagens utilizadas pelo programa. A câmera é montada de forma que o seu campo de visão contenha o máximo de vagas possível, porém que ainda seja possível visualizar o asfalto das vagas desocupadas e ocorra o mínimo de oclusão de veículos. A figura \ref{fig:aquisicao} mostra um quadro de uma aquisição em ângulo ideal.
+Uma câmera montada em um poste de luz ou outro ponto similar captura as imagens utilizadas pelo \textit{DVE}. A câmera é montada de forma que o seu campo de visão contenha o máximo de vagas possível, porém que ainda seja possível visualizar o asfalto das vagas desocupadas e ocorra o mínimo de oclusão de veículos. A figura \ref{fig:aquisicao} mostra um quadro de uma aquisição em ângulo ideal.
 
 \begin{figure}[!ht]
 	\centering
@@ -36,7 +36,7 @@ Neste trabalho, a preocupação foi implementar um programa que analisa as image
 
 \section{Regiões de Interesse}\label{sec:ROIs}
 
-No momento da instalação do programa, é necessário definir um número qualquer de regiões de interesse(\textit{Regions of interest} ou ROIs). Essas regiões determinam a área da imagem onde existem vagas. Além de determinar as regiões, deve-se informar ao programa o número de vagas existente em cada região de interesse.
+No momento da instalação do \textit{DVE}, é necessário definir um número qualquer de regiões de interesse(\textit{Regions of interest} ou ROIs). Essas regiões determinam a área da imagem onde existem vagas. Além de determinar as regiões, deve-se informar ao programa o número de vagas existente em cada região de interesse.
 
 As ROIs devem ser retangulares e determinadas de forma a não haver interseção entre elas, como exemplificado na figura \ref{fig:ROIs} que mostra as regiões determinadas para o quadro da figura \ref{fig:aquisicao}.
 
@@ -48,7 +48,7 @@ As ROIs devem ser retangulares e determinadas de forma a não haver interseção
 	\centering
 \end{figure}
 
-Depois de determinadas as regiões de interesse, cada uma delas é dividida em um número igual de seções verticais como ilustrado na figura \ref{fig:secoesVerticais}. Como as vagas não são determinadas individualmente no momento da instalação do programa, é necessário que seja feita alguma divisão das ROIs. Cada uma destas seções verticais é classificada separadamente em uma etapa futura do processamento. O resultado da classificação de cada seção de uma ROI determina um vetor $v$ de $n$ elementos, onde $n$ é o número de seções em que a região foi dividida e cada elemento indica a ocupação de uma seção, sendo o valor $1$ correspondente a uma seção ocupada e o valor $2$ correspondente a uma seção livre. Através da análise deste vetor é que o programa determina o número de vagas livres em cada região. Munido do número de vagas que cada região contém e um valor aproximado do número de seções que um carro ocupa, o programa estima quantas vagas estão ocupadas, e encontra o número de vagas livres através de simples subtração e a posição aproximada destas vagas através da posição das seções livres no vetor.
+Depois de determinadas as regiões de interesse, cada uma delas é dividida em um número igual de seções verticais como ilustrado na figura \ref{fig:secoesVerticais}. Como as vagas não são determinadas individualmente no momento da instalação do \textit{DVE}, é necessário que seja feita alguma divisão das ROIs. Cada uma destas seções verticais é classificada separadamente em uma etapa futura do processamento. O resultado da classificação de cada seção de uma ROI determina um vetor $v$ de $n$ elementos, onde $n$ é o número de seções em que a região foi dividida e cada elemento indica a ocupação de uma seção, sendo o valor $1$ correspondente a uma seção ocupada e o valor $2$ correspondente a uma seção livre. Através da análise deste vetor é que o \textit{DVE} determina o número de vagas livres em cada região. Munido do número de vagas que cada região contém e um valor aproximado do número de seções que um carro ocupa, o programa estima quantas vagas estão ocupadas, e encontra o número de vagas livres através de simples subtração e a posição aproximada destas vagas através da posição das seções livres no vetor.
 
 \begin{figure}
 	\centering
@@ -63,7 +63,7 @@ Uma vez que as regiões de interesse foram definidas e divididas em seções, a 
 
 \section{Classificação das seções} \label{sec:classificacao}
 
-O primeiro passo na execução do programa depois da calibração é a classificação de cada uma das sessões verticais criadas na imagem. Essa classificação é feita assim que a execução começa, no primeiro quadro do vídeo e é repetida a cada segundo de execução do programa. Além disso, quando se detecta movimento em uma das ROIs as sessões interceptadas pelo movimento detectada são classificadas. O processo de detecção de movimento e determinação das sessões a serem classificadas excepcionalmente é detelhado na seção \ref{sec:sub:regioesmovimento}.
+O primeiro passo na execução do \textit{DVE} depois da calibração é a classificação de cada uma das sessões verticais criadas na imagem. Essa classificação é feita assim que a execução começa, no primeiro quadro do vídeo e é repetida a cada segundo de execução do programa. Além disso, quando se detecta movimento em uma das ROIs as sessões interceptadas pelo movimento detectada são classificadas. O processo de detecção de movimento e determinação das sessões a serem classificadas excepcionalmente é detelhado na seção \ref{sec:sub:regioesmovimento}.
 
 Para que seja feita a extração das caracterísiticas e a classificação de uma seção, uma imagem $I_s$ é extraída do quadro de vídeo original capturado.Essa imagem corresponde à fração do quadro contida dentro dos limites da seção a ser analisada. A extração de $I_s$ consiste simplesmente em copiar os valores da matriz que representa o quadro que estavam dentro das bordas da seção em uma nova matriz de dimensões iguais às da seção. A figura \ref{fig:imgSecao} mostra um exemplo de uma $I_s$. Cada uma dessas imagens é submetida separadamente ao processo de classificação.
 
@@ -220,7 +220,7 @@ A influência de cada vizinha nos valores de $y_s$ da seção sendo classificada
 \label{eq:novoRCv}
 \end{equation}
 
-O propósito desta etapa é evitar possíveis erros de classificação que podem ocorrer por pequenas anomalias na imagem da seção que possam confundir a rede e principalmente ajudar a classificar seções como as da figura \ref{fig:secaoMeio} que possuem partes que representam veículos e outras partes vazias. Como um benefício adicional, esse ajuste gaussiano diminui a chance de o programa não detectar que uma vaga foi ocupada por que a seção central ocupada pelo carro foi classificada incorretamente, como ilustrado na figura \ref{fig:erromeio}, uma vez que é comum que uma das seções adjacentes seja classificada como ocupada e colabore com a correção da classificação da seção central.
+O propósito desta etapa é evitar possíveis erros de classificação que podem ocorrer por pequenas anomalias na imagem da seção que possam confundir a rede e principalmente ajudar a classificar seções como as da figura \ref{fig:secaoMeio} que possuem partes que representam veículos e outras partes vazias. Como um benefício adicional, esse ajuste gaussiano diminui a chance de o \textit{DVE} não detectar que uma vaga foi ocupada por que a seção central ocupada pelo carro foi classificada incorretamente, como ilustrado na figura \ref{fig:erromeio}, uma vez que é comum que uma das seções adjacentes seja classificada como ocupada e colabore com a correção da classificação da seção central.
 
 
 \begin{figure}
@@ -241,7 +241,7 @@ O propósito desta etapa é evitar possíveis erros de classificação que podem
 
 \subsection{Sistema de votação}\ref{sec:votacao}
 
-Além do sistema de classificação momentânea, o programa integra um componente que determina a classe majoritária de uma seção durante um intervalo de tempo. Para o programa uma seção pode estar em um de dois estados: estabilizada ou não-estabilizada. No começo da execução do programa, nenhuma seção está estabilizada. 
+Além do sistema de classificação momentânea, o programa integra um componente que determina a classe majoritária de uma seção durante um intervalo de tempo. Para o \textit{DVE} uma seção pode estar em um de dois estados: estabilizada ou não-estabilizada. No começo da execução do programa, nenhuma seção está estabilizada. 
 
 \begin{figure}
 	\centering
@@ -252,7 +252,7 @@ Além do sistema de classificação momentânea, o programa integra um component
 \end{figure}
 
 
-Depois de determinar o vetor $y_s$, o sistema determina um voto definido pela equação \ref{eq:voto}.  Se a seção não estiver estabilizada, sua classe se torna a classe representada pelo voto. Se uma seção receber $3$ votos iguais consecutivamente, ela se torna estabilizada. Nesse estado, a sua classe não muda mais, mas a seção continua a receber votos. Uma seção deixa de estar estabilizada e volta a poder ser reavaliada se receber um número suficientes de votos consecutivos da classe diferente da sua classe atual ou, mais comumente, quando o programa detecta que houve movimento dentro da área de interesse que intercepta a seção. Esse processo está ilustrado no fluxograma da figura \ref{fig:fluxogramaVotos}.
+Depois de determinar o vetor $y_s$, o sistema determina um voto definido pela equação \ref{eq:voto}.  Se a seção não estiver estabilizada, sua classe se torna a classe representada pelo voto. Se uma seção receber $3$ votos iguais consecutivamente, ela se torna estabilizada. Nesse estado, a sua classe não muda mais, mas a seção continua a receber votos. Uma seção deixa de estar estabilizada e volta a poder ser reavaliada se receber um número suficientes de votos consecutivos da classe diferente da sua classe atual ou, mais comumente, quando o \textit{DVE} detecta que houve movimento dentro da área de interesse que intercepta a seção. Esse processo está ilustrado no fluxograma da figura \ref{fig:fluxogramaVotos}.
 
 Essa etapa do processamento tem o propósito de evitar que flutuações nas imagens das seções causem mudanças frequentes na sua classificação e fazer com que na maioria dos casos a classe de uma seção só mude quando houver movimento detectado na região que ela ocupa, trazendo estabilidade para os resultados do programa.
 
@@ -278,11 +278,11 @@ Ao final do processo de classificação, o vetor $v$ de seções é representado
 
 \section{Extração do movimento}
 
-Outra ferramenta utilizada pelo programa para a análise do vídeo capturado é a extração do movimento que ocorre na imagem. A cada quadro o programa detecta o movimento ocorrido desde o quadro anterior e processa essa informação para determinar se houve movimento de veículos em alguma das regiões de interesse delimitadas. Mais especificamente, o programa está interessado nos momentos quando um objeto que antes se movimentava termina seu movimento em uma região de interesse ou quando um objeto que iniciou seu movimento dentro de uma ROI finaliza o movimento. Essas situações são entendidas como um veículo estacionando em uma vaga e um veículo sainda de uma vaga respectivamente.
+Outra ferramenta utilizada pelo \textit{DVE} para a análise do vídeo capturado é a extração do movimento que ocorre na imagem. A cada quadro o programa detecta o movimento ocorrido desde o quadro anterior e processa essa informação para determinar se houve movimento de veículos em alguma das regiões de interesse delimitadas. Mais especificamente, o programa está interessado nos momentos quando um objeto que antes se movimentava termina seu movimento em uma região de interesse ou quando um objeto que iniciou seu movimento dentro de uma ROI finaliza o movimento. Essas situações são entendidas como um veículo estacionando em uma vaga e um veículo sainda de uma vaga respectivamente.
 
 \subsection{Magnitudes do movimento}
 
-O movimento é detectado através do método de cálculo do fluxo óptico utilizando o método de Lucas-Kanade\cite{faria1992fluxo}\cite{mota2011tensor} e \cite{bruhn2005lucas} para resolver a equação \ref{eq:fluxo2}. O resultado deste processo é uma matriz $M$ de dimensões iguais as do quadro onde cada elemento corresponde à magnitude do vetor velocidade do seu movimento. A direção e o sentido do vetor velocidade não são de interesse do programa, uma vez só os pontos de início e fim do movimento são relevantes para o processamento. A matriz $M$ então passa por um processo de limiarização, onde cada elemento de magnitude menor do que um limiar $t$ tem seu valor redefinido como $0$. O resultado deste processo é uma matriz que mostra as posições do quadro aonde ocorreu movimento significativo. 
+O movimento é detectado através do método de cálculo do fluxo óptico utilizando o método de Lucas-Kanade\cite{faria1992fluxo}\cite{mota2011tensor} e \cite{bruhn2005lucas} para resolver a equação \ref{eq:fluxo2}. O resultado deste processo é uma matriz $M$ de dimensões iguais as do quadro onde cada elemento corresponde à magnitude do vetor velocidade do seu movimento. A direção e o sentido do vetor velocidade não são de interesse do \textit{DVE}, uma vez só os pontos de início e fim do movimento são relevantes para o processamento. A matriz $M$ então passa por um processo de limiarização, onde cada elemento de magnitude menor do que um limiar $t$ tem seu valor redefinido como $0$. O resultado deste processo é uma matriz que mostra as posições do quadro aonde ocorreu movimento significativo. 
 
 
 
@@ -327,7 +327,7 @@ Y_c = \frac{\sum_i y_iv_i}{\sum_iv_i}
 \label{eq:centros}
 \end{equation}
 
-Para se encontrar esses centros, o programa começa separando um vetor $B$ que contém as coordenadas dos pontos diferentes de $0$ de $M$ e os valores destes pontos. A posição do centro de cada objeto em movimento é um vetor de dois elementos onde cada elemento é a média das coordenadas correspondentes dos pontos que compõe o objeto ponderadas pelos valores dos pontos. A equação \ref{eq:centros} representa esse cálculo, onde $C$ é a posição do centro e $x_i$,$y_i$ e $v_i$ as coordenadas e valores dos pontos que compõe o objeto. A construção dos conjuntos de pontos que representam cada objeto em movimento é feita seguindo os passos abaixo.
+Para se encontrar esses centros, o \textit{DVE} começa separando um vetor $B$ que contém as coordenadas dos pontos diferentes de $0$ de $M$ e os valores destes pontos. A posição do centro de cada objeto em movimento é um vetor de dois elementos onde cada elemento é a média das coordenadas correspondentes dos pontos que compõe o objeto ponderadas pelos valores dos pontos. A equação \ref{eq:centros} representa esse cálculo, onde $C$ é a posição do centro e $x_i$,$y_i$ e $v_i$ as coordenadas e valores dos pontos que compõe o objeto. A construção dos conjuntos de pontos que representam cada objeto em movimento é feita seguindo os passos abaixo.
 
 \begin{enumerate}
 \item Para cada ponto de $B$ faça: 
@@ -349,7 +349,7 @@ D = \bar{\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}}
 \label{eq:distancia}
 \end{equation}
 
-Munido dos limites da área ocupada por cada objeto em movimento na cena, o programa constrói retângulos que representam uma estimativa da posição desses objetos no quadro. Se $x_{min}$, $x_{max}$, $y_{min}$ e $y_{max}$ são, respectivamente, os valores das menores e maiores coordenadas $x$ e $y$ de um objeto, o programa um retângulo na coordenada $(x_{min},y_(min)$ de largura $x_{max}-x_{min}$ e altura $y_{max}-y_{min}$. A figura \ref{fig:retanguloMovimento} mostra um exemplo de uma destes retângulos, representado em azul.
+Munido dos limites da área ocupada por cada objeto em movimento na cena, o programa constrói retângulos que representam uma estimativa da posição desses objetos no quadro. Se $x_{min}$, $x_{max}$, $y_{min}$ e $y_{max}$ são, respectivamente, os valores das menores e maiores coordenadas $x$ e $y$ de um objeto, um retângulo na coordenada $(x_{min},y_(min)$ de largura $x_{max}-x_{min}$ e altura $y_{max}-y_{min}$ é criado. A figura \ref{fig:retanguloMovimento} mostra um exemplo de uma destes retângulos, representado em azul.
 
 \begin{figure}
 \centering
