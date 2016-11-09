@@ -96,7 +96,7 @@ Uma vez construída a GLCM referente a sessão, quatro medidas estatísticas sã
 Os outros dois \textit{features} extraídos de cada sessão vêm dos canais $Cb$ e $Cr$ de $I_s$. A média de valores da matriz de cada canal é calculada através da equação \ref{eq:media}. Onde $N$ é o número total de \textit{pixels} de $I_s$ e $v_i$ é o valor do \textit{i-ésimo pixel}. Esses valores então formam o vetor $c = (M_{Cb}, M_{Cr})^T$.
 
 \begin{equation}
-	M = \frac{\sum_i=1^N v_i}{N}
+	M = \frac{\sum_{i=1}^N v_i}{N}
 \label{eq:media}
 \end{equation}
 
@@ -206,17 +206,17 @@ Depois de extraído o vetor $y_s$ de uma seção vertical, o programa observa as
 A influência de cada vizinha nos valores de $y_s$ da seção sendo classificada é definida pela sua distância no vetor de seções e ilustrada aproximadamente pela figura \ref{fig:influencia}. Para compreender de forma mais clara, considere a posição de cada seção como o seu índice no vetor $v$ de todas as seções. Se estamos avaliando a seção de índice $12$, as seções de índice $11$ e $10$ são as duas vizinhas a esquerda avaliadas e as seções de índice $13$ e $14$ são as suas vizinhas a direita avaliadas. A quantidade da influência de cada vizinha é definida pela equação \ref{eq:gaussiana}, onde $\sigma = 0,5$, $i_s$ é o indíce da seção sendo classificada e $i_v$ é o índice da vizinha. Note que essa equação representa o valor de uma curva gaussiana calculada no ponto $i_s$ com média igual a $i_v$ e desvio padrão igual a $\sigma$. Se chamarmos o valor de $y_s$ referente a classe da vizinha de $c_v$ e o outro valor de $\overline{c_v}$, cada vizinha modifica $y_s$ de acordo com as equações \ref{eq:novoCv} e \ref{eq:novoRCv}.
 
 \begin{equation}
-	f = \frac{1}{\sqrt{2\pi\sigma^2}} \exp^{\frac{-(i_s-i_v)^2}{2\sigma^2}} 
+	f(s,v) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp^{\frac{-(i_s-i_v)^2}{2\sigma^2}} 
 \label{eq:gaussiana}
 \end{equation}
 
 \begin{equation}
-	c_v  = c_v(1+f)
+	c_v  = c_v(1+f(s,v))
 \label{eq:novoCv}
 \end{equation}
 
 \begin{equation}
-	\overline{c_v}  = \overline{c_v}(1-f)
+	\overline{c_v}  = \overline{c_v}(1-f(s,v))
 \label{eq:novoRCv}
 \end{equation}
 
@@ -239,7 +239,7 @@ O propósito desta etapa é evitar possíveis erros de classificação que podem
 	\centering
 \end{figure}
 
-\subsection{Sistema de votação}\ref{sec:votacao}
+\subsection{Sistema de votação}\label{sec:votacao}
 
 Além do sistema de classificação momentânea, o programa integra um componente que determina a classe majoritária de uma seção durante um intervalo de tempo. Para o \textit{DVE} uma seção pode estar em um de dois estados: estabilizada ou não-estabilizada. No começo da execução do programa, nenhuma seção está estabilizada. 
 
@@ -259,7 +259,7 @@ Essa etapa do processamento tem o propósito de evitar que flutuações nas imag
 \begin{equation}
 voto= 
 \begin{cases}
-    1,& \text{se} y_s(1) >= 0,6\\
+    1,& \text{se } y_s(1) >= 0,6\\
     2,& \text{caso contrário}
 \end{cases}
 \label{eq:voto}
