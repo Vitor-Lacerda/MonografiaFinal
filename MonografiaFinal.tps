@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=capitulos\capitulo1.tex
 
 [Frame0_View0,0]
-TopLine=0
-Cursor=3006
+TopLine=2
+Cursor=3012
 
 [Frame1]
 Flags=0
@@ -35,8 +35,8 @@ Class=LaTeXView
 Document=capitulos\capitulo2.tex
 
 [Frame1_View0,0]
-TopLine=184
-Cursor=1623
+TopLine=191
+Cursor=13980
 
 [Frame2]
 Flags=0
@@ -53,7 +53,7 @@ Class=BibTeXView
 Document=bibliografia.bib
 
 [Frame2_View0,0]
-TopLine=186
+TopLine=188
 Cursor=6314
 
 [Frame3]
@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=capitulos\capituloRedes.tex
 
 [Frame4_View0,0]
-TopLine=1
-Cursor=453
+TopLine=16
+Cursor=2738
 
 [Frame5]
 Flags=0
@@ -125,7 +125,7 @@ Class=LaTeXView
 Document=capitulos\capitulo4.tex
 
 [Frame6_View0,0]
-TopLine=495
+TopLine=636
 Cursor=29739
 
 [Frame7]
@@ -144,7 +144,7 @@ Document=capitulos\capitulo5.tex
 
 [Frame7_View0,0]
 TopLine=0
-Cursor=3072
+Cursor=2905
 
 [Frame8]
 Flags=0
@@ -162,7 +162,7 @@ Document=..\Seminário\Seminario\Seminario.tex
 
 [Frame8_View0,0]
 TopLine=0
-Cursor=28592
+Cursor=449
 
 [Frame9]
 Flags=0
@@ -184,7 +184,7 @@ Cursor=2799
 
 [SessionInfo]
 FrameCount=10
-ActiveFrame=8
+ActiveFrame=7
 
 [Bookmarks]
 capitulos\capitulo4.tex=312 
