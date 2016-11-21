@@ -13,8 +13,8 @@ A imagem \ref{fig:fluxograma} contém um fluxograma que mostra as etapas do proc
 \begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{fluxograma}
-	\label{fig:fluxograma}
 	\caption{Um fluxograma com o funcionamento geral do \textit{DVE}}
+	\label{fig:fluxograma}
 	\centering
 \end{figure}
 
@@ -27,8 +27,8 @@ Uma câmera montada em um poste de luz ou outro ponto similar captura as imagens
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=8cm]{Vazio3}
-	\label{fig:aquisicao}
 	\caption{Um quadro de um vídeo adquirido por uma câmera do sistema}
+	\label{fig:aquisicao}
 	\centering
 \end{figure}
 
@@ -43,8 +43,8 @@ As ROIs devem ser retangulares e determinadas de forma a não haver interseção
 \begin{figure}
 	\centering
 	\includegraphics[width=8cm]{ROIs}
-	\label{fig:ROIs}
 	\caption{O mesmo quadro da figura \ref{fig:aquisicao}, depois de definidas as regiões de interesse, marcadas de verde.}
+	\label{fig:ROIs}
 	\centering
 \end{figure}
 
@@ -53,8 +53,8 @@ Depois de determinadas as regiões de interesse, cada uma delas é dividida em u
 \begin{figure}
 	\centering
 	\includegraphics[width=8cm]{Secoes}
-	\label{fig:secoesVerticais}
 	\caption{As ROIs determinadas na figura \ref{fig:ROIs} separadas em trinta seções verticais que ainda não foram classificadas. Nesta etapa os vetores $v$ de cada região é composto de trinta valores $2$.}
+	\label{fig:secoesVerticais}
 	\centering
 \end{figure}
 
@@ -63,15 +63,15 @@ Uma vez que as regiões de interesse foram definidas e divididas em seções, a 
 
 \section{Classificação das seções} \label{sec:classificacao}
 
-O primeiro passo na execução do \textit{DVE} depois da calibração é a classificação de cada uma das sessões verticais criadas na imagem. Essa classificação é feita assim que a execução começa, no primeiro quadro do vídeo e é repetida a cada segundo de execução do programa. Além disso, quando se detecta movimento em uma das ROIs as sessões interceptadas pelo movimento detectada são classificadas. O processo de detecção de movimento e determinação das sessões a serem classificadas excepcionalmente é detelhado na seção \ref{sec:sub:regioesmovimento}.
+O primeiro passo na execução do \textit{DVE} depois da calibração é a classificação de cada uma das sessões verticais criadas na imagem. Essa classificação é feita assim que a execução começa, no primeiro quadro do vídeo e é repetida a cada segundo de execução do programa. Além disso, quando se detecta movimento em uma das ROIs as sessões interceptadas pelo movimento detectada são classificadas. O processo de detecção de movimento e determinação das sessões a serem classificadas excepcionalmente é detalhado na seção \ref{sec:sub:regioesmovimento}.
 
 Para que seja feita a extração das caracterísiticas e a classificação de uma seção, uma imagem $I_s$ é extraída do quadro de vídeo original capturado.Essa imagem corresponde à fração do quadro contida dentro dos limites da seção a ser analisada. A extração de $I_s$ consiste simplesmente em copiar os valores da matriz que representa o quadro que estavam dentro das bordas da seção em uma nova matriz de dimensões iguais às da seção. A figura \ref{fig:imgSecao} mostra um exemplo de uma $I_s$. Cada uma dessas imagens é submetida separadamente ao processo de classificação.
 
 \begin{figure}
 	\centering
 	\includegraphics[height=5cm]{imgSecao}
-	\label{fig:imgSecao}
 	\caption{Uma imagem correspondente a uma das seções verticais definidas.}
+	\label{fig:imgSecao}
 	\centering
 \end{figure}
 
@@ -80,9 +80,9 @@ Para que seja feita a extração das caracterísiticas e a classificação de um
 
 O processo de classificação de uma seção começa com a extração das características que definem o padrão de cada classe e a criação do vetor de entrada da rede neural artifical. Dois conjuntos de características principais são extraídos: as quatro medidas extraídas da GLCM da imagem apresentadas na seção \ref{sec:GLCM} e dois valores que descrevem a crominância azul e vermelha da seção.
 
-Para a extração da GLCM é preciso primeiro obter uma imagem de níveis de cinza que represente $I_s$. Para isso, a imagem é convertida para o espaço $YCbCr$ como descrito na seção \ref{sec:sub:ycbcr}. A imagem referente ao canal $Y$ resultante é uma imagem de intensidade e por isso é utilizada para o cálculo da GLCM. Como mencionado na seção \ref{sec:GLCM}, a construção é feita com base na vizinhança a direita de cada \textit{pixel} da imagem. Cada valor dentre os 255 possíveis é dividido dentro de 8 níveis distintos, e sempre que um valor presente em nível $N$ aparece a direita de um valor de um nível $M$, o elemento $(N,M)$ da GLCM é incrementado. A figura \ref{fig:GLCM} mostra esse processo.
+Para a extração da GLCM é preciso primeiro obter uma imagem de níveis de cinza que represente $I_s$. Para isso, a imagem é convertida para o espaço $YCbCr$ como descrito na seção \ref{sect:sub:ycbcr}. A imagem referente ao canal $Y$ resultante é uma imagem de intensidade e por isso é utilizada para o cálculo da GLCM. Como mencionado na seção \ref{sec:GLCM}, a construção é feita com base na vizinhança a direita de cada \textit{pixel} da imagem. Cada valor dentre os 255 possíveis é dividido dentro de 8 níveis distintos, e sempre que um valor presente em nível $N$ aparece a direita de um valor de um nível $M$, o elemento $(N,M)$ da GLCM é incrementado. A figura \ref{fig:GLCM} mostra esse processo.
 
-Uma vez construída a GLCM referente a sessão, quatro medidas estatísticas são extraídas: contraste, correlação, energia e homogeneidade. Essas medidas são calculadas pelas equações \ref{eq:Contraste}, \ref{eq:Correlacao},\ref{eq:Energia} e \ref{eq:Homo} respectivamente. Esses valores formam um vetor $g = (contraste, correlação, energia, homogeneidade)^T$ que é parte da entrada final da rede neural artificial. A vetor na equação \ref{eq:exemploglcm} representa o vetor $g$ da figura \ref{fig:imgSecao}.
+Uma vez construída a GLCM referente a sessão, quatro medidas estatísticas são extraídas: contraste, correlação, energia e homogeneidade. Essas medidas são calculadas pelas equações \ref{eq:Contraste}, \ref{eq:Correlacao},\ref{eq:Energia} e \ref{eq:Homo} respectivamente. Esses valores formam um vetor $g = (contraste, correlação, energia, homogeneidade)^T$ que é parte da entrada final da rede neural artificial. O vetor na equação \ref{eq:exemploGLCM} representa o vetor $g$ da figura \ref{fig:imgSecao}.
 
 \begin{equation}
 \centering
@@ -119,48 +119,48 @@ Esses \textit{features} foram escolhidos por terem se mostrado suficientemente d
 \begin{figure}
 	\centering
 	\includegraphics[width=11cm]{Contraste}
-	\label{fig:histContraste}
 	\caption{O histograma referente aos valores de contraste no conjunto analisado. Apesar de haver bastante sobreposição dos valores ainda é possível ver que há pouco ou nenhuma ocorrência de vagas após um certo valor.}
+		\label{fig:histContraste}
 	\centering
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=11cm]{Correlacoes}
-	\label{fig:histCorrelacao}
 	\caption{O histograma referente aos valores de correlacao no conjunto analisado. Aqui é possível ver um limiar inferior para a classe dos carros. Valores abaixo deste limiar provavelmente são vagas livres.}
+		\label{fig:histCorrelacao}
 	\centering
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=11cm]{Energia}
-	\label{fig:histEnergia}
 	\caption{O histograma referente aos valores de energia no conjunto analisado. Há um ponto de divisão entre as duas classes, com pouca sobreposição de valores entre as classes.}
+		\label{fig:histEnergia}
 	\centering
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=11cm]{Homogeneidade}
-	\label{fig:histHomo}
 	\caption{O histograma referente aos valores de homogeneidade no conjunto analisado. Esse gráfico mostra mais sobreposição do que os anteriores, mas ainda contém bastante informação sobre a classe das vagas. }
+	\label{fig:histHomo}
 	\centering
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=11cm]{CrominanciaAzul}
-	\label{fig:histCb}
 	\caption{O histograma referente aos valores médios de crominância azul no conjunto analisado. Apesar de haver alta variedade nos valores encontrados nas imagens de carros, as imagens de faixa possuem valores médios em uma faixa estreita. }
+		\label{fig:histCb}
 	\centering
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=11cm]{CrominanciaVermelha}
-	\label{fig:histCr}
 	\caption{O histograma referente aos valores médios de crominância vermelha no conjunto analisado, mostrando comportamento semelhante ao histograma de de valores médios de crominância azul. }
+		\label{fig:histCr}
 	\centering
 \end{figure}
 
@@ -197,8 +197,8 @@ Depois de extraído o vetor $y_s$ de uma seção vertical, o programa observa as
 \begin{figure}
 \centering
 \includegraphics[width = 8cm]{influencia}
-\label{fig:influencia}
 \caption{Uma ilustração simplificada da influência que uma seção exerce sobre a classificação de suas vizinhas.}
+\label{fig:influencia}
 \centering
 \end{figure}
 
@@ -226,16 +226,16 @@ O propósito desta etapa é evitar possíveis erros de classificação que podem
 \begin{figure}
 	\centering
 	\includegraphics[height=5cm]{secaoMeio}
-	\label{fig:secaoMeio}
 	\caption{Uma imagem correspondente a uma seção dividida entre carro e vaga vazia, cuja classificação se beneficia do ajuste pelas vizinhas.}
+	\label{fig:secaoMeio}
 	\centering
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=8cm]{erroMeio}
-	\label{fig:erromeio}
 	\caption{Um tipo de erro que o ajuste gaussiano ajuda a corrigir. As seções vermelhas são ocupadas e as verdes são livres.}
+	\label{fig:erromeio}
 	\centering
 \end{figure}
 
@@ -246,8 +246,8 @@ Além do sistema de classificação momentânea, o programa integra um component
 \begin{figure}
 	\centering
 	\includegraphics[width=.8\textwidth]{fluxogramaVotos}
-	\label{fig:fluxogramaVotos}
 	\caption{O fluxograma de funcionamento do sistema de votação.}
+	\label{fig:fluxogramaVotos}
 	\centering
 \end{figure}
 

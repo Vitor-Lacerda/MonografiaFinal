@@ -2,7 +2,7 @@
 
 
 
-Esse capítulo tem como objetivo apresentar conceitos que facilitarão o entendimento do conteúdo do capítulo \ref{cap:solucao}, detalhando técnicas e conceitos utilizados na execução do trabalho através de exemplos e imagens. Serão apresentados conceitos relacionados ao processamento de imagens estáticas, seguidos de uma discussão breve sobre técnias aplicadas em vídeos. Por fim serão detalhados as redes neurais e o conceito de classificação de padrões.
+Esse capítulo tem como objetivo apresentar conceitos que facilitarão o entendimento do conteúdo do capítulo \ref{cap:solucao}, detalhando técnicas e conceitos utilizados na execução do trabalho através de exemplos e imagens. Serão apresentados conceitos relacionados ao processamento de imagens estáticas, seguidos de uma discussão breve sobre técnias aplicadas em vídeos. O conteúdo deste capítulo continua no cápitulo \ref{cap:redes} que apresenta conceitos de redes neurais e classificação de padrões. 
 
 \section{Processamento de Imagens}\label{sec:processamento}
 
@@ -19,15 +19,18 @@ Uma imagem então, pode ser interpretada por um programa de computador como uma 
   \includegraphics[width=.5\linewidth]{MatrizNivelCinza}
   \caption{}
   \label{exemplo:sfig1}
+  \centering
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.5\linewidth]{ExemploNivelCinza}
   \caption{}
   \label{exemplo:sfig2}
+  \centering
 \end{subfigure}
 \caption{(a) Uma matriz com níveis de cinza e (b) a imagem correspondente}
 \label{fig:NivelCinza}
+\centering
 \end{figure}
 
 
@@ -40,7 +43,7 @@ Para que um sistema de processamento de imagens possa interpretar e processar co
 
 RGB é um acrônimo para \textit{Red, Green, Blue}, vermelho, verde e azul em inglês. Pesquisas mostram que um grande gama de cores pode ser formado através de combinações aditivas das cores vermelho, verde e azul. Essas cores são consideradas então cores primárias aditivas.\cite{IBGE2000introducao}. Nesse modelo, a cor de um \textit{pixel} de uma imagem é representada através de três coeficientes que definem a influência de cada cor primária na combinação. Uma imagem no modelo RGB é então representada por três matrizes de níveis de cinza de dimensões iguais, chamadas canais, onde cada valor representado na matriz, representa o valor do coeficiente da cor correspondente na imagem final. Isto é, a imagem pode ser representada por uma matriz $MxNx3$ onde a cor final $C_{i,j}$ de cada \textit{pixel} da imagem é definida pela equação \ref{eq:corRGB}. A imagem \ref{fig:Espacos:sub:RGB} mostra os canais de uma imagem RGB separadamente.
 
-Esse espaço de cor é o mais comumente encontrado no cotidiano, uma vez que é semelhante visão humana e portanto é utilizado pelos dispositivos multimídia mais comuns.
+Esse espaço de cor é o mais comumente usado para representar imagens que vemos no cotidiano, uma vez que é semelhante a visão humana e portanto é utilizado pelos dispositivos multimídia mais comuns.
 	
 	\begin{equation}
 			C_{i,j} = p_{i,j,1} . R + p_{i,j,2} . G + p_{i,j,3} . B ,  (1<i<M, 1<j<N)
@@ -49,7 +52,7 @@ Esse espaço de cor é o mais comumente encontrado no cotidiano, uma vez que é 
 
 \subsection{Espaço YCbCr}\label{sect:sub:ycbcr}
 
-Assim como o espaço de cor RGB, o espaço YCbCr também representa uma imagem através de três matrizes, porém, seus canais contém informações diferentes do modelo RGB. Esse modelo, é muito utilizado para o armazenamento de vídeos, uma vez que o modelo tira vantagem de alguns aspectos da visão humana para poder armazenar menos dados, sem perda significativa de informação visual. Por exemplo, humanos são mais sensíveis à detalhes e variações em níveis de cinza do que detalhes em imagens coloridas. Além disso, o olho humano é mais sensível ao verde do que qualquer outra cor\cite{colorSpacesDigitalVideo}. Com esse conhecimento, o espaço YCbCr representa as cores de uma imagem através de sua luminosidade(Y) e os valores de crominância azul(Cb) e crominância vermelha(Cr). Cb e Cr são sinais de diferença de cor e são definidos pela subtração do valor de luminosidade do canal azul e vermelho da imagem, respectivamente. A luminosidade é definida pela equação \ref{eq:Y}\cite{LivroVideoDigital} que reflete a sensibilidade maior a cor verde da visão humana.
+Assim como o espaço de cor RGB, o espaço YCbCr também representa uma imagem através de três matrizes, porém, seus canais contém informações diferentes do modelo RGB. Esse modelo é muito utilizado para o armazenamento de vídeos, uma vez que o modelo tira vantagem de alguns aspectos da visão humana para poder armazenar menos dados, sem perda significativa de informação visual. Por exemplo, humanos são mais sensíveis à detalhes e variações em níveis de cinza do que detalhes em imagens coloridas. Além disso, o olho humano é mais sensível ao verde do que qualquer outra cor\cite{colorSpacesDigitalVideo}. Com esse conhecimento, o espaço YCbCr representa as cores de uma imagem através de sua luminosidade(Y) e os valores de crominância azul(Cb) e crominância vermelha(Cr). Cb e Cr são sinais de diferença de cor e são definidos pela subtração do valor de luminosidade do canal azul e vermelho da imagem, respectivamente. A luminosidade é definida pela equação \ref{eq:Y}\cite{LivroVideoDigital} que reflete a sensibilidade maior a cor verde da visão humana.
 
 Na figura \ref{fig:Espacos:sub:YCbCr} estão exemplificados os canais de uma imagem no espaço YCbCr.
 
@@ -66,35 +69,39 @@ Na figura \ref{fig:Espacos:sub:YCbCr} estão exemplificados os canais de uma ima
   \includegraphics[width=.8\linewidth]{exemploRGBFinal}
 	\caption{}
 	\label{fig:Espacos:sub:RGB}
+	\centering
 \end{subfigure}\
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.8\linewidth]{exemploYCbCrFinal}
 	\caption{}
 	\label{fig:Espacos:sub:YCbCr}
+	\centering
 \end{subfigure}
 \caption{(a) Uma imagem e cada um de seus canais RGB ordenados da esquerda para a direita e (b) os canais YCbCr da imagem ordenados da esquerda para a direita.}
 \label{fig:Espacos}
+\centering
 \end{figure}
 
 \subsection{Descritores de textura}\label{sec:descritores}
 
-Descritores de textura são algoritmos que procuram fazer o que o olho humano faz com facilidade: distinguir entre tipos diferentes de objetos apenas por algumas de suas características visuais. Estes algoritmos são utilizados quando a abordagem de processamento \textit{pixel-a-pixel} se mostra insuficiente. Eles observam e analisam características pertinentes a imagem inteira e são capazes de identificar diferenças mais sutis entre imagens diferentes. Existem diversas técnicas de descrição de textura que são utilizadas com sucesso em aplicações de processamento de imagem. Para esse trabalho, a técnica escolhida foi a conhecida como GLCM(\textit{gray-level co-ocurrence matrix}) descrita na seção \ref{sec:GLCM}, por ter execução rápida e ser invariante quanto a escala de cinza.
+Descritores de textura são algoritmos que procuram fazer o que o olho humano faz com facilidade: distinguir tipos diferentes de objetos apenas por algumas de suas características visuais. Estes algoritmos são utilizados quando a abordagem de processamento \textit{pixel-a-pixel} se mostra insuficiente. Eles observam e analisam características pertinentes a imagem inteira e são capazes de identificar diferenças mais sutis entre imagens diferentes. Existem diversas técnicas de descrição de textura que são utilizadas com sucesso em aplicações de processamento de imagem. Para esse trabalho, a técnica escolhida foi a conhecida como GLCM(\textit{gray-level co-ocurrence matrix}) descrita na seção \ref{sec:GLCM}, por ter execução rápida e ser invariante quanto a escala de cinza.
 
 \subsection{GLCM}\label{sec:GLCM}
 
 GLCM, ou matriz de co-ocorrência de nível de cinza, é uma técnica de descrição de textura que visa extrair medidas estatíticas da imagem sendo analisada. Para tanto, é criada uma matriz quadrada de tamanho $MxM$ onde M é a quantidade de níveis de cinza possíveis na imagem em questão. Essa matriz armazena a probabilidade de dois \textit{pixels} se relacionarem através de uma certa relação espacial\cite{GLCM}. 
 
-Para esse trabalho, a relação observada é a da vizinhança entre dois \textit{pixels}, sempre analisando o valor a direita de um determinado \textit{pixel} da imagem. Os 255 valores de intensidade possíveis são divididos em 8 níveis. Cada elemento $P_{i,j}$ na GLCM $G$ conta a quantidade de vezes que um \textit{pixel} com valor de intensidade no nível $j$ apareceu à direita de um \textit{pixel} com valor no nível $i$. A figura \ref{fig:GLCM} exemplifica a criação da GLCM a partir de uma imagem com 8 níveis possíveis.
+Para esse trabalho, a relação observada é a da vizinhança entre dois \textit{pixels}, sempre analisando o valor a direita de um determinado \textit{pixel} da imagem. Os 255 valores de intensidade possíveis são divididos em 8 níveis. Cada elemento $P_{i,j}$ na GLCM $G$ conta a quantidade de vezes que um \textit{pixel} com valor de intensidade  $j$ apareceu à direita de um \textit{pixel} com valor $i$. A figura \ref{fig:GLCM} exemplifica a criação da GLCM a partir de uma imagem com 8 níveis possíveis.
 
 \begin{figure}
 \includegraphics[width=8cm]{GLCM} 
 \centering
 \caption{Exemplo da elaboração da GLCM. Extraída de https://www.mathworks.com/help/images/ref/graycomatrix.html}
 \label{fig:GLCM}
+\centering
 \end{figure}
 
-Uma vez criada a matriz de co-ocorrência, diversas medidas podem ser tiradas. Para esse trabalho são extraídas 4 características definidas abaixo. Nas equações apresentadas $P_{(i,j)}$ representa o valor do elemento na posição $(i,j)$ da GLCM, $\mu_i$ e $\mu_j$ representam a média dos valores de $i$ e $j$ respectivamente e $\sigma_i$ e $\sigma_j$ os desvios padrão destes valores.
+Uma vez criada a matriz de co-ocorrência, diversas medidas podem ser extraídas. Para esse trabalho são extraídas as quatro características definidas abaixo. Nas equações apresentadas $P_{(i,j)}$ representa o valor do elemento na posição $(i,j)$ da GLCM, $\mu_i$ e $\mu_j$ representam a média dos valores de $i$ e $j$ respectivamente e $\sigma_i$ e $\sigma_j$ os desvios padrão destes valores.
 
 \begin{itemize}
 
@@ -141,15 +148,18 @@ O movimento é um dos elementos principais para a extração de informações de
   \includegraphics[width=.8\linewidth]{velocidadevetores}
 	\caption{}
 	\label{fig:fluxo:sub:vetores}
+	\centering
 \end{subfigure}\
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.8\linewidth]{velocidademagnitude}
 	\caption{}
 	\label{fig:fluxo:sub:magnitude}
+	\centering
 \end{subfigure}
 \caption{(a) Representação dos vetores de velocidade estimado pelo fluxo óptico. (b) Imagem em níveis de cinza onde a intensidade do \textit{pixel} representa a magnitude do seu vetor de velocidade.}
 \label{fig:fluxo}
+\centering
 \end{figure}
 
 Para calcular o fluxo óptico, começamos assumindo que no intervalo entre dois quadros a intensidade de cada \textit{pixel} não muda de forma significativa. Chamamos então a intensidade de cada \textit{pixel} na posição (x,y) em um determinado momento $t$ de $I(x,y,t)$ e portanto, podemos dizer que: 

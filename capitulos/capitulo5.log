@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.10)  21 NOV 2016 01:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.3)  21 NOV 2016 12:19
 entering extended mode
-**capitulo5.tex
+**./capitulo5.tex
 (capitulo5.tex
-LaTeX2e <2015/01/01> patch level 2
-Babel <3.9m> and hyphenation patterns for 69 languages loaded.
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ! Undefined control sequence.
 l.1 \chapter
             {Conclusão}\label{cap:conclusao}
@@ -49,6 +49,7 @@ Type  H <return>  for immediate help.
                                                   
 l.3 A
       tarefa de se encontrar vagas em estacionamentos tem se tornado cada ve...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -301,6 +302,7 @@ Type  H <return>  for immediate help.
                                                   
 l.5 B
      uscando minimizar estes problemas, diversos sistemas de mapeamento de e...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -493,6 +495,7 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Citation `schmid2011parking' on page  undefined on input line 5.
+
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no , in font nullfont!
@@ -744,7 +747,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `kianpisheh2012smart' on page  undefined on input line 5.
+LaTeX Warning: Citation `kianpisheh2012smart' on page  undefined on input line 
+5.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no [ in font nullfont!
@@ -778,7 +782,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `lee2008intelligent' on page  undefined on input line 5.
+LaTeX Warning: Citation `lee2008intelligent' on page  undefined on input line 5
+.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no , in font nullfont!
@@ -890,6 +895,7 @@ Type  H <return>  for immediate help.
                                                   
 l.7 P
      ara estes casos, uma solução que se mostrou adequada e de fácil impl...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1453,6 +1459,7 @@ Type  H <return>  for immediate help.
                                                   
 l.9 O
       \textit{DVE} é especialmente adequado para estacionamentos descoberto...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2050,6 +2057,7 @@ Type  H <return>  for immediate help.
                                                   
 l.11 A
       pesar de alguns erros, o \textit{DVE} é resistente a pequenos erros d...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2309,6 +2317,7 @@ Type  H <return>  for immediate help.
                                                   
 l.13 P
       or fim, o programa se mostrou promissor e capaz de ajudar de forma sim...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2752,6 +2761,7 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no � in font nullfont!
@@ -2763,6 +2773,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no o in font nullfont!
+Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no � in font nullfont!
 Missing character: There is no � in font nullfont!
@@ -2843,6 +2854,13 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no p in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no m in font nullfont!
@@ -2954,6 +2972,26 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no m in font nullfont!
@@ -3045,7 +3083,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:preliminares' on page  undefined on input line 13.
+LaTeX Warning: Reference `fig:preliminares' on page  undefined on input line 13
+.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 13--14
@@ -3081,7 +3120,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.16 \includegraphics
+l.17 \includegraphics
                      [width=8cm]{preliminar}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3096,7 +3135,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.16 \includegraphics[
+l.17 \includegraphics[
                       width=8cm]{preliminar}%
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3129,7 +3168,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 \caption
+l.18 \caption
              {Resultados preliminares de um possível trabalho futuro.}%
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3191,30 +3230,25 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.19 \end{figure}
+l.21 \end{figure}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 16--20
-[]
- []
-
 )
 ! Emergency stop.
-<*> capitulo5.tex
-                 
+<*> ./capitulo5.tex
+                   
 *** (job aborted, no legal \end found)
 
  
 Here is how much of TeX's memory you used:
- 18 strings out of 493673
- 254 string characters out of 3141498
- 53455 words of memory out of 3000000
- 3464 multiletter control sequences out of 15000+200000
+ 18 strings out of 493334
+ 254 string characters out of 3136663
+ 54242 words of memory out of 3000000
+ 3646 multiletter control sequences out of 15000+200000
  4294 words of font info for 16 fonts, out of 3000000 for 9000
- 1025 hyphenation exceptions out of 8191
- 20i,2n,26p,932b,93s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 1141 hyphenation exceptions out of 8191
+ 20i,2n,26p,967b,93s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

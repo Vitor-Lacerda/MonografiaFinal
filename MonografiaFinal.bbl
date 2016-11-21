@@ -21,16 +21,23 @@ DBL Bong, KC~Ting, and KC~Lai.
 \newblock {\em IAENG International Journal of Computer Science}, 35(1):7--14,
   2008.
 
-\bibitem{de2006introduccao}
-Jos{\'e} Eust{\'a}quio~Rangel de~Queiroz and Herman~Martins Gomes.
-\newblock Introdu{\c{c}}{\~a}o ao processamento digital de imagens.
-\newblock {\em RITA}, 13(2):11--42, 2006.
+\bibitem{bruhn2005lucas}
+Andr{\'e}s Bruhn, Joachim Weickert, and Christoph Schn{\"o}rr.
+\newblock Lucas/kanade meets horn/schunck: Combining local and global optic
+  flow methods.
+\newblock {\em International Journal of Computer Vision}, 61(3):211--231, 2005.
 
 \bibitem{delibaltov2013parking}
 Diana Delibaltov, Wencheng Wu, Robert~P Loce, Edgar Bernal, et~al.
 \newblock Parking lot occupancy determination from lamp-post camera images.
 \newblock In {\em Intelligent Transportation Systems-(ITSC), 2013 16th
   International IEEE Conference on}, pages 2387--2392. IEEE, 2013.
+
+\bibitem{faria1992fluxo}
+Alexandre Wagner~Chagas Faria.
+\newblock Fluxo {\'o}ptico.
+\newblock {\em Universidade Federal de Minas Gerais, ICEx-DCC-Vis{\~a}o
+  Computacional}, 1992.
 
 \bibitem{colorSpacesDigitalVideo}
 R~Gaunt.
@@ -83,6 +90,12 @@ Jefferson~Gustavo Martins, YMG Costa, D~Bertolini, and LS~Oliveira.
   reconhecimento de padroes em diferentes dom{\i}nios de aplica{\c{c}}ao.
 \newblock In {\em XXXVII Conferencia Latinoamericana de Inform{\'a}tica}, pages
   637--652, 2011.
+
+\bibitem{mota2011tensor}
+Virg{\'\i}nia~Fernandes Mota.
+\newblock {\em Tensor baseado em fluxo {\'o}ptico para descri{\c{c}}{\~a}o
+  global de movimento em v{\'\i}deos}.
+\newblock PhD thesis, Universidade Federal de Juiz de Fora, 2011.
 
 \bibitem{idris09}
 Idris M.Y.I, Leng Y.Y, et~al.

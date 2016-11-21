@@ -6,7 +6,7 @@ Redes neurais artificiais foram criadas com inspiração no funcionamento e na e
 
 Simon Haykin\cite{Haykin} define uma rede neural como "...um processador distribuído massivamente paralelo composto por unidades simples de processamento, que possui uma propensidade natural a armazenar conhecimento experimental e torná-lo disponível para uso."
 
-As redes neurais artificiais são utilizadas para resolver problemas como ajuste de funções, classificação de objetos e reconhecimento de padrões. Este capítulo é uma continuação do capítulo \ref{cap:fundament}w e nele serão explicados conceitos importantes para o entendimento das redes artificiais, começando pelo seu elemento mais básico, o neurônio.
+As redes neurais artificiais são utilizadas para resolver problemas como ajuste de funções, classificação de objetos e reconhecimento de padrões. Este capítulo é uma continuação do capítulo \ref{cap:fundament} e nele serão explicados conceitos importantes para o entendimento das redes artificiais, começando pelo seu elemento mais básico, o neurônio.
 
 \section{Neurônios}
 
@@ -15,8 +15,9 @@ O neurônio é a estrutura básica do sistema nervoso central. É uma célula co
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{neuronio}
-\label{fig:neuronio}
 \caption{A estrutura básica de um neurônio humano}
+\label{fig:neuronio}
+\centering
 \end{figure}
 
 O neurônio artificial também possui três estruturas básicas semelhantes àquelas do neurônio natural. Seus três elementos básicos são: as entradas(análogas aos dendritos), a sáida(análoga ao axônio) e um núcleo de processamento. 
@@ -36,8 +37,9 @@ Aonde $u_n$ é o valor agregado das entradas, $x_j$ é a j-ésima entrada e $w_j
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{NeuronioArtificial}
-\label{fig:neuroartificial}
 \caption{A estrutura básica de um neurônio artificial}
+\label{fig:neuroartificial}
+\centering
 \end{figure}
 
 Claramente, a função de ativação do neurônio é o grande fator que define o seu comportamento e consequentemente sua funcionalidade. Existem dois tipos básicos de funções de ativação\cite{Haykin}: a função degrau e a função sigmóide.
@@ -62,15 +64,18 @@ Um dos motivos que tornou a função logística uma escolha popular para os neur
   \includegraphics[width=.8\linewidth]{degrau}
 	\caption{}
 	\label{fig:ativacao:sub:degrau}
+	\centering
 \end{subfigure}\
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.8\linewidth]{logistica}
 	\caption{}
 	\label{fig:ativacao:sub:logistica}
+	\centering
 \end{subfigure}
 \caption{(a) Gráfico da função degrau com limiar 0. (b) Gráfico da função logística com a = 1}
 \label{fig:ativacao}
+\centering
 \end{figure}
 
 Outra função de interesse no estudo das redes neurais artificiais, é a função \textit{softmax} ou exponencial normalizada \cite{bishop2006pattern}. Essa função é utilizada na teoria estatística para a determinação da distribuição da probabilidade. Isto é, a função \textit{softmax} é uma função que define a probabilidade que uma varíavel discreta assuma um determinado valor\cite{altmanbs}. Em termos simples, o seu papel é transformar um vetor de $n$ elementos em um segundo vetor de mesmo tamanho, de valores no intervalo $[0,1]$ e que têm soma total igual a $1$.
@@ -96,8 +101,9 @@ São necessárias ao menos três camadas para a construção da rede neste model
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{feedforward}
-\label{fig:feedfoward}
 \caption{A arquitetura feed-forward. Cada neurônio se comunica com os neurônios da camada seguinte até que a saída final seja produzida. Adaptada de \cite{Haykin}}
+\label{fig:feedfoward}
+\centering
 \end{figure}
 
 O vetor de entrada da rede é alimentado aos neurônios da primeira camada, cuja saída serve de entrada para a segunda camada e assim por diante, até que a última camada seja alimentada pela saída da camada anterior e produza a saída final da rede. 
@@ -116,7 +122,7 @@ Para que uma rede neural artificical possa ser utilizada, ela precisa antes apre
 	\item \textbf{Conjunto de testes:} Por fim, após o treinamento, a rede é submetida aos dados deste conjunto, a fim de verificar o seu funcionamento correto.
 \end{itemize}
 
-Isto é, a cada ciclo de treinamento, a rede ajusta os seus pesos e deslocamentos de acordo com o conjunto de treinamento, e em seguida processa os dados do conjunto de validação. Se for determinado que a rede teve sucesso no processo de validação, ela fica pronta pra passar pelo conjunto de testes, aonde as sua capacidade de generalização é testada. A matriz $W$ de pesos gerada durante este processo é uma forma de representação do "conhecimento" da rede. Assim, o aprendizado não é uma característica de cada neurônio, mas sim um processo que ocorre na rede inteira como resultado do treinamento\cite{Kozabov}.
+Isto é, a cada ciclo de treinamento, a rede ajusta os seus pesos e deslocamentos de acordo com o conjunto de treinamento, e em seguida processa os dados do conjunto de validação. Se for determinado que a rede teve sucesso no processo de validação, ela fica pronta pra passar pelo conjunto de testes, aonde as sua capacidade de generalização é testada. A matriz $W$ de pesos gerada durante este processo é uma forma de representação do "conhecimento" da rede. Assim, o aprendizado não é uma característica de cada neurônio, mas sim um processo que ocorre na rede inteira como resultado do treinamento\cite{Kosabov}.
 
 Existem duas principais maneiras de se executar o treinamento de uma rede.
 
@@ -128,7 +134,7 @@ Existem duas principais maneiras de se executar o treinamento de uma rede.
 	
 \end{itemize}
 
-Uma vez definido o paradigma de treinamento, é necessário definir uma técnica para a análise do erro e alteração dos valores da matriz de pesos $W$ e do vetor $B$ de deslocamentos. Uma das técnicas mais utilizadas é a chamada de \textit{backpropagation}\cite{DeepLearning, ZhangNNSurvey}. A técnica consiste de uma análise do erro apresentado na saída da rede, que então é utilizada para se percorrer a rede no sentido contrário dos dados modificando os valores de $W$ e $B$ de forma a diminuir o erro na próxima iteração. Essa técnica é muito utilizada para sistemas de treinamento supervisionado, onde o erro é avaliado através de uma comparação da saída da rede com o gabarito fornecido. Uma vez que a os valores de $W$ e $B$ param de mudar, diz-se que a rede atingiu um estado de convergência\cite{Kozabov} e o treinamento finaliza.
+Uma vez definido o paradigma de treinamento, é necessário definir uma técnica para a análise do erro e alteração dos valores da matriz de pesos $W$ e do vetor $B$ de deslocamentos. Uma das técnicas mais utilizadas é a chamada de \textit{backpropagation}\cite{DeepLearning, ZhangNNSurvey}. A técnica consiste de uma análise do erro apresentado na saída da rede, que então é utilizada para se percorrer a rede no sentido contrário dos dados modificando os valores de $W$ e $B$ de forma a diminuir o erro na próxima iteração. Essa técnica é muito utilizada para sistemas de treinamento supervisionado, onde o erro é avaliado através de uma comparação da saída da rede com o gabarito fornecido. Uma vez que os valores de $W$ e $B$ param de mudar, diz-se que a rede atingiu um estado de convergência \cite{Kosabov} e o treinamento finaliza.
 
 
 \section{Classificação de padrões}
@@ -143,8 +149,9 @@ Normalmente, uma rede que será utilizada para classificar padrões passa por um
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=5cm]{features}
-\label{fig:features}
 \caption{Um gráfico que mostra duas características $\tilde{x}_1$ e $\tilde{x}_2$ de um problema de classificação hipotético. Círculos são padrões da classe $C_1$, enquanto os 'x' são padrões da classe $C_2$. O limiar de decisão, representado pela linha, consegue separar bem as duas classes quando as \textit{features} são consideradas como um par. Porém haveria grande sobreposição se os valores fossem considerados separadamente. Extraída de \cite{NNForPR}}
+\label{fig:features}
+\centering
 \end{figure}
 
 A escolha dos \textit{features} a serem utilizados para descrever os padrões não pode ser aleatória. Deve se escolher um número de características suficiente para descrever todos os padrões que podem ser encontrados. Além disso é importante que os \textit{features} sejam suficientemente discriminantes. Isto é, deve haver o mínimo possível de superposição entre as características de classes distintas. Esses \textit{features} podem ser escolhidos a mão, com base em um conhecimento prévio dos dados a serem classificados, ou extraídos automaticamente por um algoritmo desenvolvido para tal. Normalmente as \textit{features} são processadas em conjunto e não consideradas individualmente. A figura \ref{fig:features} mostra como isso é benéfico. Se as características hipotéticas $\tilde{x}_1$ e $\tilde{x}_2$ forem consideradas separadamente, há significativa superposição, de forma que é difícil separar com convicção as duas classes $C_1$ e $C_2$, porém, quando consideradas juntas, é possível traçar uma linha que as separa facilmente, apesar de alguns poucos elementos se confundirem. O papel da rede é determinar a função que traça essa linha através do treinamento, e retornar uma probabilidade de que um conjunto de \textit{features} alimentado a ela faça parte de uma determinada classe.
