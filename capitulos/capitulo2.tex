@@ -2,15 +2,15 @@
 
 
 
-Esse capítulo tem como objetivo apresentar conceitos que facilitarão o entendimento do conteúdo do capítulo \ref{cap:solucao}, detalhando técnicas e conceitos utilizados na execução do trabalho através de exemplos e imagens. Serão apresentados conceitos relacionados ao processamento de imagens estáticas, seguidos de uma discussão breve sobre técnias aplicadas em vídeos. O conteúdo deste capítulo continua no cápitulo \ref{cap:redes} que apresenta conceitos de redes neurais e classificação de padrões. 
+Esse capítulo tem como objetivo apresentar conceitos que facilitarão o entendimento do conteúdo do Capítulo \ref{cap:solucao}, detalhando técnicas e conceitos utilizados na execução do trabalho através de exemplos e imagens. Serão apresentados conceitos relacionados ao processamento de imagens estáticas, seguidos de uma discussão breve sobre técnias aplicadas em vídeos. O conteúdo deste capítulo continua no Cápitulo \ref{cap:redes} que apresenta conceitos de redes neurais e classificação de padrões. 
 
 \section{Processamento de Imagens}\label{sec:processamento}
 
 \subsection{Imagens em nível de cinza}
 
-Para que um computador seja capaz de operar sobre uma imagem, é preciso que seja utilizado um modelo de representação que traduza o que os nossos sentidos conseguem perceber em informações que podem ser interpretadas por uma máquina que não é dotada de visão. A forma mais simples de se representar uma imagem são as imagens em nível de cinza. Podemos definir imagens como uma função \textit{f{(x,y)}} onde x e y são coordenadas espaciais e o valor de  \textit{f{(x,y)}} é a luminosidade, ou nível de cinza, da imagem naquele ponto. Quando esses valores são todos discretos, chamamos essa imagem de uma imagem digital.\cite{gonzalez2009digital} Cada elemento individual dessa imagem, cada valor em cada coordenada, pode ser chamado de um \textit{picture element} ou mais comumente \textit{pixel}. Em imagens digitais em nível de cinza, cada \textit{pixel} possui 1 \textit{bit} de informação, ou seja, pode assumir valores entre 0 e 255, onde o valor 0 representa o preto e 255 representa o branco. 
+Para que um computador seja capaz de operar sobre uma imagem, é preciso que seja utilizado um modelo de representação que traduza o que os nossos sentidos conseguem perceber em informações que podem ser interpretadas por uma máquina que não é dotada de visão. A forma mais simples de se representar uma imagem são as imagens em nível de cinza. Podemos definir imagens como uma função \textit{f{(x,y)}} onde x e y são coordenadas espaciais e o valor de  \textit{f{(x,y)}} é a luminosidade, ou nível de cinza, da imagem naquele ponto. Quando esses valores são todos discretos, chamamos essa imagem de uma imagem digital\cite{gonzalez2009digital}. Cada elemento individual dessa imagem, cada valor em cada coordenada, pode ser chamado de um \textit{picture element} ou mais comumente \textit{pixel}. Em imagens digitais em nível de cinza, cada \textit{pixel} possui 1 \textit{byte} de informação, ou seja, pode assumir valores entre 0 e 255, onde o valor 0 representa o preto e 255 representa o branco. 
 
-Uma imagem então, pode ser interpretada por um programa de computador como uma matriz $MxN$ de elementos de 1 \textit{bit}, onde M é a largura da imagem e N é a sua altura. Cada elemento $p_{i,j}$ da matriz possui a informação de luminosidade do pixel correspondente e o computador é capaz de exibir e interpretar esses valores apropriadamente. A figura \ref{fig:NivelCinza} exemplifica esse processo.
+Uma imagem então, pode ser interpretada por um programa de computador como uma matriz $M\times N$ de elementos de 1 \textit{byte}, onde M é a largura da imagem e N é a sua altura. Cada elemento $p_{i,j}$ da matriz possui a informação de luminosidade do pixel correspondente e o computador é capaz de exibir e interpretar esses valores apropriadamente. A Figura \ref{fig:NivelCinza} exemplifica esse processo.
 
 \begin{figure}
  \centering
@@ -28,7 +28,7 @@ Uma imagem então, pode ser interpretada por um programa de computador como uma 
   \label{exemplo:sfig2}
   \centering
 \end{subfigure}
-\caption{(a) Uma matriz com níveis de cinza e (b) a imagem correspondente}
+\caption{(a) Uma matriz com níveis de cinza e (b) a imagem correspondente.}
 \label{fig:NivelCinza}
 \centering
 \end{figure}
@@ -41,20 +41,20 @@ Para que um sistema de processamento de imagens possa interpretar e processar co
 \subsection{O espaço RGB}
 
 
-RGB é um acrônimo para \textit{Red, Green, Blue}, vermelho, verde e azul em inglês. Pesquisas mostram que um grande gama de cores pode ser formado através de combinações aditivas das cores vermelho, verde e azul. Essas cores são consideradas então cores primárias aditivas.\cite{IBGE2000introducao}. Nesse modelo, a cor de um \textit{pixel} de uma imagem é representada através de três coeficientes que definem a influência de cada cor primária na combinação. Uma imagem no modelo RGB é então representada por três matrizes de níveis de cinza de dimensões iguais, chamadas canais, onde cada valor representado na matriz, representa o valor do coeficiente da cor correspondente na imagem final. Isto é, a imagem pode ser representada por uma matriz $MxNx3$ onde a cor final $C_{i,j}$ de cada \textit{pixel} da imagem é definida pela equação \ref{eq:corRGB}. A imagem \ref{fig:Espacos:sub:RGB} mostra os canais de uma imagem RGB separadamente.
+RGB é um acrônimo para \textit{Red, Green, Blue}, vermelho, verde e azul em inglês. Essas cores são consideradas então cores primárias aditivas devido ao fato de pesquisas mostrarem que um grande gama de cores pode ser formado através de combinações aditivas das cores vermelho, verde e azul\cite{IBGE2000introducao}. Nesse modelo, a cor de um \textit{pixel} de uma imagem é representada através de três coeficientes que definem a influência de cada cor primária na combinação. Uma imagem no modelo RGB é então representada por três matrizes de níveis de cinza de dimensões iguais, chamadas canais, onde cada valor representado na matriz, representa o valor do coeficiente da cor correspondente na imagem final. Isto é, a imagem pode ser representada por uma matriz $M\times N\times 3$ onde a cor final $C_{i,j}$ de cada \textit{pixel} da imagem é definida pela Equação \ref{eq:corRGB}. Se os coeficientes são representados por um \textit{byte}, é possível então representar aproximadamente $16,7$ milhões de cores com este modelo. A Figura \ref{fig:Espacos:sub:RGB} mostra os canais de uma imagem RGB separadamente.
 
 Esse espaço de cor é o mais comumente usado para representar imagens que vemos no cotidiano, uma vez que é semelhante a visão humana e portanto é utilizado pelos dispositivos multimídia mais comuns.
 	
 	\begin{equation}
-			C_{i,j} = p_{i,j,1} . R + p_{i,j,2} . G + p_{i,j,3} . B ,  (1<i<M, 1<j<N)
+			C_{i,j} = p_{i,j,1} . R + p_{i,j,2} . G + p_{i,j,3} . B ,  (1\leq i\leq M, 1\leq j\leq N)
 	\label{eq:corRGB}
 	\end{equation}
 
 \subsection{Espaço YCbCr}\label{sect:sub:ycbcr}
 
-Assim como o espaço de cor RGB, o espaço YCbCr também representa uma imagem através de três matrizes, porém, seus canais contém informações diferentes do modelo RGB. Esse modelo é muito utilizado para o armazenamento de vídeos, uma vez que o modelo tira vantagem de alguns aspectos da visão humana para poder armazenar menos dados, sem perda significativa de informação visual. Por exemplo, humanos são mais sensíveis à detalhes e variações em níveis de cinza do que detalhes em imagens coloridas. Além disso, o olho humano é mais sensível ao verde do que qualquer outra cor\cite{colorSpacesDigitalVideo}. Com esse conhecimento, o espaço YCbCr representa as cores de uma imagem através de sua luminosidade(Y) e os valores de crominância azul(Cb) e crominância vermelha(Cr). Cb e Cr são sinais de diferença de cor e são definidos pela subtração do valor de luminosidade do canal azul e vermelho da imagem, respectivamente. A luminosidade é definida pela equação \ref{eq:Y}\cite{LivroVideoDigital} que reflete a sensibilidade maior a cor verde da visão humana.
+Assim como o espaço de cor RGB, o espaço YCbCr também representa uma imagem através de três matrizes, porém, seus canais contém informações diferentes do modelo RGB. Esse modelo é muito utilizado para o armazenamento de vídeos, uma vez que o modelo tira vantagem de alguns aspectos da visão humana para poder armazenar menos dados, sem perda significativa de informação visual. Por exemplo, humanos são mais sensíveis à detalhes e variações em níveis de cinza do que detalhes em imagens coloridas. Além disso, o olho humano é mais sensível ao verde do que qualquer outra cor\cite{colorSpacesDigitalVideo}. Com esse conhecimento, o espaço YCbCr representa as cores de uma imagem através de sua luminosidade(Y) e os valores de crominância azul(Cb) e crominância vermelha(Cr). Cb e Cr são sinais de diferença de cor e são definidos pela subtração do valor de luminosidade do canal azul e vermelho da imagem, respectivamente. A luminosidade é definida pela Equação \ref{eq:Y}\cite{LivroVideoDigital} que reflete a sensibilidade maior a cor verde da visão humana.
 
-Na figura \ref{fig:Espacos:sub:YCbCr} estão exemplificados os canais de uma imagem no espaço YCbCr.
+Na Figura \ref{fig:Espacos:sub:YCbCr} estão exemplificados os canais de uma imagem no espaço YCbCr.
 
 \begin{equation}
 	Y = 0,299.R + 0,587.G + 0,114.B
@@ -85,13 +85,13 @@ Na figura \ref{fig:Espacos:sub:YCbCr} estão exemplificados os canais de uma ima
 
 \subsection{Descritores de textura}\label{sec:descritores}
 
-Descritores de textura são algoritmos que procuram fazer o que o olho humano faz com facilidade: distinguir tipos diferentes de objetos apenas por algumas de suas características visuais. Estes algoritmos são utilizados quando a abordagem de processamento \textit{pixel-a-pixel} se mostra insuficiente. Eles observam e analisam características pertinentes a imagem inteira e são capazes de identificar diferenças mais sutis entre imagens diferentes. Existem diversas técnicas de descrição de textura que são utilizadas com sucesso em aplicações de processamento de imagem. Para esse trabalho, a técnica escolhida foi a conhecida como GLCM(\textit{gray-level co-ocurrence matrix}) descrita na seção \ref{sec:GLCM}, por ter execução rápida e ser invariante quanto a escala de cinza.
+Descritores de textura são algoritmos que procuram fazer o que o olho humano faz com facilidade: distinguir tipos diferentes de objetos apenas por algumas de suas características visuais. Estes algoritmos são utilizados quando a abordagem de processamento \textit{pixel-a-pixel} se mostra insuficiente. Eles observam e analisam características pertinentes a imagem inteira e são capazes de identificar diferenças mais sutis entre imagens diferentes. Existem diversas técnicas de descrição de textura que são utilizadas com sucesso em aplicações de processamento de imagem. Para esse trabalho, a técnica escolhida foi a conhecida como GLCM(\textit{gray-level co-ocurrence matrix}) descrita na Seção \ref{sec:GLCM}, por ter execução rápida e ser invariante quanto à escala de cinza.
 
 \subsection{GLCM}\label{sec:GLCM}
 
-GLCM, ou matriz de co-ocorrência de nível de cinza, é uma técnica de descrição de textura que visa extrair medidas estatíticas da imagem sendo analisada. Para tanto, é criada uma matriz quadrada de tamanho $MxM$ onde M é a quantidade de níveis de cinza possíveis na imagem em questão. Essa matriz armazena a probabilidade de dois \textit{pixels} se relacionarem através de uma certa relação espacial\cite{GLCM}. 
+GLCM, ou matriz de co-ocorrência de nível de cinza, é uma técnica de descrição de textura que visa extrair medidas estatíticas da imagem sendo analisada. Para tanto, é criada uma matriz quadrada de tamanho $M\times M$ onde M é a quantidade de níveis de cinza possíveis na imagem em questão. Essa matriz armazena a probabilidade de dois \textit{pixels} se relacionarem através de uma certa relação espacial\cite{GLCM}. 
 
-Para esse trabalho, a relação observada é a da vizinhança entre dois \textit{pixels}, sempre analisando o valor a direita de um determinado \textit{pixel} da imagem. Os 255 valores de intensidade possíveis são divididos em 8 níveis. Cada elemento $P_{i,j}$ na GLCM $G$ conta a quantidade de vezes que um \textit{pixel} com valor de intensidade  $j$ apareceu à direita de um \textit{pixel} com valor $i$. A figura \ref{fig:GLCM} exemplifica a criação da GLCM a partir de uma imagem com 8 níveis possíveis.
+Para esse trabalho, a relação observada é a da vizinhança entre dois \textit{pixels}, sempre analisando o valor a direita de um determinado \textit{pixel} da imagem. Os 255 valores de intensidade possíveis são divididos em 8 níveis. Cada elemento $P_{i,j}$ na GLCM $G$ conta a quantidade de vezes que um \textit{pixel} com valor de intensidade  $j$ apareceu à direita de um \textit{pixel} com valor $i$. A Figura \ref{fig:GLCM} exemplifica a criação da GLCM a partir de uma imagem com 8 níveis possíveis.
 
 \begin{figure}
 \includegraphics[width=8cm]{GLCM} 
@@ -135,11 +135,11 @@ Uma vez criada a matriz de co-ocorrência, diversas medidas podem ser extraídas
 \section{Vídeos}\label{sec:video}
 
 
-Quando observamos uma cena no mundo real, ela raramente é estática. Com o passar do tempo, os objetos presentes nela se movem continuamente pelo espaço, criando infinitas imagens diferentes em nossas retinas. Podemos simular essa sensação de movimento na nossa visão através da exibição rápida de imagens que contém valores discretos. Esse é o conceito de um vídeo digital. Um vídeo digital é formado através da amostragem de imagens	em três eixos: horizontal, vertical e temporal\cite{LivroVideoDigital}. A cada intervalo fixo de tempo, uma imagem representada por uma matriz bidimensional de valores de intensidade luminosa e cor é amostrada. Cada uma dessas imagens, ou quadros, representa o estado da cena naquele momento no tempo.
+Quando observamos uma cena no mundo real, a cena raramente é estática. Com o passar do tempo, os objetos presentes na cena se movem continuamente pelo espaço, criando infinitas imagens diferentes em nossas retinas. Podemos simular essa sensação de movimento na nossa visão através da exibição rápida de imagens que contém valores discretos. Esse é o conceito de um vídeo digital. Um vídeo digital é formado através da amostragem de imagens	em três eixos: horizontal, vertical e temporal\cite{LivroVideoDigital}. A cada intervalo fixo de tempo, uma imagem representada por uma matriz bidimensional de valores de intensidade luminosa e cor é amostrada. Cada uma dessas imagens, ou quadros, representa o estado da cena naquele momento no tempo.
 
 \subsection{Fluxo Óptico}\label{sec:fluxooptico}
 
-O movimento é um dos elementos principais para a extração de informações de um vídeo. O fluxo óptico, ou \textit{optical flow}, é uma das técnicas para a estimativa de movimento em vídeos digitais. A técnica consiste em medir a projeção 2D no plano da imagem de um movimento real 3D\cite{mota2011tensor}. Essa projeção 2D mede a velocidade de cada \textit{pixel} da imagem. Esses vetores de velocidade da imagem podem ser utilizados para a realização de diversas tarefas. Por exemplo, é possível extrair a magnitude dos vetores e criar uma nova imagem, aonde os valores de intensidade representam o movimento realizado pelo \textit{pixel}. Nesse trabalho, essa técnica é utilizada para a segmentação de objetos em movimento contra um fundo estático, detalhada no capítulo \ref{cap:solucao}. A figura \ref{fig:fluxo} mostra os vetores de movimento calculados e uma imagem em níveis de cinza que representa as magnitudes das velocidades de cada pixel.
+O movimento é um dos elementos principais para a extração de informações de um vídeo. O fluxo óptico, ou \textit{optical flow}, é uma das técnicas para a estimativa de movimento em vídeos digitais. A técnica consiste em medir a projeção 2D no plano da imagem de um movimento real 3D\cite{mota2011tensor}. Essa projeção 2D mede a velocidade de cada \textit{pixel} da imagem. Esses vetores de velocidade da imagem podem ser utilizados para a realização de diversas tarefas. Por exemplo, é possível extrair a magnitude dos vetores e criar uma nova imagem, aonde os valores de intensidade representam o movimento realizado pelo \textit{pixel}. Nesse trabalho, essa técnica é utilizada para a segmentação de objetos em movimento contra um fundo estático, detalhada no Capítulo \ref{cap:solucao}. A Figura \ref{fig:fluxo} mostra os vetores de movimento calculados e uma imagem em níveis de cinza que representa as magnitudes das velocidades de cada pixel.
 
 \begin{figure}
  \centering
@@ -171,16 +171,16 @@ Para calcular o fluxo óptico, começamos assumindo que no intervalo entre dois 
 
 onde $dx$ e $dy$ são o deslocamento que o \textit{pixel} no intervalo $dt$ entre dois quadros.
 
-Queremos então encontrar a velocidade $v =(\frac{dx}{dt},\frac{dy}{dt})$ do \textit{pixel}. Usando a expansão por série de Taylor e manipulações matemáticas na equação \ref{eq:fluxo1}, obtemos a equação \ref{eq:fluxo2}\cite{faria1992fluxo}.
+Queremos então encontrar a velocidade $v =(\frac{dx}{dt},\frac{dy}{dt})$ do \textit{pixel}. Usando a expansão por série de Taylor e manipulações matemáticas na Equação \ref{eq:fluxo1}, obtemos a Equação \ref{eq:fluxo2}\cite{faria1992fluxo}.
 
 \begin{equation}
 	\nabla Iv + I_t = 0
 \label{eq:fluxo2}
 \end{equation}
 
-onde $\nabla I$ é o gradiente da função intensidade. Essa equação descreve o chamado problema de Restrição do Fluxo Óptico\cite{mota2011tensor}. Porém, há um problema na equação. A partir dela só é possível obter um dos componentes da velocidade. A solução completa da velocidade depende de um cálculo na vizinhança de cada ponto. Diversos métodos foram criados para a fazer a estimativa da velocidade, com propriedades diversas. Para esse trabalho foi escolhido o método desenvolvido por Lucas e Kanade, detalhado em \cite{faria1992fluxo}\cite{mota2011tensor} e \cite{bruhn2005lucas}. Este método se utiliza de características de uma vizinhança local e visa minimizar o erro de mínimos quadrados. Foi escolhido por ser resistente a ruído e ter mostrado um resultado mais adequado para as exigências do trabalho.
+onde $\nabla I$ é o gradiente da função intensidade. Essa equação descreve o chamado problema de Restrição do Fluxo Óptico\cite{mota2011tensor}. Porém, há um problema na equação. A partir dela só é possível obter um dos componentes da velocidade. A solução completa da velocidade depende de um cálculo na vizinhança de cada ponto. Diversos métodos foram criados para a fazer a estimativa da velocidade, com propriedades diversas. Para esse trabalho foi escolhido o método desenvolvido por Lucas e Kanade, detalhado em \cite{bruhn2005lucas,faria1992fluxo,mota2011tensor}. Este método se utiliza de características de uma vizinhança local e visa minimizar o erro de mínimos quadrados. Foi escolhido por ser resistente a ruído e ter mostrado um resultado mais adequado para as exigências do trabalho.
 
-O capítulo \ref{cap:redes} continua a apresentação de conceitos importantes para o entendimento do trabalho, mas tem foco exclusivo em redes neurais artificiais. 
+O Capítulo \ref{cap:redes} continua a apresentação de conceitos importantes para o entendimento do trabalho, mas tem foco exclusivo em redes neurais artificiais. 
 
 
 

@@ -4,7 +4,7 @@
 
 Para os experimentos realizados neste trabalho foi capturado um conjunto de vídeos no estacionamento do pavilhão João Calmon na Universidade de Brasília. Foram feitas duas seções de filmagens contínua, aonde três veículos se deslocavam pelo estacionamento e ocupavam vagas escolhidas arbitrariamente. O primeiro vídeo capturado foi utilizado para o treinamento da rede. O segundo vídeo foi dividido em oito vídeos de menor duração sobre os quais foram realizados os testes.
 
-As filmagens foram realizadas por um drone modelo \textit{Yuneec Typhoon Q500+} (figura \ref{fig:drone}). O drone foi controlado para que pairasse no ar em uma altura semelhante a de um poste de luz, a fim de capturar imagens de forma mais próxima possível de uma câmera de vídeo instalada em um poste de luz.
+As filmagens foram realizadas por um drone modelo \textit{Yuneec Typhoon Q500+} (Figura \ref{fig:drone}). O drone foi controlado para que pairasse no ar em uma altura semelhante a de um poste de luz, a fim de capturar imagens de forma mais próxima possível de uma câmera de vídeo instalada em um poste de luz.
 
 \begin{figure}
 \centering
@@ -14,11 +14,11 @@ As filmagens foram realizadas por um drone modelo \textit{Yuneec Typhoon Q500+} 
 \centering
 \end{figure}
 
-Para a aquisição das imagens utilizadas para o treinamento da rede, o primeiro vídeo passou por um processo semelhante ao processo de calibração do programa final descrito no capítulo \ref{cap:solucao}. Duas áreas de interesse foram determinadas de forma idêntica ao processo de escolha de ROIs do \textit{DVE}. Em seguida cada ROI foi dividida em trinta seções verticais. Três quadros do vídeo foram escolhidos de forma aleatória. As imagens correspondentes a cada seção de cada quadro escolhido foram extraídas em arquivos separados. Dessa maneira, as imagens utilizadas para o treinamento da rede neural foram construídas da mesma maneira que as imagens que seriam alimentadas a ela para classificação no futuro.
+Para a aquisição das imagens utilizadas para o treinamento da rede, o primeiro vídeo passou por um processo semelhante ao processo de calibração do programa final descrito no Capítulo \ref{cap:solucao}. Duas áreas de interesse foram determinadas de forma idêntica ao processo de escolha de ROIs do \textit{DVE}. Em seguida cada ROI foi dividida em trinta seções verticais. Três quadros do vídeo foram escolhidos de forma aleatória. As imagens correspondentes a cada seção de cada quadro escolhido foram extraídas em arquivos separados. Dessa maneira, as imagens utilizadas para o treinamento da rede neural foram construídas da mesma maneira que as imagens que seriam alimentadas a ela para classificação no futuro.
 
 \section{Treinamento da rede neural artificial}
 
-Uma vez adquiridas as imagens a serem utilizadas para o treinamento, cada uma delas foi separada manualmente em uma das duas categorias:veículo ou vaga vazia. Ao todo foram utilizadas $57$ imagens classificadas como veículo(categoria 1) e $59$ imagens classificadas como vaga vazia(categoria 2) totalizando $116$ imagens. Foram extraídas as características de cada imagem da forma descrita na seção \ref{sec:extracao}. Os vetores $x_s$ obtidos foram então concatenados de forma a criar duas matrizes. A primeira de dimensões $6x57$ representava as \textit{features} das imagens de carros e a segunda de dimensões $6x59$ as características das imagens de vagas desocupadas.
+Uma vez adquiridas as imagens a serem utilizadas para o treinamento, cada uma delas foi separada manualmente em uma das duas categorias:veículo ou vaga vazia. Ao todo foram utilizadas $57$ imagens classificadas como veículo(categoria 1) e $59$ imagens classificadas como vaga vazia(categoria 2) totalizando $116$ imagens. Foram extraídas as características de cada imagem da forma descrita na Seção \ref{sec:extracao}. Os vetores $x_s$ obtidos foram então concatenados de forma a criar duas matrizes. A primeira de dimensões $6\times 57$ representava as \textit{features} das imagens de carros e a segunda de dimensões $6\times 59$ as características das imagens de vagas desocupadas.
 
 \begin{figure}
 \centering
@@ -39,14 +39,14 @@ Uma vez adquiridas as imagens a serem utilizadas para o treinamento, cada uma de
 \label{fig:exemploRede}
 \end{figure}
 
-Para que pudesse ser feito o treinamento supervisionado da rede neural, duas matrizes de alvos foram construídas. Uma com dimensões $2x57$ e a outra com dimensões $2x59$. A primeira matriz com todas as colunas iguais a $\begin{psmallmatrix}1\\0\end{psmallmatrix}$ e a segunda com as colunas da forma $\begin{psmallmatrix}0\\1\end{psmallmatrix}$. Essas matrizes vão compor o gabarito utilizado para o treinamento supervisionado da rede.
+Para que pudesse ser feito o treinamento supervisionado da rede neural, duas matrizes de alvos foram construídas. Uma com dimensões $2\times 57$ e a outra com dimensões $2\times 59$. A primeira matriz com todas as colunas iguais a $\begin{psmallmatrix}1\\0\end{psmallmatrix}$ e a segunda com as colunas da forma $\begin{psmallmatrix}0\\1\end{psmallmatrix}$. Essas matrizes vão compor o gabarito utilizado para o treinamento supervisionado da rede.
 
-As matrizes  de características de cada classe foram então concatenadas formando uma matriz de entrada $In_{6x116}$. O mesmo foi feito com as matrizes do gabarito, resultando na matriz $Target_{2x116}$. Em seguida as colunas dessas duas matrizes foram reorganizadas aleatoriamente, de forma que as mudanças feitas em $In$ fossem refletidas em $Out$, garantindo que não fosse perdida a relação entre as colunas de mesmo índice das matrizes. O resultado final deste processo é que cada coluna de $Target_{2x116}$ indica a classe da coluna correspondente de $In_{6x116}$.
+As matrizes  de características de cada classe foram então concatenadas formando uma matriz de entrada $In_{6\times 116}$. O mesmo foi feito com as matrizes do gabarito, resultando na matriz $Target_{2\times 116}$. Em seguida as colunas dessas duas matrizes foram reorganizadas aleatoriamente, de forma que as mudanças feitas em $In$ fossem refletidas em $Out$, garantindo que não fosse perdida a relação entre as colunas de mesmo índice das matrizes. O resultado final deste processo é que cada coluna de $Target_{2\times 116}$ indica a classe da coluna correspondente de $In_{6\times 116}$.
 
-Uma vez criadas essas duas matrizes, as entradas e seus respectivos alvos são separados em três conjuntos: o conjunto de treinamento, de validação e de testes. A divisão é feita de forma que $70\%$ das entradas são designadas ao conjunto de treinamento, $15\%$ designadas ao conjunto de validação e os $15\%$ restantes ao conjunto de testes. O conjunto de treinamento então é composto por duas matriz $Ti_{6x81}$ e $To_{2x81}$ que são iguais as primeira $81$ colunas de $In_{6x116}$ e $Target_{2x116}$ e representam os vetores descritores das entradas e seus gabaritos respectivamente. Os outros dois conjuntos são construídos de forma similar utilizando. O conjunto de validação é composto por matrizes de $18$ colunas e o de teste por matrizes de $17$ colunas.
+Uma vez criadas essas duas matrizes, as entradas e seus respectivos alvos são separados em três conjuntos: o conjunto de treinamento, de validação e de testes. A divisão é feita de forma que $70\%$ das entradas são designadas ao conjunto de treinamento, $15\%$ designadas ao conjunto de validação e os $15\%$ restantes ao conjunto de testes. O conjunto de treinamento então é composto por duas matriz $Ti_{6\times 81}$ e $To_{2\times 81}$ que são iguais as primeira $81$ colunas de $In_{6\times 116}$ e $Target_{2\times 116}$ e representam os vetores descritores das entradas e seus gabaritos respectivamente. Os outros dois conjuntos são construídos de forma similar utilizando. O conjunto de validação é composto por matrizes de $18$ colunas e o de teste por matrizes de $17$ colunas.
 
 
-A rede neural utilizada foi uma rede \textit{feed-forward} com três camadas. A camada oculta possui $15$ neurônios com função de ativação logística (\ref{eq:logistica}) e a camada de saída $2$ neurônios com função de ativação \textit{softmax} (\ref{eq:softmax}). A rede é submetida a um treinamento supervisionado com um limite de $1000$ iterações. Quando a situação de convergência é atingida, o treinamento para e o resultado é a rede final utilizada.
+A rede neural utilizada foi uma rede \textit{feed-forward} com três camadas. A camada oculta possui $15$ neurônios com função de ativação logística (Equação\ref{eq:logistica}) e a camada de saída $2$ neurônios com função de ativação \textit{softmax} (Equação \ref{eq:softmax}). A rede é submetida a um treinamento supervisionado com um limite de $1000$ iterações. Quando a situação de convergência é atingida, o treinamento para e o resultado é a rede final utilizada.
 
 
 \section{Resultados Obtidos}
@@ -56,7 +56,7 @@ Para determinar a capacidade do \textit{DVE} de determinar se as seções vertic
 Cada um dos observadores receberam as seguintes instruções:
 
 \begin{itemize}
-  \item As regiões de interesse e as seções são numeradas como indicado na figura \ref{instrucao}.
+  \item As regiões de interesse e as seções são numeradas como indicado na Figura \ref{fig:instrucao}.
 	\item Uma seção ocupada é aquela cuja maior parte de sua área está ocupada por um veículo.
 	\item No momento inicial do vídeo ($0$ segundos), indique quais seções verticais estão ocupadas através do número das ROI e das seções, as outras serão assumidas como livres. Indique também o número de vagas ocupadas.
 	\item Se a qualquer momento o estado de ocupação de uma seção mudar, indique o tempo da mudança, a seção onde ocorreu a mudança e a natureza da mudança(ocupada ou liberada).
@@ -66,7 +66,7 @@ Cada um dos observadores receberam as seguintes instruções:
 \centering
 \includegraphics[width=8cm]{instrucoes}
 \centering
-\caption{Figura mostrando a divisão das ROIs e numeração das seções nos vídeos mostrados para os observadores humanos}
+\caption{Figura mostrando a divisão das ROIs e numeração das seções nos vídeos mostrados para os observadores humanos.}
 \label{fig:instrucao}
 \end{figure}
 
@@ -76,7 +76,7 @@ Para os testes apresentados a seguir, serão observadas somente aquelas seções
 
 Além da capacidade de classificar cada seção, a precisão do \textit{DVE} em determinar o número de vagas ocupadas a cada momento do vídeo também foi analisada. Para este teste, os observadores foram instruídos a informar o número de vagas ocupadas no início do vídeo. Sempre que considerassem que houve uma mudança neste número, deveriam informar o momento da mudança e o novo número de vagas ocupadas. Para esta análise, um \textit{acerto} é considerado a cada segundo que o programa indica o mesmo número de vagas ocupadas que os observadores. Para a determinação das vagas o programa foi executado no modo complexo de mapeamento.
 
-Nas seções seguintes serão apresentados cada um dos vídeos utilizados para os testes. Cada caso iniciará com uma breve descrição do movimento dos veículos no vídeo, a duração do vídeo e o número de acertos possíveis para as seções verticais, seguidos de cinco tabelas, uma para cada observador e duas para o \textit{DVE}. As tabelas indicam o tempo onde foram acusadas mudanças de estado nas seções e no número de vagas ocupadas. A primeira linha da tabela indica as seções ocupadas no momento inicial do vídeo e cada linha subsequente indica um momento em segundos quando houve mudança de estado de pelo menos uma seção ou vaga, a ROI e número das seções modificadas e um número de vagas ocupadas naquele momento no tempo.  Finalmente, será calculada uma taxa de acerto que compara o desempenho do programa na classificação a cada observador e uma taxa final de acerto média para o caso de teste. A taxa de acerto para cada observador é calculada pela razão entre o número de acertos do programa e o número de acertos possíveis para o caso de teste e a taxa de acerto média é a média aritmética entre estes valores. Para que o leitor possa comparar o desempenho do \textit{DVE} com suas próprias impressões, uma imagem dos momentos iniciais e finais de cada vídeo será mostrada junto de cada análise.
+Nas seções seguintes serão apresentados cada um dos vídeos utilizados para os testes. Cada caso iniciará com uma breve descrição do movimento dos veículos no vídeo, a duração do vídeo e o número de acertos possíveis para as seções verticais, seguidos de cinco tabelas, uma para cada observador e duas para o \textit{DVE}. As tabelas indicam o tempo onde foram acusadas mudanças de estado nas seções e no número de vagas ocupadas. A primeira linha da tabela indica as seções ocupadas no momento inicial do vídeo e cada linha subsequente indica um momento em segundos quando houve mudança de estado de pelo menos uma seção ou vaga, a ROI e o número das seções modificadas e o número de vagas ocupadas naquele momento no tempo.  Finalmente, será calculada uma taxa de acerto que compara o desempenho do programa na classificação a cada observador e uma taxa final de acerto média para o caso de teste. A taxa de acerto para cada observador é calculada pela razão entre o número de acertos do programa e o número de acertos possíveis para o caso de teste e a taxa de acerto média é a média aritmética entre estes valores. Para que o leitor possa comparar o desempenho do \textit{DVE} com suas próprias impressões, uma imagem dos momentos iniciais e finais de cada vídeo será mostrada junto de cada análise.
 
 A leitura das tabelas que representam as taxas de acerto devem ser feitas com um certo cuidado. Por causa da grande quantidade de seções e de possíveis acertos, um erro na classificação de uma seção representa uma mudança pequena na taxa de acerto. Em cada caso de testes há um grande número de seções aonde não há movimento algum, que são classificadas corretamente como vazias, elevando a taxa de acertos do teste. Enquanto esses acertos são relevantes, a classificação correta das seções onde há movimento de veículos representa uma diferença muito maior no funcionamento do \textit{DVE}.
 
@@ -101,7 +101,7 @@ No primeiro caso de testes, o vídeo começa com um estacionamento vazio. Depois
 \caption{}
 \end{subfigure}
 \centering
-\caption{(a) O momento inicial do vídeo 1. (b) O momento final do vídeo 1}%
+\caption{(a) O momento inicial do vídeo 1; (b) O momento final do vídeo 1.}%
 \label{}%
 \end{figure}
 
@@ -196,7 +196,7 @@ Neste vídeo, um carro branco está estacionado no conjunto inferior de vagas. U
 \caption{}
 \end{subfigure}
 \centering
-\caption{(a) O momento inicial do vídeo 2. (b) O momento final do vídeo 2}%
+\caption{(a) O momento inicial do vídeo 2; (b) O momento final do vídeo 2.}%
 \label{}%
 \end{figure}
 
@@ -292,7 +292,7 @@ Neste vídeo, dois carros se encontram no estacionamento. Um veículo amarelo en
 \caption{}
 \end{subfigure}
 \centering
-\caption{(a) O momento inicial do vídeo 3. (b) O momento final do vídeo 3}%
+\caption{(a) O momento inicial do vídeo 3; (b) O momento final do vídeo 3.}%
 \label{}%
 \end{figure}
 
@@ -397,7 +397,7 @@ Mesmo com os problemas, o mapeamento e determinação das ocupações das vagas 
 
 \subsection{Vídeo 4}
 
-Neste vídeo, o veículo branco entra em cena pela parte superior da tela e estaciona entre os outros dois carros. O carro cinza sai da vaga que ocupava e estaciona em uma na área inferior. Duração de $30s$, portanto $1800$ possíveis acertos.
+Neste vídeo, o veículo branco entra em cena pela parte superior da tela e estaciona entre os outros dois carros. O carro cinza sai da vaga que ocupava e estaciona em uma na área inferior. O vídeo possui uma duração de $30s$, portanto $1800$ possíveis acertos.
 
 \begin{figure}[!h]
 \centering
@@ -412,7 +412,7 @@ Neste vídeo, o veículo branco entra em cena pela parte superior da tela e esta
 \caption{}
 \end{subfigure}
 \centering
-\caption{(a) O momento inicial do vídeo 4. (b) O momento final do vídeo 4}%
+\caption{(a) O momento inicial do vídeo 4; (b) O momento final do vídeo 4.}%
 \label{}%
 \end{figure}
 
@@ -503,7 +503,7 @@ Há um atraso na desocupação de uma vaga, indicada por volta dos $18$ segundos
 
 \subsection{Vídeo 5}
 
-Um veículo desocupa a sua vaga sainda pela parte superior da tela. Duração de $10s$ ou $600$ possíveis acertos.
+Um veículo desocupa a sua vaga sainda pela parte superior da tela. O vídeo possui uma duração de $10s$ ou $600$ possíveis acertos.
 
 \begin{figure}[!h]
 \centering
@@ -518,7 +518,7 @@ Um veículo desocupa a sua vaga sainda pela parte superior da tela. Duração de
 \caption{}
 \end{subfigure}
 \centering
-\caption{(a) O momento inicial do vídeo 5. (b) O momento final do vídeo 5}%
+\caption{(a) O momento inicial do vídeo 5; (b) O momento final do vídeo 5.}%
 \label{}%
 \end{figure}
 
@@ -599,7 +599,7 @@ Média & 9,66 & 96,66\% \\
 \end{center}
 
 
-Um caso de testes simples, onde os erros ocorreram principalmente por causa da natureza subjetiva do que configura uma seção ocupada. O \textit{DVE} classifica a seção $17$ como ocupada e os observadores não. Por outro lado, dois dos observadores acharam que a seção $14$ da ROI $2$ estava ocupada, descordando do programa. Essas discordâncias não afetam a quantidade de vagas ocupadas.
+Um caso de testes simples, onde os erros ocorreram principalmente por causa da natureza subjetiva do que configura uma seção ocupada. O \textit{DVE} classifica a seção $17$ como ocupada e os observadores não. Por outro lado, dois dos observadores acharam que a seção $14$ da ROI $2$ estava ocupada, descordando do programa. Contudo, essas discordâncias não afetam a quantidade de vagas ocupadas.
 
 \subsection{Vídeo 6}
 
@@ -618,7 +618,7 @@ Neste vídeo o veículo amarelo entra na cena pela parte inferior da tela. O ve�
 \caption{}
 \end{subfigure}
 \centering
-\caption{(a) O momento inicial do vídeo 6. (b) O momento final do vídeo 6.}%
+\caption{(a) O momento inicial do vídeo 6; (b) O momento final do vídeo 6.}%
 \label{}%
 \end{figure}
 
@@ -703,7 +703,7 @@ Média & 10 & 76,92\% \\
 \end{center}
 
 
-Um caso de testes aonde a avaliação do \textit{DVE} se mantém estável e concorda quase plenamente com a avaliação dos humanos. Os atraso da detecção da liberação das seções $18$ e $19$ da ROI $2$ e da desocupação da vaga representada por elas se deve ao fato de que o movimento do veículo saindo só é considerado finalizado depois que ele sai da tela, o que ocorre alguns momentos depois que os observadores humanos consideraram que ele saiu da vaga.
+Um caso de testes aonde a avaliação do \textit{DVE} se mantém estável e concorda quase plenamente com a avaliação dos humanos. Os atraso da detecção da liberação das seções $18$ e $19$ da ROI $2$ e da desocupação da vaga representada por estas seções se deve ao fato de que o movimento do veículo saindo só é considerado finalizado depois que o veículo sai do campo de visão da câmera, o que ocorre alguns momentos depois que os observadores humanos consideraram que ele saiu da vaga.
 
 \subsection{Vídeo 7}
 
@@ -722,7 +722,7 @@ Neste vídeo um dos carros sai da cena pela esquerda. O vídeo tem $17s$ de dura
 \caption{}
 \end{subfigure}
 \centering
-\caption{(a) O momento inicial do vídeo 7. (b) O momento final do vídeo 7.}%
+\caption{(a) O momento inicial do vídeo 7; (b) O momento final do vídeo 7.}%
 \label{}%
 \end{figure}
 
@@ -817,7 +817,7 @@ No oitavo e último caso de testes, um carro branco passa pela região central d
 \caption{}
 \end{subfigure}
 \centering
-\caption{(a) O momento inicial do vídeo 8. (b) O momento final do vídeo 8.}%
+\caption{(a) O momento inicial do vídeo 8; (b) O momento final do vídeo 8.}%
 \label{}%
 \end{figure}
 
@@ -892,7 +892,7 @@ Média & 23 & 100\% \\
 \end{tabular}
 \end{center}
 
-O programa avalia as seções de forma quase idêntica aos humanos. Aos $20s$, a classificação que ocorre regularmente determina que que quatro seções estão sendo ocupadas pelo veículo. Um segundo depois porém, quando o movimento do veículo termina, o erro é corrigido e o programa volta a acertar completamente.
+O programa avalia as seções de forma quase idêntica aos humanos. Aos $20s$, a classificação que ocorre regularmente determina que quatro seções estão sendo ocupadas pelo veículo. Um segundo depois porém, quando o movimento do veículo termina, o erro é corrigido e o programa volta a acertar completamente.
 
 
 

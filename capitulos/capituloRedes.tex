@@ -6,16 +6,16 @@ Redes neurais artificiais foram criadas com inspiração no funcionamento e na e
 
 Simon Haykin\cite{Haykin} define uma rede neural como "...um processador distribuído massivamente paralelo composto por unidades simples de processamento, que possui uma propensidade natural a armazenar conhecimento experimental e torná-lo disponível para uso."
 
-As redes neurais artificiais são utilizadas para resolver problemas como ajuste de funções, classificação de objetos e reconhecimento de padrões. Este capítulo é uma continuação do capítulo \ref{cap:fundament} e nele serão explicados conceitos importantes para o entendimento das redes artificiais, começando pelo seu elemento mais básico, o neurônio.
+As redes neurais artificiais são utilizadas para resolver problemas como ajuste de funções, classificação de objetos e reconhecimento de padrões. Este capítulo é uma continuação do Capítulo \ref{cap:fundament} e nele serão explicados conceitos importantes para o entendimento das redes artificiais, começando pelo seu elemento mais básico, o neurônio.
 
 \section{Neurônios}
 
-O neurônio é a estrutura básica do sistema nervoso central. É uma célula composta principalmente de três partes distintas: o corpo celular, os dendritos e o axônio. O corpo celular é a estrutra central do célula aonde está contido o núcleo do neurônio e são executados as suas funções vitais. Os dendritos são prolongamentos do corpo celular responsáveis por receber sinais e o axônio é uma extensão maior do corpo celular, responsável por enviar sinais a outros neurônios. Dois neurônios interagem em apenas  pontos de contato chamados sinapses. Nessas sinapses o axônio de um neurônio envia sinais para os dendritos de um segundo neurônio. A figura \ref{fig:neuronio} ilustra a estrutura básica dos neurônios.
+O neurônio é a estrutura básica do sistema nervoso central. É uma célula composta principalmente de três partes distintas: o corpo celular, os dendritos e o axônio. O corpo celular é a estrutra central do célula aonde está contido o núcleo do neurônio e são executados as suas funções vitais. Os dendritos são prolongamentos do corpo celular responsáveis por receber sinais e o axônio é uma extensão maior do corpo celular, responsável por enviar sinais a outros neurônios. Dois neurônios interagem em apenas  pontos de contato chamados sinapses. Nessas sinapses o axônio de um neurônio envia sinais para os dendritos de um segundo neurônio. A Figura \ref{fig:neuronio} ilustra a estrutura básica dos neurônios.
 
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{neuronio}
-\caption{A estrutura básica de um neurônio humano}
+\caption{A estrutura básica de um neurônio humano.}
 \label{fig:neuronio}
 \centering
 \end{figure}
@@ -32,12 +32,12 @@ O neurônio pode ter uma ou mais conexões de entrada caracterizadas por um peso
 s(n) = f(u_n + b)
 \end{equation}
 
-Aonde $u_n$ é o valor agregado das entradas, $x_j$ é a j-ésima entrada e $w_j$ o peso da conexão associada, $s(n)$ é a saída do neurônio, $f$ é a função de ativação e $b$ o deslocamento, ou $bias$ do neurônio $n$. A figura \ref{fig:neuroartificial} ilustra a estrutura básica de um neurônio artificial.
+Aonde $u_n$ é o valor agregado das entradas, $x_j$ é a j-ésima entrada e $w_j$ o peso da conexão associada, $s(n)$ é a saída do neurônio, $f$ é a função de ativação e $b$ o deslocamento, ou $bias$ do neurônio $n$. A Figura \ref{fig:neuroartificial} ilustra a estrutura básica de um neurônio artificial.
 
 \begin{figure}
 \centering
-\includegraphics[width=.6\textwidth]{NeuronioArtificial}
-\caption{A estrutura básica de um neurônio artificial}
+\includegraphics[width=.8\textwidth]{NeuronioArtificial}
+\caption{A estrutura básica de um neurônio artificial.}
 \label{fig:neuroartificial}
 \centering
 \end{figure}
@@ -46,7 +46,7 @@ Claramente, a função de ativação do neurônio é o grande fator que define o
 
 O neurônio mais simples possível tem sua saída regida por uma função degrau e saída binária. Isto é, se o valor agregado $u$ de suas entradas for maior que um determinado limiar, a sua saída será 1 e a saída será 0 caso contrário. Apesar de ser capaz de resolver alguns problemas, esse tipo de neurônio tem algumas desvantagens. Por vezes, alterações sutis podem representar a diferença entre os dois valores possíveis da sáida. Além disso, um alcance limitado de valores na saída prejudica o treinamento.
 
-A escolha mais comum de de função de ativação para a construção de redes neurais é a família de funções sigmóides. Essas funções, que tem um gráfico com formato de \textit{S}, assumem valores contínuos entre 0 e 1, o que faz com que alterações sutis na entrada representem alterações mais sutis na saída, aumentando a qualidade da informação gerada pelo neurônio. A mais comum das funções sigmóides utilizadas é a função logística, definida pela equação \ref{eq:logistica}, onde $a$ é uma constante que mede a declividade da curva.
+A escolha mais comum de de função de ativação para a construção de redes neurais é a família de funções sigmóides. Essas funções, que tem um gráfico com formato de \textit{S}, assumem valores contínuos entre 0 e 1, o que faz com que alterações sutis na entrada representem alterações mais sutis na saída, aumentando a qualidade da informação gerada pelo neurônio. A mais comum das funções sigmóides utilizadas é a função logística, definida pela Equação \ref{eq:logistica}, onde $a$ é uma constante que mede a declividade da curva.
 
 \begin{equation}
 	f(u) = \frac{1}{1 + \exp{-au}}
@@ -59,14 +59,14 @@ Um dos motivos que tornou a função logística uma escolha popular para os neur
 
 \begin{figure}
  \centering
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.9\textwidth}
   \centering
   \includegraphics[width=.8\linewidth]{degrau}
 	\caption{}
 	\label{fig:ativacao:sub:degrau}
 	\centering
 \end{subfigure}\
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.9\textwidth}
   \centering
   \includegraphics[width=.8\linewidth]{logistica}
 	\caption{}
@@ -80,7 +80,7 @@ Um dos motivos que tornou a função logística uma escolha popular para os neur
 
 Outra função de interesse no estudo das redes neurais artificiais, é a função \textit{softmax} ou exponencial normalizada \cite{bishop2006pattern}. Essa função é utilizada na teoria estatística para a determinação da distribuição da probabilidade. Isto é, a função \textit{softmax} é uma função que define a probabilidade que uma varíavel discreta assuma um determinado valor\cite{altmanbs}. Em termos simples, o seu papel é transformar um vetor de $n$ elementos em um segundo vetor de mesmo tamanho, de valores no intervalo $[0,1]$ e que têm soma total igual a $1$.
 
-Essa função é muito utilizada como função de ativação nas camadas de saídas de redes treinadas para reconhecimento de padrões, por sua capacidade de determinar a probabilidade da entrada pertencer a uma determinada classe. A função \textit{softmax} pode ser definida pela equação \ref{eq:softmax}, onde $x$ é o vetor de tamanho $n$ da entrada e $x_i$ é o seu \textit{i-ésimo} elemento.
+Essa função é muito utilizada como função de ativação nas camadas de saídas de redes treinadas para reconhecimento de padrões, por sua capacidade de determinar a probabilidade da entrada pertencer a uma determinada classe. A função \textit{softmax} pode ser definida pela Equação \ref{eq:softmax}, onde $x$ é o vetor de tamanho $n$ da entrada e $x_i$ é o seu \textit{i-ésimo} elemento.
 
 \begin{equation}
 p(x)_i = \frac{\exp{x_i}}{\sum_{j=1}^n\exp{x_j}}
@@ -96,12 +96,12 @@ Apesar de neurônios serem capazes de resolver alguns problemas sozinhos, o verd
 
 Existem várias arquiteturas para a formação destas redes de neurônios, porém neste trabalho a discussão será limitada àquela utilizada na implementação do programa: as chamadas redes neurais \textit{feed-forward}.
 
-São necessárias ao menos três camadas para a construção da rede neste modelo: a primeira camada, chamada de camada de entrada, uma ou mais camadas intermediárias(ou ocultas) e a camada de saída. O papel das camadas ocultas é intermediar entre as entradas externas e a saída da rede, de forma a possibilitar que a rede extraia dados estatíticos mais significativos da sua entrada.  Uma camada é composta de um número de neurônios que agem de forma paralela. Cada neurônio de uma camada que não é a de saída está conectado a todos os neurônios da camada seguinte, de forma que não há comunicação entre uma camada e camadas anteriores a ela. Isto é, a informação flui na rede apenas no sentido entrada-saída, como ilustrado na figura \ref{fig:feedfoward}.
+São necessárias ao menos três camadas para a construção da rede neste modelo: a primeira camada, chamada de camada de entrada, uma ou mais camadas intermediárias(ou ocultas) e a camada de saída. O papel das camadas ocultas é intermediar entre as entradas externas e a saída da rede, de forma a possibilitar que a rede extraia dados estatíticos mais significativos da sua entrada.  Uma camada é composta de um número de neurônios que agem de forma paralela. Cada neurônio de uma camada que não é a de saída está conectado a todos os neurônios da camada seguinte, de forma que não há comunicação entre uma camada e camadas anteriores a ela. Isto é, a informação flui na rede apenas no sentido entrada-saída, como ilustrado na Figura \ref{fig:feedfoward}.
 
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{feedforward}
-\caption{A arquitetura feed-forward. Cada neurônio se comunica com os neurônios da camada seguinte até que a saída final seja produzida. Adaptada de \cite{Haykin}}
+\caption{A arquitetura feed-forward. Cada neurônio se comunica com os neurônios da camada seguinte até que a saída final seja produzida. Adaptada de \cite{Haykin}.}
 \label{fig:feedfoward}
 \centering
 \end{figure}
@@ -110,7 +110,7 @@ O vetor de entrada da rede é alimentado aos neurônios da primeira camada, cuja
 
 \section{Treinamento}
 
-Para que uma rede neural artificical possa ser utilizada, ela precisa antes aprender a realizar a tarefa para a qual foi criada. Para isso a rede precisa ter duas abilidades importantes: de aprendizado e de generalização. Aprendizado é a capacidade da rede de aproximar o comportamento das entradas fornecidas durante o treinamento, enquanto generalização é a sua capacidade de prever e operar sobre dados além do conjunto com a qual foi treinada\cite{ZhangNNSurvey}.
+Para que uma rede neural artificical possa ser utilizada, ela precisa antes aprender a realizar a tarefa para a qual foi criada. Para isso a rede precisa ter duas habilidades importantes: de aprendizado e de generalização. Aprendizado é a capacidade da rede de aproximar o comportamento das entradas fornecidas durante o treinamento, enquanto generalização é a sua capacidade de prever e operar sobre dados além do conjunto com a qual foi treinada\cite{ZhangNNSurvey}.
 
 É necessário então que a rede passe por um processo de treinamento, onde os valores dos pesos $wi$ e os deslocamentos $b$ de cada neurônio são definidos de forma que o funcionamento da rede seja ótimo para a tarefa que se deseja realizar. Para realizar o treinamento de uma rede, o primeiro passo é definir 3 conjuntos distintos de entradas:
 
@@ -122,7 +122,7 @@ Para que uma rede neural artificical possa ser utilizada, ela precisa antes apre
 	\item \textbf{Conjunto de testes:} Por fim, após o treinamento, a rede é submetida aos dados deste conjunto, a fim de verificar o seu funcionamento correto.
 \end{itemize}
 
-Isto é, a cada ciclo de treinamento, a rede ajusta os seus pesos e deslocamentos de acordo com o conjunto de treinamento, e em seguida processa os dados do conjunto de validação. Se for determinado que a rede teve sucesso no processo de validação, ela fica pronta pra passar pelo conjunto de testes, aonde as sua capacidade de generalização é testada. A matriz $W$ de pesos gerada durante este processo é uma forma de representação do "conhecimento" da rede. Assim, o aprendizado não é uma característica de cada neurônio, mas sim um processo que ocorre na rede inteira como resultado do treinamento\cite{Kosabov}.
+Isto é, a cada ciclo de treinamento, a rede ajusta os seus pesos e deslocamentos de acordo com o conjunto de treinamento, e em seguida processa os dados do conjunto de validação. Se for determinado que a rede teve sucesso no processo de validação, ela fica pronta pra passar pelo conjunto de testes, aonde a sua capacidade de generalização é testada. A matriz $W$ de pesos gerada durante este processo é uma forma de representação do "conhecimento" da rede. Assim, o aprendizado não é uma característica de cada neurônio, mas sim um processo que ocorre na rede inteira como resultado do treinamento\cite{Kosabov}.
 
 Existem duas principais maneiras de se executar o treinamento de uma rede.
 
@@ -149,12 +149,12 @@ Normalmente, uma rede que será utilizada para classificar padrões passa por um
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=5cm]{features}
-\caption{Um gráfico que mostra duas características $\tilde{x}_1$ e $\tilde{x}_2$ de um problema de classificação hipotético. Círculos são padrões da classe $C_1$, enquanto os 'x' são padrões da classe $C_2$. O limiar de decisão, representado pela linha, consegue separar bem as duas classes quando as \textit{features} são consideradas como um par. Porém haveria grande sobreposição se os valores fossem considerados separadamente. Extraída de \cite{NNForPR}}
+\caption{Um gráfico que mostra duas características $\tilde{x}_1$ e $\tilde{x}_2$ de um problema de classificação hipotético. Círculos são padrões da classe $C_1$, enquanto os 'x' são padrões da classe $C_2$. O limiar de decisão, representado pela linha, consegue separar bem as duas classes quando as \textit{features} são consideradas como um par. Porém haveria grande sobreposição se os valores fossem considerados separadamente. Extraída de \cite{NNForPR}.}
 \label{fig:features}
 \centering
 \end{figure}
 
-A escolha dos \textit{features} a serem utilizados para descrever os padrões não pode ser aleatória. Deve se escolher um número de características suficiente para descrever todos os padrões que podem ser encontrados. Além disso é importante que os \textit{features} sejam suficientemente discriminantes. Isto é, deve haver o mínimo possível de superposição entre as características de classes distintas. Esses \textit{features} podem ser escolhidos a mão, com base em um conhecimento prévio dos dados a serem classificados, ou extraídos automaticamente por um algoritmo desenvolvido para tal. Normalmente as \textit{features} são processadas em conjunto e não consideradas individualmente. A figura \ref{fig:features} mostra como isso é benéfico. Se as características hipotéticas $\tilde{x}_1$ e $\tilde{x}_2$ forem consideradas separadamente, há significativa superposição, de forma que é difícil separar com convicção as duas classes $C_1$ e $C_2$, porém, quando consideradas juntas, é possível traçar uma linha que as separa facilmente, apesar de alguns poucos elementos se confundirem. O papel da rede é determinar a função que traça essa linha através do treinamento, e retornar uma probabilidade de que um conjunto de \textit{features} alimentado a ela faça parte de uma determinada classe.
+A escolha dos \textit{features} a serem utilizados para descrever os padrões não pode ser aleatória. Deve se escolher um número de características suficiente para descrever todos os padrões que podem ser encontrados. Além disso é importante que os \textit{features} sejam suficientemente discriminantes. Isto é, deve haver o mínimo possível de superposição entre as características de classes distintas. Esses \textit{features} podem ser escolhidos a mão, com base em um conhecimento prévio dos dados a serem classificados, ou extraídos automaticamente por um algoritmo desenvolvido para tal. Normalmente as \textit{features} são processadas em conjunto e não consideradas individualmente. A Figura \ref{fig:features} mostra como isso é benéfico. Se as características hipotéticas $\tilde{x}_1$ e $\tilde{x}_2$ forem consideradas separadamente, há significativa superposição, de forma que é difícil separar com convicção as duas classes $C_1$ e $C_2$, porém, quando consideradas juntas, é possível traçar uma linha que as separa facilmente, apesar de alguns poucos elementos se confundirem. O papel da rede é determinar a função que traça essa linha através do treinamento, e retornar uma probabilidade de que um conjunto de \textit{features} alimentado a ela faça parte de uma determinada classe.
 
 
 
