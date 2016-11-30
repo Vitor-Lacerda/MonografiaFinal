@@ -6,7 +6,7 @@ Redes neurais artificiais foram criadas com inspiração no funcionamento e na e
 
 Simon Haykin\cite{Haykin} define uma rede neural como "...um processador distribuído massivamente paralelo composto por unidades simples de processamento, que possui uma propensidade natural a armazenar conhecimento experimental e torná-lo disponível para uso."
 
-As redes neurais artificiais são utilizadas para resolver problemas como ajuste de funções, classificação de objetos e reconhecimento de padrões. Este capítulo é uma continuação do Capítulo \ref{cap:fundament} e nele serão explicados conceitos importantes para o entendimento das redes artificiais, começando pelo seu elemento mais básico, o neurônio.
+As redes neurais artificiais são utilizadas para resolver problemas como ajuste de funções, classificação de objetos e reconhecimento de padrões. Este capítulo é uma continuação do Capítulo \ref{cap:fundament} e possui explicações e clarificações de conceitos importantes para o entendimento das redes artificiais, começando pelo seu elemento mais básico, o neurônio.
 
 \section{Neurônios}
 
@@ -96,7 +96,7 @@ Apesar de neurônios serem capazes de resolver alguns problemas sozinhos, o verd
 
 Existem várias arquiteturas para a formação destas redes de neurônios, porém neste trabalho a discussão será limitada àquela utilizada na implementação do programa: as chamadas redes neurais \textit{feed-forward}.
 
-São necessárias ao menos três camadas para a construção da rede neste modelo: a primeira camada, chamada de camada de entrada, uma ou mais camadas intermediárias(ou ocultas) e a camada de saída. O papel das camadas ocultas é intermediar entre as entradas externas e a saída da rede, de forma a possibilitar que a rede extraia dados estatíticos mais significativos da sua entrada.  Uma camada é composta de um número de neurônios que agem de forma paralela. Cada neurônio de uma camada que não é a de saída está conectado a todos os neurônios da camada seguinte, de forma que não há comunicação entre uma camada e camadas anteriores a ela. Isto é, a informação flui na rede apenas no sentido entrada-saída, como ilustrado na Figura \ref{fig:feedfoward}.
+São necessárias ao menos três camadas para a construção da rede neste modelo: a primeira camada, chamada de camada de entrada, uma ou mais camadas intermediárias(ou ocultas) e a camada de saída. O papel das camadas ocultas é intermediar entre as entradas externas e a saída da rede, de forma a possibilitar que a rede extraia dados estatíticos mais significativos da sua entrada.  Uma camada é composta de um número de neurônios que agem de forma paralela. Cada neurônio de uma camada que não é a de saída está conectado a todos os neurônios da camada seguinte, de forma que não há comunicação entre uma camada e camadas anteriores. Isto é, a informação flui na rede apenas no sentido entrada-saída, como ilustrado na Figura \ref{fig:feedfoward}.
 
 \begin{figure}
 \centering
@@ -109,8 +109,8 @@ São necessárias ao menos três camadas para a construção da rede neste model
 O vetor de entrada da rede é alimentado aos neurônios da primeira camada, cuja saída serve de entrada para a segunda camada e assim por diante, até que a última camada seja alimentada pela saída da camada anterior e produza a saída final da rede. 
 
 \section{Treinamento}
-
-Para que uma rede neural artificical possa ser utilizada, ela precisa antes aprender a realizar a tarefa para a qual foi criada. Para isso a rede precisa ter duas habilidades importantes: de aprendizado e de generalização. Aprendizado é a capacidade da rede de aproximar o comportamento das entradas fornecidas durante o treinamento, enquanto generalização é a sua capacidade de prever e operar sobre dados além do conjunto com a qual foi treinada\cite{ZhangNNSurvey}.
+%Para que uma rede neural artificical possa ser utilizada, ela precisa antes aprender a realizar a tarefa para a qual foi criada.%
+ Uma rede neural artificial precisa aprender a realizar a tarefa para qual foi criada antes que possa ser utilizada. Para isso a rede precisa ter duas habilidades importantes: de aprendizado e de generalização. Aprendizado é a capacidade da rede de aproximar o comportamento das entradas fornecidas durante o treinamento, enquanto generalização é a sua capacidade de prever e operar sobre dados além do conjunto com a qual foi treinada\cite{ZhangNNSurvey}.
 
 É necessário então que a rede passe por um processo de treinamento, onde os valores dos pesos $wi$ e os deslocamentos $b$ de cada neurônio são definidos de forma que o funcionamento da rede seja ótimo para a tarefa que se deseja realizar. Para realizar o treinamento de uma rede, o primeiro passo é definir 3 conjuntos distintos de entradas:
 
@@ -122,7 +122,7 @@ Para que uma rede neural artificical possa ser utilizada, ela precisa antes apre
 	\item \textbf{Conjunto de testes:} Por fim, após o treinamento, a rede é submetida aos dados deste conjunto, a fim de verificar o seu funcionamento correto.
 \end{itemize}
 
-Isto é, a cada ciclo de treinamento, a rede ajusta os seus pesos e deslocamentos de acordo com o conjunto de treinamento, e em seguida processa os dados do conjunto de validação. Se for determinado que a rede teve sucesso no processo de validação, ela fica pronta pra passar pelo conjunto de testes, aonde a sua capacidade de generalização é testada. A matriz $W$ de pesos gerada durante este processo é uma forma de representação do "conhecimento" da rede. Assim, o aprendizado não é uma característica de cada neurônio, mas sim um processo que ocorre na rede inteira como resultado do treinamento\cite{Kosabov}.
+Isto é, a cada ciclo de treinamento, a rede ajusta os seus pesos e deslocamentos de acordo com o conjunto de treinamento, e em seguida processa os dados do conjunto de validação. Se for determinado que a rede teve sucesso no processo de validação, considera-se a rede pronta para passar pelo conjunto de testes, aonde a sua capacidade de generalização é testada. A matriz $W$ de pesos gerada durante este processo é uma forma de representação do "conhecimento" da rede. Assim, o aprendizado não é uma característica de cada neurônio, mas sim um processo que ocorre na rede inteira como resultado do treinamento\cite{Kosabov}.
 
 Existem duas principais maneiras de se executar o treinamento de uma rede.
 
@@ -130,7 +130,7 @@ Existem duas principais maneiras de se executar o treinamento de uma rede.
 	\item \textbf{Treinamento supervisionado:} Neste paradigma os conjunto de treinamento e de validação consistem em um grupo de vetores de entrada $x$ e um gabarito de vetores de saída desejado $y$. O treinamento acontece até que o vetor de saída da rede para uma determinada entrada $x_i$ seja suficientemente próximo do vetor gabarito $y_i$ correspondete.
 	
 	
-	\item \textbf{Treinamento não-supervisionado:} Neste paradigma a rede apenas recebe um conjunto $x$ de entradas e aprende características intrínsicas do dados apresentados a ela.
+	\item \textbf{Treinamento não-supervisionado:} Neste paradigma a rede apenas recebe um conjunto $x$ de entradas e aprende características intrínsicas do dados contidos no conjunto.
 	
 \end{itemize}
 
@@ -144,7 +144,7 @@ Uma vez definido o paradigma de treinamento, é necessário definir uma técnica
 
 Um problema muito comum que pode ser solucionado com redes neurais artificiais é o da classificação de padrões. Isto é, analisar um padrão ou um conjunto de características de um conjunto de dados e designá-lo a uma de várias classes pré-determinadas. Os nossos sentidos são muitas vezes capazes de fazer isso com extrema facilidade em uma fração de segundo. Por exemplo, se estamos andando pela rua, somos capazes de dizer que um som mais agudo e melódico é o canto de um pássaro, enquanto um som mais grave e contínuo provavelmente pertence ao motor de um carro passando. Essa habilidade é adquirida através de um aprendizado que ocorre durante as nossas vidas, e da mesma forma podemos ensinar uma rede neural artificial a reconhecer e classificar padrões.
 
-Normalmente, uma rede que será utilizada para classificar padrões passa por um treinamento supervisionado, onde ela é alimentada com um vetor de entradas que contém características, ou \textit{features}, que descrevem os padrões junto com um gabarito que determina a classe a qual cada entrada pertence. Espera-se que depois do treinamento, ao ser apresentada a um novo padrão, a rede seja capaz de determinar a qual classe esse padrão pertence. Para que a rede demonstre boa generalização, é importante que ela não aprenda uma representação exata do conjunto de treinamento, mas que ela construa um modelo estatístico do processo que gera os dados \cite{NNForPR}.
+Normalmente, uma rede que será utilizada para classificar padrões passa por um treinamento supervisionado, onde é alimentada com um vetor de entradas que contém características que descrevem os padrões junto com um gabarito que determina a classe a qual cada entrada pertence. Espera-se que depois do treinamento, ao ser apresentada a um novo padrão, a rede seja capaz de determinar a qual classe esse padrão pertence. Para que a rede demonstre boa generalização, é importante que a rede não aprenda uma representação exata do conjunto de treinamento, mas que construa um modelo estatístico do processo que gera os dados \cite{NNForPR}.
 
 \begin{figure}[!ht]
 \centering

@@ -14,10 +14,10 @@ As filmagens foram realizadas por um drone modelo \textit{Yuneec Typhoon Q500+} 
 \centering
 \end{figure}
 
-Para a aquisição das imagens utilizadas para o treinamento da rede, o primeiro vídeo passou por um processo semelhante ao processo de configuração inicial do programa final descrito no Capítulo \ref{cap:solucao}. Duas áreas de interesse foram determinadas de forma idêntica ao processo de escolha de ROIs do \textit{DVE}. Em seguida cada ROI foi dividida em trinta seções verticais. Três quadros do vídeo foram escolhidos de forma aleatória. As imagens correspondentes a cada seção de cada quadro escolhido foram extraídas em arquivos separados. Dessa maneira, as imagens utilizadas para o treinamento da rede neural foram construídas da mesma maneira que as imagens que seriam alimentadas a ela para classificação no futuro.
+Para a aquisição das imagens utilizadas para o treinamento da rede, o primeiro vídeo passou por um processo semelhante ao processo de configuração inicial do programa final descrito no Capítulo \ref{cap:solucao}. Duas áreas de interesse foram determinadas de forma idêntica ao processo de escolha de ROIs do \textit{DVE}. Em seguida cada ROI foi dividida em trinta seções verticais. Três quadros do vídeo foram escolhidos de forma aleatória. As imagens correspondentes a cada seção de cada quadro escolhido foram extraídas em arquivos separados. Dessa maneira, as imagens utilizadas para o treinamento da rede neural foram construídas da mesma maneira que as imagens que seriam alimentadas a rede para classificação no futuro.
 
 \section{Treinamento da rede neural artificial}
-Uma vez adquiridas as imagens a serem utilizadas para o treinamento, cada uma delas foi separada manualmente em uma das duas categorias:veículo ou vaga vazia. Ao todo foram utilizadas $57$ imagens classificadas como veículo(categoria 1) e $59$ imagens classificadas como vaga vazia(categoria 2) totalizando $116$ imagens. Foram extraídas as características de cada imagem da forma descrita na Seção \ref{sec:extracao}. Os vetores $x_s$ obtidos foram então concatenados de forma a criar duas matrizes. A primeira de dimensões $6\times 57$ representava as características das imagens de carros e a segunda de dimensões $6\times 59$ as características das imagens de vagas desocupadas.
+Uma vez adquiridas as imagens a serem utilizadas para o treinamento, cada uma das imagens foi separada manualmente em uma das duas categorias:veículo ou vaga vazia. Ao todo foram utilizadas $57$ imagens classificadas como veículo(categoria 1) e $59$ imagens classificadas como vaga vazia(categoria 2) totalizando $116$ imagens. Foram extraídas as características de cada imagem da forma descrita na Seção \ref{sec:extracao}. Os vetores $x_s$ obtidos foram então concatenados de forma a criar duas matrizes. A primeira de dimensões $6\times 57$ representava as características das imagens de carros e a segunda de dimensões $6\times 59$ as características das imagens de vagas desocupadas.
 
 \begin{figure}
 \centering
@@ -272,11 +272,11 @@ Média & 10 & 100\% \\
 
 Neste caso de testes, houve discordância entre os observadores sobre as seções ocupadas pelo carro cinza na parte superior do vídeo. Porém o \textit{DVE} classificou como ocupadas as seções onde houve consenso entre os observadores.
 
-O programa também classificou errôneamente a seção $18$ do ROI $2$ no momento inicial do vídeo. Novamente ele acerta nas seções onde há consenso entre os observadores. O erro é mais aceitável que o erro que ocorreu no vídeo $1$, pois a determinação da vaga ainda ocorre de maneira que a sua ocupação é reconhecida.
+O programa também classificou errôneamente a seção $18$ do ROI $2$ no momento inicial do vídeo. Novamente o \textit{DVE} acerta nas seções onde há consenso entre os observadores. O erro é mais aceitável que o erro que ocorreu no vídeo $1$, pois a determinação da vaga ainda ocorre de maneira que a sua ocupação é reconhecida.
 
 \subsection{Vídeo 3}
 
-Neste vídeo, dois carros se encontram no estacionamento. Um veículo amarelo entra pela direita e estaciona na seção superior das vagas. O veículo branco sai pela parte de baixo da tela. Ele tem duração de $20s$ totalizando $1200$ acertos possíveis.
+Neste vídeo, dois carros se encontram no estacionamento. Um veículo amarelo entra pela direita e estaciona na seção superior das vagas. O veículo branco sai pela parte de baixo da tela. O vídeo tem duração de $20s$ totalizando $1200$ acertos possíveis.
 
 \begin{figure}[!h]
 \centering
@@ -384,13 +384,13 @@ Média & 16 & 80\% \\
 
 
 
-Esse caso de teste possui alguns problemas causados principalmente por causa da movimentação do \textit{drone} no momento da gravação. Essa movimentação faz com que partes da imagem passem a ocupar seções diferentes, criando algumas incosistências. Repare que por volta dos $14s$ dois dos observadores disseram que a seção $18$ da ROI $2$ foi liberada, apesar de nunca terem acusado que ela estava ocupada anteriormente. Essa inconsistência ocorre porque entre o início do vídeo esse momento, o \textit{drone} utilizado para a gravação se movimenta e faz com que o veículo que estava ocupando as  seções $19$ e $20$ ocupe as seções $18$ e $19$. Esse problema acontece em outros casos de teste em menor proporção.
+Esse caso de teste possui alguns problemas causados principalmente por causa da movimentação do \textit{drone} no momento da gravação. Essa movimentação faz com que partes da imagem passem a ocupar seções diferentes, criando algumas incosistências. Repare que por volta dos $14s$ dois dos observadores disseram que a seção $18$ da ROI $2$ foi liberada, apesar de nunca terem acusado que a seção estava ocupada anteriormente. Essa inconsistência ocorre porque entre o início do vídeo esse momento, o \textit{drone} utilizado para a gravação se movimenta e faz com que o veículo que estava ocupando as  seções $19$ e $20$ ocupe as seções $18$ e $19$. Esse problema acontece em outros casos de teste em menor proporção.
 
 O teste sobre esse vídeo ainda possui resultados interessantes e úteis. Uma vantagem do uso de um sistema automatizado se mostra neste caso de teste. O observador \textit{P} não percebeu que um veículo saia da tela por volta dos $14$ segundos e por isso não acusou a mudança de estado de nenhuma seção nesse momento. Uma falha que não ocorre no programa.
 
 Através deste caso também percebe-se que o \textit{DVE} tem dificuldade em classificar corretamente as seções ocupadas pelo veículo cinza na ROI $1$, evidenciada principalmente pela flutuação da classificação das seções $23$ e $20$.
 
-Mesmo com os problemas, o mapeamento e determinação das ocupações das vagas mostra uma alta taxa de acerto. Neste caso de teste, a determinação inicial das vagas funciona a favor do programa. Apesar de ter dificuldades em classificar o carro cinza, o \textit{DVE} identifica uma das seções que ele ocupa e determina que esta seção pertence a uma vaga. Por isso, o número de vagas ocupadas se mantém correto durante a execução do teste. Uma flutuação na classificação da seção causa um erro por um segundo, mas que é rapidamente corrigido. Além disso o sistema de mapeamento se mostrou eficaz e seguro. Quando o deslocamento do drone ocorre, diversos movimentos são detectados no vídeo, causando a marcação de várias vagas. Apesar disso, nenhuma seção fica marcada em duas vagas.
+Mesmo com os problemas, o mapeamento e determinação das ocupações das vagas mostra uma alta taxa de acerto. Neste caso de teste, a determinação inicial das vagas funciona a favor do programa. Apesar de ter dificuldades em classificar o carro cinza, o \textit{DVE} identifica uma das seções ocupadas pelo veículo e determina que esta seção pertence a uma vaga. Por isso, o número de vagas ocupadas se mantém correto durante a execução do teste. Uma flutuação na classificação da seção causa um erro por um segundo, mas que é rapidamente corrigido. Além disso o sistema de mapeamento se mostrou eficaz e seguro. Quando o deslocamento do drone ocorre, diversos movimentos são detectados no vídeo, causando a marcação de várias vagas. Apesar disso, nenhuma seção fica marcada em duas vagas.
 
 
 
@@ -702,7 +702,7 @@ Média & 10 & 76,92\% \\
 \end{center}
 
 
-Um caso de testes aonde a avaliação do \textit{DVE} se mantém estável e concorda quase plenamente com a avaliação dos humanos. Os atraso da detecção da liberação das seções $18$ e $19$ da ROI $2$ e da desocupação da vaga representada por estas seções se deve ao fato de que o movimento do veículo saindo só é considerado finalizado depois que o veículo sai do campo de visão da câmera, o que ocorre alguns momentos depois que os observadores humanos consideraram que ele saiu da vaga.
+Um caso de testes aonde a avaliação do \textit{DVE} se mantém estável e concorda quase plenamente com a avaliação dos humanos. Os atraso da detecção da liberação das seções $18$ e $19$ da ROI $2$ e da desocupação da vaga representada por estas seções se deve ao fato de que o movimento do veículo saindo só é considerado finalizado depois que o veículo sai do campo de visão da câmera, o que ocorre alguns momentos depois que os observadores humanos consideraram que o veículo saiu da vaga.
 
 \subsection{Vídeo 7}
 

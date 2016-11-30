@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.10)  30 NOV 2016 01:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.10)  30 NOV 2016 10:40
 entering extended mode
 **MonografiaFinal.tex
 (MonografiaFinal.tex
@@ -1218,11 +1218,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
 Here is how much of TeX's memory you used:
  10904 strings out of 493673
  162901 string characters out of 3141498
- 285734 words of memory out of 3000000
+ 285739 words of memory out of 3000000
  13784 multiletter control sequences out of 15000+200000
  29764 words of font info for 44 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 59i,9n,94p,1532b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 59i,9n,94p,1542b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Avell G1711 NEW\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
 our\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Avell G1711 NEW\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
 0\ecbx1440.pk> <C:\Users\Avell G1711 NEW\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Us
@@ -1238,7 +1238,7 @@ msfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
 r8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/arial/ua1b8a.pfb>
-Output written on MonografiaFinal.pdf (70 pages, 24852482 bytes).
+Output written on MonografiaFinal.pdf (70 pages, 24852437 bytes).
 PDF statistics:
  1496 PDF objects out of 1728 (max. 8388607)
  216 named destinations out of 1000 (max. 500000)

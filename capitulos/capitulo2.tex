@@ -2,7 +2,7 @@
 
 
 
-Esse capítulo tem como objetivo apresentar conceitos que facilitarão o entendimento do conteúdo do Capítulo \ref{cap:solucao}, detalhando técnicas e conceitos utilizados na execução do trabalho através de exemplos e imagens. Serão apresentados conceitos relacionados ao processamento de imagens estáticas, seguidos de uma discussão breve sobre técnias aplicadas em vídeos. O conteúdo deste capítulo continua no Cápitulo \ref{cap:redes} que apresenta conceitos de redes neurais e classificação de padrões. 
+Esse capítulo tem como objetivo apresentar conceitos que facilitarão o entendimento do conteúdo do Capítulo \ref{cap:solucao}, detalhando técnicas e conceitos utilizados na execução do trabalho através de exemplos e imagens. Serão apresentados conceitos relacionados ao processamento de imagens estáticas, seguidos de uma discussão breve sobre técnicas aplicadas em vídeos. O conteúdo deste capítulo continua no Cápitulo \ref{cap:redes} que apresenta conceitos de redes neurais e classificação de padrões. 
 
 \section{Processamento de Imagens}\label{sec:processamento}
 
@@ -85,7 +85,7 @@ Na Figura \ref{fig:Espacos:sub:YCbCr} estão exemplificados os canais de uma ima
 
 \subsection{Descritores de textura}\label{sec:descritores}
 
-Descritores de textura são algoritmos que procuram fazer o que o olho humano faz com facilidade: distinguir tipos diferentes de objetos apenas por algumas de suas características visuais. Estes algoritmos são utilizados quando a abordagem de processamento \textit{pixel-a-pixel} se mostra insuficiente. Eles observam e analisam características pertinentes a imagem inteira e são capazes de identificar diferenças mais sutis entre imagens diferentes. Existem diversas técnicas de descrição de textura que são utilizadas com sucesso em aplicações de processamento de imagem. Para esse trabalho, a técnica escolhida foi a conhecida como GLCM(\textit{gray-level co-ocurrence matrix}) descrita na Seção \ref{sec:GLCM}, por ter execução rápida e ser invariante quanto à escala de cinza.
+Descritores de textura são algoritmos que procuram fazer o que o olho humano faz com facilidade: distinguir tipos diferentes de objetos apenas por algumas de suas características visuais. Estes algoritmos são utilizados quando a abordagem de processamento \textit{pixel-a-pixel} se mostra insuficiente. Estes algoritmos observam e analisam características pertinentes a imagem inteira e são capazes de identificar diferenças mais sutis entre imagens diferentes. Existem diversas técnicas de descrição de textura que são utilizadas com sucesso em aplicações de processamento de imagem. Para esse trabalho, a técnica escolhida foi a conhecida como GLCM(\textit{gray-level co-ocurrence matrix}) descrita na Seção \ref{sec:GLCM}, por ter execução rápida e ser invariante quanto à escala de cinza.
 
 \subsection{GLCM}\label{sec:GLCM}
 
@@ -178,7 +178,10 @@ Queremos então encontrar a velocidade $v =(\frac{dx}{dt},\frac{dy}{dt})$ do \te
 \label{eq:fluxo2}
 \end{equation}
 
-onde $\nabla I$ é o gradiente da função intensidade. Essa equação descreve o chamado problema de Restrição do Fluxo Óptico\cite{mota2011tensor}. Porém, há um problema na equação. A partir dela só é possível obter um dos componentes da velocidade. A solução completa da velocidade depende de um cálculo na vizinhança de cada ponto. Diversos métodos foram criados para a fazer a estimativa da velocidade, com propriedades diversas. Para esse trabalho foi escolhido o método desenvolvido por Lucas e Kanade, detalhado em \cite{bruhn2005lucas,faria1992fluxo,mota2011tensor}. Este método se utiliza de características de uma vizinhança local e visa minimizar o erro de mínimos quadrados. Foi escolhido por ser resistente a ruído e ter mostrado um resultado mais adequado para as exigências do trabalho.
+onde $\nabla I$ é o gradiente da função intensidade. Essa equação descreve o chamado problema de Restrição do Fluxo Óptico\cite{mota2011tensor}. Porém, há um problema. A partir da equação só é possível obter um dos componentes da velocidade. A solução completa da velocidade depende de um cálculo na vizinhança de cada ponto. Diversos métodos foram criados para a fazer a estimativa da velocidade, com propriedades diversas. Para esse trabalho foi escolhido o método desenvolvido por Lucas e Kanade, detalhado em \cite{bruhn2005lucas,faria1992fluxo,mota2011tensor}. Este método se utiliza de características de uma vizinhança local e visa minimizar o erro de mínimos quadrados. Foi escolhido por ser resistente a ruído e ter mostrado um resultado mais adequado para as exigências do trabalho.
+
+%%FALAR AQUI SOBRE OS MOTIVOS DA ESCOLHA DO METODO LUCAS-KANADE%%%
+
 
 O Capítulo \ref{cap:redes} continua a apresentação de conceitos importantes para o entendimento do trabalho, mas tem foco exclusivo em redes neurais artificiais. 
 
