@@ -4,6 +4,11 @@
 DG~Altman.
 \newblock Bs everitt (1998) cambridge dictionary of statistics.
 
+\bibitem{neuronio}
+Só Biologia.
+\newblock Células nervosas.
+\newblock [Online; Acessado 30/11/2016].
+
 \bibitem{NNForPR}
 Christopher~M Bishop.
 \newblock {\em Neural networks for pattern recognition}.
@@ -90,6 +95,11 @@ Jefferson~Gustavo Martins, YMG Costa, D~Bertolini, and LS~Oliveira.
   reconhecimento de padroes em diferentes dom{\i}nios de aplica{\c{c}}ao.
 \newblock In {\em XXXVII Conferencia Latinoamericana de Inform{\'a}tica}, pages
   637--652, 2011.
+
+\bibitem{matlab}
+Mathworks.
+\newblock graycomatrix - create gray-level co-occurrence matrix from image.
+\newblock [Online; Acessado 30/11/2016].
 
 \bibitem{mota2011tensor}
 Virg{\'\i}nia~Fernandes Mota.
