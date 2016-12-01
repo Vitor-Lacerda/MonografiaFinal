@@ -5,14 +5,14 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces (a) Uma matriz com n\IeC {\'\i }veis de cinza e (b) a imagem correspondente.\relax }}{4}{figure.caption.8}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces (a) Uma imagem e cada um de seus canais RGB ordenados da esquerda para a direita e (b) os canais YCbCr da imagem ordenados da esquerda para a direita.\relax }}{5}{figure.caption.9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Exemplo da elabora\IeC {\c c}\IeC {\~a}o da GLCM. Extra\IeC {\'\i }da de \cite {matlab}.\relax }}{6}{figure.caption.10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Exemplo da elabora\IeC {\c c}\IeC {\~a}o da GLCM}}{6}{figure.caption.10}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces (a) Representa\IeC {\c c}\IeC {\~a}o dos vetores de velocidade estimado pelo fluxo \IeC {\'o}ptico. (b) Imagem em n\IeC {\'\i }veis de cinza onde a intensidade do \textit {pixel} representa a magnitude do seu vetor de velocidade.\relax }}{8}{figure.caption.11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces A estrutura b\IeC {\'a}sica de um neur\IeC {\^o}nio humano. Extra\IeC {\'\i }da de \cite {neuronio}.\relax }}{10}{figure.caption.12}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A estrutura b\IeC {\'a}sica de um neur\IeC {\^o}nio humano.}}{10}{figure.caption.12}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces A estrutura b\IeC {\'a}sica de um neur\IeC {\^o}nio artificial.\relax }}{10}{figure.caption.13}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces (a) Gr\IeC {\'a}fico da fun\IeC {\c c}\IeC {\~a}o degrau com limiar 0. (b) Gr\IeC {\'a}fico da fun\IeC {\c c}\IeC {\~a}o log\IeC {\'\i }stica com a = 1\relax }}{12}{figure.caption.14}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces A arquitetura feed-forward. Cada neur\IeC {\^o}nio se comunica com os neur\IeC {\^o}nios da camada seguinte at\IeC {\'e} que a sa\IeC {\'\i }da final seja produzida. Adaptada de \cite {Haykin}.\relax }}{13}{figure.caption.15}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Um gr\IeC {\'a}fico que mostra duas caracter\IeC {\'\i }sticas $\mathaccentV {tilde}07E{x}_1$ e $\mathaccentV {tilde}07E{x}_2$ de um problema de classifica\IeC {\c c}\IeC {\~a}o hipot\IeC {\'e}tico. C\IeC {\'\i }rculos s\IeC {\~a}o padr\IeC {\~o}es da classe $C_1$, enquanto os 'x' s\IeC {\~a}o padr\IeC {\~o}es da classe $C_2$. O limiar de decis\IeC {\~a}o, representado pela linha, consegue separar bem as duas classes quando as caracter\IeC {\'\i }sticas s\IeC {\~a}o consideradas como um par. Por\IeC {\'e}m haveria grande sobreposi\IeC {\c c}\IeC {\~a}o se os valores fossem considerados separadamente. Extra\IeC {\'\i }da de \cite {NNForPR}.\relax }}{15}{figure.caption.16}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces A arquitetura feed-forward. Cada neur\IeC {\^o}nio se comunica com os neur\IeC {\^o}nios da camada seguinte at\IeC {\'e} que a sa\IeC {\'\i }da final seja produzida. Adaptada de ~\cite {Haykin}.\relax }}{13}{figure.caption.15}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Um gr\IeC {\'a}fico que mostra duas caracter\IeC {\'\i }sticas $\mathaccentV {tilde}07E{x}_1$ e $\mathaccentV {tilde}07E{x}_2$ de um problema de classifica\IeC {\c c}\IeC {\~a}o hipot\IeC {\'e}tico.}}{15}{figure.caption.16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Um fluxograma com o funcionamento geral do \textit {DVE}\relax }}{20}{figure.caption.17}

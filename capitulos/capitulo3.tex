@@ -282,7 +282,7 @@ Outra ferramenta utilizada pelo \textit{DVE} para a análise do vídeo capturado
 
 \subsection{Magnitudes do movimento}
 
-O movimento é detectado através do método de cálculo do fluxo óptico utilizando o método de Lucas-Kanade\cite{bruhn2005lucas,faria1992fluxo,mota2011tensor} para resolver a Equação \ref{eq:fluxo2}. O resultado deste processo é uma matriz $M$ de dimensões iguais as do quadro onde cada elemento corresponde à magnitude do vetor velocidade do seu movimento. A direção e o sentido do vetor velocidade não são de interesse do \textit{DVE}, uma vez só os pontos de início e fim do movimento são relevantes para o processamento. A matriz $M$ então passa por um processo de limiarização, onde cada elemento de magnitude menor do que um limiar $t$ tem seu valor redefinido como $0$. O resultado deste processo é uma matriz que mostra as posições do quadro aonde ocorreu movimento significativo. 
+O movimento é detectado através do método de cálculo do fluxo óptico utilizando o método de Lucas-Kanade~\cite{bruhn2005lucas,faria1992fluxo,mota2011tensor} para resolver a Equação \ref{eq:fluxo2}. O resultado deste processo é uma matriz $M$ de dimensões iguais as do quadro onde cada elemento corresponde à magnitude do vetor velocidade do seu movimento. A direção e o sentido do vetor velocidade não são de interesse do \textit{DVE}, uma vez só os pontos de início e fim do movimento são relevantes para o processamento. A matriz $M$ então passa por um processo de limiarização, onde cada elemento de magnitude menor do que um limiar $t$ tem seu valor redefinido como $0$. O resultado deste processo é uma matriz que mostra as posições do quadro aonde ocorreu movimento significativo. 
 
 
 
