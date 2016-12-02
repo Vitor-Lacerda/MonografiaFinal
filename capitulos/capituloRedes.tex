@@ -101,11 +101,13 @@ São necessárias ao menos três camadas para a construção da rede neste model
 \begin{figure}
 \centering
 \includegraphics[width=.6\textwidth]{feedforward}
-\caption{A arquitetura feed-forward. Cada neurônio se comunica com os neurônios da camada seguinte até que a saída final seja produzida. Adaptada de ~\cite{Haykin}.}
+\caption[A arquitetura feed-forward. Cada neurônio se comunica com os neurônios da camada seguinte até que a saída final seja produzida.]{A arquitetura feed-forward. Cada neurônio se comunica com os neurônios da camada seguinte até que a saída final seja produzida.\protect\footnotemark}
 \label{fig:feedfoward}
 \centering
 \end{figure}
 
+
+\footnotetext{ Adaptada de ~\cite{Haykin}.}
 O vetor de entrada da rede é alimentado aos neurônios da primeira camada, cuja saída serve de entrada para a segunda camada e assim por diante, até que a última camada seja alimentada pela saída da camada anterior e produza a saída final da rede. 
 
 \section{Treinamento}

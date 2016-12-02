@@ -36,7 +36,7 @@ Uma imagem então, pode ser interpretada por um programa de computador como uma 
 
 \subsection{Espaços de cores}
 
-Para que um sistema de processamento de imagens possa interpretar e processar cores, é preciso criar modelos apropriados para representá-las. Chamamos os modelos de representação das cores em uma imagem um espaços de cor. Existem diversos espaços de cor, cada um importante para a realização de tarefas e necessidades diferentes. Para a compreensão deste trabalho, é necessário, porém, entender apenas dois: o espaço RGB e o espaço YCbCr.
+Para que um sistema de processamento de imagens possa interpretar e processar cores, é preciso criar modelos apropriados para representá-las. Chamamos os modelos de representação das cores em uma imagem um espaço de cor. Existem diversos espaços de cor, cada um importante para a realização de tarefas e necessidades diferentes~\cite{acharya2005image}. Para a compreensão deste trabalho, é necessário, porém, entender apenas dois: o espaço RGB e o espaço YCbCr.
 
 \subsection{O espaço RGB}
 
@@ -85,7 +85,7 @@ Na Figura \ref{fig:Espacos:sub:YCbCr} estão exemplificados os canais de uma ima
 
 \subsection{Descritores de textura}\label{sec:descritores}
 
-Descritores de textura são algoritmos que procuram fazer o que o olho humano faz com facilidade: distinguir tipos diferentes de objetos apenas por algumas de suas características visuais. Estes algoritmos são utilizados quando a abordagem de processamento \textit{pixel-a-pixel} se mostra insuficiente. Estes algoritmos observam e analisam características pertinentes a imagem inteira e são capazes de identificar diferenças mais sutis entre imagens diferentes. Existem diversas técnicas de descrição de textura que são utilizadas com sucesso em aplicações de processamento de imagem. Para esse trabalho, a técnica escolhida foi a conhecida como GLCM(\textit{gray-level co-ocurrence matrix}) descrita na Seção \ref{sec:GLCM}, por ter execução rápida e ser invariante quanto à escala de cinza.
+Descritores de textura são algoritmos que procuram fazer o que o olho humano faz com facilidade: distinguir tipos diferentes de objetos apenas por algumas de suas características visuais~\cite{GLCM}. Estes algoritmos observam e analisam características pertinentes a imagem inteira e são capazes de identificar diferenças mais sutis entre imagens diferentes. Existem diversas técnicas de descrição de textura~\cite{ojala2002multiresolution} que são utilizadas com sucesso em aplicações de processamento de imagem. Para esse trabalho, a técnica escolhida foi a conhecida como GLCM (\textit{gray-level co-ocurrence matrix}) descrita na Seção \ref{sec:GLCM}, por ter execução rápida e ser invariante quanto à escala de cinza.
 
 \subsection{GLCM}\label{sec:GLCM}
 

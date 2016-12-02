@@ -1,48 +1,19 @@
 \begin{thebibliography}{10}
 
-\bibitem{altmanbs}
-DG~Altman.
-\newblock Bs everitt (1998) cambridge dictionary of statistics.
+\bibitem{gonzalez2009digital}
+Rafael~C Gonzalez.
+\newblock {\em Digital image processing}.
+\newblock Pearson Education India, 2009.
 
-\bibitem{neuronio}
-Só Biologia.
-\newblock Células nervosas.
-\newblock [Online; Acessado 30/11/2016].
+\bibitem{acharya2005image}
+Tinku Acharya and Ajoy~K Ray.
+\newblock {\em Image processing: principles and applications}.
+\newblock John Wiley \& Sons, 2005.
 
-\bibitem{NNForPR}
-Christopher~M Bishop.
-\newblock {\em Neural networks for pattern recognition}.
-\newblock Oxford university press, 1995.
-
-\bibitem{bishop2006pattern}
-Christopher~M Bishop.
-\newblock Pattern recognition.
-\newblock {\em Machine Learning}, 128, 2006.
-
-\bibitem{bong2008integrated}
-DBL Bong, KC~Ting, and KC~Lai.
-\newblock Integrated approach in the design of car park occupancy information
-  system (coins).
-\newblock {\em IAENG International Journal of Computer Science}, 35(1):7--14,
-  2008.
-
-\bibitem{bruhn2005lucas}
-Andr{\'e}s Bruhn, Joachim Weickert, and Christoph Schn{\"o}rr.
-\newblock Lucas/kanade meets horn/schunck: Combining local and global optic
-  flow methods.
-\newblock {\em International Journal of Computer Vision}, 61(3):211--231, 2005.
-
-\bibitem{delibaltov2013parking}
-Diana Delibaltov, Wencheng Wu, Robert~P Loce, Edgar Bernal, et~al.
-\newblock Parking lot occupancy determination from lamp-post camera images.
-\newblock In {\em Intelligent Transportation Systems-(ITSC), 2013 16th
-  International IEEE Conference on}, pages 2387--2392. IEEE, 2013.
-
-\bibitem{faria1992fluxo}
-Alexandre Wagner~Chagas Faria.
-\newblock Fluxo {\'o}ptico.
-\newblock {\em Universidade Federal de Minas Gerais, ICEx-DCC-Vis{\~a}o
-  Computacional}, 1992.
+\bibitem{IBGE2000introducao}
+IBGE.
+\newblock {\em Introdução ao processamento digital de imagens}.
+\newblock IBGE, 2000.
 
 \bibitem{colorSpacesDigitalVideo}
 R~Gaunt.
@@ -50,44 +21,10 @@ R~Gaunt.
 \newblock Technical report, Lawrence Livermore National Lab., CA (United
   States), 1997.
 
-\bibitem{gonzalez2009digital}
-Rafael~C Gonzalez.
-\newblock {\em Digital image processing}.
-\newblock Pearson Education India, 2009.
-
-\bibitem{DeepLearning}
-Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
-\newblock Deep learning.
-\newblock Book in preparation for MIT Press, 2016.
-
-\bibitem{Haykin}
-Simon Haykin.
-\newblock {\em Neural Networks}.
-\newblock Prentice Hall, 2 edition, 1999.
-
-\bibitem{IBGE2000introducao}
-IBGE.
-\newblock {\em Introdução ao processamento digital de imagens}.
-\newblock IBGE, 2000.
-
-\bibitem{Kosabov}
-Nikola~K Kasabov.
-\newblock {\em Foundations of neural networks, fuzzy systems, and knowledge
-  engineering}.
-\newblock Marcel Alencar, 1996.
-
-\bibitem{kianpisheh2012smart}
-Amin Kianpisheh, Norlia Mustaffa, Pakapan Limtrairut, and Pantea
-  Keikhosrokiani.
-\newblock Smart parking system (sps) architecture using ultrasonic detector.
-\newblock {\em International Journal of Software Engineering and Its
-  Applications}, 6(3):55--58, 2012.
-
-\bibitem{lee2008intelligent}
-Sangwon Lee, Dukhee Yoon, and Amitabha Ghosh.
-\newblock Intelligent parking lot application using wireless sensor networks.
-\newblock In {\em Collaborative Technologies and Systems, 2008. CTS 2008.
-  International Symposium on}, pages 48--57. IEEE, 2008.
+\bibitem{LivroVideoDigital}
+Charles~A. Poynton.
+\newblock {\em A Technical Introduction to Digital Video}.
+\newblock John Wiley \& Sons, Inc., New York, NY, USA, 1996.
 
 \bibitem{GLCM}
 Jefferson~Gustavo Martins, YMG Costa, D~Bertolini, and LS~Oliveira.
@@ -96,21 +33,96 @@ Jefferson~Gustavo Martins, YMG Costa, D~Bertolini, and LS~Oliveira.
 \newblock In {\em XXXVII Conferencia Latinoamericana de Inform{\'a}tica}, pages
   637--652, 2011.
 
+\bibitem{ojala2002multiresolution}
+Timo Ojala, Matti Pietikainen, and Topi Maenpaa.
+\newblock Multiresolution gray-scale and rotation invariant texture
+  classification with local binary patterns.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
+  24(7):971--987, 2002.
+
 \bibitem{mota2011tensor}
 Virg{\'\i}nia~Fernandes Mota.
 \newblock {\em Tensor baseado em fluxo {\'o}ptico para descri{\c{c}}{\~a}o
   global de movimento em v{\'\i}deos}.
 \newblock PhD thesis, Universidade Federal de Juiz de Fora, 2011.
 
+\bibitem{faria1992fluxo}
+Alexandre Wagner~Chagas Faria.
+\newblock Fluxo {\'o}ptico.
+\newblock {\em Universidade Federal de Minas Gerais, ICEx-DCC-Vis{\~a}o
+  Computacional}, 1992.
+
+\bibitem{bruhn2005lucas}
+Andr{\'e}s Bruhn, Joachim Weickert, and Christoph Schn{\"o}rr.
+\newblock Lucas/kanade meets horn/schunck: Combining local and global optic
+  flow methods.
+\newblock {\em International Journal of Computer Vision}, 61(3):211--231, 2005.
+
+\bibitem{Haykin}
+Simon Haykin.
+\newblock {\em Neural Networks}.
+\newblock Prentice Hall, 2 edition, 1999.
+
+\bibitem{Kosabov}
+Nikola~K Kasabov.
+\newblock {\em Foundations of neural networks, fuzzy systems, and knowledge
+  engineering}.
+\newblock Marcel Alencar, 1996.
+
+\bibitem{bishop2006pattern}
+Christopher~M Bishop.
+\newblock Pattern recognition.
+\newblock {\em Machine Learning}, 128, 2006.
+
+\bibitem{altmanbs}
+DG~Altman.
+\newblock Bs everitt (1998) cambridge dictionary of statistics.
+
+\bibitem{ZhangNNSurvey}
+Guoqiang~Peter Zhang.
+\newblock Neural networks for classification: a survey.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics, Part C
+  (Applications and Reviews)}, 30(4):451--462, 2000.
+
+\bibitem{DeepLearning}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock Deep learning.
+\newblock Book in preparation for MIT Press, 2016.
+
+\bibitem{NNForPR}
+Christopher~M Bishop.
+\newblock {\em Neural networks for pattern recognition}.
+\newblock Oxford university press, 1995.
+
 \bibitem{idris09}
 Idris M.Y.I, Leng Y.Y, et~al.
 \newblock Car park system: A review of smart parking system and its technology.
 \newblock {\em Information Technology Journal}, 8(8):101--113, June 2009.
 
-\bibitem{LivroVideoDigital}
-Charles~A. Poynton.
-\newblock {\em A Technical Introduction to Digital Video}.
-\newblock John Wiley \& Sons, Inc., New York, NY, USA, 1996.
+\bibitem{kianpisheh2012smart}
+Amin Kianpisheh, Norlia Mustaffa, Pakapan Limtrairut, and Pantea
+  Keikhosrokiani.
+\newblock Smart parking system (sps) architecture using ultrasonic detector.
+\newblock {\em International Journal of Software Engineering and Its
+  Applications}, 6(3):55--58, 2012.
+
+\bibitem{delibaltov2013parking}
+Diana Delibaltov, Wencheng Wu, Robert~P Loce, Edgar Bernal, et~al.
+\newblock Parking lot occupancy determination from lamp-post camera images.
+\newblock In {\em Intelligent Transportation Systems-(ITSC), 2013 16th
+  International IEEE Conference on}, pages 2387--2392. IEEE, 2013.
+
+\bibitem{bong2008integrated}
+DBL Bong, KC~Ting, and KC~Lai.
+\newblock Integrated approach in the design of car park occupancy information
+  system (coins).
+\newblock {\em IAENG International Journal of Computer Science}, 35(1):7--14,
+  2008.
+
+\bibitem{true2007vacant}
+Nicholas True.
+\newblock Vacant parking space detection in static images.
+\newblock {\em University of California, San Diego}, 2007.
 
 \bibitem{schmid2011parking}
 Matthias~R Schmid, Savas Ates, J{\"u}rgen Dickmann, Felix von Hundelshausen,
@@ -119,10 +131,11 @@ Matthias~R Schmid, Savas Ates, J{\"u}rgen Dickmann, Felix von Hundelshausen,
 \newblock In {\em Intelligent Vehicles Symposium (IV), 2011 IEEE}, pages
   254--259. IEEE, 2011.
 
-\bibitem{true2007vacant}
-Nicholas True.
-\newblock Vacant parking space detection in static images.
-\newblock {\em University of California, San Diego}, 2007.
+\bibitem{lee2008intelligent}
+Sangwon Lee, Dukhee Yoon, and Amitabha Ghosh.
+\newblock Intelligent parking lot application using wireless sensor networks.
+\newblock In {\em Collaborative Technologies and Systems, 2008. CTS 2008.
+  International Symposium on}, pages 48--57. IEEE, 2008.
 
 \bibitem{wolff2006parking}
 Joerg Wolff, Thomas Heuer, Haibin Gao, Michael Weinmann, Stefan Voit, and Uwe
@@ -130,11 +143,5 @@ Joerg Wolff, Thomas Heuer, Haibin Gao, Michael Weinmann, Stefan Voit, and Uwe
 \newblock Parking monitor system based on magnetic field senso.
 \newblock In {\em 2006 IEEE Intelligent Transportation Systems Conference},
   pages 1275--1279. IEEE, 2006.
-
-\bibitem{ZhangNNSurvey}
-Guoqiang~Peter Zhang.
-\newblock Neural networks for classification: a survey.
-\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics, Part C
-  (Applications and Reviews)}, 30(4):451--462, 2000.
 
 \end{thebibliography}
