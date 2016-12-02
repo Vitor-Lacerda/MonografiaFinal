@@ -40,6 +40,11 @@ Timo Ojala, Matti Pietikainen, and Topi Maenpaa.
 \newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
   24(7):971--987, 2002.
 
+\bibitem{bovik2010handbook}
+Alan~C Bovik.
+\newblock {\em Handbook of image and video processing}.
+\newblock Academic press, 2010.
+
 \bibitem{mota2011tensor}
 Virg{\'\i}nia~Fernandes Mota.
 \newblock {\em Tensor baseado em fluxo {\'o}ptico para descri{\c{c}}{\~a}o
@@ -62,6 +67,16 @@ Andr{\'e}s Bruhn, Joachim Weickert, and Christoph Schn{\"o}rr.
 Simon Haykin.
 \newblock {\em Neural Networks}.
 \newblock Prentice Hall, 2 edition, 1999.
+
+\bibitem{kohonen1990self}
+Teuvo Kohonen.
+\newblock The self-organizing map.
+\newblock {\em Proceedings of the IEEE}, 78(9):1464--1480, 1990.
+
+\bibitem{chiras2013human}
+Daniel~D Chiras et~al.
+\newblock {\em Human biology}.
+\newblock Jones \& Bartlett Publishers, 2013.
 
 \bibitem{Kosabov}
 Nikola~K Kasabov.

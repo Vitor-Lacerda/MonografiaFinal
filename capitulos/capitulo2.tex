@@ -10,7 +10,7 @@ Esse capítulo tem como objetivo apresentar conceitos que facilitarão o entendi
 
 Para que um computador seja capaz de operar sobre uma imagem, é preciso que seja utilizado um modelo de representação que traduza o que os nossos sentidos conseguem perceber em informações que podem ser interpretadas por uma máquina que não é dotada de visão. A forma mais simples de se representar uma imagem são as imagens em nível de cinza. Podemos definir imagens como uma função \textit{f{(x,y)}} onde x e y são coordenadas espaciais e o valor de  \textit{f{(x,y)}} é a luminosidade, ou nível de cinza, da imagem naquele ponto. Quando esses valores são todos discretos, chamamos essa imagem de uma imagem digital~\cite{gonzalez2009digital}. Cada elemento individual dessa imagem, cada valor em cada coordenada, pode ser chamado de um \textit{picture element} ou mais comumente \textit{pixel}. Em imagens digitais em nível de cinza, cada \textit{pixel} possui 1 \textit{byte} de informação, ou seja, pode assumir valores entre 0 e 255, onde o valor 0 representa o preto e 255 representa o branco. 
 
-Uma imagem então, pode ser interpretada por um programa de computador como uma matriz $M\times N$ de elementos de 1 \textit{byte}, onde M é a largura da imagem e N é a sua altura. Cada elemento $p_{i,j}$ da matriz possui a informação de luminosidade do pixel correspondente e o computador é capaz de exibir e interpretar esses valores apropriadamente. A Figura \ref{fig:NivelCinza} exemplifica esse processo.
+Uma imagem então, pode ser interpretada por um programa de computador como uma matriz $M\times N$ de elementos de 1 \textit{byte}, onde $M$ é a largura da imagem e $N$ é a sua altura. Cada elemento $p_{i,j}$ da matriz possui a informação de luminosidade do pixel correspondente e o computador é capaz de exibir e interpretar esses valores apropriadamente. A Figura \ref{fig:NivelCinza} exemplifica esse processo.
 
 \begin{figure}
  \centering
@@ -135,7 +135,7 @@ Uma vez criada a matriz de co-ocorrência, diversas medidas podem ser extraídas
 \section{Vídeos}\label{sec:video}
 
 
-Quando observamos uma cena no mundo real, a cena raramente é estática. Com o passar do tempo, os objetos presentes na cena se movem continuamente pelo espaço, criando infinitas imagens diferentes em nossas retinas. Podemos simular essa sensação de movimento na nossa visão através da exibição rápida de imagens que contém valores discretos. Esse é o conceito de um vídeo digital. Um vídeo digital é formado através da amostragem de imagens	em três eixos: horizontal, vertical e temporal~\cite{LivroVideoDigital}. A cada intervalo fixo de tempo, uma imagem representada por uma matriz bidimensional de valores de intensidade luminosa e cor é amostrada. Cada uma dessas imagens, ou quadros, representa o estado da cena naquele momento no tempo.
+Quando observamos uma cena no mundo real, a cena raramente é estática. Com o passar do tempo, os objetos presentes na cena se movem continuamente pelo espaço, criando infinitas imagens diferentes em nossas retinas. Podemos simular essa sensação de movimento na nossa visão através da exibição rápida de imagens que contém valores discretos. Esse é o conceito de um vídeo digital. Um vídeo digital é formado através da amostragem de imagens	em três eixos: horizontal, vertical e temporal~\cite{LivroVideoDigital,bovik2010handbook}. A cada intervalo fixo de tempo, uma imagem representada por uma matriz bidimensional de valores de intensidade luminosa e cor é amostrada. Cada uma dessas imagens, ou quadros, representa o estado da cena naquele momento no tempo.
 
 \subsection{Fluxo Óptico}\label{sec:fluxooptico}
 
@@ -169,7 +169,7 @@ Para calcular o fluxo óptico, começamos assumindo que no intervalo entre dois 
 \label{eq:fluxo1}
 \end{equation} 
 
-onde $dx$ e $dy$ são o deslocamento que o \textit{pixel} no intervalo $dt$ entre dois quadros.
+\noindent onde $dx$ e $dy$ são o deslocamento que o \textit{pixel} no intervalo $dt$ entre dois quadros.
 
 Queremos então encontrar a velocidade $v =(\frac{dx}{dt},\frac{dy}{dt})$ do \textit{pixel}. Usando a expansão por série de Taylor e manipulações matemáticas na Equação \ref{eq:fluxo1}, obtemos a Equação \ref{eq:fluxo2}~\cite{faria1992fluxo}.
 
@@ -178,9 +178,10 @@ Queremos então encontrar a velocidade $v =(\frac{dx}{dt},\frac{dy}{dt})$ do \te
 \label{eq:fluxo2}
 \end{equation}
 
-onde $\nabla I$ é o gradiente da função intensidade. Essa equação descreve o chamado problema de Restrição do Fluxo Óptico~\cite{mota2011tensor}. Porém, há um problema. A partir da equação só é possível obter um dos componentes da velocidade. A solução completa da velocidade depende de um cálculo na vizinhança de cada ponto. Diversos métodos foram criados para a fazer a estimativa da velocidade, com propriedades diversas. Para esse trabalho foi escolhido o método desenvolvido por Lucas e Kanade, detalhado em ~\cite{bruhn2005lucas,faria1992fluxo,mota2011tensor}. Este método se utiliza de características de uma vizinhança local e visa minimizar o erro de mínimos quadrados. Foi escolhido por ser resistente a ruído e ter mostrado um resultado mais adequado para as exigências do trabalho.
+\noindent onde $\nabla I$ é o gradiente da função intensidade. Essa equação descreve o chamado problema de Restrição do Fluxo Óptico~\cite{mota2011tensor}. Porém, há um problema. A partir da equação só é possível obter um dos componentes da velocidade. A solução completa da velocidade depende de um cálculo na vizinhança de cada ponto. Diversos métodos foram criados para resolver a equação da Restrição do Fluxo Óptico, de naturezas distintas~\cite{mota2011tensor}. Para esse trabalho foi escolhido o método desenvolvido por Lucas e Kanade, detalhado em ~\cite{bruhn2005lucas,faria1992fluxo,mota2011tensor}.
 
-%%FALAR AQUI SOBRE OS MOTIVOS DA ESCOLHA DO METODO LUCAS-KANADE%%%
+O método de Lucas-Kanade resolve a equação \ref{eq:fluxo2} a partir da suposição que o vetor do fluxo óptico se mantém constante entre os elementos de uma pequena janela imagem. Desta forma é possível elaborar um sistema determinado, que é resolvido por uma aproximação pela técnica dos mínimos quadrados. Apesar de criar uma malha de pontos do campo de velocidade menos densa que outros métodos, o método de Lucas-Kanade é mais resistente a ruídos. Por esse motivo este método foi escolhido para a elaboração do presente trabalho.
+
 
 
 O Capítulo \ref{cap:redes} continua a apresentação de conceitos importantes para o entendimento do trabalho, mas tem foco exclusivo em redes neurais artificiais. 
