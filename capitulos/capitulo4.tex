@@ -17,7 +17,7 @@ As filmagens foram realizadas por um drone modelo \textit{Yuneec Typhoon Q500+} 
 Para a aquisição das imagens utilizadas para o treinamento da rede, o primeiro vídeo passou por um processo semelhante ao processo de configuração inicial do programa final descrito no Capítulo \ref{cap:solucao}. Duas áreas de interesse foram determinadas de forma idêntica ao processo de escolha de ROIs do \textit{DVE}. Em seguida cada ROI foi dividida em trinta seções verticais. Três quadros do vídeo foram escolhidos de forma aleatória. As imagens correspondentes a cada seção de cada quadro escolhido foram extraídas em arquivos separados. Dessa maneira, as imagens utilizadas para o treinamento da rede neural foram construídas da mesma maneira que as imagens que seriam alimentadas a rede para classificação no futuro.
 
 \section{Treinamento da rede neural artificial}
-Uma vez adquiridas as imagens a serem utilizadas para o treinamento, cada uma das imagens foi separada manualmente em uma das duas categorias:veículo ou vaga vazia. Ao todo foram utilizadas $57$ imagens classificadas como veículo(categoria 1) e $59$ imagens classificadas como vaga vazia(categoria 2) totalizando $116$ imagens. Foram extraídas as características de cada imagem da forma descrita na Seção \ref{sec:extracao}. Os vetores $x_s$ obtidos foram então concatenados de forma a criar duas matrizes. A primeira de dimensões $6\times 57$ representava as características das imagens de carros e a segunda de dimensões $6\times 59$ as características das imagens de vagas desocupadas.
+Uma vez adquiridas as imagens a serem utilizadas para o treinamento, cada uma das imagens foi separada manualmente em uma das duas categorias:veículo ou vaga vazia. Ao todo foram utilizadas $57$ imagens classificadas como veículo (categoria 1) e $59$ imagens classificadas como vaga vazia (categoria 2) totalizando $116$ imagens. Foram extraídas as características de cada imagem da forma descrita na Seção \ref{sec:extracao}. Os vetores $x_s$ obtidos foram então concatenados de forma a criar duas matrizes. A primeira de dimensões $6\times 57$ representava as características das imagens de carros e a segunda de dimensões $6\times 59$ as características das imagens de vagas desocupadas.
 
 \begin{figure}
 \centering
@@ -34,7 +34,7 @@ Uma vez adquiridas as imagens a serem utilizadas para o treinamento, cada uma da
   \label{fig:exemploRede:sub:desocupada}
 \end{subfigure}
 \centering
-\caption{(a)Um exemplo de imagem classificada manualmente na classe 1.(b) Um exemplo de imagem classificada manualmente na classe 2.}
+\caption{(a)Um exemplo de imagem classificada manualmente na classe 1;(b) Um exemplo de imagem classificada manualmente na classe 2.}
 \label{fig:exemploRede}
 \end{figure}
 
@@ -58,7 +58,7 @@ Cada um dos observadores receberam as seguintes instruções:
   \item As regiões de interesse e as seções são numeradas como indicado na Figura \ref{fig:instrucao}.
 	\item Uma seção ocupada é aquela cuja maior parte de sua área está ocupada por um veículo.
 	\item No momento inicial do vídeo ($0$ segundos), indique quais seções verticais estão ocupadas através do número das ROI e das seções, as outras serão assumidas como livres. Indique também o número de vagas ocupadas.
-	\item Se a qualquer momento o estado de ocupação de uma seção mudar, indique o tempo da mudança, a seção onde ocorreu a mudança e a natureza da mudança(ocupada ou liberada).
+	\item Se a qualquer momento o estado de ocupação de uma seção mudar, indique o tempo da mudança, a seção onde ocorreu a mudança e a natureza da mudança (ocupada ou liberada).
 \end{itemize}
 
 \begin{figure}

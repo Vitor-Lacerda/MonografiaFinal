@@ -3,45 +3,35 @@
 \BOOKMARK [0][-]{resumo.0}{Abstract}{}% 3
 \BOOKMARK [0][-]{abstract.0}{Abstract}{}% 4
 \BOOKMARK [0][-]{chapter.1}{Introdu\347\343o}{}% 5
-\BOOKMARK [0][-]{chapter.2}{Fundamenta\347\343o Te\363rica}{}% 6
-\BOOKMARK [1][-]{section.2.1}{Processamento de Imagens}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.1.1}{Imagens em n\355vel de cinza}{section.2.1}% 8
-\BOOKMARK [2][-]{subsection.2.1.2}{Espa\347os de cores}{section.2.1}% 9
-\BOOKMARK [2][-]{subsection.2.1.3}{O espa\347o RGB}{section.2.1}% 10
-\BOOKMARK [2][-]{subsection.2.1.4}{Espa\347o YCbCr}{section.2.1}% 11
-\BOOKMARK [2][-]{subsection.2.1.5}{Descritores de textura}{section.2.1}% 12
-\BOOKMARK [2][-]{subsection.2.1.6}{GLCM}{section.2.1}% 13
-\BOOKMARK [1][-]{section.2.2}{V\355deos}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.1}{Fluxo \323ptico}{section.2.2}% 15
-\BOOKMARK [0][-]{chapter.3}{Redes Neurais Artificiais}{}% 16
-\BOOKMARK [1][-]{section.3.1}{Neur\364nios}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.2}{Redes Neurais Feed-Forward}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.3}{Treinamento}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.4}{Classifica\347\343o de padr\365es}{chapter.3}% 20
-\BOOKMARK [0][-]{chapter.4}{Trabalhos Correlatos}{}% 21
-\BOOKMARK [0][-]{chapter.5}{Solu\347\343o Proposta}{}% 22
-\BOOKMARK [1][-]{section.5.1}{Aquisi\347\343o}{chapter.5}% 23
-\BOOKMARK [1][-]{section.5.2}{Regi\365es de Interesse}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.3}{Classifica\347\343o das se\347\365es}{chapter.5}% 25
-\BOOKMARK [2][-]{subsection.5.3.1}{Extra\347\343o de caracter\355sticas}{section.5.3}% 26
-\BOOKMARK [2][-]{subsection.5.3.2}{Classifica\347\343o da rede neural artificial}{section.5.3}% 27
-\BOOKMARK [2][-]{subsection.5.3.3}{Ajuste gaussiano dos vizinhos}{section.5.3}% 28
-\BOOKMARK [2][-]{subsection.5.3.4}{Sistema de vota\347\343o}{section.5.3}% 29
-\BOOKMARK [1][-]{section.5.4}{Extra\347\343o do movimento}{chapter.5}% 30
-\BOOKMARK [2][-]{subsection.5.4.1}{Magnitudes do movimento}{section.5.4}% 31
-\BOOKMARK [2][-]{subsection.5.4.2}{Regi\365es de movimento}{section.5.4}% 32
-\BOOKMARK [1][-]{section.5.5}{Mapeamento de Vagas}{chapter.5}% 33
-\BOOKMARK [0][-]{chapter.6}{Resultados Experimentais}{}% 34
-\BOOKMARK [1][-]{section.6.1}{Aquisi\347\343o de dados}{chapter.6}% 35
-\BOOKMARK [1][-]{section.6.2}{Treinamento da rede neural artificial}{chapter.6}% 36
-\BOOKMARK [1][-]{section.6.3}{Resultados Obtidos}{chapter.6}% 37
-\BOOKMARK [2][-]{subsection.6.3.1}{V\355deo 1}{section.6.3}% 38
-\BOOKMARK [2][-]{subsection.6.3.2}{V\355deo 2}{section.6.3}% 39
-\BOOKMARK [2][-]{subsection.6.3.3}{V\355deo 3}{section.6.3}% 40
-\BOOKMARK [2][-]{subsection.6.3.4}{V\355deo 4}{section.6.3}% 41
-\BOOKMARK [2][-]{subsection.6.3.5}{V\355deo 5}{section.6.3}% 42
-\BOOKMARK [2][-]{subsection.6.3.6}{V\355deo 6}{section.6.3}% 43
-\BOOKMARK [2][-]{subsection.6.3.7}{V\355deo 7}{section.6.3}% 44
-\BOOKMARK [2][-]{subsection.6.3.8}{V\355deo 8}{section.6.3}% 45
-\BOOKMARK [0][-]{chapter.7}{Conclus\343o}{}% 46
-\BOOKMARK [0][-]{section*.49}{Refer\352ncias}{}% 47
+\BOOKMARK [0][-]{chapter.2}{Revis\343o Bibliogr\341fica}{}% 6
+\BOOKMARK [1][-]{section.2.1}{Fundamenta\347\343o Te\363rica}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.1.1}{Processamento de Imagens}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.2}{V\355deos}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.3}{Redes Neurais Artificiais}{section.2.1}% 10
+\BOOKMARK [1][-]{section.2.2}{Trabalhos Correlatos}{chapter.2}% 11
+\BOOKMARK [0][-]{chapter.3}{Solu\347\343o Proposta}{}% 12
+\BOOKMARK [1][-]{section.3.1}{Aquisi\347\343o}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.2}{Regi\365es de Interesse}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.3}{Classifica\347\343o das se\347\365es}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.3.1}{Extra\347\343o de caracter\355sticas}{section.3.3}% 16
+\BOOKMARK [2][-]{subsection.3.3.2}{Classifica\347\343o da rede neural artificial}{section.3.3}% 17
+\BOOKMARK [2][-]{subsection.3.3.3}{Ajuste gaussiano dos vizinhos}{section.3.3}% 18
+\BOOKMARK [2][-]{subsection.3.3.4}{Sistema de vota\347\343o}{section.3.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Extra\347\343o do movimento}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.4.1}{Magnitudes do movimento}{section.3.4}% 21
+\BOOKMARK [2][-]{subsection.3.4.2}{Regi\365es de movimento}{section.3.4}% 22
+\BOOKMARK [1][-]{section.3.5}{Mapeamento de Vagas}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{Resultados Experimentais}{}% 24
+\BOOKMARK [1][-]{section.4.1}{Aquisi\347\343o de dados}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{Treinamento da rede neural artificial}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{Resultados Obtidos}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.3.1}{V\355deo 1}{section.4.3}% 28
+\BOOKMARK [2][-]{subsection.4.3.2}{V\355deo 2}{section.4.3}% 29
+\BOOKMARK [2][-]{subsection.4.3.3}{V\355deo 3}{section.4.3}% 30
+\BOOKMARK [2][-]{subsection.4.3.4}{V\355deo 4}{section.4.3}% 31
+\BOOKMARK [2][-]{subsection.4.3.5}{V\355deo 5}{section.4.3}% 32
+\BOOKMARK [2][-]{subsection.4.3.6}{V\355deo 6}{section.4.3}% 33
+\BOOKMARK [2][-]{subsection.4.3.7}{V\355deo 7}{section.4.3}% 34
+\BOOKMARK [2][-]{subsection.4.3.8}{V\355deo 8}{section.4.3}% 35
+\BOOKMARK [0][-]{chapter.5}{Conclus\343o}{}% 36
+\BOOKMARK [0][-]{section*.60}{Refer\352ncias}{}% 37

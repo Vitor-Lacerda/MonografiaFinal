@@ -4,7 +4,7 @@ Uma vez que o conhecimento teórico necessário para o entendimento completo do 
 
 A solução desenvolvida consiste em um algoritmo que analisa imagens de vídeo de um estacionamento descoberto e determina o número de vagas livres na imagem, além da sua localização aproximada. O sistema funciona bem em imagens de menor qualidade, mas é necessário que as imagens que compõem o vídeo estejam no espaço de cor RGB. Chamaremos a solução apresentada a seguir de \textit{Dectector de vagas em estacionamento} ou \textit{DVE}. A partir deste momento no trabalho, referências ao programa se referem ao \textit{DVE}.
 
-O trabalho se preocupa em cumprir os critérios definidos no Capítulo \ref{cap:trabalhos}. Além disso, o sistema foi desenvolvido de forma que pudesse processar as imagens adquiridas de forma mais próxima possível do tempo real, causando o mínimo de atrasos para o processamento de quadros subsequentes do vídeo.
+O trabalho se preocupa em cumprir os critérios definidos na Seção \ref{cap:trabalhos}. Além disso, o sistema foi desenvolvido de forma que pudesse processar as imagens adquiridas de forma mais próxima possível do tempo real, causando o mínimo de atrasos para o processamento de quadros subsequentes do vídeo.
 
 O sistema recebe como entrada um vídeo em cores capturado em um certo ângulo e um vetor de regiões de interesse no vídeo. A saída do \textit{DVE} a cada quadro é o número de vagas livres em cada região de interesse no vídeo.
 
@@ -36,7 +36,7 @@ Neste trabalho, a preocupação foi implementar um programa que analisa as image
 
 \section{Regiões de Interesse}\label{sec:ROIs}
 
-No momento da instalação do \textit{DVE}, é necessário definir um número qualquer de regiões de interesse(\textit{Regions of interest} ou ROIs). Essas regiões determinam a área da imagem onde existem vagas. Além de determinar as regiões, deve-se informar ao programa o número de vagas existente em cada região de interesse.
+No momento da instalação do \textit{DVE}, é necessário definir um número qualquer de regiões de interesse (\textit{Regions of interest} ou ROIs). Essas regiões determinam a área da imagem onde existem vagas. Além de determinar as regiões, deve-se informar ao programa o número de vagas existente em cada região de interesse.
 
 As ROIs devem ser retangulares e determinadas de forma a não haver interseção entre as regiões, como exemplificado na Figura \ref{fig:ROIs} que mostra as regiões determinadas para o quadro da Figura \ref{fig:aquisicao}.
 
@@ -82,7 +82,7 @@ O processo de classificação de uma seção começa com a extração das caract
 
 Para a extração da GLCM é preciso primeiro obter uma imagem de níveis de cinza que represente $I_s$. Para isso, a imagem é convertida para o espaço $YCbCr$ como descrito na Seção \ref{sect:sub:ycbcr}. A imagem referente ao canal $Y$ resultante é uma imagem de intensidade e por isso é utilizada para o cálculo da GLCM. Como mencionado na Seção \ref{sec:GLCM}, a construção é feita com base na vizinhança a direita de cada \textit{pixel} da imagem. Cada valor dentre os 256 possíveis é dividido dentro de 8 níveis distintos, e sempre que um valor presente em nível $N$ aparece a direita de um valor de um nível $M$, o elemento $(N,M)$ da GLCM é incrementado. A Figura \ref{fig:GLCM} mostra esse processo.
 
-Uma vez construída a GLCM referente a sessão, quatro medidas estatísticas são extraídas: contraste, correlação, energia e homogeneidade. Essas medidas são calculadas pelas Equações \ref{eq:Contraste}, \ref{eq:Correlacao}, \ref{eq:Energia} e \ref{eq:Homo} respectivamente. Esses valores formam um vetor $g = (\text{\textit{contraste, correlação, energia, homogeneidade}})^T$ que é parte da entrada final da rede neural artificial. O vetor na Equação \ref{eq:exemploGLCM} representa o vetor $g$ da Figura \ref{fig:imgSecao}.
+Uma vez construída a GLCM referente a sessão, quatro medidas estatísticas são extraídas: contraste, correlação, energia e homogeneidade. Essas medidas são calculadas pelas Equações \ref{eq:Contraste} a \ref{eq:Homo} respectivamente. Esses valores formam um vetor $g = (\text{\textit{contraste, correlação, energia, homogeneidade}})^T$ que é parte da entrada final da rede neural artificial. O vetor na Equação \ref{eq:exemploGLCM} representa o vetor $g$ da Figura \ref{fig:imgSecao}.
 
 \begin{equation}
 \centering
@@ -114,7 +114,7 @@ O vetor $c$ da Figura \ref{fig:imgSecao} é:
 \end{equation}
 
 
-Essas características foram escolhidos por terem se mostrado suficientemente descritivas e distintivas após uma análise de um conjunto de 90 imagens. As Figuras \ref{fig:histContraste}, \ref{fig:histCorrelacao},  \ref{fig:histEnergia}, \ref{fig:histHomo},  \ref{fig:histCb} e \ref{fig:histCr} mostram histogramas que descrevem a distribuição das características no conjunto de imagens. Em cada um dos gráficos, o eixo $x$ correspondente a valores obtidos para caracterísitica em questão e o eixo $y$ indica o número de imagens que exibiram aquele valor. As barras azuis são referentes as imagens de carros ou vagas ocupadas e as barras vermelhas referentes a vagas vazias.
+Essas características foram escolhidos por terem se mostrado suficientemente descritivas e distintivas após uma análise de um conjunto de 90 imagens. As Figuras \ref{fig:histContraste} a \ref{fig:histCr} mostram histogramas que descrevem a distribuição das características no conjunto de imagens. Em cada um dos gráficos, o eixo $x$ correspondente a valores obtidos para caracterísitica em questão e o eixo $y$ indica o número de imagens que exibiram aquele valor. As barras azuis são referentes as imagens de carros ou vagas ocupadas e as barras vermelhas referentes a vagas vazias.
 
 \begin{figure}
 	\centering
@@ -192,7 +192,7 @@ O vetor $x_s$ é alimentado à rede neural artificial que retorna um vetor $y_s$
 
 O vetor $y_s$ resultante da classificação da rede neural artificial não é define a classe final da seção avaliada. Partindo do princípio que na maioria dos casos, uma seção vai possuir a mesma classe de suas vizinhas, esta informação também cumpre um papel na classificação de uma seção. 
 
-Depois de extraído o vetor $y_s$ de uma seção vertical, o programa observa as suas duas vizinhas mais próximas a esquerda e a direita se existirem e para cada vizinha, calcula uma quantidade em que deve aumentar ou diminuir os valores de $y_x$. Uma seção vizinha sempre é responsável por aumentar o valor referente a sua classe e diminuir o outro valor. Isto é, se uma das vizinhas da seção avaliada é uma seção ocupada(classe $1$), o valor de $y_s(1)$ aumenta ligeiramente e o valor de $y_s(2)$ diminui na mesma proporção.
+Depois de extraído o vetor $y_s$ de uma seção vertical, o programa observa as suas duas vizinhas mais próximas a esquerda e a direita se existirem e para cada vizinha, calcula uma quantidade em que deve aumentar ou diminuir os valores de $y_x$. Uma seção vizinha sempre é responsável por aumentar o valor referente a sua classe e diminuir o outro valor. Isto é, se uma das vizinhas da seção avaliada é uma seção ocupada (classe $1$), o valor de $y_s(1)$ aumenta ligeiramente e o valor de $y_s(2)$ diminui na mesma proporção.
 
 \begin{figure}
 \centering
