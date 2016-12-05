@@ -87,7 +87,7 @@ Por isso, as taxas de acerto não são fatores exclusivos na determinação da e
 
 No primeiro caso de testes, o vídeo começa com um estacionamento vazio. Depois de alguns segundos um único veículo de cor branca entra na cena pela direita e estaciona em uma vaga na parte inferior da imagem. O vídeo tem $15$ segundos de duração, totalizando $900$ acertos possíveis.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
 \centering
@@ -104,7 +104,7 @@ No primeiro caso de testes, o vídeo começa com um estacionamento vazio. Depois
 \label{}%
 \end{figure}
 
-
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -114,8 +114,12 @@ Tempo(s) & Acontecimento & Vagas ocupadas\\ \hline
 10 & ROI 2: Seções 18 e 19 ocupadas. & 1 \\
 \hline
 \end{tabular}
+\caption{Tabela com os resultados do observador F referentes ao Vídeo 1.}
+\label{tab:video1F}
 \end{center}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -125,8 +129,12 @@ Tempo(s) & Acontecimento & Vagas ocupadas\\ \hline
 10 & ROI 2: Seções 18 e 19 ocupadas. & 1 \\
 \hline
 \end{tabular}
+\caption{Tabela com os resultados do observador P referentes ao Vídeo 1.}
+\label{tab:video1F}
 \end{center}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -136,8 +144,12 @@ Tempo(s) & Acontecimento & Vagas ocupadas\\ \hline
 9 & ROI 2: Seções 18 e 19 ocupadas. & 1 \\
 \hline
 \end{tabular}
+\caption{Tabela com os resultados do observador M referentes ao Vídeo 1.}
+\label{tab:video1M}
 \end{center}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -148,8 +160,12 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 14 & ROI 2: Seção 3 liberada. & 1\\
 \hline
 \end{tabular}
+\caption{Tabela com os resultados do \textit{DVE} referentes ao Vídeo 1.}
+\label{tab:video1P}
 \end{center}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -160,11 +176,6 @@ P & 886 & 98,44\% \\ \hline
 M & 884 & 98,22\% \\ \hline
 Média & 885,3 & 98,37\% \\
 \hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
 Observador & Acertos & Taxa de acertos \\ \hline
@@ -174,7 +185,11 @@ M & 1 & 7\% \\ \hline
 Média & 1 & 7\% \\
 \hline
 \end{tabular}
+\caption{Tabela com o número de acertos e a taxa de acertos do \textit{DVE} nos dois critérios avaliados no Vídeo 1.}
+\label{tab:rvideo1}
 \end{center}
+\end{table}
+
 
 Neste caso de testes, o programa classifica errôneamente a seção $3$ da ROI $2$ durante quase toda a duração do vídeo. Como o erro se inicia logo no primeiro momento do vídeo, esta seção é definida como uma vaga que conta como ocupada enquanto o erro de classificação persiste, fazendo com que o programa indique um número de vagas ocupadas errado durante toda a sua execução. Esse caso ilustra uma possível consequência de um erro de classificação. Apesar do erro, o reconhecimento da vaga ocupada pelo veículo nas seções $18$ e $19$ ocorre sem problemas.
 
@@ -182,7 +197,7 @@ Neste caso de testes, o programa classifica errôneamente a seção $3$ da ROI $
 
 Neste vídeo, um carro branco está estacionado no conjunto inferior de vagas. Um veículo cinza entra pela direita e estaciona no conjunto superior de vagas. O vídeo tem uma duração de $10$ segundos, totalizando $600$ acertos possíveis.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
 \centering
@@ -199,7 +214,7 @@ Neste vídeo, um carro branco está estacionado no conjunto inferior de vagas. U
 \label{}%
 \end{figure}
 
-
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -210,7 +225,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador F referentes ao Vídeo 2.}
+\label{tab:video2F}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -221,7 +240,12 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador P referentes ao Vídeo 2.}
+\label{tab:video2M}
+\end{table}
 
+
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -232,18 +256,28 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador M referentes ao Vídeo 2.}
+\label{tab:video2P}
+\end{table}
 
+
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{DVE}  \\ \hline \hline
 Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 0 & ROI 2: Seções 18,19 e 20 ocupadas. & 1 \\ \hline
-6 & ROI 1: Seções 21 e 22 ocupadas. & 2 \\ \hline
+6 & ROI 1: Seções 21 e 22 ocupadas. & 2 \\
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do \textit{DVE} referentes ao Vídeo 2.}
+\label{tab:video2}
+\end{table}
 
+
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -254,11 +288,6 @@ P & 586 & 97,66\% \\ \hline
 M & 586 & 97,66\% \\ \hline
 Média & 586 & 97,66\% \\
 \hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
 Observador & Acertos & Taxa de acertos \\ \hline
@@ -268,7 +297,14 @@ M & 10 & 100\% \\ \hline
 Média & 10 & 100\% \\
 \hline
 \end{tabular}
+
 \end{center}
+\caption{Tabela com o número de acertos e a taxa de acertos do \textit{DVE} nos dois critérios avaliados no Vídeo 2.}
+\label{tab:rvideo2}
+\end{table}
+
+
+
 
 Neste caso de testes, houve discordância entre os observadores sobre as seções ocupadas pelo carro cinza na parte superior do vídeo. Porém o \textit{DVE} classificou como ocupadas as seções onde houve consenso entre os observadores.
 
@@ -278,7 +314,7 @@ O programa também classificou errôneamente a seção $18$ do ROI $2$ no moment
 
 Neste vídeo, dois carros se encontram no estacionamento. Um veículo amarelo entra pela direita e estaciona na seção superior das vagas. O veículo branco sai pela parte de baixo da tela. O vídeo tem duração de $20$ segundos totalizando $1200$ acertos possíveis.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
 \centering
@@ -295,6 +331,8 @@ Neste vídeo, dois carros se encontram no estacionamento. Um veículo amarelo en
 \label{}%
 \end{figure}
 
+
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -307,7 +345,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador F referentes ao Vídeo 3.}
+\label{tab:video3F}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -319,7 +361,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador P referentes ao Vídeo 3.}
+\label{tab:video3P}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -332,7 +378,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador M referentes ao Vídeo 3.}
+\label{tab:video3M}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -356,7 +406,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do \textit{DVE} referentes ao Vídeo 3.}
+\label{tab:video3}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -366,11 +420,6 @@ P & 1113 & 92,75\% \\ \hline
 M & 1136 & 94,66\% \\ \hline
 Média & 1138 & 94,83\% \\
 \hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
 Observador & Acertos & Taxa de acertos \\ \hline
@@ -381,6 +430,9 @@ Média & 16 & 80\% \\
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com o número de acertos e a taxa de acertos do \textit{DVE} nos dois critérios avaliados no Vídeo 3.}
+\label{tab:rvideo3}
+\end{table}
 
 
 
@@ -398,7 +450,7 @@ Mesmo com os problemas, o mapeamento e determinação das ocupações das vagas 
 
 Neste vídeo, o veículo branco entra em cena pela parte superior da tela e estaciona entre os outros dois carros. O carro cinza sai da vaga que ocupava e estaciona em uma na área inferior. O vídeo possui uma duração de $30$ segundos, portanto $1800$ possíveis acertos.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
 \centering
@@ -415,6 +467,7 @@ Neste vídeo, o veículo branco entra em cena pela parte superior da tela e esta
 \label{}%
 \end{figure}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -427,7 +480,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador F referentes ao Vídeo 4.}
+\label{tab:video4F}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -440,7 +497,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador P referentes ao Vídeo 4.}
+\label{tab:video4P}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -453,7 +514,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador M referentes ao Vídeo 4.}
+\label{tab:video4M}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -468,7 +533,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do \textit{DVE} referentes ao Vídeo 4.}
+\label{tab:video3}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -479,11 +548,6 @@ P & 1749 & 97,16\% \\ \hline
 M & 1772 & 98,44\% \\ \hline
 Média & 1757 & 97,61\% \\
 \hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
 Observador & Acertos & Taxa de acertos \\ \hline
@@ -494,6 +558,9 @@ Média & 22,66 & 75,55\% \\
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com o número de acertos e a taxa de acertos do \textit{DVE} nos dois critérios avaliados no Vídeo 4.}
+\label{tab:rvideo4}
+\end{table}
 
 Este vídeo reforça a dificuldade do programa de classificar corretamente as seções ocupadas pelo veículo cinza. Porém a dificuldade parece não acontecer quando este carro estaciona na região inferior, quando o programa determina que o veículo ocupa as mesmas seções que os observadores humanos.
 
@@ -504,7 +571,7 @@ Há um atraso na desocupação de uma vaga, indicada por volta dos $18$ segundos
 
 Um veículo desocupa a sua vaga sainda pela parte superior da tela. O vídeo possui uma duração de $10$ segundos ou $600$ possíveis acertos.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
 \centering
@@ -521,6 +588,7 @@ Um veículo desocupa a sua vaga sainda pela parte superior da tela. O vídeo pos
 \label{}%
 \end{figure}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -532,7 +600,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador F referentes ao Vídeo 5.}
+\label{tab:video5F}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -544,7 +616,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador P referentes ao Vídeo 5.}
+\label{tab:video5P}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -556,7 +632,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador M referentes ao Vídeo 5.}
+\label{tab:video5M}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -570,7 +650,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do \textit{DVE} referentes ao Vídeo 5.}
+\label{tab:video5}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -581,11 +665,6 @@ P & 585 & 97,50\% \\ \hline
 M & 587 & 97,83\% \\ \hline
 Média & 1757 & 97,61\% \\
 \hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
 Observador & Acertos & Taxa de acertos \\ \hline
@@ -596,6 +675,9 @@ Média & 9,66 & 96,66\% \\
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com o número de acertos e a taxa de acertos do \textit{DVE} nos dois critérios avaliados no Vídeo 5.}
+\label{tab:rvideo5}
+\end{table}
 
 
 Um caso de testes simples, onde os erros ocorreram principalmente por causa da natureza subjetiva do que configura uma seção ocupada. O \textit{DVE} classifica a seção $17$ como ocupada e os observadores não. Por outro lado, dois dos observadores acharam que a seção $14$ da ROI $2$ estava ocupada, descordando do programa. Contudo, essas discordâncias não afetam a quantidade de vagas ocupadas.
@@ -604,7 +686,7 @@ Um caso de testes simples, onde os erros ocorreram principalmente por causa da n
 
 Neste vídeo o veículo amarelo entra na cena pela parte inferior da tela. O veículo branco desocupa sua vaga e sai da tela pelo lado esquerdo. O vídeo tem $13$ segundos totalizando $780$ acertos possíveis.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
 \centering
@@ -621,6 +703,7 @@ Neste vídeo o veículo amarelo entra na cena pela parte inferior da tela. O ve�
 \label{}%
 \end{figure}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -631,9 +714,14 @@ Tempo(s) & Acontecimento & Vagas Ocupadas \\ \hline
 5 & ROI 2: Seções 14 e 15 ocupadas. & 3 \\ \hline
 8 & ROI 1:Seçoes 18 e 19 liberadas. & 2 \\
 \hline
+
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador F referentes ao Vídeo 6.}
+\label{tab:video6F}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -644,9 +732,14 @@ Tempo(s) & Acontecimento & Vagas Ocupadas \\ \hline
 5 & ROI 1: Seções 15,16 e 17 ocupadas. & 3 \\ \hline
 9 & ROI 2: Seções 18 e 19 liberadas. & 2 \\
 \hline
+
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador P referentes ao Vídeo 6.}
+\label{tab:video6P}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -657,9 +750,14 @@ Tempo(s) & Acontecimento & Vagas Ocupadas \\ \hline
 4 & ROI 1: Seções 15,16 e 17 ocupadas. & 3 \\ \hline
 8 & ROI 2: Seções 18,19 liberadas. & 2\\
 \hline
+
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador M referentes ao Vídeo 6.}
+\label{tab:video6M}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -673,7 +771,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas \\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do \textit{DVE} referentes ao Vídeo 6.}
+\label{tab:video6}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -684,12 +786,6 @@ P & 774 & 99,23\% \\ \hline
 M & 767 & 98,33\% \\ \hline
 Média & 764,33 & 97,99\% \\
 \hline
-\end{tabular}
-\end{center}
-
-
-\begin{center}
-\begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
 Observador & Acertos & Taxa de acertos \\ \hline
@@ -700,6 +796,10 @@ Média & 10 & 76,92\% \\
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com o número de acertos e a taxa de acertos do \textit{DVE} nos dois 
+critérios avaliados no Vídeo 6.}
+\label{tab:rvideo6}
+\end{table}
 
 
 Um caso de testes aonde a avaliação do \textit{DVE} se mantém estável e concorda quase plenamente com a avaliação dos humanos. Os atraso da detecção da liberação das seções $18$ e $19$ da ROI $2$ e da desocupação da vaga representada por estas seções se deve ao fato de que o movimento do veículo saindo só é considerado finalizado depois que o veículo sai do campo de visão da câmera, o que ocorre alguns momentos depois que os observadores humanos consideraram que o veículo saiu da vaga.
@@ -708,7 +808,7 @@ Um caso de testes aonde a avaliação do \textit{DVE} se mantém estável e conc
 
 Neste vídeo um dos carros sai da cena pela esquerda. O vídeo tem $17$ segundos de duração e portanto $1020$ acertos possíveis.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
 \centering
@@ -725,6 +825,7 @@ Neste vídeo um dos carros sai da cena pela esquerda. O vídeo tem $17$ segundos
 \label{}%
 \end{figure}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -735,7 +836,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas \\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador F referentes ao Vídeo 7.}
+\label{tab:video7F}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -746,7 +851,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas \\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador P referentes ao Vídeo 7.}
+\label{tab:video7P}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -757,7 +866,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas \\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador M referentes ao Vídeo 7.}
+\label{tab:video7M}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -770,7 +883,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas \\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do \textit{DVE} referentes ao Vídeo 7.}
+\label{tab:video7}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -781,11 +898,6 @@ P & 1014 & 99,41\% \\ \hline
 M & 1016 & 99,60\% \\ \hline
 Média & 1014,33 & 99,44\% \\
 \hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
 Observador & Acertos & Taxa de acertos \\ \hline
@@ -796,6 +908,10 @@ Média & 16,33 & 96,07\% \\
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com o número de acertos e a taxa de acertos do \textit{DVE} nos dois 
+critérios avaliados no Vídeo 7.}
+\label{tab:rvideo7}
+\end{table}
 
 O programa concordou com os observadores nesse vídeo, exibindo apenas um leve atraso para a classificação correta da seção $12$ e uma liberação levemente precipitada da seção $14$. A ocupação das vagas é determinada de forma quase idêntica a dos observadores.
 
@@ -803,7 +919,7 @@ O programa concordou com os observadores nesse vídeo, exibindo apenas um leve a
 
 No oitavo e último caso de testes, um carro branco passa pela região central da imagem sem estacionar em nenhuma vaga e depois um carro cinza estaciona na região inferior. O vídeo tem $23$ segundos de duração e $1380$ acertos possíveis.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
 \centering
@@ -820,6 +936,7 @@ No oitavo e último caso de testes, um carro branco passa pela região central d
 \label{}%
 \end{figure}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -830,7 +947,12 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador F referentes ao Vídeo 8.}
+\label{tab:video8F}
+\end{table}
 
+
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -841,7 +963,12 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador P referentes ao Vídeo 8.}
+\label{tab:video8P}
+\end{table}
 
+
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -852,7 +979,12 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do observador M referentes ao Vídeo 8.}
+\label{tab:video8M}
+\end{table}
 
+
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -864,7 +996,11 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com os resultados do \textit{DVE} referentes ao Vídeo 8.}
+\label{tab:video8}
+\end{table}
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|c||c||c|}
 \hline
@@ -875,11 +1011,6 @@ P & 1379 & 99,92\% \\ \hline
 M & 1379 & 99,92\% \\ \hline
 Média & 1378 & 99,85\% \\
 \hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Acertos - vagas}  \\ \hline \hline
 Observador & Acertos & Taxa de acertos \\ \hline
@@ -890,6 +1021,10 @@ Média & 23 & 100\% \\
 \hline
 \end{tabular}
 \end{center}
+\caption{Tabela com o número de acertos e a taxa de acertos do \textit{DVE} nos dois 
+critérios avaliados no Vídeo 8.}
+\label{tab:rvideo8}
+\end{table}
 
 O programa avalia as seções de forma quase idêntica aos humanos. Aos $20s$, a classificação que ocorre regularmente determina que quatro seções estão sendo ocupadas pelo veículo. Um segundo depois porém, quando o movimento do veículo termina, o erro é corrigido e o programa volta a acertar completamente.
 
