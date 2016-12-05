@@ -48,12 +48,12 @@ As ROIs devem ser retangulares e determinadas de forma a não haver interseção
 	\centering
 \end{figure}
 
-Depois de determinadas as regiões de interesse, cada uma das regiões é dividida em um número igual de seções verticais como ilustrado na Figura \ref{fig:secoesVerticais}. Como as vagas não são determinadas individualmente no momento da instalação do \textit{DVE}, é necessário que seja feita alguma divisão das ROIs. Cada uma destas seções verticais é classificada separadamente em uma etapa futura do processamento. O resultado da classificação de cada seção de uma ROI determina um vetor $v$ de $n$ elementos, onde $n$ é o número de seções em que a região foi dividida e cada elemento indica a ocupação de uma seção, sendo o valor $1$ correspondente a uma seção ocupada e o valor $2$ correspondente a uma seção livre. Através da análise deste vetor é que o \textit{DVE} determina o número de vagas livres em cada região. Munido do número de vagas que cada região contém e um valor aproximado do número de seções que um carro ocupa, o programa estima quantas vagas estão ocupadas, e encontra o número de vagas livres através de simples subtração e a posição aproximada destas vagas através da posição das seções livres no vetor.
+Depois de determinadas as regiões de interesse, cada uma das regiões é dividida em um número igual de seções verticais como ilustrado na Figura \ref{fig:secoesVerticais}. Como as vagas não são determinadas individualmente no momento da instalação do \textit{DVE}, é necessário que seja feita alguma divisão das ROIs. Cada uma destas seções verticais é classificada separadamente em uma etapa futura do processamento. O resultado da classificação de cada seção de uma ROI determina um vetor $V$ de $k$ elementos, onde $k$ é o número de seções em que a região foi dividida e cada elemento indica a ocupação de uma seção, sendo o valor $1$ correspondente a uma seção ocupada e o valor $2$ correspondente a uma seção livre. Através da análise deste vetor é que o \textit{DVE} determina o número de vagas livres em cada região. Munido do número de vagas que cada região contém e um valor aproximado do número de seções que um carro ocupa, o programa estima quantas vagas estão ocupadas, e encontra o número de vagas livres através de simples subtração e a posição aproximada destas vagas através da posição das seções livres no vetor.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=8cm]{Secoes}
-	\caption{As ROIs determinadas na Figura \ref{fig:ROIs} separadas em trinta seções verticais que ainda não foram classificadas. Nesta etapa os vetores $v$ de cada região é composto de trinta valores $2$.}
+	\caption{As ROIs determinadas na Figura \ref{fig:ROIs} separadas em trinta seções verticais que ainda não foram classificadas. Nesta etapa o vetor $V$ de cada região é composto de trinta valores $2$.}
 	\label{fig:secoesVerticais}
 	\centering
 \end{figure}
@@ -65,7 +65,7 @@ Uma vez que as regiões de interesse foram definidas e divididas em seções, a 
 
 O primeiro passo na execução do \textit{DVE} depois da configuração inicial é a classificação de cada uma das sessões verticais criadas na imagem. Essa classificação é feita assim que a execução começa, no primeiro quadro do vídeo e é repetida a cada segundo de execução do programa. Além disso, quando se detecta movimento em uma das ROIs as sessões interceptadas pelo movimento detectada são classificadas. O processo de detecção de movimento e determinação das sessões a serem classificadas excepcionalmente é detalhado na Seção \ref{sec:sub:regioesmovimento}.
 
-Para que seja feita a extração das caracterísiticas e a classificação de uma seção, uma imagem $I_s$ é extraída do quadro de vídeo original capturado.Essa imagem corresponde à fração do quadro contida dentro dos limites da seção a ser analisada. A extração de $I_s$ consiste simplesmente em copiar os valores da matriz que representa o quadro que estavam dentro das bordas da seção em uma nova matriz de dimensões iguais às da seção. A Figura \ref{fig:imgSecao} mostra um exemplo de uma $I_s$. Cada uma dessas imagens é submetida separadamente ao processo de classificação.
+Para que seja feita a extração das caracterísiticas e a classificação de uma seção, uma imagem $I_{sec}$ é extraída do quadro de vídeo original capturado.Essa imagem corresponde à fração do quadro contida dentro dos limites da seção a ser analisada. A extração de $I_{sec}$ consiste simplesmente em copiar os valores da matriz que representa o quadro que estavam dentro das bordas da seção em uma nova matriz de dimensões iguais às da seção. A Figura \ref{fig:imgSecao} mostra um exemplo de uma $I_{sec}$. Cada uma dessas imagens é submetida separadamente ao processo de classificação.
 
 \begin{figure}
 	\centering
@@ -80,32 +80,32 @@ Para que seja feita a extração das caracterísiticas e a classificação de um
 
 O processo de classificação de uma seção começa com a extração das características que definem o padrão de cada classe e a criação do vetor de entrada da rede neural artifical. Dois conjuntos de características principais são extraídos: as quatro medidas extraídas da GLCM da imagem apresentadas na Seção \ref{sec:GLCM} e dois valores que descrevem a crominância azul e vermelha da seção.
 
-Para a extração da GLCM é preciso primeiro obter uma imagem de níveis de cinza que represente $I_s$. Para isso, a imagem é convertida para o espaço $YCbCr$ como descrito na Seção \ref{sect:sub:ycbcr}. A imagem referente ao canal $Y$ resultante é uma imagem de intensidade e por isso é utilizada para o cálculo da GLCM. Como mencionado na Seção \ref{sec:GLCM}, a construção é feita com base na vizinhança a direita de cada \textit{pixel} da imagem. Cada valor dentre os 256 possíveis é dividido dentro de 8 níveis distintos, e sempre que um valor presente em nível $N$ aparece a direita de um valor de um nível $M$, o elemento $(N,M)$ da GLCM é incrementado. A Figura \ref{fig:GLCM} mostra esse processo.
+Para a extração da GLCM é preciso primeiro obter uma imagem de níveis de cinza que represente $I_{sec}$. Para isso, a imagem é convertida para o espaço $YCbCr$ como descrito na Seção \ref{sect:sub:ycbcr}. A imagem referente ao canal $Y$ resultante é uma imagem de intensidade e por isso é utilizada para o cálculo da GLCM. Como mencionado na Seção \ref{sec:GLCM}, a construção é feita com base na vizinhança a direita de cada \textit{pixel} da imagem. Cada valor dentre os 256 possíveis é dividido dentro de 8 níveis distintos, e sempre que um valor presente em nível $a$ aparece a direita de um valor de um nível $b$, o elemento $(a,b)$ da GLCM é incrementado. A Figura \ref{fig:GLCM} mostra esse processo.
 
-Uma vez construída a GLCM referente a sessão, quatro medidas estatísticas são extraídas: contraste, correlação, energia e homogeneidade. Essas medidas são calculadas pelas Equações \ref{eq:Contraste} a \ref{eq:Homo} respectivamente. Esses valores formam um vetor $g = (\text{\textit{contraste, correlação, energia, homogeneidade}})^T$ que é parte da entrada final da rede neural artificial. O vetor na Equação \ref{eq:exemploGLCM} representa o vetor $g$ da Figura \ref{fig:imgSecao}.
+Uma vez construída a GLCM referente a sessão, quatro medidas estatísticas são extraídas: contraste, correlação, energia e homogeneidade. Essas medidas são calculadas pelas Equações \ref{eq:Contraste} a \ref{eq:Homo} respectivamente. Esses valores formam um vetor $VG = (\text{\textit{contraste, correlação, energia, homogeneidade}})^T$ que é parte da entrada final da rede neural artificial. O vetor na Equação \ref{eq:exemploGLCM} representa o vetor $VG$ da Figura \ref{fig:imgSecao}.
 
 \begin{equation}
 \centering
-	g = \begin{pmatrix}
+	VG = \begin{pmatrix}
 	0,2170\\0,9208\\0,2084\\0,9019
 	\end{pmatrix}
 \centering
 \label{eq:exemploGLCM}
 \end{equation}
 
-As outras duas características extraídas de cada sessão vêm dos canais $Cb$ e $Cr$ de $I_s$. A média de valores da matriz de cada canal é calculada através da Equação \ref{eq:media}. Onde $N$ é o número total de \textit{pixels} de $I_s$ e $v_i$ é o valor do \textit{i-ésimo pixel}. Esses valores então formam o vetor $c = (M_{Cb}, M_{Cr})^T$.
+As outras duas características extraídas de cada sessão vêm dos canais $Cb$ e $Cr$ de $I_{sec}$. A média de valores da matriz de cada canal é calculada através da Equação \ref{eq:media}. Onde $Tam$ é o número total de \textit{pixels} de $I_{sec}$ e $p(i)$ é o valor do \textit{i-ésimo pixel}. Esses valores então formam o vetor $VMed = (M_{Cb}, M_{Cr})^T$.
 
 \begin{equation}
-	M = \frac{\sum_{i=1}^N v_i}{N}
+	Med = \frac{\sum_{i=1}^{Tam} v_i}{Tam}
 \label{eq:media}
 \end{equation}
 
-O vetor $c$ da Figura \ref{fig:imgSecao} é:
+O vetor $VMed$ da Figura \ref{fig:imgSecao} é:
 
 \begin{equation}
 \centering
 \centering
-	c = \begin{pmatrix}
+	VMed = \begin{pmatrix}
 	130,7157\\127,0190
 	\end{pmatrix}
 \centering
@@ -167,20 +167,20 @@ Essas características foram escolhidos por terem se mostrado suficientemente de
 
 \subsection{Classificação da rede neural artificial}
 
-Depois de extraídas as características das imagens e construídos os vetores $g$ e $c$ com os valores das características, a entrada para a rede neural artificial é construída. O vetor de entrada $x_s$ referente a seção a ser classificada é a concatenação de $g$ e $c$ de forma que:
+Depois de extraídas as características das imagens e construídos os vetores $VG$ e $VMed$ com os valores das características, a entrada para a rede neural artificial é construída. O vetor de entrada $E_{sec}$ referente a seção a ser classificada é a concatenação de $VG$ e $VMed$ de forma que:
 
 \begin{equation}
-	x_s = (\text{\textit{contraste, correlação, energia, homogeneidade}}, M_{Cb}, M_{Cr})^T
+	E_{sec} = (\text{\textit{contraste, correlação, energia, homogeneidade}}, M_{Cb}, M_{Cr})^T
 \end{equation}
 
-O vetor $x_s$ é alimentado à rede neural artificial que retorna um vetor $y_s$ de saída que possue dois elementos com valores reais entre $0$ e $1$. Esses valores sempre somam $1$ e representam o grau de certeza que a rede tem de que a o $x_s$ representa um elemento da classe correspondente ao seu índice. Isto é, o primeiro elemento, $y_s(1)$ representa o grau de certeza que a rede tem que a entrada pertence à classe $1$, os carros, e o segundo elemento, $y_s(2)$ representa o grau de certeza que a rede tem que a entrada pertence à classe $2$, das vagas livres. O vetor $y_s$ é armazenado e processado futuramente para decidir a classe final a que a vaga pertence. Os vetores da Equação \ref{eq:vetoresRede} correspondem ao s vetores $x_s$ e $y_s$ da seção mostrada na Figura \ref{fig:imgSecao}. Nesse exemplo o vetor $y_s$ tem valor $1$ no seu primeiro elemento, indicando certeza total da rede de que a imagem corresponde a uma seção ocupada por um veículo. É importante lembrar porém, que este não é sempre o caso e frequentemente o vetor de saída possui valores diferentes de $1$ e $0$.
+O vetor $E_{sec}$ é alimentado à rede neural artificial que retorna um vetor $S_{sec}$ de saída que possue dois elementos com valores reais entre $0$ e $1$. Esses valores sempre somam $1$ e representam o grau de certeza que a rede tem de que a o $E_{sec}$ representa um elemento da classe correspondente ao seu índice. Isto é, o primeiro elemento, $S_{sec}(1)$ representa o grau de certeza que a rede tem que a entrada pertence à classe $1$, os carros, e o segundo elemento, $S_{sec}(2)$ representa o grau de certeza que a rede tem que a entrada pertence à classe $2$, das vagas livres. O vetor $S_{sec}$ é armazenado e processado futuramente para decidir a classe final a que a vaga pertence. Os vetores da Equação \ref{eq:vetoresRede} correspondem ao s vetores $E_{sec}$ e $S_{sec}$ da seção mostrada na Figura \ref{fig:imgSecao}. Nesse exemplo o vetor $S_{sec}$ tem valor $1$ no seu primeiro elemento, indicando certeza total da rede de que a imagem corresponde a uma seção ocupada por um veículo. É importante lembrar porém, que este não é sempre o caso e frequentemente o vetor de saída possui valores diferentes de $1$ e $0$.
 
 \begin{equation}
 \centering
-	x_s = \begin{pmatrix}
+	E_{sec} = \begin{pmatrix}
 	0,2170\\0,9208\\0,2084\\0,9019\\130,7157\\127,0190
 	\end{pmatrix}
-	y_s = \begin{pmatrix}
+	S_{sec} = \begin{pmatrix}
 	1,0\\0,0
 	\end{pmatrix}
 \centering
@@ -190,9 +190,9 @@ O vetor $x_s$ é alimentado à rede neural artificial que retorna um vetor $y_s$
 
 \subsection{Ajuste gaussiano dos vizinhos}
 
-O vetor $y_s$ resultante da classificação da rede neural artificial não é define a classe final da seção avaliada. Partindo do princípio que na maioria dos casos, uma seção vai possuir a mesma classe de suas vizinhas, esta informação também cumpre um papel na classificação de uma seção. 
+O vetor $S_{sec}$ resultante da classificação da rede neural artificial não é define a classe final da seção avaliada. Partindo do princípio que na maioria dos casos, uma seção vai possuir a mesma classe de suas vizinhas, esta informação também cumpre um papel na classificação de uma seção. 
 
-Depois de extraído o vetor $y_s$ de uma seção vertical, o programa observa as suas duas vizinhas mais próximas a esquerda e a direita se existirem e para cada vizinha, calcula uma quantidade em que deve aumentar ou diminuir os valores de $y_x$. Uma seção vizinha sempre é responsável por aumentar o valor referente a sua classe e diminuir o outro valor. Isto é, se uma das vizinhas da seção avaliada é uma seção ocupada (classe $1$), o valor de $y_s(1)$ aumenta ligeiramente e o valor de $y_s(2)$ diminui na mesma proporção.
+Depois de extraído o vetor $S_{sec}$ de uma seção vertical, o programa observa as suas duas vizinhas mais próximas a esquerda e a direita se existirem e para cada vizinha, calcula uma quantidade em que deve aumentar ou diminuir os valores de $S_{sec}$. Uma seção vizinha sempre é responsável por aumentar o valor referente a sua classe e diminuir o outro valor. Isto é, se uma das vizinhas da seção avaliada é uma seção ocupada (classe $1$), o valor de $S_{sec}(1)$ aumenta ligeiramente e o valor de $S_{sec}(2)$ diminui na mesma proporção.
 
 \begin{figure}
 \centering
@@ -203,20 +203,20 @@ Depois de extraído o vetor $y_s$ de uma seção vertical, o programa observa as
 \end{figure}
 
 
-A influência de cada vizinha nos valores de $y_s$ da seção sendo classificada é definida pela sua distância no vetor de seções e ilustrada aproximadamente pela Figura \ref{fig:influencia}. Para compreender de forma mais clara, considere a posição de cada seção como o seu índice no vetor $v$ de todas as seções. Se estamos avaliando a seção de índice $12$, as seções de índice $11$ e $10$ são as duas vizinhas a esquerda avaliadas e as seções de índice $13$ e $14$ são as suas vizinhas a direita avaliadas. A quantidade da influência de cada vizinha é definida pela Equação \ref{eq:gaussiana}, onde $\sigma = 0,5$, $i_s$ é o indíce da seção sendo classificada e $i_v$ é o índice da vizinha. Note que essa equação representa o valor de uma curva gaussiana calculada no ponto $i_s$ com média igual a $i_v$ e desvio padrão igual a $\sigma$. Se chamarmos o valor de $y_s$ referente a classe da vizinha de $c_v$ e o outro valor de $\overline{c_v}$, cada vizinha modifica $y_s$ de acordo com as Equações \ref{eq:novoCv} e \ref{eq:novoRCv}.
+A influência de cada vizinha nos valores de $S_{sec}$ da seção sendo classificada é definida pela sua distância no vetor de seções e ilustrada aproximadamente pela Figura \ref{fig:influencia}. Para compreender de forma mais clara, considere a posição de cada seção como o seu índice no vetor $V$ de todas as seções. Se estamos avaliando a seção de índice $12$, as seções de índice $11$ e $10$ são as duas vizinhas a esquerda avaliadas e as seções de índice $13$ e $14$ são as suas vizinhas a direita avaliadas. A quantidade da influência de cada vizinha é definida pela Equação \ref{eq:gaussiana}, onde $\sigma = 0,5$, $i_{sec}$ é o indíce da seção sendo classificada e $i_{viz}$ é o índice da vizinha. Note que essa equação representa o valor de uma curva gaussiana calculada no ponto $i_{sec}$ com média igual a $i_{viz}$ e desvio padrão igual a $\sigma$. Se chamarmos o valor de $S_{sec}$ referente a classe da vizinha de $c_{viz}$ e o outro valor de $\overline{c_{viz}}$, cada vizinha modifica $S_{sec}$ de acordo com as Equações \ref{eq:novoCv} e \ref{eq:novoRCv}.
 
 \begin{equation}
-	f(s,v) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp^{\frac{-(i_s-i_v)^2}{2\sigma^2}} 
+	gauss(s,v) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp^{\frac{-(i_{sec}-i_{viz})^2}{2\sigma^2}} 
 \label{eq:gaussiana}
 \end{equation}
 
 \begin{equation}
-	c_v  = c_v(1+f(s,v))
+	c_{viz}  = c_{viz}(1+gauss(sec,viz))
 \label{eq:novoCv}
 \end{equation}
 
 \begin{equation}
-	\overline{c_v}  = \overline{c_v}(1-f(s,v))
+	\overline{c_{viz}}  = \overline{c_{viz}}(1-gauss(sec,viz))
 \label{eq:novoRCv}
 \end{equation}
 
@@ -252,21 +252,21 @@ Além do sistema de classificação momentânea, o programa integra um component
 \end{figure}
 
 
-Depois de determinar o vetor $y_s$, o sistema determina um voto definido pela Equação \ref{eq:voto}.  Se a seção não estiver estabilizada, sua classe se torna a classe representada pelo voto. Se uma seção receber $3$ votos iguais consecutivamente, a seção se torna estabilizada. Nesse estado, a sua classe não muda mais, mas a seção continua a receber votos. Uma seção deixa de estar estabilizada e volta a poder ser reavaliada se receber um número suficientes de votos consecutivos da classe diferente da sua classe atual ou, mais comumente, quando o \textit{DVE} detecta que houve movimento dentro da área de interesse que intercepta a seção. Esse processo está ilustrado no fluxograma da Figura \ref{fig:fluxogramaVotos}.
+Depois de determinar o vetor $S_{sec}$, o sistema determina um voto definido pela Equação \ref{eq:voto}.  Se a seção não estiver estabilizada, sua classe se torna a classe representada pelo voto. Se uma seção receber $3$ votos iguais consecutivamente, a seção se torna estabilizada. Nesse estado, a sua classe não muda mais, mas a seção continua a receber votos. Uma seção deixa de estar estabilizada e volta a poder ser reavaliada se receber um número suficientes de votos consecutivos da classe diferente da sua classe atual ou, mais comumente, quando o \textit{DVE} detecta que houve movimento dentro da área de interesse que intercepta a seção. Esse processo está ilustrado no fluxograma da Figura \ref{fig:fluxogramaVotos}.
 
 Essa etapa do processamento tem o propósito de evitar que flutuações nas imagens das seções causem mudanças frequentes na sua classificação e fazer com que na maioria dos casos a classe de uma seção só mude quando houver movimento detectado na região que ocupada pela seção, trazendo estabilidade para os resultados do programa.
 
 \begin{equation}
-voto= 
+Voto= 
 \begin{cases}
-    1,& \text{se } y_s(1) \geq 0,6\\
+    1,& \text{se } S_{sec}(1) \geq 0,6\\
     2,& \text{caso contrário}
 \end{cases}
 \label{eq:voto}
 \end{equation}
 
 
-Ao final do processo de classificação, o vetor $v$ de seções é representado visualmente em uma imagem semelhante a Figura \ref{fig:exemploClassificacao}, onde as seções vermelhas são da classe $1$ e representam veículos e as seções verdes são da classe $2$ e representam espaços desocupados.
+Ao final do processo de classificação, o vetor $V$ de seções é representado visualmente em uma imagem semelhante a Figura \ref{fig:exemploClassificacao}, onde as seções vermelhas são da classe $1$ e representam veículos e as seções verdes são da classe $2$ e representam espaços desocupados.
 
 \begin{figure}
 \centering
@@ -282,7 +282,7 @@ Outra ferramenta utilizada pelo \textit{DVE} para a análise do vídeo capturado
 
 \subsection{Magnitudes do movimento}
 
-O movimento é detectado através do método de cálculo do fluxo óptico utilizando o método de Lucas-Kanade~\cite{bruhn2005lucas,faria1992fluxo,mota2011tensor} para resolver a Equação \ref{eq:fluxo2}. O resultado deste processo é uma matriz $M$ de dimensões iguais as do quadro onde cada elemento corresponde à magnitude do vetor velocidade do seu movimento. A direção e o sentido do vetor velocidade não são de interesse do \textit{DVE}, uma vez só os pontos de início e fim do movimento são relevantes para o processamento. A matriz $M$ então passa por um processo de limiarização, onde cada elemento de magnitude menor do que um limiar $t$ tem seu valor redefinido como $0$. O resultado deste processo é uma matriz que mostra as posições do quadro aonde ocorreu movimento significativo. 
+O movimento é detectado através do método de cálculo do fluxo óptico utilizando o método de Lucas-Kanade~\cite{bruhn2005lucas,faria1992fluxo,mota2011tensor} para resolver a Equação \ref{eq:fluxo2}. O resultado deste processo é uma matriz $Mag$ de dimensões iguais as do quadro onde cada elemento corresponde à magnitude do vetor velocidade do seu movimento. A direção e o sentido do vetor velocidade não são de interesse do \textit{DVE}, uma vez só os pontos de início e fim do movimento são relevantes para o processamento. A matriz $Mag$ então passa por um processo de limiarização, onde cada elemento de magnitude menor do que um limiar $l$ tem seu valor redefinido como $0$. O resultado deste processo é uma matriz que mostra as posições do quadro aonde ocorreu movimento significativo. 
 
 
 
@@ -314,23 +314,23 @@ O movimento é detectado através do método de cálculo do fluxo óptico utiliz
 
 \subsection{Regiões de movimento}\label{sec:sub:regioesmovimento}
 
-Uma vez que a matriz $M$ de magnitudes das velocidades do movimento foi limiarizada, a etapa seguinte é determinar as regiões do quadro que correspondem ao objeto em movimento. Essas regiões são determinadas encontrando pontos na matriz $M$ que correspondem a estimativas dos centros dos objetos móveis, e a partir desses pontos construir um retângulos que representam os limites superiores e inferiores das áreas que os objetos ocupam no quadro.
+Uma vez que a matriz $Mag$ de magnitudes das velocidades do movimento foi limiarizada, a etapa seguinte é determinar as regiões do quadro que correspondem ao objeto em movimento. Essas regiões são determinadas encontrando pontos na matriz $Mag$ que correspondem a estimativas dos centros dos objetos móveis, e a partir desses pontos construir retângulos que representam os limites superiores e inferiores das áreas que os objetos ocupam no quadro.
 
 \begin{equation}
-C=\begin{pmatrix}
-X_c\\Y_c
+CR=\begin{pmatrix}
+X_{cr}\\Y_{cr}
 \end{pmatrix}
 \text{,onde } 
-X_c = \frac{\sum_i x_iv_i}{\sum_iv_i}
+X_{cr} = \frac{\sum_k i_kval_k}{\sum_kval_i}
 \text{ e }
-Y_c = \frac{\sum_i y_iv_i}{\sum_iv_i}
+Y_{cr} = \frac{\sum_k j_kval_k}{\sum_kval_k}
 \label{eq:centros}
 \end{equation}
 
-Para se encontrar esses centros, o \textit{DVE} começa separando um vetor $B$ que contém as coordenadas dos pontos diferentes de $0$ de $M$ e os valores destes pontos. A posição do centro de cada objeto em movimento é um vetor de dois elementos onde cada elemento é a média das coordenadas correspondentes dos pontos que compõe o objeto ponderadas pelos valores dos pontos. A Equação \ref{eq:centros} representa esse cálculo, onde $C$ é a posição do centro e $x_i$,$y_i$ e $v_i$ as coordenadas e valores dos pontos que compõe o objeto. A construção dos conjuntos de pontos que representam cada objeto em movimento é feita seguindo os passos abaixo.
+Para se encontrar esses centros, o \textit{DVE} começa separando um vetor $NP$ que contém as coordenadas dos pontos diferentes de $0$ de $Mag$ e os valores destes pontos. A posição do centro de cada objeto em movimento é um vetor de dois elementos onde cada elemento é a média das coordenadas correspondentes dos pontos que compõe o objeto ponderadas pelos valores dos pontos. A Equação \ref{eq:centros} representa esse cálculo, onde $CR$ é a posição do centro e $i_k$,$j_k$ e $val_k$ as coordenadas e valores dos pontos que compõe o objeto. A construção dos conjuntos de pontos que representam cada objeto em movimento é feita seguindo os passos abaixo.
 
 \begin{enumerate}
-\item Para cada ponto de $B$ faça: 
+\item Para cada ponto de $NP$ faça: 
 	\begin{itemize}
 		\item Verifique se o ponto está próximo o suficiente de um centro já 				encontrado através da Equação \ref{eq:distancia} de distância.
 		\item Caso esteja, associe esse ponto ao conjunto de pontos do objeto e 			recalcule o centro usando a Equação \ref{eq:centros}. 
@@ -341,7 +341,7 @@ Para se encontrar esses centros, o \textit{DVE} começa separando um vetor $B$ q
 
 \item Exclua todos os conjuntos com um número muito pequeno de elementos.
 
-\item Para cada conjunto restante, determine as os elementos com menores e maiores valores nas coordenadas $x$ e $y$ em $B$. Esses pontos representam os limites inferiores e superiores do espaço que cada objeto ocupa no quadro.
+\item Para cada conjunto restante, determine as os elementos com menores e maiores valores nas coordenadas $i$ e $j$ em $NP$. Esses pontos representam os limites inferiores e superiores do espaço que cada objeto ocupa no quadro.
 \end{enumerate}
 
 \begin{equation}
@@ -349,7 +349,7 @@ D = \sqrt{(x_1-x_2)^2+(y_1-y_2)^2}
 \label{eq:distancia}
 \end{equation}
 
-Munido dos limites da área ocupada por cada objeto em movimento na cena, o programa constrói retângulos que representam uma estimativa da posição desses objetos no quadro. Se $x_{min}$, $x_{max}$, $y_{min}$ e $y_{max}$ são, respectivamente, os valores das menores e maiores coordenadas $x$ e $y$ de um objeto, um retângulo na coordenada $(x_{min},y_{min}$ de largura $x_{max}-x_{min}$ e altura $y_{max}-y_{min}$ é criado. A Figura \ref{fig:retanguloMovimento} mostra um exemplo de uma destes retângulos, representado em azul.
+Munido dos limites da área ocupada por cada objeto em movimento na cena, o programa constrói retângulos que representam uma estimativa da posição desses objetos no quadro. Se $ICR_{min}$, $ICR_{max}$, $JCR_{min}$ e $JCR_{max}$ são, respectivamente, os valores das menores e maiores coordenadas $i$ e $j$ de um objeto, um retângulo na coordenada $(ICR_{min},JCR_{min})$ de largura $ICR_{max}-ICR_{min}$ e altura $JCR_{max}-JCR_{min}$ é criado. A Figura \ref{fig:retanguloMovimento} mostra um exemplo de uma destes retângulos, representado em azul.
 
 \begin{figure}
 \centering
@@ -393,9 +393,9 @@ O modo complexo por outro lado segue um conjunto de regras mais elaborado para d
 
 \begin{itemize}
 	\item Caso nenhuma seção de $S$ esteja associada a alguma vaga, $S$ passa a compor uma nova vaga.
-	\item Caso as seções de uma certa vaga $V$ sejam um subconjunto de $S$, $V$ passa a ser composto por $S$.
-	\item Caso $S$ seja um subconjunto de uma vaga $V$, uma nova vaga com as seções de $S$ é criada. Caso as seções de $V$ que não pertenciam a $S$ formem um conjunto contínuo com número de seções suficientemente grande, uma segunda vaga $V_2$ é criada.
-	\item Caso a intersecção entre as seções de $S$ e de uma outra vaga $V$ seja não-nula e nenhum dos casos anteriores ocorra, as seções da intersecção são divididas entre as duas vagas. Se houver um número ímpar de seções a dividir, $S$ recebe a seção sobresalente.
+	\item Caso as seções de uma certa vaga $Vag$ sejam um subconjunto de $S$, $Vag$ passa a ser composto por $S$.
+	\item Caso $S$ seja um subconjunto de uma vaga $Vag$, uma nova vaga com as seções de $S$ é criada. Caso as seções de $Vag$ que não pertenciam a $S$ formem um conjunto contínuo com número de seções suficientemente grande, uma segunda vaga $Vag_2$ é criada.
+	\item Caso a intersecção entre as seções de $S$ e de uma outra vaga $Vag$ seja não-nula e nenhum dos casos anteriores ocorra, as seções da intersecção são divididas entre as duas vagas. Se houver um número ímpar de seções a dividir, $S$ recebe a seção sobresalente.
 \end{itemize}
 
 Esse modo de mapeamento não garante naturalmente que as seções pertençam a uma única vaga, apesar da ocorrência ser rara. Porém, as vagas criadas através deste modo representam melhor a configuração real do estacionamento. Ao contrário do método simples, este modo de mapeamento é mais adequado quando o número de seções verticais em cada área de interesse é menor.

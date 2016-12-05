@@ -30,18 +30,18 @@
 \contentsline {section}{\numberline {3.4}Extra\IeC {\c c}\IeC {\~a}o do movimento}{29}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Magnitudes do movimento}{30}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Regi\IeC {\~o}es de movimento}{30}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Mapeamento de Vagas}{32}{section.3.5}
-\contentsline {chapter}{\numberline {4}Resultados Experimentais}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Aquisi\IeC {\c c}\IeC {\~a}o de dados}{35}{section.4.1}
-\contentsline {section}{\numberline {4.2}Treinamento da rede neural artificial}{36}{section.4.2}
-\contentsline {section}{\numberline {4.3}Resultados Obtidos}{37}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}V\IeC {\'\i }deo 1}{39}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}V\IeC {\'\i }deo 2}{41}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}V\IeC {\'\i }deo 3}{43}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}V\IeC {\'\i }deo 4}{46}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}V\IeC {\'\i }deo 5}{48}{subsection.4.3.5}
-\contentsline {subsection}{\numberline {4.3.6}V\IeC {\'\i }deo 6}{50}{subsection.4.3.6}
-\contentsline {subsection}{\numberline {4.3.7}V\IeC {\'\i }deo 7}{52}{subsection.4.3.7}
-\contentsline {subsection}{\numberline {4.3.8}V\IeC {\'\i }deo 8}{54}{subsection.4.3.8}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{57}{chapter.5}
-\contentsline {chapter}{Refer\^encias}{59}{section*.100}
+\contentsline {section}{\numberline {3.5}Mapeamento de Vagas}{33}{section.3.5}
+\contentsline {chapter}{\numberline {4}Resultados Experimentais}{36}{chapter.4}
+\contentsline {section}{\numberline {4.1}Aquisi\IeC {\c c}\IeC {\~a}o de dados}{36}{section.4.1}
+\contentsline {section}{\numberline {4.2}Treinamento da rede neural artificial}{37}{section.4.2}
+\contentsline {section}{\numberline {4.3}Resultados Obtidos}{38}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}V\IeC {\'\i }deo 1}{40}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}V\IeC {\'\i }deo 2}{42}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}V\IeC {\'\i }deo 3}{44}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}V\IeC {\'\i }deo 4}{47}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}V\IeC {\'\i }deo 5}{49}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}V\IeC {\'\i }deo 6}{51}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.7}V\IeC {\'\i }deo 7}{53}{subsection.4.3.7}
+\contentsline {subsection}{\numberline {4.3.8}V\IeC {\'\i }deo 8}{55}{subsection.4.3.8}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{58}{chapter.5}
+\contentsline {chapter}{Refer\^encias}{60}{section*.100}

@@ -95,7 +95,7 @@ Descritores de textura são algoritmos que procuram fazer o que o olho humano fa
 
 GLCM, ou matriz de co-ocorrência de nível de cinza, é uma técnica de descrição de textura que visa extrair medidas estatíticas da imagem sendo analisada. Para tanto, é criada uma matriz quadrada de tamanho $M\times M$ onde M é a quantidade de níveis de cinza possíveis na imagem em questão. Essa matriz armazena a probabilidade de dois \textit{pixels} se relacionarem através de uma certa relação espacial~\cite{GLCM}. 
 
-Para esse trabalho, a relação observada é a da vizinhança entre dois \textit{pixels}, sempre analisando o valor a direita de um determinado \textit{pixel} da imagem. Os 255 valores de intensidade possíveis são divididos em 8 níveis. Cada elemento $P_{(i,j)}$ na GLCM $G$ conta a quantidade de vezes que um \textit{pixel} com valor de intensidade  $j$ apareceu à direita de um \textit{pixel} com valor $i$. A Figura \ref{fig:GLCM} exemplifica a criação da GLCM a partir de uma imagem com 8 níveis possíveis.
+Para esse trabalho, a relação observada é a da vizinhança entre dois \textit{pixels}, sempre analisando o valor a direita de um determinado \textit{pixel} da imagem. Os 255 valores de intensidade possíveis são divididos em 8 níveis. Cada elemento $P_{(a,b)}$ na GLCM $G$ conta a quantidade de vezes que um \textit{pixel} com valor de intensidade  $a$ apareceu à direita de um \textit{pixel} com valor $b$. A Figura \ref{fig:GLCM} exemplifica a criação da GLCM a partir de uma imagem com 8 níveis possíveis.
 
 \begin{figure}
 \includegraphics[width=8cm]{GLCM} 
@@ -105,31 +105,31 @@ Para esse trabalho, a relação observada é a da vizinhança entre dois \textit
 \centering
 \end{figure}
 \footnotetext{Extraída de \url{https://www.mathworks.com/help/images/ref/graycomatrix.html}.}
-Uma vez criada a matriz de co-ocorrência, diversas medidas podem ser extraídas. Para esse trabalho são extraídas as quatro características definidas abaixo. Nas equações apresentadas $P_{(i,j)}$ representa o valor do elemento na posição $(i,j)$ da GLCM, $\mu_i$ e $\mu_j$ representam a média dos valores de $i$ e $j$ respectivamente e $\sigma_i$ e $\sigma_j$ os desvios padrão destes valores.
+Uma vez criada a matriz de co-ocorrência, diversas medidas podem ser extraídas. Para esse trabalho são extraídas as quatro características definidas abaixo. Nas equações apresentadas $P_{(a,b)}$ representa o valor do elemento na posição $(a,b)$ da GLCM, $\mu_a$ e $\mu_b$ representam a média dos valores de $a$ e $b$ respectivamente e $\sigma_a$ e $\sigma_b$ os desvios padrão destes valores.
 
 \begin{itemize}
 
 \item \textbf{Contraste}: mede o contraste entre um \textit{pixel} e seu vizinho na imagem. Deve ser 0 para uma imagem completamente homogênea. Definido por:
 	\begin{equation}
-		C = \sum_{i,j} (i-j)^{2}P_{(i,j)}
+		C = \sum_{a,b} (a-b)^{2}P_{(a,b)}
 	\label{eq:Contraste}
 	\end{equation}
 	
 \item \textbf{Correlação}: mede a taxa de correlação de um \textit{pixel} e seu vizinho na imagem inteira. Definida por:
 	\begin{equation}
-		Co = \sum_{i,j} \frac{(i - \mu_i)(j - \mu_j)P_{(i,j)}}{\sigma_i\sigma_j}
+		Co = \sum_{a,b} \frac{(a - \mu_a)(b - \mu_b)P_{(a,b)}}{\sigma_a\sigma_b}
 	\label{eq:Correlacao}
 	\end{equation}
 	
 \item \textbf{Energia}: soma do quadrado dos elementos da imagem. Definida por:
 	\begin{equation}
-		E = \sum_{i,j} P_{(i,j)}^{2}
+		E = \sum_{a,b} P_{(a,b)}^{2}
 		\label{eq:Energia}
 	\end{equation}
 	
 \item \textbf{Homogeneidade}: mede a proximidade da distribuição dos elementos à diagonal da matriz. Definida por:
 	\begin{equation}
-		H = \sum_{i,j} \frac{P_{(i,j)}}{1+|i-j|}
+		H = \sum_{a,b} \frac{P_{(a,b)}}{1+|a-b|}
 		\label{eq:Homo}
 	\end{equation}
 
@@ -166,16 +166,16 @@ O movimento é um dos elementos principais para a extração de informações de
 \centering
 \end{figure}
 
-Para calcular o fluxo óptico, começamos assumindo que no intervalo entre dois quadros a intensidade de cada \textit{pixel} não muda de forma significativa. Chamamos então a intensidade de cada \textit{pixel} na posição (x,y) em um determinado momento $t$ de $I(x,y,t)$ e portanto, podemos dizer que: 
+Para calcular o fluxo óptico, começamos assumindo que no intervalo entre dois quadros a intensidade de cada \textit{pixel} não muda de forma significativa. Chamamos então a intensidade de cada \textit{pixel} na posição $(i,j)$ em um determinado momento $t$ de $I(i,j,t)$ e portanto, podemos dizer que: 
 
 \begin{equation}
-	I(x,y,t) = I(x+dx, y+dy, t+dt)
+	I(i,j,t) = I(i+di, j+dj, t+dt)
 \label{eq:fluxo1}
 \end{equation} 
 
-\noindent onde $dx$ e $dy$ são o deslocamento que o \textit{pixel} no intervalo $dt$ entre dois quadros.
+\noindent onde $di$ e $dj$ são o deslocamento que o \textit{pixel} no intervalo $dt$ entre dois quadros.
 
-Queremos então encontrar a velocidade $v =(\frac{dx}{dt},\frac{dy}{dt})$ do \textit{pixel}. Usando a expansão por série de Taylor e manipulações matemáticas na Equação \ref{eq:fluxo1}, obtemos a Equação \ref{eq:fluxo2}~\cite{faria1992fluxo}.
+Queremos então encontrar a velocidade $v =(\frac{di}{dt},\frac{dj}{dt})$ do \textit{pixel}. Usando a expansão por série de Taylor e manipulações matemáticas na Equação \ref{eq:fluxo1}, obtemos a Equação \ref{eq:fluxo2}~\cite{faria1992fluxo}.
 
 \begin{equation}
 	\nabla Iv + I_t = 0
@@ -214,17 +214,17 @@ O neurônio é a estrutura básica do sistema nervoso~\cite{chiras2013human}. É
 
 O neurônio artificial também possui três estruturas básicas semelhantes àquelas do neurônio natural. Seus três elementos básicos são: as entradas (análogas aos dendritos), a sáida (análoga ao axônio) e um núcleo de processamento. 
 \footnotetext{Extraída de \url{http://www.sobiologia.com.br/conteudos/FisiologiaAnimal/nervoso2.php}.}
-O neurônio pode ter uma ou mais conexões de entrada caracterizadas por um peso $wi$ e que recebe um valor $xi$. No núcleo do neurônio artificial há um somador que calcula o valor $u$ agregado das entradas, ponderadas pelo peso correspondente. O resultado dessa soma ponderada é então deslocado de um valor escalar e em seguida submetido a uma função chamada de função de ativação, que determina a saída final do neurônio. Em suma podemos descrever a saída de um neurônio $n$ que possui $i$ entradas através das seguintes equações:
+O neurônio pode ter uma ou mais conexões de entrada caracterizadas por um peso $w_i$ e que recebe um valor $e_i$. No núcleo do neurônio artificial há um somador que calcula o valor $u$ agregado das entradas, ponderadas pelo peso correspondente. O resultado dessa soma ponderada é então deslocado de um valor escalar e em seguida submetido a uma função chamada de função de ativação, que determina a saída final do neurônio. Em suma podemos descrever a saída de um neurônio $n$ que possui $k$ entradas através das seguintes equações:
 
 \begin{equation}
- u_n = \sum_{j=1}^i x_jw_j
+ u_n = \sum_{j=1}^k e_jw_j
 \end{equation}
 
 \begin{equation}
-s(n) = f(u_n + b)
+s(n) = f(u_n + d)
 \end{equation}
 
-Onde $u_n$ é o valor agregado das entradas, $x_j$ é a j-ésima entrada e $w_j$ o peso da conexão associada, $s(n)$ é a saída do neurônio, $f$ é a função de ativação e $b$ o deslocamento, ou $bias$ do neurônio $n$. A Figura \ref{fig:neuroartificial} ilustra a estrutura básica de um neurônio artificial.
+Onde $u_n$ é o valor agregado das entradas, $e_j$ é a j-ésima entrada e $w_j$ o peso da conexão associada, $s(n)$ é a saída do neurônio, $f$ é a função de ativação e $d$ o deslocamento, ou $bias$ do neurônio $n$. A Figura \ref{fig:neuroartificial} ilustra a estrutura básica de um neurônio artificial.
 
 \begin{figure}
 \centering
@@ -238,16 +238,16 @@ Claramente, a função de ativação do neurônio é o grande fator que define o
 
 O neurônio mais simples possível tem sua saída regida por uma função degrau e saída binária. Isto é, se o valor agregado $u$ de suas entradas for maior que um determinado limiar, a sua saída será 1 e a saída será 0 caso contrário. Apesar de ser capaz de resolver alguns problemas, esse tipo de neurônio tem algumas desvantagens. Por vezes, alterações sutis podem representar a diferença entre os dois valores possíveis da sáida. Além disso, um alcance limitado de valores na saída prejudica o treinamento.
 
-A escolha mais comum de de função de ativação para a construção de redes neurais é a família de funções sigmóides. Essas funções, que tem um gráfico com formato de \textit{S}, assumem valores contínuos entre 0 e 1, o que faz com que alterações sutis na entrada representem alterações mais sutis na saída, aumentando a qualidade da informação gerada pelo neurônio. A mais comum das funções sigmóides utilizadas é a função logística, definida pela Equação \ref{eq:logistica}~\cite{Kosabov}, onde $a$ é uma constante que mede a declividade da curva.
+A escolha mais comum de de função de ativação para a construção de redes neurais é a família de funções sigmóides. Essas funções, que tem um gráfico com formato de \textit{S}, assumem valores contínuos entre 0 e 1, o que faz com que alterações sutis na entrada representem alterações mais sutis na saída, aumentando a qualidade da informação gerada pelo neurônio. A mais comum das funções sigmóides utilizadas é a função logística, definida pela Equação \ref{eq:logistica}~\cite{Kosabov}, onde $c$ é uma constante que mede a declividade da curva.
 
 \begin{equation}
-	f(u) = \frac{1}{1 + \exp{-au}}
+	sig(u) = \frac{1}{1 + \exp{-uc}}
 \label{eq:logistica}
 \end{equation}
 
 Um dos motivos que tornou a função logística uma escolha popular para os neurônios artificiais foi a sua derivação simples, uma vez que algoritmos de treinamento muitas vezes usam a derivada da função de ativação.
 
-É interessante reparar que quando $a$ se aproxima do infinito, a função logística se comporta da mesma forma que a função degrau.
+É interessante reparar que quando $c$ se aproxima do infinito, a função logística se comporta da mesma forma que a função degrau.
 
 \begin{figure}
  \centering
@@ -270,12 +270,12 @@ Um dos motivos que tornou a função logística uma escolha popular para os neur
 \centering
 \end{figure}
 
-Outra função de interesse no estudo das redes neurais artificiais, é a função \textit{softmax} ou exponencial normalizada ~\cite{bishop2006pattern}. Essa função é utilizada na teoria estatística para a determinação da distribuição da probabilidade. Isto é, a função \textit{softmax} é uma função que define a probabilidade que uma varíavel discreta assuma um determinado valor~\cite{altmanbs}. Em termos simples, o seu papel é transformar um vetor de $n$ elementos em um segundo vetor de mesmo tamanho, de valores no intervalo $[0,1]$ e que têm soma total igual a $1$.
+Outra função de interesse no estudo das redes neurais artificiais, é a função \textit{softmax} ou exponencial normalizada ~\cite{bishop2006pattern}. Essa função é utilizada na teoria estatística para a determinação da distribuição da probabilidade. Isto é, a função \textit{softmax} é uma função que define a probabilidade que uma varíavel discreta assuma um determinado valor~\cite{altmanbs}. Em termos simples, o seu papel é transformar um vetor de $k$ elementos em um segundo vetor de mesmo tamanho, de valores no intervalo $[0,1]$ e que têm soma total igual a $1$.
 
-Essa função é muito utilizada como função de ativação nas camadas de saídas de redes treinadas para reconhecimento de padrões, por sua capacidade de determinar a probabilidade da entrada pertencer a uma determinada classe. A função \textit{softmax} pode ser definida pela Equação \ref{eq:softmax}, onde $x$ é o vetor de tamanho $n$ da entrada e $x_i$ é o seu \textit{i-ésimo} elemento.
+Essa função é muito utilizada como função de ativação nas camadas de saídas de redes treinadas para reconhecimento de padrões, por sua capacidade de determinar a probabilidade da entrada pertencer a uma determinada classe. A função \textit{softmax} pode ser definida pela Equação \ref{eq:softmax}, onde $vet$ é o vetor de tamanho $k$ da entrada e $vet_i$ é o seu \textit{i-ésimo} elemento.
 
 \begin{equation}
-p(x)_i = \frac{\exp{x_i}}{\sum_{j=1}^n\exp{x_j}}
+soft(x)_i = \frac{\exp{vet_i}}{\sum_{j=1}^k\exp{vet_j}}
 \label{eq:softmax}
 \end{equation}
 
@@ -309,9 +309,9 @@ O vetor de entrada da rede é alimentado aos neurônios da primeira camada, cuja
 É necessário então que a rede passe por um processo de treinamento, onde os valores dos pesos $wi$ e os deslocamentos $b$ de cada neurônio são definidos de forma que o funcionamento da rede seja ótimo para a tarefa que se deseja realizar. Para realizar o treinamento de uma rede, o primeiro passo é definir 3 conjuntos distintos de entradas:
 
 \begin{itemize}
-	\item \textbf{Conjunto de treinamento:} A rede é submetida às entradas deste conjunto para que seja feita a calibração dos valores da matriz de pesos $W$ e do vetor de deslocamentos $B$.
+	\item \textbf{Conjunto de treinamento:} A rede é submetida às entradas deste conjunto para que seja feita a calibração dos valores da matriz de pesos $W$ e do vetor de deslocamentos $D$.
 	
-	\item \textbf{Conjunto de validação:} Após uma etapa de treinamento, a rede computa os dados deste conjunto de entradas para validar os valores da matriz $W$ e do vetor $B$ escolhidos até então.
+	\item \textbf{Conjunto de validação:} Após uma etapa de treinamento, a rede computa os dados deste conjunto de entradas para validar os valores da matriz $W$ e do vetor $D$ escolhidos até então.
 	
 	\item \textbf{Conjunto de testes:} Por fim, após o treinamento, a rede é submetida aos dados deste conjunto, a fim de verificar o seu funcionamento correto.
 \end{itemize}
@@ -321,14 +321,14 @@ Isto é, a cada ciclo de treinamento, a rede ajusta os seus pesos e deslocamento
 Existem duas principais maneiras de se executar o treinamento de uma rede.
 
 \begin{itemize}
-	\item \textbf{Treinamento supervisionado:} Neste paradigma os conjunto de treinamento e de validação consistem em um grupo de vetores de entrada $x$ e um gabarito de vetores de saída desejado $y$. O treinamento acontece até que o vetor de saída da rede para uma determinada entrada $x_i$ seja suficientemente próximo do vetor gabarito $y_i$ correspondete.
+	\item \textbf{Treinamento supervisionado:} Neste paradigma os conjunto de treinamento e de validação consistem em um grupo de vetores de entrada $e$ e um gabarito de vetores de saída desejado $gab$. O treinamento acontece até que o vetor de saída da rede para uma determinada entrada $e_i$ seja suficientemente próximo do vetor gabarito $gab_i$ correspondete.
 	
 	
-	\item \textbf{Treinamento não-supervisionado:} Neste paradigma a rede apenas recebe um conjunto $x$ de entradas e aprende características intrínsicas do dados contidos no conjunto.
+	\item \textbf{Treinamento não-supervisionado:} Neste paradigma a rede apenas recebe um conjunto $e$ de entradas e aprende características intrínsicas do dados contidos no conjunto.
 	
 \end{itemize}
 
-Uma vez definido o paradigma de treinamento, é necessário definir uma técnica para a análise do erro e alteração dos valores da matriz de pesos $W$ e do vetor $B$ de deslocamentos. Uma das técnicas mais utilizadas é a chamada de \textit{backpropagation}~\cite{DeepLearning, ZhangNNSurvey}. A técnica consiste de uma análise do erro apresentado na saída da rede, que então é utilizada para se percorrer a rede no sentido contrário dos dados modificando os valores de $W$ e $B$ de forma a diminuir o erro na próxima iteração. Essa técnica é muito utilizada para sistemas de treinamento supervisionado, onde o erro é avaliado através de uma comparação da saída da rede com o gabarito fornecido. Uma vez que os valores de $W$ e $B$ param de mudar, diz-se que a rede atingiu um estado de convergência ~\cite{Kosabov} e o treinamento finaliza.
+Uma vez definido o paradigma de treinamento, é necessário definir uma técnica para a análise do erro e alteração dos valores da matriz de pesos $W$ e do vetor $D$ de deslocamentos. Uma das técnicas mais utilizadas é a chamada de \textit{backpropagation}~\cite{DeepLearning, ZhangNNSurvey}. A técnica consiste de uma análise do erro apresentado na saída da rede, que então é utilizada para se percorrer a rede no sentido contrário dos dados modificando os valores de $W$ e $D$ de forma a diminuir o erro na próxima iteração. Essa técnica é muito utilizada para sistemas de treinamento supervisionado, onde o erro é avaliado através de uma comparação da saída da rede com o gabarito fornecido. Uma vez que os valores de $W$ e $D$ param de mudar, diz-se que a rede atingiu um estado de convergência ~\cite{Kosabov} e o treinamento finaliza.
 
 
 \subsubsection{Classificação de padrões}
@@ -343,16 +343,16 @@ Normalmente, uma rede que será utilizada para classificar padrões passa por um
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=5cm]{features}
-\caption[Um gráfico que mostra duas características $\tilde{x}_1$ e $\tilde{x}_2$ de um problema de classificação hipotético.]{Um gráfico que mostra duas características $\tilde{x}_1$ e $\tilde{x}_2$ de um problema de classificação hipotético.\protect\footnotemark  Círculos são padrões da classe $C_1$, enquanto os 'x' são padrões da classe $C_2$. O limiar de decisão, representado pela linha, consegue separar bem as duas classes quando as características são consideradas como um par. Porém haveria grande sobreposição se os valores fossem considerados separadamente.}
+\caption[Um gráfico que mostra duas características $\tilde{x}_1$ e $\tilde{x}_2$ de um problema de classificação hipotético.]{Um gráfico que mostra duas características $\tilde{x}_1$ e $\tilde{x}_2$ de um problema de classificação hipotético.\protect\footnotemark  Círculos são padrões da classe $Cl_1$, enquanto os 'x' são padrões da classe $Cl_2$. O limiar de decisão, representado pela linha, consegue separar bem as duas classes quando as características são consideradas como um par. Porém haveria grande sobreposição se os valores fossem considerados separadamente.}
 \label{fig:features}
 \centering
 \end{figure}
 \footnotetext{ Extraída de ~\cite{NNForPR}.}
-A escolha das características a serem utilizados para descrever os padrões não pode ser aleatória. Deve se escolher um número de características suficiente para descrever todos os padrões que podem ser encontrados. Além disso é importante que as características sejam suficientemente discriminantes. Isto é, deve haver o mínimo possível de superposição entre as características de classes distintas. Essas características podem ser escolhidos a mão, com base em um conhecimento prévio dos dados a serem classificados, ou extraídos automaticamente por um algoritmo desenvolvido para tal. Normalmente as características são processadas em conjunto e não consideradas individualmente. A Figura \ref{fig:features} mostra como isso é benéfico. Se as características hipotéticas $\tilde{x}_1$ e $\tilde{x}_2$ forem consideradas separadamente, há significativa superposição, de forma que é difícil separar com convicção as duas classes $C_1$ e $C_2$, porém, quando consideradas juntas, é possível traçar uma linha que as separa facilmente, apesar de alguns poucos elementos se confundirem. O papel da rede é determinar a função que traça essa linha através do treinamento, e retornar uma probabilidade de que um conjunto de características que lhe foi fornecido faça parte de uma determinada classe.
+A escolha das características a serem utilizados para descrever os padrões não pode ser aleatória. Deve se escolher um número de características suficiente para descrever todos os padrões que podem ser encontrados. Além disso é importante que as características sejam suficientemente discriminantes. Isto é, deve haver o mínimo possível de superposição entre as características de classes distintas. Essas características podem ser escolhidos a mão, com base em um conhecimento prévio dos dados a serem classificados, ou extraídos automaticamente por um algoritmo desenvolvido para tal. Normalmente as características são processadas em conjunto e não consideradas individualmente. A Figura \ref{fig:features} mostra como isso é benéfico. Se as características hipotéticas $\tilde{x}_1$ e $\tilde{x}_2$ forem consideradas separadamente, há significativa superposição, de forma que é difícil separar com convicção as duas classes $Cl_1$ e $Cl_2$, porém, quando consideradas juntas, é possível traçar uma linha que as separa facilmente, apesar de alguns poucos elementos se confundirem. O papel da rede é determinar a função que traça essa linha através do treinamento, e retornar uma probabilidade de que um conjunto de características que lhe foi fornecido faça parte de uma determinada classe.
 
 
 
-Um exemplo: se queremos criar uma rede que diferencia imagens de peixes palhaço de imagens de tubarões, um conjunto adequado de características provavelmente envolveria a cor $c$ predominante do animal, o tamanho do animal $t$ e o tamanho $b$ das suas barbatanas. A rede então seria submetida a entradas na forma de um vetor $(c, t, b)^T$, valores numéricos que caracterizam uma imagem a ser analisada. Podemos facilmente separar as classe através dessas características. Peixes com cor mais próxima do laranja e barbatanas pequenas são muito provavelmente peixes palhaços, enquanto aqueles que têm a barbatana grande seriam classificados como tubarões.
+Um exemplo: se queremos criar uma rede que diferencia imagens de peixes palhaço de imagens de tubarões, um conjunto adequado de características provavelmente envolveria a cor $c$ predominante do animal, o tamanho do animal $tam$ e o tamanho $bar$ das suas barbatanas. A rede então seria submetida a entradas na forma de um vetor $(c, tam, bar)^T$, valores numéricos que caracterizam uma imagem a ser analisada. Podemos facilmente separar as classe através dessas características. Peixes com cor mais próxima do laranja e barbatanas pequenas são muito provavelmente peixes palhaços, enquanto aqueles que têm a barbatana grande seriam classificados como tubarões.
 
 
 \section{Trabalhos Correlatos} \label{cap:trabalhos}
