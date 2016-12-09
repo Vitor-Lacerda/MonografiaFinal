@@ -50,7 +50,7 @@ A rede neural utilizada foi uma rede \textit{feed-forward} com três camadas. A 
 
 \section{Resultados Obtidos}
 
-Para determinar a capacidade do \textit{DVE} de determinar se as seções verticais estão ocupadas ou livres, os resultados obtidos pelo programa foram comparados com os resultados que eram esperados de observadores humanos. Foram apresentados a três observadores, que chamaremos pelas iniciais F, M e P, um conjunto de oito vídeos que mostravam veículos estacionando ou saindo de vagas em um estacionamento descoberto. As áreas de interesse do vídeo foram definidas previamente e divididas em $30$ seções verticais. Dessa forma, todos os observadores e o \textit{DVE} analisaram seções verticais idênticas. 
+Para determinar a capacidade do \textit{DVE} de determinar se as seções verticais estão ocupadas ou livres e ,por consequência, determinar a ocupação das vagas, os resultados obtidos pelo programa foram comparados com os resultados que eram esperados de observadores humanos. Foram apresentados a três observadores, que chamaremos pelas iniciais F, M e P, um conjunto de oito vídeos que mostravam veículos estacionando ou saindo de vagas em um estacionamento descoberto. As áreas de interesse do vídeo foram definidas previamente e divididas em $30$ seções verticais. Dessa forma, todos os observadores e o \textit{DVE} analisaram seções verticais idênticas. 
 
 Cada um dos observadores receberam as seguintes instruções:
 
@@ -59,6 +59,7 @@ Cada um dos observadores receberam as seguintes instruções:
 	\item Uma seção ocupada é aquela cuja maior parte de sua área está ocupada por um veículo.
 	\item No momento inicial do vídeo ($0$ segundos), indique quais seções verticais estão ocupadas através do número das ROI e das seções, as outras serão assumidas como livres. Indique também o número de vagas ocupadas.
 	\item Se a qualquer momento o estado de ocupação de uma seção mudar, indique o tempo da mudança, a seção onde ocorreu a mudança e a natureza da mudança (ocupada ou liberada).
+	\item Se a qualquer momento o número de vagas ocupadas mudar, indique o tempo da mudança e o novo número de vagas ocupadas.
 \end{itemize}
 
 \begin{figure}
@@ -71,21 +72,37 @@ Cada um dos observadores receberam as seguintes instruções:
 
 Cada observador assistiu aos vídeos sozinho, sem interferência externa e sem conhecimento dos resultados do programa. De fato, a fim de evitar interferência, o \textit{DVE} só foi executado sobre os casos de teste após todos os observadores escolhidos terem entregado os resultados que obteram.
 
-Para os testes apresentados a seguir, serão observadas somente aquelas seções que o \textit{DVE} ou os observadores determinaram como ocupadas. As demais seções serão consideradas livres. Chamaremos de um \textit{acerto} sempre que em um determinado segundo $t$, o programa e um observador concordam quanto a ocupação de uma seção vertical. Sendo assim, o programa pode atingir um máximo de $60$ acertos por segundo. A indicação da ocupação das seções pelos observadores não foi definida a cada segundo, mas considera-se que entre duas acusações de mudança de estado a ocupação das seções permanece a mesma. Sendo assim, podemos utilizar esses momentos para definir a ocupação em cada segundo do vídeo. Por exemplo, se um observador disser que a seção $10$ estava ocupada no momento inicial do vídeo e depois indicar que a mesma sessão foi liberada aos $8s$, a seção será considerada ocupada durante todos os momentos deste intervalo. 
+Para a quantificação da capacidade do \textit{DVE} de classificar as seções verticais e determinar corretamente o número de vagas ocupadas, foram utilizadas quatro medidas:
 
-Além da capacidade de classificar cada seção, a precisão do \textit{DVE} em determinar o número de vagas ocupadas a cada momento do vídeo também foi analisada. Para este teste, os observadores foram instruídos a informar o número de vagas ocupadas no início do vídeo. Sempre que considerassem que houve uma mudança neste número, deveriam informar o momento da mudança e o novo número de vagas ocupadas. Para esta análise, um \textit{acerto} é considerado a cada segundo que o programa indica o mesmo número de vagas ocupadas que os observadores. Para a determinação das vagas o programa foi executado no modo complexo de mapeamento.
+\begin{itemize}
+\item Verdadeiros Positivos ($VP$): Define-se um VP quando tanto o \textit{DVE} quanto um observador determinam que uma seção ou vaga está ocupada.
+\item Falsos Positivos ($FP$): Define-se um FP quando o \textit{DVE} acusa uma seção ou vaga como ocupada e um observador a determina como livre.
+\item Verdadeiros Negativos ($VN$): Define-se um VP quando tanto o \textit{DVE} quanto um observador determinam que uma seção ou vaga está livre.
+\item Falsos Negativos ($FN$): Define-se um FP quando o \textit{DVE} acusa uma seção ou vaga como livre e um observador a determina como ocupada.
 
-Nas seções seguintes serão apresentados cada um dos vídeos utilizados para os testes. Cada caso iniciará com uma breve descrição do movimento dos veículos no vídeo, a duração do vídeo e o número de acertos possíveis para as seções verticais, seguidos de cinco tabelas, uma para cada observador e duas para o \textit{DVE}. As tabelas indicam o tempo onde foram acusadas mudanças de estado nas seções e no número de vagas ocupadas. A primeira linha da tabela indica as seções ocupadas no momento inicial do vídeo e cada linha subsequente indica um momento em segundos quando houve mudança de estado de pelo menos uma seção ou vaga, a ROI e o número das seções modificadas e o número de vagas ocupadas naquele momento no tempo.  Finalmente, será calculada uma taxa de acerto que compara o desempenho do programa na classificação a cada observador e uma taxa final de acerto média para o caso de teste. A taxa de acerto para cada observador é calculada pela razão entre o número de acertos do programa e o número de acertos possíveis para o caso de teste e a taxa de acerto média é a média aritmética entre estes valores. Para que o leitor possa comparar o desempenho do \textit{DVE} com suas próprias impressões, uma imagem dos momentos iniciais e finais de cada vídeo será mostrada junto de cada análise.
+\end{itemize}
 
-A leitura das tabelas que representam as taxas de acerto devem ser feitas com um certo cuidado. Por causa da grande quantidade de seções e de possíveis acertos, um erro na classificação de uma seção representa uma mudança pequena na taxa de acerto. Em cada caso de testes há um grande número de seções aonde não há movimento algum, que são classificadas corretamente como vazias, elevando a taxa de acertos do teste. Enquanto esses acertos são relevantes, a classificação correta das seções onde há movimento de veículos representa uma diferença muito maior no funcionamento do \textit{DVE}.
+As medidas $VP$ e $VN$ representam uma classificação correta feita pelo \textit{DVE}, enquanto $FP$ e $FN$ representam classificações errôneas. Estas quatro medidas são utilizadas para o cálculo da métrica que será utilizada para a análise dos resultados obtidos pelo \textit{DVE}. Chamaremos essa métrica de \textit{total accuracy} ou precisão total representada pela equação \ref{eq:tacc}~\cite{zaghetto2016detecccao}.
 
-Por outro lado, a taxas de acerto das ocupações das vagas são muito mais afetadas por erros. Se o \textit{DVE} indicar uma vaga ocupada a mais que um observador por apenas $1$ segundo, um erro quase insignificante em termos humanos, isso pode representar uma diminuição de até $10\%$ na taxa de acerto. 
+\begin{equation}
+tacc = \frac{VP + VN}{VP + FP + VN + FN}
+\label{eq:tacc}
+\end{equation}
 
-Por isso, as taxas de acerto não são fatores exclusivos na determinação da eficácia do programa. Assim, uma análise rápida do comportamento do \textit{DVE} em cada caso de testes será apresentada após as tabelas.
+Essa métrica representa a razão entre o número de classificações corretas e o total de classificações feitas no caso de teste. É importante ressaltar que o valor do denominador pode também ser calculado por $\text{\textit{número de seções}}\times \text{\textit{duração do vídeo}}$ se a classificação correta das seções verticais está sendo analisada ou $\text{\textit{número de vagas}}\times \text{\textit{duração do vídeo}}$ se a determinação correta do número de vagas está sendo avaliada. Este valor é o número total de acertos ou de classificações corretas possíveis.
+
+Chamaremos o valor do denominador ou o total de classificações feitas de $TS$ para as seções verticais e $TV$ para as vagas. Da mesma forma $VPS$, $FPS$, $VNS$ e $FNS$ representam as medidas de verdadeiros positivos na classificação das seções, $FPS$ a quantidade de falsos positivos, $VNS$ a quantidade de verdadeiros negativos e $FNS$ a quantidade de falsos negativos. $VPV$, $FPV$, $VNV$ e $FNV$ representam as mesmas medidas para a determinação do número de vagas ocupadas.
+
+Nos testes executados, cada um dos vídeos possui $60$ seções verticais e $24$ vagas de estacionamento, com exceção do Vídeo $1$ que contempla $26$ vagas. Nestes testes, foram observadas somente aquelas seções ou vagas que o \textit{DVE} ou os observadores determinaram como ocupadas. As demais seções ou vagas serão consideradas livres.
+A indicação da ocupação das seções pelos observadores não foi definida a cada segundo, mas considera-se que entre duas acusações de mudança de estado a ocupação das seções permanece a mesma. Sendo assim, podemos utilizar esses momentos para definir a ocupação em cada segundo do vídeo. Por exemplo, se um observador disser que a seção $10$ estava ocupada no momento inicial do vídeo e depois indicar que a mesma sessão foi liberada aos $8s$, a seção será considerada ocupada durante todos os momentos deste intervalo. Uma abordagem parecida é utilizada para análise do número de vagas ocupadas.
+
+Nas seções seguintes serão apresentados cada um dos vídeos utilizados para os testes. Cada caso iniciará com uma breve descrição do movimento dos veículos no vídeo, a duração do vídeo em segundos e os valores de $TS$ e $TV$. Em seguida, serão apresentadas cinco tabelas, três tabelas com os resultados fornecidos por cada observador, uma tabela com os resultados obtidos pelo \textit{DVE} e uma tabela que mostra os valores de $VPS + VNS$ e $VPV + VNV$ seguidos da \textit{tacc}, nomeada de precisão nas tabelas, para cada caso e uma média aritmética destes valores em relação aos três observadores.
+
+As tabelas indicam o tempo onde foram acusadas mudanças de estado nas seções e no número de vagas ocupadas. A primeira linha da tabela indica as seções ocupadas no momento inicial do vídeo e cada linha subsequente indica um momento em segundos quando houve mudança de estado de pelo menos uma seção ou vaga, a ROI e o número das seções modificadas e o número de vagas ocupadas naquele momento no tempo. Para que o leitor possa comparar o desempenho do \textit{DVE} com suas próprias impressões, uma imagem dos momentos iniciais e finais de cada vídeo será mostrada junto de cada análise.
 
 \subsection{Vídeo 1}
 
-No primeiro caso de testes, o vídeo começa com um estacionamento vazio. Depois de alguns segundos um único veículo de cor branca entra na cena pela direita e estaciona em uma vaga na parte inferior da imagem. O vídeo tem $15$ segundos de duração, totalizando $900$ acertos possíveis.
+No primeiro caso de testes, o vídeo começa com um estacionamento vazio. Depois de alguns segundos um único veículo de cor branca entra na cena pela direita e estaciona em uma vaga na parte inferior da imagem. O vídeo tem $15$ segundos de duração, de forma que $TS = 900$ e $TV = 390$.
 
 \begin{figure}[H]
 \centering
@@ -170,7 +187,7 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Precisão - seções}  \\ \hline \hline
-Observador & TPS + TNS & Precisão \\ \hline
+Observador & VPS + VNS & Precisão \\ \hline
 F & 886 & 98,44\% \\  \hline
 P & 886 & 98,44\% \\ \hline
 M & 884 & 98,22\% \\ \hline
@@ -178,7 +195,7 @@ Média & 885,3 & 98,37\% \\
 \hline
 \hline
 \multicolumn{3}{|c|}{Precisão - vagas}  \\ \hline \hline
-Observador & TPV + TNV & Precisão \\ \hline
+Observador & VPV + VNV & Precisão \\ \hline
 F & 376 & 96,41\% \\  \hline
 P & 376 & 96,41\% \\ \hline
 M & 375 & 96,15\% \\ \hline
@@ -191,11 +208,11 @@ Média & 375,66 & 96,32\% \\
 \end{table}
 
 
-Neste caso de testes, o programa classifica errôneamente a seção $3$ da ROI $2$ durante quase toda a duração do vídeo. Como o erro se inicia logo no primeiro momento do vídeo, esta seção é definida como uma vaga que conta como ocupada enquanto o erro de classificação persiste, fazendo com que o programa indique um número de vagas ocupadas errado durante toda a sua execução. Esse caso ilustra uma possível consequência de um erro de classificação. Apesar do erro, o reconhecimento da vaga ocupada pelo veículo nas seções $18$ e $19$ ocorre sem problemas.
+Neste caso de testes, o programa classifica errôneamente a seção $3$ da ROI $2$ durante quase toda a duração do vídeo. Como o erro se inicia logo no primeiro momento do vídeo, esta seção é definida como uma vaga que conta como ocupada enquanto o erro de classificação persiste, fazendo com que o programa indique um número de vagas ocupadas errado durante toda a sua execução. Esse caso ilustra uma possível consequência de um erro de classificação. Apesar do erro, o reconhecimento da vaga ocupada pelo veículo nas seções $18$ e $19$ ocorre sem problemas e a precisão total do \textit{DVE} ainda apresenta valores relativamente altos.
 
 \subsection{Vídeo 2}
 
-Neste vídeo, um carro branco está estacionado no conjunto inferior de vagas. Um veículo cinza entra pela direita e estaciona no conjunto superior de vagas. O vídeo tem uma duração de $10$ segundos, totalizando $600$ acertos possíveis.
+Neste vídeo, um carro branco está estacionado no conjunto inferior de vagas. Um veículo cinza entra pela direita e estaciona no conjunto superior de vagas. O vídeo tem uma duração de $10$ segundos, de forma que $TS = 600$ e $TV = 240$.
 
 \begin{figure}[H]
 \centering
@@ -282,7 +299,7 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Precisão - seções}  \\ \hline \hline
-Observador & TPS + TNS & Precisão \\ \hline
+Observador & VPS + VNS & Precisão \\ \hline
 F & 586 & 97,66\% \\  \hline
 P & 586 & 97,66\% \\ \hline
 M & 586 & 97,66\% \\ \hline
@@ -290,7 +307,7 @@ Média & 586 & 97,66\% \\
 \hline
 \hline
 \multicolumn{3}{|c|}{Precisão - vagas}  \\ \hline \hline
-Observador & TPV + TNV & Precisão \\ \hline
+Observador & VPV + VNV & Precisão \\ \hline
 F & 240 & 100\% \\  \hline
 P & 240 & 100\% \\ \hline
 M & 240 & 100\% \\ \hline
@@ -312,7 +329,7 @@ O programa também classificou errôneamente a seção $18$ do ROI $2$ no moment
 
 \subsection{Vídeo 3}
 
-Neste vídeo, dois carros se encontram no estacionamento. Um veículo amarelo entra pela direita e estaciona na seção superior das vagas. O veículo branco sai pela parte de baixo da tela. O vídeo tem duração de $20$ segundos totalizando $1200$ acertos possíveis.
+Neste vídeo, dois carros se encontram no estacionamento. Um veículo amarelo entra pela direita e estaciona na seção superior das vagas. O veículo branco sai pela parte de baixo da tela. O vídeo tem duração de $20$ segundos, portanto $TS = 1200$ e $TV = 480$.
 
 \begin{figure}[H]
 \centering
@@ -414,7 +431,7 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Precisão - seções}  \\ \hline \hline
-Observador & TPS + TNS & Precisão \\ \hline
+Observador & VPS + VNS & Precisão \\ \hline
 F & 1165 & 97,08\% \\  \hline
 P & 1113 & 92,75\% \\ \hline
 M & 1136 & 94,66\% \\ \hline
@@ -422,7 +439,7 @@ Média & 1138 & 94,83\% \\
 \hline
 \hline
 \multicolumn{3}{|c|}{Precisão - vagas}  \\ \hline \hline
-Observador & TPV + TNV & Precisão \\ \hline
+Observador & VPV + VNV & Precisão \\ \hline
 F & 480 & 100\% \\  \hline
 P & 472 & 98,33\% \\ \hline
 M & 479 & 99,79\% \\ \hline
@@ -448,7 +465,7 @@ Mesmo com os problemas, o mapeamento e determinação das ocupações das vagas 
 
 \subsection{Vídeo 4}
 
-Neste vídeo, o veículo branco entra em cena pela parte superior da tela e estaciona entre os outros dois carros. O carro cinza sai da vaga que ocupava e estaciona em uma na área inferior. O vídeo possui uma duração de $30$ segundos, portanto $1800$ possíveis acertos.
+Neste vídeo, o veículo branco entra em cena pela parte superior da tela e estaciona entre os outros dois carros. O carro cinza sai da vaga que ocupava e estaciona em uma na área inferior. O vídeo possui uma duração de $30$ segundos, portanto $TS = 1800$ e $TV = 720$.
 
 \begin{figure}[H]
 \centering
@@ -542,7 +559,7 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Precisão - seções}  \\ \hline \hline
-Observador & TPS + TNS & Precisão \\ \hline
+Observador & VPS + VNS & Precisão \\ \hline
 F & 1750 & 97,22\% \\  \hline
 P & 1749 & 97,16\% \\ \hline
 M & 1772 & 98,44\% \\ \hline
@@ -550,7 +567,7 @@ Média & 1757 & 97,61\% \\
 \hline
 \hline
 \multicolumn{3}{|c|}{Precisão - vagas}  \\ \hline \hline
-Observador & TPV + TNV & Precisão \\ \hline
+Observador & VPV + VNV & Precisão \\ \hline
 F & 711 & 98,75\% \\  \hline
 P & 712 & 98,88\% \\ \hline
 M & 714 & 99,16\% \\ \hline
@@ -569,7 +586,7 @@ Há um atraso na desocupação de uma vaga, indicada por volta dos $18$ segundos
 
 \subsection{Vídeo 5}
 
-Um veículo desocupa a sua vaga sainda pela parte superior da tela. O vídeo possui uma duração de $10$ segundos ou $600$ possíveis acertos.
+Um veículo desocupa a sua vaga sainda pela parte superior da tela. O vídeo possui uma duração de $10$ segundos, logo $TS = 600$ e $TV = 240$.
 
 \begin{figure}[H]
 \centering
@@ -659,7 +676,7 @@ Tempo(s) & Acontecimento & Vagas Ocupadas\\ \hline
 \begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Precisão - seções}  \\ \hline
-Observador & TPS + TNS & Precisão \\ \hline
+Observador & VPS + VNS & Precisão \\ \hline
 F & 597 & 99,50\% \\  \hline
 P & 585 & 97,50\% \\ \hline
 M & 587 & 97,83\% \\ \hline
@@ -667,7 +684,7 @@ Média & 1757 & 97,61\% \\
 \hline
 \hline
 \multicolumn{3}{|c|}{Precisão - vagas}  \\ \hline \hline
-Observador & TPV + TNV & Precisão \\ \hline
+Observador & VPV + VNV & Precisão \\ \hline
 F & 240 & 100\% \\  \hline
 P & 239 & 99,58\% \\ \hline
 M & 240 & 100\% \\ \hline
@@ -684,7 +701,7 @@ Um caso de testes simples, onde os erros ocorreram principalmente por causa da n
 
 \subsection{Vídeo 6}
 
-Neste vídeo o veículo amarelo entra na cena pela parte inferior da tela. O veículo branco desocupa sua vaga e sai da tela pelo lado esquerdo. O vídeo tem $13$ segundos totalizando $780$ acertos possíveis.
+Neste vídeo o veículo amarelo entra na cena pela parte inferior da tela. O veículo branco desocupa sua vaga e sai da tela pelo lado esquerdo. O vídeo tem $13$ segundos, logo $TS = 780$ e $TV = 312$.
 
 \begin{figure}[H]
 \centering
@@ -780,7 +797,7 @@ Tempo(s) & Acontecimento & Vagas Ocupadas \\ \hline
 \begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Precisão - seções}  \\ \hline
-Observador & TPS + TNS & Precisão \\ \hline
+Observador & VPS + VNS & Precisão \\ \hline
 F & 752 & 96,40\% \\  \hline
 P & 774 & 99,23\% \\ \hline
 M & 767 & 98,33\% \\ \hline
@@ -788,7 +805,7 @@ Média & 764,33 & 97,99\% \\
 \hline
 \hline
 \multicolumn{3}{|c|}{Precisão - vagas}  \\ \hline \hline
-Observador & TPV + TNV & Precisão \\ \hline
+Observador & VPV + VNV & Precisão \\ \hline
 F & 309 & 99,03\% \\  \hline
 P & 310 & 99,35\% \\ \hline
 M & 308 & 98,71\% \\ \hline
@@ -806,7 +823,7 @@ Um caso de testes aonde a avaliação do \textit{DVE} se mantém estável e conc
 
 \subsection{Vídeo 7}
 
-Neste vídeo um dos carros sai da cena pela esquerda. O vídeo tem $17$ segundos de duração e portanto $1020$ acertos possíveis.
+Neste vídeo um dos carros sai da cena pela esquerda. O vídeo tem $17$ segundos de duração e portanto $TS = 1020$ e $TV = 408$.
 
 \begin{figure}[H]
 \centering
@@ -892,7 +909,7 @@ Tempo(s) & Acontecimento & Vagas Ocupadas \\ \hline
 \begin{tabular}{|c||c||c|}
 \hline
 \multicolumn{3}{|c|}{Precisão - seções}  \\ \hline
-Observador & TPS + TNS & Precisão \\ \hline
+Observador & VPS + VNS & Precisão \\ \hline
 F & 1013 & 99,31\% \\  \hline
 P & 1014 & 99,41\% \\ \hline
 M & 1016 & 99,60\% \\ \hline
@@ -900,7 +917,7 @@ Média & 1014,33 & 99,44\% \\
 \hline
 \hline
 \multicolumn{3}{|c|}{Precisão - vagas}  \\ \hline \hline
-Observador & TPV + TNV & Precisão \\ \hline
+Observador & VPV + VNV & Precisão \\ \hline
 F & 407 & 99,75\% \\  \hline
 P & 407 & 99,75\% \\ \hline
 M & 408 & 100\% \\ \hline
@@ -917,7 +934,7 @@ O programa concordou com os observadores nesse vídeo, exibindo apenas um leve a
 
 \subsection{Vídeo 8}
 
-No oitavo e último caso de testes, um carro branco passa pela região central da imagem sem estacionar em nenhuma vaga e depois um carro cinza estaciona na região inferior. O vídeo tem $23$ segundos de duração e $1380$ acertos possíveis.
+No oitavo e último caso de testes, um carro branco passa pela região central da imagem sem estacionar em nenhuma vaga e depois um carro cinza estaciona na região inferior. O vídeo tem $23$ segundos de duração e portanto $TS = 1380$ e $TV = 552$.
 
 \begin{figure}[H]
 \centering
